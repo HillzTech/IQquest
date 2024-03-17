@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "IQquest",
+    "name": "IQ Quest",
     "slug": "IQquest",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,9 +8,12 @@
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#000000"
     },
+    "plugins": [
+      "@react-native-google-signin/google-signin"
+    ],
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -20,11 +23,20 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#000000"
+      },
+      "package": "com.harrison.ugwu.IQquest"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9878a4fa-d15a-4b1a-a762-6c3b3943f691"
+      }
     }
+  },
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-1458204118033702~9895205659"
   }
 }

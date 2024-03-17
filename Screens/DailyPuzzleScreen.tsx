@@ -1,0 +1,619 @@
+import React, { useEffect, useState, useRef } from 'react';
+import { BackHandler, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Background from '../Components/Background';
+import { Audio } from 'expo-av';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Ionicons } from '@expo/vector-icons';
+import { Animated, Easing } from 'react-native';
+import PartyPopperAnimation from '../Components/PartyPopperAnimation';
+import Puzzle from '../Components/Puzzle';
+import { StatusBar } from 'expo-status-bar';
+
+
+
+
+  const DailyPuzzleScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
+  
+    const [currentPuzzle, setCurrentPuzzle] = useState(1); 
+  const [score, setScore] = useState(0);
+  const [currentGuess, setCurrentGuess] = useState<string[]>(['', '', '', '']);
+  const [letterBox, setLetterBox] = useState<string[]>([]);
+const [correctSound, setCorrectSound] = useState<Audio.Sound | null>(null);
+const [buttonSound, setButtonSound] = useState<Audio.Sound | null>(null);
+const [coinVisible, setCoinVisible] = useState(false);
+  const [removeSound, setRemoveSound] = useState<Audio.Sound | null>(null);
+  const [incorrectSound, setIncorrectSound] = useState<Audio.Sound | null>(null);
+  const [fanfareSound, setFanfareSound] = useState<Audio.Sound | null>(null);
+  const [comicSound, setComicSound] = useState<Audio.Sound | null>(null);
+ 
+  const [coinAnimation] = useState(new Animated.ValueXY({ x: 0, y: 0 }));
+  
+  const [pendingScore, setPendingScore] = useState<number | null>(null);
+  const [showPartyPopper, setShowPartyPopper] = useState(false); // Add this state variable
+  const translateX = useRef(new Animated.Value(500)).current;
+  const [loading, setLoading] = useState(false);
+  const LoadingImage = require('../assets/loadingImg.gif');
+  const completionTimeKey = 'lastCompletionTime';
+
+
+  useEffect(() => {
+    loadGameProgress();
+  
+  }, [])
+
+  useEffect(() => {
+    Animated.timing(translateX, {
+      toValue: 0,
+      duration: 600, // Adjust duration as needed
+      useNativeDriver: true,
+    }).start();
+  }, [currentPuzzle]);
+
+  useEffect(() => {
+    const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+      // Navigate to MainMenuScreen and pass score and current level
+      navigation.push('MainMenu', { score: score, current: currentPuzzle });
+
+      return true; // Prevent default behavior (closing the app)
+    });
+
+    return () => {
+      backHandler.remove(); // Remove the event listener when component unmounts
+    };
+  }, [navigation, score, currentPuzzle]);
+
+  
+ 
+  const playSound = async (soundObject: Audio.Sound | null) => {
+    try {
+      if (soundObject) {
+        await soundObject.replayAsync();
+      }
+    } catch (error) {
+      console.error('Error playing sound:', error);
+    }
+  };
+  
+  useEffect(() => {
+    const loadSounds = async () => {
+      try {
+        const correctSoundObject = new Audio.Sound();
+        await correctSoundObject.loadAsync(require('../assets/sounds/dailycorrect.mp3'));
+        setCorrectSound(correctSoundObject);
+
+        const removeSoundObject = new Audio.Sound();
+        await removeSoundObject.loadAsync(require('../assets/sounds/remove.mp3'));
+        setRemoveSound(removeSoundObject);
+
+        const incorrectSoundObject = new Audio.Sound();
+        await incorrectSoundObject.loadAsync(require('../assets/sounds/incorrect.mp3'));
+        setIncorrectSound(incorrectSoundObject);
+
+        const buttonSoundObject = new Audio.Sound();
+        await buttonSoundObject.loadAsync(require('../assets/sounds/button.mp3'));
+        setButtonSound(buttonSoundObject);
+
+        const fanfareSoundObject = new Audio.Sound();
+        await fanfareSoundObject.loadAsync(require('../assets/sounds/fanfair.mp3'));
+        setFanfareSound(fanfareSoundObject);
+
+        const comicSoundObject = new Audio.Sound();
+        await comicSoundObject.loadAsync(require('../assets/sounds/comic.mp3'));
+        setComicSound(comicSoundObject);
+
+
+
+      } catch (error) {
+        console.error('Error loading sounds:', error);
+      }
+    };
+
+    loadSounds();
+
+    return () => {
+      correctSound && correctSound.unloadAsync();
+      removeSound && removeSound.unloadAsync();
+      incorrectSound && incorrectSound.unloadAsync();
+      fanfareSound && fanfareSound.unloadAsync();
+      buttonSound && buttonSound.unloadAsync();
+      
+    };
+  }, []);
+
+
+
+
+
+  useEffect(() => {
+    // Update the score after a delay
+    if (pendingScore !== null) {
+      setTimeout(() => {
+        setScore(pendingScore);
+        setPendingScore(null);
+      }, 1000); // Delay updating the score for 1 second
+    }
+  }, [pendingScore]);
+  
+  const moveCoin = () => {
+    Animated.parallel([
+      Animated.timing(coinAnimation, {
+        toValue: { x: 0, y: -820 },
+        duration: 1300,
+        easing: Easing.bezier(0.17, 0.67, 0.83, 0.67),
+        useNativeDriver: false,
+      }),
+      Animated.timing(coinAnimation, {
+        toValue: { x: 1, y: 1 },
+        duration: 1300,
+        easing: Easing.bezier(0.17, 0.67, 0.83, 0.67),
+        useNativeDriver: false,
+      }),
+      Animated.timing(coinAnimation, {
+        toValue: 0, // Reset scale back to original
+        duration: 0,
+        delay: 1300, // Delay reset to match the end of movement animation
+        useNativeDriver: false,
+      }),
+      Animated.timing(coinAnimation, {
+        toValue: 0, // Reset opacity back to original
+        duration: 0,
+        delay: 1300, // Delay reset to match the end of movement animation
+        useNativeDriver: false,
+      }),
+    ]).start(() => {
+      setCoinVisible(false);
+      coinAnimation.setValue({ x: 0, y: 0 });
+    });
+  };
+  
+  useEffect(() => {
+    if (currentGuess.every((letter) => letter !== '')) {
+      checkGuess();
+    }
+  }, [currentGuess]);
+
+  
+  useEffect(() => {
+    if (currentPuzzle > Puzzle.length) {
+      setCurrentPuzzle(1);
+    }
+  }, [currentPuzzle]);
+ 
+    useEffect(() => {
+    // Save game progress whenever score or current level changes
+    saveGameProgress();
+  }, [score, currentPuzzle]);
+
+  const loadGameProgress = async () => {
+    try {
+      const savedLevel = await AsyncStorage.getItem('currentPuzzle');
+      const savedScore = await AsyncStorage.getItem('score');
+      
+      if (savedLevel !== null && savedScore !== null) {
+        setCurrentPuzzle(parseInt(savedLevel));
+        setScore(parseInt(savedScore));
+        const lastCompletionTime = await AsyncStorage.getItem(completionTimeKey);
+        if (lastCompletionTime) {
+          const timeDifference = Date.now() - parseInt(lastCompletionTime);
+          if (timeDifference < 24 * 60 * 60 * 1000) {
+            const remainingTime = 24 * 60 * 60 * 1000 - timeDifference;
+          console.log('Remaining time:', remainingTime);
+            setLoading(true);
+            setTimeout(() => {
+              setLoading(false);
+            }, 24 * 60 * 60 * 1000 - timeDifference);
+          }
+        }
+      }
+      
+    } catch (error) {
+      console.error('Error loading game progress:', error);
+    }
+  };
+
+
+  const saveCompletionTime = async () => {
+    try {
+      await AsyncStorage.setItem(completionTimeKey, Date.now().toString());
+    } catch (error) {
+      console.error('Error saving completion time:', error);
+    }
+  };
+
+  const saveGameProgress = async () => {
+    try {
+      await AsyncStorage.setItem('currentPuzzle', currentPuzzle.toString());
+      await AsyncStorage.setItem('score', score.toString());
+    } catch (error) {
+      console.error('Error saving game progress:', error);
+    }
+  };
+ 
+  useEffect(() => {
+    const loadCombinedScore = async () => {
+      try {
+        const savedScore = await AsyncStorage.getItem('combinedScore');
+        if (savedScore !== null) {
+          setScore(parseInt(savedScore));
+        }
+      } catch (error) {
+        console.error('Error loading combined score:', error);
+      }
+    };
+
+    loadCombinedScore();
+  }, []);
+
+  useEffect(() => {
+    const saveCombinedScore = async () => {
+      try {
+        await AsyncStorage.setItem('combinedScore', score.toString());
+      } catch (error) {
+        console.error('Error saving combined score:', error);
+      }
+    };
+
+    saveCombinedScore();
+  }, [score]);
+
+
+  useEffect(() => {
+    // Initialize guess boxes based on the length of the word for the current level
+    setCurrentGuess(Array(Puzzle[currentPuzzle].word.length).fill(''));
+    // Initialize letter box with 10 random letters and letters from the current word
+    const wordLetters = Puzzle[currentPuzzle].word.split('');
+    const remainingLetters = Array.from({ length: 10 - wordLetters.length }, () => {
+      const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      return alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+    });
+    const shuffledLetters = shuffle(wordLetters.concat(remainingLetters));
+    setLetterBox(shuffledLetters);
+  }, [currentPuzzle]);
+
+  const handleGuessInputPress = async (index: number) => {
+   const letterToMove = currentGuess[index];
+   if (letterToMove !== '') {
+     // Remove the letter from the guess box
+     const updatedGuess = [...currentGuess];
+     updatedGuess[index] = ''; // Clear the guess box
+     setCurrentGuess(updatedGuess);
+    playSound(removeSound);
+     // Add the letter back to the letter box
+     setLetterBox([...letterBox, letterToMove]);
+     
+     
+   }
+ };
+ 
+
+const handleNav = () => {
+  navigation.navigate('CoinPurchase', { score, currentPuzzle });
+ }
+
+
+  const handleLetterBoxPress = async (index: number) => {
+   try{
+    playSound(buttonSound);
+   
+    // Move the letter to the first empty guess input box
+    const emptyIndex = currentGuess.findIndex((letter) => letter === '');
+    if (emptyIndex !== -1) {
+      const updatedGuess = [...currentGuess];
+      updatedGuess[emptyIndex] = letterBox[index];
+      setCurrentGuess(updatedGuess);
+      setLetterBox(letterBox.filter((_, idx) => idx !== index));
+    } 
+    } catch (error) {
+      console.error('Error handling letterbox press:', error);
+    }
+  };
+
+  const shuffle = (array: string[]) => {
+    let currentIndex = array.length;
+    let temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  };
+
+  useEffect(() => {
+    // Automatically check the guess when the guess box is full
+    if (currentGuess.every((letter) => letter !== '')) {
+      checkGuess();
+    }
+  }, [currentGuess]);
+
+
+
+
+  const checkGuess = () => {
+    const currentWord = Puzzle[currentPuzzle].word;
+    if (currentGuess.join('').toUpperCase() === currentWord) {
+      setShowPartyPopper(true);
+     
+      playSound(fanfareSound);
+      setCoinVisible(true); // Show the coin
+      setTimeout(() => {
+        playSound(correctSound);
+
+      }, 2900)
+      
+      setTimeout(() => {
+        setLoading(true);
+        playSound(comicSound);
+      }, 4500)
+      saveCompletionTime();
+      setTimeout(() => {
+        setLoading(false);
+        setCurrentPuzzle(currentPuzzle + 1);
+      }, 24 * 60 * 60 * 1000);
+      setTimeout(() => {
+        moveCoin(); // Move the coin to the score area
+        AsyncStorage.setItem('score', score.toString())
+        setPendingScore(score + 60); // Increment score after animation
+      }, 1000);
+        
+    } else {
+      playSound(incorrectSound);
+    }
+  };
+  
+  
+
+  const handleMovement = () => {
+   navigation.push('MainMenu', { score, currentPuzzle }); 
+ };
+ 
+    
+return(
+
+<Background>
+<StatusBar />
+   <View style={{backgroundColor:'black', height:'9%', flexDirection: 'row', justifyContent:'space-between', alignContent:'space-around'}}>
+    
+         <View>
+            <TouchableOpacity onPress={handleMovement} >
+            <ImageBackground 
+            source={require('../assets/Images/backIcon.png')}
+            style={{width:30, height: 30, marginTop: 43, marginBottom:-81, left:9}}
+            
+            />
+               
+            </TouchableOpacity>
+            
+         </View>
+         
+
+   <View style={{ flexDirection:"row",justifyContent:'space-around', alignContent:'flex-start', top:43, right:10, borderColor:'#859410', borderWidth:1, borderRadius:10, marginBottom:50, paddingHorizontal:5, gap:1}}>
+   <ImageBackground
+            source={require('../assets/Images/coins.png')} 
+            style={{width: 20, height: 20}}
+               
+         /> 
+        <TouchableOpacity onPress={handleNav} >
+        
+         <Text style={{ fontWeight: '600', color: "white", fontSize: 16, fontStyle: 'italic' }}>{score}<Ionicons name="add-circle" size={11} color="green" /></Text>
+
+
+        </TouchableOpacity>
+         
+         
+          
+        
+</View>
+     
+   </View>
+
+    
+   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      {loading ? (
+        <View style={{ backgroundColor:'#00007B', width:'95%', borderColor:"blue", borderWidth:2, borderRadius:20}}>
+          <Image source={LoadingImage} style={{width:240, height: 240, left:'17%'}}/>
+          
+          <ImageBackground source={require('../assets/adaptive-icon.png')} style={{width:300, height:300, left:'5%', bottom:30}}/>
+
+          <Text style={{color:'white', padding:'7%', textAlign:'center', fontSize:16, marginTop:-70}}> You have played your puzzle for the day!</Text>
+          
+        </View>
+         
+        
+      
+      ) : (
+    
+
+        
+ <View>
+   <View style={{paddingHorizontal:'5%'}}>
+
+    <ImageBackground source={require('../assets/board.png')} style={{width:'100%', height:60, top:'10%'}} />
+   
+  <Text style={{color:'blue', textAlign:'center', fontSize:17, bottom:'35%', fontWeight:'800', fontStyle:'italic', fontFamily:'srif'}}>{Puzzle[currentPuzzle].question}</Text>
+ </View>
+      
+     
+ 
+      <Animated.View style={{
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignContent: 'center',
+      flexWrap: 'wrap',
+      transform: [{ translateX }]
+    }}>
+      {Puzzle[currentPuzzle].images.map((imageSource, index) => (
+        <Image key={index} source={imageSource} style={{
+          width: '43%',
+          height: 160,
+          margin: 5,
+          borderWidth: 3,
+          borderColor: 'grey',
+          borderRadius: 10
+        }} />
+      ))}
+    </Animated.View>
+       
+       
+    
+          
+    {coinVisible && (
+        <Animated.View
+          style={[
+            styles.coinContainer,
+            {
+              transform: [{ translateY: coinAnimation.y }],
+            },
+          ]}
+        >
+          <ImageBackground source={require('../assets/Images/coin.png')} style={{ width: 24, height: 24 }}>
+            <Text style={styles.coinText}>60</Text>
+          </ImageBackground>
+          
+        </Animated.View>
+      )}
+        {showPartyPopper && (
+        <PartyPopperAnimation onAnimationComplete={() => setShowPartyPopper(false)} />
+      )}
+
+
+
+    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', marginTop:'10%'}}>
+      {/* Guess boxes */}
+      {currentGuess.map((letter, index) => (
+        <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index) }>
+          <View style={{ padding: 5, margin: 2,paddingHorizontal:'3.5%', backgroundColor:'black', borderRadius:5, borderWidth:1, borderColor:'white'}}>
+            <Text style={{fontSize:21, fontWeight:'900', color:'white', textAlign:'center'}}>{letter}</Text>
+          </View>
+        </TouchableOpacity>
+      ))}
+    </View>
+
+    
+
+      {/* Render letter box */}
+      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"94%"}}>
+      <View style={styles.container}>
+        {letterBox.map((letter, index) => (
+          <TouchableOpacity
+            key={index}
+            onPress={() => handleLetterBoxPress(index)}
+            style={styles.box}
+          >
+            <Text style={{fontSize:28,fontWeight:'900',textAlign:'center'}}>{letter}</Text>
+          </TouchableOpacity>
+        ))}
+
+        
+      </View>
+      
+       
+      
+
+      
+      </View>
+      
+      
+      </View>
+       )}
+       </View>
+      
+     
+   </Background>
+   
+
+)
+
+
+
+}
+const styles = StyleSheet.create({
+   
+  
+
+    container: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      marginVertical: '12%',
+      width: '90%',
+      marginLeft: '15%',
+      marginRight:1
+      
+      
+      
+    },
+    box: {
+      borderWidth: 2,
+      borderColor: 'black',
+      padding: 5,
+      margin: 1,
+      borderRadius: 6,
+      backgroundColor: 'white',
+      minWidth: '17%',
+      maxWidth: '17%',
+      
+
+      
+      
+    },
+    coinContainer: {
+      position: 'absolute',
+      top: '70%', 
+      left: '90%', 
+      marginLeft: -11.5, 
+      zIndex: 1000, 
+    },
+    coinText: {
+      fontWeight: '600',
+      color: 'white',
+      fontSize: 17,
+      fontStyle: 'italic',
+      position: 'absolute',
+      top: 0,
+      left: '-10%',
+    },
+
+    
+
+    imageStyle: {
+      width: 320,
+      height: 210,
+      position: 'absolute',
+      top: '35%', // Adjust this as needed
+      left: '6%',
+      right: 0,
+      bottom: 0,
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 999, // Ensure the image appears above other content
+    },
+
+    wrongImageStyle: {
+      width: 250,
+      height: 240,
+      position: 'absolute',
+      top: '35%', // Adjust this as needed
+      left: '14%',
+      right: 0,
+      bottom: 0,
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 999, // Ensure the image appears above other content
+    },
+
+    
+  });
+  
+  
+
+
+export default DailyPuzzleScreen;
