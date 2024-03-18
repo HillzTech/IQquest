@@ -11,8 +11,8 @@ import levels from '../Components/Level';
 import { StatusBar } from 'expo-status-bar'
 import CorrectImage from '../Components/CorrectImage';
 import WrongImage from '../Components/WrongImage';
-
-
+import { useInterstitialAd } from '../Components/useInterstitialAd';
+import { useFocusEffect } from '@react-navigation/native';
 
   const GameScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [currentLevel, setCurrentLevel] = useState(1); 
@@ -37,9 +37,25 @@ const [buttonSound, setButtonSound] = useState<Audio.Sound | null>(null);
   const [pendingScore, setPendingScore] = useState<number | null>(null);
   const [showPartyPopper, setShowPartyPopper] = useState(false); 
   const translateX = useRef(new Animated.Value(500)).current;
-  
-  
+  const { handleManualRefresh } = useInterstitialAd();
 
+  // useEffect to handle the refresh when the screen is mounted
+  /*   useEffect(() => {
+    handleManualRefresh(); // Refresh the interstitial ad when the screen mounts
+  }, []);
+
+  // useFocusEffect to handle the refresh when the screen is focused
+  useFocusEffect(
+    React.useCallback(() => {
+      handleManualRefresh(); // Refresh the interstitial ad when the screen is focused
+      return () => {
+        // Cleanup function if needed
+      };
+    }, [])
+  );
+
+*/
+  
   
   
   useEffect(() => {

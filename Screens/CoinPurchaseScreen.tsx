@@ -73,6 +73,8 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
     const adEventListener = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
       if (showAd) {
         rewarded.show();
+        AsyncStorage.setItem('score', score.toString())
+      setPendingScore(score + 20);
         setShowAd(false);
       }
     });
@@ -103,11 +105,7 @@ const rewardEventListener = rewarded.addAdEventListener(RewardedAdEventType.EARN
     setShowAd(true);
     
 
-    setTimeout(() => {
     
-      AsyncStorage.setItem('score', score.toString())
-      setPendingScore(score + 20); 
-    }, 10000);
     
   };
 
@@ -206,26 +204,26 @@ const rewardEventListener = rewarded.addAdEventListener(RewardedAdEventType.EARN
 
 
      
-      <View style={{ flex: 1, justifyContent: 'center', alignContent: 'center', left:'4%', top:'2%' }}>
+      <View style={{ flex: 1, justifyContent: 'center', alignContent: 'center', left:'13%', top:'2%' }}>
         <TouchableOpacity onPress={handleShowAd}>
-          <ImageBackground source={require('../assets/Images/watchnow.png')} style={{ width: '100%', height: '90%', padding:'4%'}} />
+          <ImageBackground source={require('../assets/Images/watchnow.png')} style={{ width: '90%', height: '90%', padding:'4%'}} />
         </TouchableOpacity>
       </View>
 
-      <View style={{top:'-12%'}}>
+      <View style={{top:'-20%'}}>
 
       <View style={{ flexDirection:'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', gap:10}}>
       <TouchableOpacity onPress={() => purchaseCoins('1000_coins')} >
-        <ImageBackground source={require('../assets/Images/1000.png')} style={{width:160, height:210}}/>
+        <ImageBackground source={require('../assets/Images/1000.png')} style={{width:170, height:150}}/>
         
          </TouchableOpacity>
       <TouchableOpacity onPress={() => purchaseCoins('5000_coins')} > 
-      <ImageBackground source={require('../assets/Images/5000.png')} style={{width:170, height: 210}}/>
+      <ImageBackground source={require('../assets/Images/5000.png')} style={{width:120, height: 150}}/>
       
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() => purchaseCoins('10000_coins')} > 
-      <ImageBackground source={require('../assets/Images/10000.png')} style={{width:170, height: 210}}/> 
+      <ImageBackground source={require('../assets/Images/10000.png')} style={{width:120, height: 150}}/> 
       </TouchableOpacity>
     </View>
     </View>

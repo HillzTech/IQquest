@@ -9,7 +9,7 @@ import LoginScreen from './Screens/LoginScreen';
 import DailyPuzzleScreen from './Screens/DailyPuzzleScreen';
 import SplashScreen from './Screens/SplashScreen';
 import 'expo-dev-client';
-import { useInterstitialAd } from './Components/useInterstitialAd';
+
 
 import Purchases, { PurchasesConfiguration}   from 'react-native-purchases';
 
@@ -24,7 +24,7 @@ const Stack = createStackNavigator();
 
 const App: React.FC = () => {
 
-  //const { loaded } = useInterstitialAd();
+ 
   
   
   return (

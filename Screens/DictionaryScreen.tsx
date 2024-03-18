@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, ImageBackground, Image, ImageSourcePropType, Keyboard, BackHandler } from 'react-native'; // Import Keyboard
+import { View, Text, TextInput, TouchableOpacity, ImageBackground, Image, ImageSourcePropType, Keyboard, BackHandler, ScrollView } from 'react-native'; // Import Keyboard
 import levels from '../Components/Level';
 import Background from '../Components/Background';
 import { Ionicons } from '@expo/vector-icons';
@@ -53,14 +53,18 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 
   return (
     <Background>
-    
-     <ImageBackground source={require('../assets/adaptive-icon.png')} style={{ width: 70, height: 50,top:'3.7%', left:'42%'}} />
+      <ScrollView
+        contentContainerStyle={{ flexGrow: 1 }} // Add flexGrow: 1 to make content fill the screen
+        keyboardShouldPersistTaps="handled" // Handle taps when keyboard is open
+        style={{ flex: 1 }} // Add flex: 1 to make ScrollView fill the screen
+      >
+     
       
       <View style={{ flexDirection:'row', justifyContent:'space-between',alignContent:'center' }}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <ImageBackground
               source={require('../assets/Images/backIcon.png')}
-              style={{ width: 30, height: 30, left:15, top:'-30%' }}
+              style={{ width: 30, height: 30, left:15, top:'130%' }}
             />
           </TouchableOpacity>
 
@@ -72,7 +76,7 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
         <Text style={{textAlign:'center', color:'white', marginBottom:'1%', marginTop:'1%', fontWeight:'800', fontSize:18}}>Welcome to the Glossary!</Text>
         <Text style={{textAlign:'center', color:'white', marginBottom:'7%', fontStyle:'italic', paddingHorizontal:'13%'}}>Search and get more information of words used in the game. </Text>
 
-        <View style={{backgroundColor:'#00006B', width: '97%', height:'83.7%', borderRadius:20, left:'1.6%', top:-14, borderWidth:2, borderColor:'blue' }}>
+        <View style={{backgroundColor:'#00006B', width: '97%', height:'87%', borderRadius:20, left:'1.6%', top:-14, borderWidth:2, borderColor:'blue' }}>
 
         <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:'center', top:'4%'}}>
             <TextInput
@@ -115,6 +119,9 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
          </View>
          </View>
          </View>
+
+         </ScrollView>
+
     </Background>
   );
 };

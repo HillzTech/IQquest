@@ -12,6 +12,7 @@ const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
 export const useInterstitialAd = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
   const [proUser, setProUser] = useState<boolean>(false);
+  const [refreshed, setRefreshed] = useState<boolean>(false);
   const [appState, setAppState] = useState<AppStateStatus>(AppState.currentState);
 
   useEffect(() => {
@@ -30,21 +31,25 @@ export const useInterstitialAd = () => {
     checkProUser();
 
     // Load ad if not a pro user
+    if (!proUser && !loaded && refreshed) {
+      interstitial.load();
+    }
+
+    // Add event listeners for ad events
     const unsubscribeLoaded = interstitial.addAdEventListener(AdEventType.LOADED, () => {
       setLoaded(true);
     });
 
     const unsubscribeClosed = interstitial.addAdEventListener(AdEventType.CLOSED, () => {
       setLoaded(false);
-      interstitial.load();
     });
 
     // Listen for app state changes
     const handleAppStateChange = (nextAppState: AppStateStatus) => {
       if (appState.match(/inactive|background/) && nextAppState === 'active') {
-        // App is returning from background or being resumed
-        if (!proUser) {
-          interstitial.load();
+        // Game is returning from background or being resumed
+        if (!proUser && loaded && refreshed) {
+          interstitial.show();
         }
       }
       setAppState(nextAppState);
@@ -52,22 +57,17 @@ export const useInterstitialAd = () => {
 
     const appStateSubscription = AppState.addEventListener('change', handleAppStateChange);
 
-    // Load ad initially
-    interstitial.load();
-
     return () => {
       unsubscribeLoaded();
       unsubscribeClosed();
       appStateSubscription.remove();
     };
-  }, [proUser]);
+  }, [proUser, loaded, refreshed]);
 
-  useEffect(() => {
-    // Check if the user is a pro user and if ad is loaded, then show the ad
-    if (!proUser && loaded && appState === 'active') {
-      interstitial.show();
-    }
-  }, [proUser, loaded, appState]);
+  // Function to set the refresh flag
+  const handleManualRefresh = () => {
+    setRefreshed(true);
+  };
 
-  return { loaded };
+  return { handleManualRefresh };
 };

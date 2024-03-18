@@ -130,7 +130,7 @@ const [coinVisible, setCoinVisible] = useState(false);
       setTimeout(() => {
         setScore(pendingScore);
         setPendingScore(null);
-      }, 1000); // Delay updating the score for 1 second
+      }, 300); // Delay updating the score for 1 second
     }
   }, [pendingScore]);
   
@@ -362,7 +362,7 @@ const handleNav = () => {
         moveCoin(); // Move the coin to the score area
         AsyncStorage.setItem('score', score.toString())
         setPendingScore(score + 60); // Increment score after animation
-      }, 1000);
+      }, 2000);
         
     } else {
       playSound(incorrectSound);
@@ -567,7 +567,7 @@ const styles = StyleSheet.create({
     },
     coinContainer: {
       position: 'absolute',
-      top: '70%', 
+      top: '-8%', 
       left: '90%', 
       marginLeft: -11.5, 
       zIndex: 1000, 
