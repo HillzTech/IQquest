@@ -40,7 +40,7 @@ const [buttonSound, setButtonSound] = useState<Audio.Sound | null>(null);
   const { handleManualRefresh } = useInterstitialAd();
 
   // useEffect to handle the refresh when the screen is mounted
-  /*   useEffect(() => {
+     useEffect(() => {
     handleManualRefresh(); // Refresh the interstitial ad when the screen mounts
   }, []);
 
@@ -54,7 +54,7 @@ const [buttonSound, setButtonSound] = useState<Audio.Sound | null>(null);
     }, [])
   );
 
-*/
+
   
   
   

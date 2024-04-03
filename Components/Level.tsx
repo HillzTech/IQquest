@@ -341,7 +341,7 @@ const levels = [
      ],
     word: "SOCCER",
     category: "Sport",
-    definition:"Football is the world's most popular ball game in numbers of participants and spectators. Simple in its principal rules and essential equipment, the sport can be played almost anywhere, from official football playing fields (pitches) to gymnasiums, streets, school playgrounds, parks, or beaches. Football's governing body, the Fédération Internationale de Football Association (FIFA), estimated that at the turn of the 21st century there were approximately 250 million football players and over 1.3 billion people “interested” in football; in 2010 a combined television audience of more than 26 billion watched football's premier tournament, the quadrennial monthlong World Cup finals."
+    definition:"Soccer is the world's most popular ball game in numbers of participants and spectators. Simple in its principal rules and essential equipment, the sport can be played almost anywhere, from official football playing fields (pitches) to gymnasiums, streets, school playgrounds, parks, or beaches. Football's governing body, the Fédération Internationale de Football Association (FIFA), estimated that at the turn of the 21st century there were approximately 250 million football players and over 1.3 billion people “interested” in football; in 2010 a combined television audience of more than 26 billion watched football's premier tournament, the quadrennial monthlong World Cup finals."
   },
   {
     images: [
@@ -715,6 +715,79 @@ const levels = [
 
   {
     images: [
+       require('../assets/Images/casual/casual1.jpg'),
+       require('../assets/Images/casual/casual2.jpg'),
+       require('../assets/Images/casual/casual3.jpg'),
+       require('../assets/Images/casual/casual4.jpg'),
+     ],
+    word: "CASUAL",
+    category: "Fashion",
+    definition: "Casual wear refers to clothing that is relaxed, comfortable, and suitable for everyday activities, socializing, or informal occasions. It typically includes items like t-shirts, jeans, shorts, sweatshirts, hoodies, sneakers, and sandals. Casual wear is often chosen for its comfort and versatility, allowing individuals to move freely and comfortably while maintaining a relaxed and laid-back appearance."
+  },
+
+  {
+    images: [
+       require('../assets/Images/formal/formal1.png'),
+       require('../assets/Images/formal/formal2.jpg'),
+       require('../assets/Images/formal/formal3.jpg'),
+       require('../assets/Images/formal/formal4.jpg'),
+     ],
+    word: "FORMAL",
+    category: "Fashion",
+    definition: "Formal wear refers to clothing that is worn for formal events or occasions that require a more polished and sophisticated appearance. This type of attire is typically reserved for events such as weddings, galas, formal dinners, award ceremonies, or business functions where a certain level of decorum is expected. Formal wear often includes garments such as suits, tuxedos, evening gowns, cocktail dresses."
+  },
+
+  {
+    images: [
+       require('../assets/Images/couture/couture1.jpg'),
+       require('../assets/Images/couture/couture2.jpg'),
+       require('../assets/Images/couture/couture3.jpg'),
+       require('../assets/Images/couture/couture4.jpg'),
+     ],
+    word: "COUTURE",
+    category: "Fashion",
+    definition: "Couture is a term used in the fashion industry to refer to high-end, custom-made clothing that is created by skilled artisans and designers. It originates from the French word couture which means sewing or dressmaking. Couture garments are typically handmade with meticulous attention to detail and craftsmanship, using high-quality fabrics, intricate embellishments, and precise tailoring techniques."
+  },
+
+  {
+    images: [
+       require('../assets/Images/gothic/gothic1.jpg'),
+       require('../assets/Images/gothic/gothic2.jpg'),
+       require('../assets/Images/gothic/gothic3.jpg'),
+       require('../assets/Images/gothic/gothic4.jpg'),
+     ],
+    word: "GOTHIC",
+    category: "Fashion",
+    definition: "Gothic wear refers to clothing styles associated with the goth subculture, which originated in the late 1970s and early 1980s as a subgenre of post-punk music. Goth fashion is characterized by its dark, dramatic aesthetic and often draws inspiration from Victorian, medieval, and punk styles."
+  },
+
+  {
+    images: [
+       require('../assets/Images/vintage/vintage1.jpg'),
+       require('../assets/Images/vintage/vintage2.jpg'),
+       require('../assets/Images/vintage/vintage3.jpg'),
+       require('../assets/Images/vintage/vintage4.jpg'),
+     ],
+    word: "VINTAGE",
+    category: "Fashion",
+    definition: "Vintage Wear, Clothing from previous decades or eras that is considered fashionable and trendy. Vintage wear encompasses a wide range of styles, from retro-inspired garments to authentic pieces from specific time periods."
+  },
+
+  {
+    images: [
+       require('../assets/Images/bohemian/bohemian1.jpg'),
+       require('../assets/Images/bohemian/bohemian2.jpg'),
+       require('../assets/Images/bohemian/bohemian3.jpg'),
+       require('../assets/Images/bohemian/bohemian4.jpg'),
+     ],
+    word: "BOHEMIAN",
+    category: "Fashion",
+    definition: "Bohemian fashion, often shortened to is a style inspired by the unconventional and free-spirited lifestyle associated with bohemian culture. Bohemian clothing is characterized by its relaxed, eclectic, and artistic aesthetic, drawing inspiration from various cultures, eras, and natural elements. Key features of bohemian fashion include"
+  },
+
+
+  {
+    images: [
        require('../assets/Images/fairy/fairy1.jpg'),
        require('../assets/Images/fairy/fairy2.jpg'),
        require('../assets/Images/fairy/fairy3.jpg'),
@@ -1005,353 +1078,832 @@ const levels = [
 
   {
     images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
+       require('../assets/Images/eclipse/eclipse1.jpg'),
+       require('../assets/Images/eclipse/eclipse2.jpg'),
+       require('../assets/Images/eclipse/eclipse3.jpg'),
+       require('../assets/Images/eclipse/eclipse4.jpg'),
      ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
+    word: "ECLIPSE",
+    category: "Astronomy",
+    definition: "An eclipse occurs when one celestial body passes into the shadow of another celestial body, resulting in a temporary dimming or blocking of light. There are two main types of eclipses: solar eclipses and lunar eclipses."
   },
 
   {
     images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
+       require('../assets/Images/comet/comet1.jpg'),
+       require('../assets/Images/comet/comet2.jpg'),
+       require('../assets/Images/comet/comet3.jpg'),
+       require('../assets/Images/comet/comet4.jpg'),
      ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
+    word: "COMET",
+    category: "Astronomy",
+    definition: "Comets are celestial bodies composed of ice, dust, rocky debris, and organic compounds that orbit the Sun in highly elliptical paths. They are often referred to as dirty snowballs or icy dirtballs because of their composition. Comets are thought to be remnants from the early solar system's formation about 4.6 billion years ago."
   },
 
   {
     images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
+       require('../assets/Images/asteroid/asteroid1.jpg'),
+       require('../assets/Images/asteroid/asteroid2.jpg'),
+       require('../assets/Images/asteroid/asteroid3.jpg'),
+       require('../assets/Images/asteroid/asteroid4.jpg'),
      ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
+    word: "ASTEROID",
+    category: "Astronomy",
+    definition: "An asteroid is a small rocky body that orbits the Sun, primarily found in the asteroid belt, a region located between the orbits of Mars and Jupiter. Asteroids vary in size from tiny rocky fragments to large bodies several hundred kilometers in diameter. They are remnants from the early solar system's formation and are composed primarily of rock and metal, with some containing organic compounds as well."
   },
 
   {
     images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
+       require('../assets/Images/nebula/nebula1.jpg'),
+       require('../assets/Images/nebula/nebula2.jpg'),
+       require('../assets/Images/nebula/nebula3.jpg'),
+       require('../assets/Images/nebula/nebula4.jpg'),
      ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
+    word: "NEBULA",
+    category: "Astronomy",
+    definition: "A nebula is a cloud of gas and dust in space. These clouds can vary greatly in size, shape, and composition. Some nebulae are the birthplaces of new stars, while others are the remnants of stars that have reached the end of their lives. The term nebula comes from the Latin word for cloud."
   },
 
   {
     images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
+       require('../assets/Images/meteor/meteor1.jpg'),
+       require('../assets/Images/meteor/meteor2.jpg'),
+       require('../assets/Images/meteor/meteor3.jpg'),
+       require('../assets/Images/meteor/meteor4.jpg'),
      ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
-  },
-
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: ""
+    word: "METEOR",
+    category: "Astronomy",
+    definition: "A meteor is a bright streak of light that appears in the night sky when a meteoroid, a small rocky or metallic object from space, enters Earth's atmosphere and burns up due to friction with the air. Meteors are often colloquially referred to as shooting stars or falling stars."
   },
 
   
+  {
+    images: [
+       require('../assets/Images/seed/seed1.jpg'),
+       require('../assets/Images/seed/seed2.jpg'),
+       require('../assets/Images/seed/seed3.jpg'),
+       require('../assets/Images/seed/seed4.jpg'),
+     ],
+    word: "SEED",
+    category: "Plant",
+    definition: "a seed is a fertilized ovule containing the embryonic plant and stored food reserves necessary for its initial growth. Seeds are the starting point of plant life cycles and are crucial for crop production and propagation."
+  },
+
+  {
+    images: [
+       require('../assets/Images/botany/botany1.jpg'),
+       require('../assets/Images/botany/botany2.jpg'),
+       require('../assets/Images/botany/botany3.jpg'),
+       require('../assets/Images/botany/botany4.jpg'),
+     ],
+    word: "BOTANY",
+    category: "Plant",
+    definition: "Botany is the scientific study of plants, encompassing their physiology, structure, genetics, ecology, distribution, classification, and economic importance. It is a branch of biology that examines various aspects of plant life, ranging from microscopic organisms like algae to complex multicellular organisms like trees. Botanists study plants at different levels, from molecular and cellular biology to ecosystems and global patterns of plant distribution."
+  },
+
+  {
+    images: [
+       require('../assets/Images/shrub/shrub1.jpg'),
+       require('../assets/Images/shrub/shrub2.jpg'),
+       require('../assets/Images/shrub/shrub3.jpg'),
+       require('../assets/Images/shrub/shrub4.jpg'),
+     ],
+    word: "SHRUB",
+    category: "Plant",
+    definition: "A shrub is a type of woody plant characterized by multiple stems or branches arising from the base of the plant. Unlike trees, which typically have a single main trunk, shrubs have a more compact and bushy growth habit. Shrubs vary greatly in size, ranging from low-growing ground covers to tall specimens several meters in height. They can be evergreen or deciduous, meaning they may retain their leaves year-round or shed them seasonally"
+  },
+
+  {
+    images: [
+       require('../assets/Images/climber/climber1.jpg'),
+       require('../assets/Images/climber/climber2.jpg'),
+       require('../assets/Images/climber/climber3.jpg'),
+       require('../assets/Images/climber/climber4.jpg'),
+     ],
+    word: "CLIMBER",
+    category: "Plant",
+    definition: "A climber, also known as a vine, is a type of plant that grows upward by clinging to or twining around other structures for support. Climbers have specialized structures such as tendrils, twining stems, or clinging roots that enable them to attach themselves to surfaces like walls, fences, trees, or other plants."
+  },
+
+  {
+    images: [
+       require('../assets/Images/foliage/foliage1.jpg'),
+       require('../assets/Images/foliage/foliage2.jpg'),
+       require('../assets/Images/foliage/foliage3.jpg'),
+       require('../assets/Images/foliage/foliage4.jpg'),
+     ],
+    word: "FOLIAGE",
+    category: "Plant",
+    definition: "Foliage refers to the leaves of plants collectively, especially on trees and shrubs. It encompasses all the greenery and plant material that is primarily composed of leaves. Foliage plays a crucial role in the ecosystem, as it performs photosynthesis, converting sunlight into energy and releasing oxygen into the atmosphere. Additionally, foliage contributes to the aesthetics of landscapes, gardens, and natural environments, providing various colors, textures, and shapes."
+  },
+
+  {
+    images: [
+       require('../assets/Images/mobile/mobile1.jpg'),
+       require('../assets/Images/mobile/mobile2.jpg'),
+       require('../assets/Images/mobile/mobile3.jpg'),
+       require('../assets/Images/mobile/mobile4.jpg'),
+     ],
+    word: "MOBILE",
+    category: "Technology",
+    definition: "Mobiles, also known as cell phones are portable electronic devices that enable communication over long distances by utilizing a network of specialized base stations. They have evolved significantly since their inception, offering a wide range of features beyond just voice calls, including text messaging, internet browsing, multimedia playback, gaming, photography, and much more."
+  },
+
+  {
+    images: [
+       require('../assets/Images/cloud/cloud1.jpg'),
+       require('../assets/Images/cloud/cloud2.jpg'),
+       require('../assets/Images/cloud/cloud3.jpg'),
+       require('../assets/Images/cloud/cloud4.png'),
+     ],
+    word: "CLOUD",
+    category: "Technology",
+    definition: "Cloud upload typically refers to the process of transferring files, data, or information from a local device or network to a remote server or storage system hosted in the cloud. This can be done using various methods, such as web interfaces, dedicated applications, or automated processes."
+  },
+
+  {
+    images: [
+       require('../assets/Images/gadget/gadget1.jpg'),
+       require('../assets/Images/gadget/gadget2.jpg'),
+       require('../assets/Images/gadget/gadget3.jpg'),
+       require('../assets/Images/gadget/gadget4.jpg'),
+     ],
+    word: "GADGET",
+    category: "Technology",
+    definition: "A gadget typically refers to a small, specialized electronic device or tool designed for a particular purpose. Gadgets often serve practical functions or provide entertainment and are characterized by their portability and convenience. Examples of gadgets include smartphones, tablets, fitness trackers, smartwatches, digital cameras, portable gaming consoles, and various other electronic devices. Gadgets are commonly associated with modern technology and are often designed to enhance productivity, communication, or leisure activities."
+  },
+
+  {
+    images: [
+       require('../assets/Images/hardware/hardware1.jpg'),
+       require('../assets/Images/hardware/hardware2.jpg'),
+       require('../assets/Images/hardware/hardware3.jpg'),
+       require('../assets/Images/hardware/hardware4.jpg'),
+     ],
+    word: "HARDWARE",
+    category: "Technology",
+    definition: "Hardware refers to the physical components of a computer system or electronic device. Unlike software, which encompasses programs, applications, and data, hardware includes tangible objects such as the computer's central processing unit (CPU), memory modules (RAM), storage devices (hard drives, solid-state drives), input/output devices (keyboard, mouse, monitor, printer), and other components necessary for the device to function."
+  },
+
+  {
+    images: [
+       require('../assets/Images/robotics/robotics1.jpg'),
+       require('../assets/Images/robotics/robotics2.jpg'),
+       require('../assets/Images/robotics/robotics3.jpg'),
+       require('../assets/Images/robotics/robotics4.jpg'),
+     ],
+    word: "ROBOTICS",
+    category: "Technology",
+    definition: "Robotics is the interdisciplinary field that involves the design, construction, operation, and use of robots. A robot is a programmable machine capable of carrying out a complex series of actions automatically, especially when controlled by a computer or electronic system."
+  },
+
+  {
+    images: [
+       require('../assets/Images/brown/brown1.jpg'),
+       require('../assets/Images/brown/brown2.jpg'),
+       require('../assets/Images/brown/brown3.jpg'),
+       require('../assets/Images/brown/brown4.jpg'),
+     ],
+    word: "BROWN",
+    category: "Color",
+    definition: "Brown typically refers to a color that is a mixture of red, yellow, and black pigments. It is often described as a dark shade of orange or a warm earthy tone. Brown is commonly found in nature, such as in soil, wood, tree bark, and animal fur. It is also frequently used in art, fashion, and interior design for its versatility and ability to evoke feelings of warmth, stability, and naturalness."
+  },
+
+  {
+    images: [
+       require('../assets/Images/yellow/yellow1.jpg'),
+       require('../assets/Images/yellow/yellow2.jpg'),
+       require('../assets/Images/yellow/yellow3.jpg'),
+       require('../assets/Images/yellow/yellow4.jpg'),
+     ],
+    word: "YELLOW",
+    category: "Color",
+    definition: "Yellow is a color often associated with brightness, energy, and warmth. It is one of the primary colors in the subtractive color model, along with red and blue, and can be created by mixing red and green light in the additive color model. Yellow is typically perceived as a light hue, but it can vary in intensity from pale to vibrant."
+  },
+
+  {
+    images: [
+       require('../assets/Images/indigo/indigo1.jpg'),
+       require('../assets/Images/indigo/indigo2.jpg'),
+       require('../assets/Images/indigo/indigo3.jpg'),
+       require('../assets/Images/indigo/indigo4.jpg'),
+     ],
+    word: "INDIGO",
+    category: "Color",
+    definition: "Indigo is a deep and rich color that falls between blue and violet on the color spectrum. It is often described as a dark purplish-blue or a deep midnight blue. Indigo is derived from the natural dye extracted from the leaves of the indigo plant and has been used historically in textiles, artwork, and various cultural practices."
+  },
+
+  {
+    images: [
+       require('../assets/Images/magenta/magenta1.jpg'),
+       require('../assets/Images/magenta/magenta2.jpg'),
+       require('../assets/Images/magenta/magenta3.jpg'),
+       require('../assets/Images/magenta/magenta4.jpg'),
+     ],
+    word: "MAGENTA",
+    category: "Color",
+    definition: "Magenta is a vivid purplish-red color that falls between red and blue on the color spectrum. It is often described as a bright pinkish-purple hue. Magenta is a subtractive primary color, meaning it cannot be created by mixing other colors together. Instead, it is a primary color in the CMYK color model used in printing, along with cyan and yellow."
+  },
+
+  {
+    images: [
+       require('../assets/Images/lavender/lavender1.jpg'),
+       require('../assets/Images/lavender/lavender2.jpg'),
+       require('../assets/Images/lavender/lavender3.jpg'),
+       require('../assets/Images/lavender/lavender4.jpg'),
+     ],
+    word: "LAVENDER",
+    category: "Color",
+    definition: "Lavender is a pale shade of purple, often described as a light purple or a bluish-purple hue. It is named after the lavender flower, known for its fragrant and delicate purple blossoms. Lavender is a soothing and calming color that is commonly associated with qualities such as tranquility, relaxation, and mindfulness."
+  },
+
+  {
+    images: [
+       require('../assets/Images/shame/shame1.jpg'),
+       require('../assets/Images/shame/shame2.jpg'),
+       require('../assets/Images/shame/shame3.jpg'),
+       require('../assets/Images/shame/shame4.jpg'),
+     ],
+    word: "SHAME",
+    category: "Emotions",
+    definition: "Shame is a complex and powerful emotion that arises from feelings of guilt, embarrassment, or disgrace about one's actions, thoughts, or circumstances. It is often accompanied by a sense of moral or social judgment, leading individuals to feel remorseful or unworthy. Shame can result from both internal self-evaluation and external criticism or social expectations."
+  },
+
+  {
+    images: [
+       require('../assets/Images/relief/relief1.jpg'),
+       require('../assets/Images/relief/relief2.jpg'),
+       require('../assets/Images/relief/relief3.jpg'),
+       require('../assets/Images/relief/relief4.jpg'),
+     ],
+    word: "RELIEF",
+    category: "Emotions",
+    definition: "Relief is a feeling of comfort, ease, or reassurance that follows the removal of a burden, stress, or difficulty. It is the sensation of being freed from pain, worry, or anxiety, often accompanied by a sense of relaxation and contentment."
+  },
+
+  {
+    images: [
+       require('../assets/Images/disgust/disgust1.jpg'),
+       require('../assets/Images/disgust/disgust2.jpg'),
+       require('../assets/Images/disgust/disgust3.jpg'),
+       require('../assets/Images/disgust/disgust4.jpg'),
+     ],
+    word: "DISGUST",
+    category: "Emotions",
+    definition: "Disgust is a strong aversive emotion characterized by feelings of revulsion, repulsion, or distaste towards something perceived as offensive, unpleasant, or repugnant. It is often accompanied by physical sensations such as nausea, gagging, or recoiling. Disgust serves as a protective mechanism, helping individuals avoid potential sources of harm, contamination, or disease. It can be triggered by various stimuli, including foul odors, tastes, sights, or behaviors that violate social or cultural norms."
+  },
+
+  {
+    images: [
+       require('../assets/Images/empathy/empathy1.jpg'),
+       require('../assets/Images/empathy/empathy2.jpg'),
+       require('../assets/Images/empathy/empathy3.jpg'),
+       require('../assets/Images/empathy/empathy4.jpg'),
+     ],
+    word: "EMPATHY",
+    category: "Emotions",
+    definition: "Empathy is the ability to understand and share the feelings, thoughts, and experiences of another person. It involves recognizing and resonating with someone else's emotions, perspectives, and struggles, often leading to a sense of connection, compassion, and understanding. Empathy enables individuals to perceive and respond to the emotions of others with sensitivity, kindness, and support, even if they have not directly experienced the same situation or feelings themselves."
+  },
+
+  {
+    images: [
+       require('../assets/Images/elation/elation1.jpg'),
+       require('../assets/Images/elation/elation2.jpg'),
+       require('../assets/Images/elation/elation3.jpg'),
+       require('../assets/Images/elation/elation4.jpg'),
+     ],
+    word: "ELATION",
+    category: "Emotions",
+    definition: "Elation is an intense and exhilarating emotion characterized by feelings of extreme happiness, joy, or jubilation. It is a state of intense excitement and pleasure, often accompanied by a sense of triumph, accomplishment, or euphoria. Elation can arise from various sources, such as achieving a long-sought goal, receiving positive news or recognition, or experiencing a moment of profound happiness or fulfillment. It is marked by a heightened sense of energy, enthusiasm, and optimism, as well as a feeling of being uplifted and invigorated. "
+  },
+
+  {
+    images: [
+       require('../assets/Images/gavel/gavel1.jpg'),
+       require('../assets/Images/gavel/gavel2.jpg'),
+       require('../assets/Images/gavel/gavel3.jpg'),
+       require('../assets/Images/gavel/gavel4.jpg'),
+     ],
+    word: "GAVEL",
+    category: "Instruments",
+    definition: "A gavel is a small wooden hammer or mallet typically used by a judge or presiding officer to signal the beginning or end of a session, call for order or attention, or indicate a decision or ruling. Gavels are commonly associated with judicial proceedings, courtrooms, and formal meetings, where they are used as a symbol of authority, control, and impartiality."
+  },
+
+  {
+    images: [
+       require('../assets/Images/cello/cello1.jpg'),
+       require('../assets/Images/cello/cello2.jpg'),
+       require('../assets/Images/cello/cello3.jpg'),
+       require('../assets/Images/cello/cello4.jpg'),
+     ],
+    word: "CELLO",
+    category: "Instruments",
+    definition: "A cello, short for violoncello, is a bowed string instrument known for its deep, rich tone and versatile musical capabilities. It is part of the violin family, which also includes the violin, viola, and double bass. The cello is larger than the violin and viola but smaller than the double bass, with a resonating chamber, a neck, and four strings tuned in perfect fifths (C-G-D-A). The cello is played while seated, with the player holding the instrument between their knees and supporting it with an endpin that rests on the floor. The strings are typically played with a bow made of horsehair or with the fingers of the left hand, which press down on the strings to change pitch."
+  },
+
+  {
+    images: [
+       require('../assets/Images/bandage/bandage1.jpg'),
+       require('../assets/Images/bandage/bandage2.jpg'),
+       require('../assets/Images/bandage/bandage3.jpg'),
+       require('../assets/Images/bandage/bandage4.jpg'),
+     ],
+    word: "BANDAGE",
+    category: "Instruments",
+    definition: "A bandage is a piece of material used to cover and protect wounds or injuries on the body. It is typically made of soft, flexible fabric or adhesive material and is designed to provide support, compression, and protection to the affected area while allowing it to heal."
+  },
+
+  {
+    images: [
+       require('../assets/Images/crane/crane1.jpg'),
+       require('../assets/Images/crane/crane2.jpg'),
+       require('../assets/Images/crane/crane3.jpg'),
+       require('../assets/Images/crane/crane4.jpg'),
+     ],
+    word: "CRANE",
+    category: "Instruments",
+    definition: "A crane is a large, tall machine used for lifting and moving heavy objects or materials. It typically consists of a tall vertical mast or tower, a horizontal boom or jib, and a lifting mechanism, such as a hook, winch, or hoist. Cranes are commonly used in construction, manufacturing, shipping, and other industries that require heavy lifting and precise positioning of materials. "
+  },
+
+  {
+    images: [
+       require('../assets/Images/scaler/scaler1.png'),
+       require('../assets/Images/scaler/scaler2.jpg'),
+       require('../assets/Images/scaler/scaler3.jpg'),
+       require('../assets/Images/scaler/scaler4.jpg'),
+     ],
+    word: "SCALER",
+    category: "Instruments",
+    definition: "A scaler is a dental instrument used by dentists and dental hygienists to remove plaque, tartar, and stains from the surfaces of teeth. It typically consists of a thin, pointed metal tip attached to a handle, which vibrates or oscillates at high frequencies to dislodge and scrape away buildup from the teeth."
+  },
+
+  {
+    images: [
+       require('../assets/Images/museum/museum1.jpg'),
+       require('../assets/Images/museum/museum2.jpg'),
+       require('../assets/Images/museum/museum3.jpg'),
+       require('../assets/Images/museum/museum4.jpg'),
+     ],
+    word: "MUSEUM",
+    category: "Tourism",
+    definition: "A museum is a cultural institution dedicated to collecting, preserving, studying, and displaying objects of artistic, historical, scientific, or cultural significance for public education and enjoyment. Museums serve as repositories of human knowledge and heritage, providing opportunities for people to explore and learn about the world's diverse cultures, histories, and natural phenomena."
+  },
+
+  {
+    images: [
+       require('../assets/Images/explore/explore1.jpg'),
+       require('../assets/Images/explore/explore2.jpg'),
+       require('../assets/Images/explore/explore3.jpg'),
+       require('../assets/Images/explore/explore4.jpg'),
+     ],
+    word: "EXPLORE",
+    category: "Tourism",
+    definition: "To explore is to travel through or investigate an unfamiliar place, idea, concept, or experience in order to discover, learn, or understand more about it. Exploration involves curiosity, discovery, and a willingness to venture into the unknown in search of knowledge, insights, or new perspectives. It can take many forms, including physical travel to distant lands, intellectual inquiry into new subjects, or emotional exploration of one's own thoughts and feelings."
+  },
+
+  {
+    images: [
+       require('../assets/Images/monument/monument1.jpg'),
+       require('../assets/Images/monument/monument2.jpg'),
+       require('../assets/Images/monument/monument3.jpg'),
+       require('../assets/Images/monument/monument4.jpg'),
+     ],
+    word: "MONUMENT",
+    category: "Tourism",
+    definition: "A monument is a structure, statue, or other memorial erected to commemorate and honor a person, event, idea, or significant historical or cultural significance. Monuments serve as symbols of remembrance, tribute, and commemoration, preserving the memory of past achievements, sacrifices, or contributions for future generations."
+  },
+
+  {
+    images: [
+       require('../assets/Images/artifact/artifact1.jpg'),
+       require('../assets/Images/artifact/artifact2.jpg'),
+       require('../assets/Images/artifact/artifact3.jpg'),
+       require('../assets/Images/artifact/artifact4.jpg'),
+     ],
+    word: "ARTIFACT",
+    category: "Tourism",
+    definition: "An artifact is an object made or modified by humans that has historical, cultural, scientific, or artistic significance. Artifacts provide tangible evidence of past civilizations, societies, or human activities, offering insights into ancient technologies, customs, beliefs, and lifestyles. They are typically found through archaeological excavations, historical research, or cultural preservation efforts and are carefully studied, preserved, and interpreted by scholars and experts."
+  },
+
+  {
+    images: [
+       require('../assets/Images/souvenir/souvenir1.jpg'),
+       require('../assets/Images/souvenir/souvenir2.jpg'),
+       require('../assets/Images/souvenir/souvenir3.jpg'),
+       require('../assets/Images/souvenir/souvenir4.jpg'),
+     ],
+    word: "SOUVENIR",
+    category: "Tourism",
+    definition: "A souvenir is a token or keepsake obtained during travels or visits to specific locations, attractions, or events. Typically purchased as a memento or reminder of the experience, souvenirs often encapsulate the essence of the destination or reflect its cultural, historical, or natural characteristics. They come in various forms, including objects, trinkets, apparel, postcards, or handicrafts, and serve as tangible reminders of cherished memories and experiences."
+  },
+
+  {
+    images: [
+       require('../assets/Images/sketch/sketch1.jpg'),
+       require('../assets/Images/sketch/sketch2.jpg'),
+       require('../assets/Images/sketch/sketch3.jpg'),
+       require('../assets/Images/sketch/sketch4.jpg'),
+     ],
+    word: "SKETCH",
+    category: "Art",
+    definition: "A sketch is a rough or preliminary drawing or design that serves as a quick visual representation of an idea, concept, or subject. Sketches are often created as a means of exploring and developing artistic or creative concepts, capturing the essence of a scene or object, or planning out more detailed artwork or projects. They can be executed using various drawing tools and techniques, ranging from pencil and paper to digital software."
+  },
+
+  {
+    images: [
+       require('../assets/Images/canvas/canvas1.jpg'),
+       require('../assets/Images/canvas/canvas2.jpg'),
+       require('../assets/Images/canvas/canvas3.jpg'),
+       require('../assets/Images/canvas/canvas4.jpg'),
+     ],
+    word: "CANVAS",
+    category: "Art",
+    definition: "A canvas is a sturdy, woven fabric traditionally used as a surface for painting. It typically consists of cotton or linen fibers stretched tightly over a wooden frame to create a flat, firm surface suitable for applying paint. Canvases come in various sizes and shapes, ranging from small panels to large, expansive surfaces, and are widely used by artists for creating paintings and other forms of visual art."
+  },
+
+  {
+    images: [
+       require('../assets/Images/texture/texture1.jpg'),
+       require('../assets/Images/texture/texture2.jpg'),
+       require('../assets/Images/texture/texture3.jpg'),
+       require('../assets/Images/texture/texture4.jpg'),
+     ],
+    word: "TEXTURE",
+    category: "Art",
+    definition: "Texture refers to the physical or visual quality of a surface, characterized by its tactile feel or appearance. In art and design, texture plays a crucial role in creating depth, interest, and realism within an artwork or design piece. It can be smooth, rough, bumpy, glossy, matte, soft, or hard, among other characteristics, and can be perceived through touch or visually."
+  },
+
+  {
+    images: [
+       require('../assets/Images/gallery/gallery1.jpg'),
+       require('../assets/Images/gallery/gallery2.jpg'),
+       require('../assets/Images/gallery/gallery3.jpg'),
+       require('../assets/Images/gallery/gallery4.jpg'),
+     ],
+    word: "GALLERY",
+    category: "Art",
+    definition: "A gallery typically refers to a space or building specifically designed to display works of art, whether it's paintings, sculptures, photographs, or other forms of visual art. Galleries can vary greatly in size, style, and focus, ranging from small independent art spaces showcasing local artists to large institutions housing vast collections of renowned artworks from various periods and cultures. These spaces serve as platforms for artists to exhibit their creations and for visitors to appreciate and engage with art in a curated environment. Additionally, galleries often host events, openings, and educational programs to further enrich the art experience for the public."
+  },
+
+  {
+    images: [
+       require('../assets/Images/abstract/abstract1.jpg'),
+       require('../assets/Images/abstract/abstract2.jpg'),
+       require('../assets/Images/abstract/abstract3.jpg'),
+       require('../assets/Images/abstract/abstract4.jpg'),
+     ],
+    word: "ABSTRACT",
+    category: "Art",
+    definition: "Abstract refers to a style that does not attempt to represent an accurate depiction of visual reality. Instead, abstract art often emphasizes shapes, colors, forms, and gestural marks to convey emotions, ideas, or concepts. Examples of abstract art include the works of artists like Wassily Kandinsky, Piet Mondrian, and Jackson Pollock."
+  },
+
+  {
+    images: [
+       require('../assets/Images/volcano/volcano1.jpg'),
+       require('../assets/Images/volcano/volcano2.jpg'),
+       require('../assets/Images/volcano/volcano3.jpg'),
+       require('../assets/Images/volcano/volcano4.jpg'),
+     ],
+    word: "VOLCANO",
+    category: "Geology",
+    definition: "A volcano is a geological feature characterized by an opening or rupture in the Earth's crust through which molten rock, gases, and ash erupt from beneath the surface. Volcanoes can take various forms, including stratovolcanoes, shield volcanoes, and cinder cones, depending on the type of eruption and the composition of the magma. When magma rises to the surface and erupts, it can create lava flows, ash clouds, volcanic gases, and pyroclastic flows, which can pose significant hazards to nearby communities and ecosystems."
+  },
+
+  {
+    images: [
+       require('../assets/Images/mineral/mineral1.jpg'),
+       require('../assets/Images/mineral/mineral2.jpg'),
+       require('../assets/Images/mineral/mineral3.jpg'),
+       require('../assets/Images/mineral/mineral4.jpg'),
+     ],
+    word: "MINERAL",
+    category: "Geology",
+    definition: "A mineral is a naturally occurring, inorganic solid substance with a definite chemical composition and a crystalline structure. Minerals are the building blocks of rocks and are formed through various geological processes over millions of years. They can be found in a wide range of environments, including the Earth's crust, oceans, and even outer space."
+  },
+
+  {
+    images: [
+       require('../assets/Images/fossil/fossil1.jpg'),
+       require('../assets/Images/fossil/fossil2.jpg'),
+       require('../assets/Images/fossil/fossil3.jpg'),
+       require('../assets/Images/fossil/fossil4.jpg'),
+     ],
+    word: "FOSSIL",
+    category: "Geology",
+    definition: "A fossil is the preserved remains or traces of ancient organisms that lived in the distant past. Fossils can include the remains of plants, animals, fungi, bacteria, and other organisms, as well as imprints or traces of their activities, such as footprints, burrows, or fossilized dung. Fossilization occurs when the remains or traces of an organism are buried in sedimentary rock layers, where they undergo a process of mineralization over time. This process replaces the original organic material with minerals, preserving the structure of the organism or its traces."
+  },
+
+  {
+    images: [
+       require('../assets/Images/strata/strata1.jpg'),
+       require('../assets/Images/strata/strata2.jpg'),
+       require('../assets/Images/strata/strata3.jpg'),
+       require('../assets/Images/strata/strata4.jpg'),
+     ],
+    word: "STRATA",
+    category: "Geology",
+    definition: "Strata, in geological terms, refer to layers of rock that have been deposited one above the other over time. These layers represent different periods of geological history and can provide valuable information about past environments, climates, and events. Strata form through various geological processes, including sedimentation, erosion, and tectonic activity. Each layer of strata may contain different types of rocks, fossils, minerals, and other materials, reflecting the conditions under which they were deposited. By studying the sequence and characteristics of strata, geologists can reconstruct the Earth's history and understand how landscapes and ecosystems have changed over millions of years."
+  },
+
+  {
+    images: [
+       require('../assets/Images/glacier/glacier1.jpg'),
+       require('../assets/Images/glacier/glacier2.jpg'),
+       require('../assets/Images/glacier/glacier3.jpg'),
+       require('../assets/Images/glacier/glacier4.jpg'),
+     ],
+    word: "GLACIER",
+    category: "Geology",
+    definition: "A glacier is a large mass of ice that forms over many years from the accumulation and compaction of snow in areas where snowfall exceeds snowmelt. Glaciers are typically found in polar regions, mountainous areas, and high-altitude regions, although they can occur at lower latitudes in specific conditions. Glaciers move slowly under the force of gravity, flowing downhill in response to their own weight. This movement, known as glaciation or glacial flow, can cause erosion and the formation of distinct landforms such as valleys, fjords, and cirques. Glaciers also transport large amounts of sediment and rock debris, which they deposit as they melt or retreat."
+  },
+
+  {
+    images: [
+       require('../assets/Images/poseidon/poseidon1.jpg'),
+       require('../assets/Images/poseidon/poseidon2.jpg'),
+       require('../assets/Images/poseidon/poseidon3.jpg'),
+       require('../assets/Images/poseidon/poseidon4.jpg'),
+     ],
+    word: "POSEIDON",
+    category: "Mythology",
+    definition: "Poseidon is a figure from Greek mythology, known as the god of the sea, earthquakes, and horses. He is one of the twelve Olympian gods and is often depicted as a powerful and bearded figure holding a trident, a three-pronged spear associated with his domain over the seas.In Greek mythology, Poseidon is the brother of Zeus, the king of the gods, and Hades, the ruler of the underworld. He is the son of Cronus and Rhea. Poseidon is often associated with his role as the ruler of the oceans and is credited with creating earthquakes and storms at sea. He is also considered the protector of sailors and ships, although he can be both benevolent and wrathful, depending on how humans treat him. Poseidon is frequently featured in ancient Greek literature, art, and mythology, where he plays a significant role in various myths and legends. His exploits include contests with other gods, conflicts with mortals, and his involvement in the Trojan War."
+  },
+
+  {
+    images: [
+       require('../assets/Images/ares/ares1.jpg'),
+       require('../assets/Images/ares/ares2.jpg'),
+       require('../assets/Images/ares/ares3.jpg'),
+       require('../assets/Images/ares/ares4.jpg'),
+     ],
+    word: "ARES",
+    category: "Mythology",
+    definition: "Ares is a figure from Greek mythology, known as the god of war, violence, and bloodshed. He is one of the twelve Olympian gods and is often depicted as a powerful and fearsome warrior clad in armor, wielding a spear or sword. In Greek mythology, Ares is the son of Zeus, the king of the gods, and Hera, the queen of the gods. He is considered the personification of the brutal and destructive aspects of war, in contrast to Athena, who represents strategic warfare and wisdom in battle. Ares is often portrayed as impulsive, aggressive, and hot-tempered, reveling in the chaos and carnage of warfare. He is frequently involved in conflicts among the gods and mortals, and he is sometimes depicted as a patron of warriors or soldiers. However, Ares is not typically revered or admired in Greek mythology, as his destructive nature often brings suffering and strife to both gods and humans alike."
+  },
+
+  {
+    images: [
+       require('../assets/Images/athena/athena1.jpg'),
+       require('../assets/Images/athena/athena2.jpg'),
+       require('../assets/Images/athena/athena3.jpg'),
+       require('../assets/Images/athena/athena4.jpg'),
+     ],
+    word: "ATHENA",
+    category: "Mythology",
+    definition: "Athena is a prominent figure in Greek mythology, revered as the goddess of wisdom, courage, and strategic warfare. Among the twelve Olympian gods, she holds a significant position, often depicted as a powerful and wise deity, clad in armor and wielding a shield and spear. According to Greek myth, Athena was born fully grown and armored from the forehead of her father, Zeus, the king of the gods. She is associated with various aspects of civilization, including arts, crafts, and justice. The city of Athens, in particular, honored Athena as its patron goddess, erecting temples and holding festivals in her honor."
+  },
+
+  {
+    images: [
+       require('../assets/Images/hela/hela1.jpg'),
+       require('../assets/Images/hela/hela2.jpg'),
+       require('../assets/Images/hela/hela3.jpg'),
+       require('../assets/Images/hela/hela4.jpg'),
+     ],
+    word: "HELA",
+    category: "Mythology",
+    definition: "Hela is a character from Norse mythology, known as the ruler of Helheim, the realm of the dead in Norse cosmology. In Norse mythology, Hela is described as the daughter of Loki, the trickster god, and the giantess Angrboða. She is depicted as a powerful and formidable figure, often associated with death, decay, and the afterlife. Hela is said to dwell in a realm called Helheim, where she governs over those who have died of natural causes or illness. Her realm is described as a cold and desolate place, reserved for those who did not die in battle and therefore did not ascend to Valhalla, the hall of the slain in Norse mythology. In some accounts, Hela is depicted as having a half-living, half-dead appearance, with one side of her body appearing healthy and vibrant while the other side is decayed and skeletal. She is often portrayed as wielding power over the souls of the dead and is sometimes depicted as a fearsome and relentless figure."
+  },
+
+  {
+    images: [
+       require('../assets/Images/osiris/osiris1.jpg'),
+       require('../assets/Images/osiris/osiris2.jpg'),
+       require('../assets/Images/osiris/osiris3.jpg'),
+       require('../assets/Images/osiris/osiris4.jpg'),
+     ],
+    word: "OSIRIS",
+    category: "Mythology",
+    definition: "Osiris is a figure from ancient Egyptian mythology, revered as one of the most important gods in the Egyptian pantheon. He is associated with the afterlife, resurrection, and fertility. Osiris is often depicted as a mummified figure wearing the Atef crown, a symbol of kingship, with green skin symbolizing rebirth and vegetation.In Egyptian mythology, Osiris is the son of the earth god Geb and the sky goddess Nut, and he is the brother and husband of Isis, the goddess of magic and wisdom. Osiris is also the father of Horus, the falcon-headed god associated with kingship and the sky. Osiris is best known for his role as the god of the afterlife and the judge of the dead. According to myth, he was murdered by his jealous brother Set, the god of chaos and storms, who dismembered Osiris's body and scattered the pieces throughout Egypt."
+  },
+
+  {
+    images: [
+       require('../assets/Images/bicycle/bicycle1.jpg'),
+       require('../assets/Images/bicycle/bicycle2.jpg'),
+       require('../assets/Images/bicycle/bicycle3.jpg'),
+       require('../assets/Images/bicycle/bicycle4.jpg'),
+     ],
+    word: "BICYCLE",
+    category: "Vehicle",
+    definition: "A bicycle is a two-wheeled vehicle propelled by pedals and operated by a person sitting on a seat. It is a popular mode of transportation, recreational activity, and sport around the world. Bicycles typically consist of a frame, handlebars for steering, pedals connected to a chain and gears, wheels with tires, and brakes for slowing down or stopping. Bicycles come in various styles and designs, including road bikes, mountain bikes, hybrid bikes, and cruiser bikes, each tailored for different purposes and terrains. They can be used for commuting, exercise, touring, racing, or simply enjoying leisurely rides."
+  },
+
+  {
+    images: [
+       require('../assets/Images/scooter/scooter1.jpg'),
+       require('../assets/Images/scooter/scooter2.jpg'),
+       require('../assets/Images/scooter/scooter3.jpg'),
+       require('../assets/Images/scooter/scooter4.jpg'),
+     ],
+    word: "SCOOTER",
+    category: "Vehicle",
+    definition: "A scooter is a two-wheeled vehicle typically powered by a small engine or electric motor. It features a platform for the rider to stand or sit on, handlebars for steering, and wheels for movement. Scooters are commonly used for short-distance transportation in urban areas, offering a convenient and economical alternative to cars or bicycles."
+  },
+
+  {
+    images: [
+       require('../assets/Images/aircraft/aircraft1.jpg'),
+       require('../assets/Images/aircraft/aircraft2.jpg'),
+       require('../assets/Images/aircraft/aircraft3.jpg'),
+       require('../assets/Images/aircraft/aircraft4.jpg'),
+     ],
+    word: "AIRCRAFT",
+    category: "Vehicle",
+    definition: "An aircraft is a vehicle that is designed for flight through the Earth's atmosphere. Aircraft come in various forms, including airplanes, helicopters, gliders, balloons, and drones, each with its own method of propulsion and means of generating lift."
+  },
+
+  {
+    images: [
+       require('../assets/Images/minivan/minivan1.jpg'),
+       require('../assets/Images/minivan/minivan2.jpg'),
+       require('../assets/Images/minivan/minivan3.jpg'),
+       require('../assets/Images/minivan/minivan4.jpg'),
+     ],
+    word: "MINIVAN",
+    category: "Vehicle",
+    definition: "A minivan, short for miniature van, is a type of vehicle designed primarily for transporting passengers, typically with seating for seven or more people arranged in multiple rows. Minivans are characterized by their spacious and versatile interior, sliding rear doors, and elevated roofline, which provides ample headroom for passengers.Minivans are popular among families and large groups due to their practicality, comfort, and convenience. They offer generous cargo space, foldable rear seats for additional storage capacity, and a smooth ride quality. Many minivans also come equipped with features such as entertainment systems, multiple climate zones, and advanced safety technologies to enhance the driving experience and ensure passenger comfort."
+  },
+
+  {
+    images: [
+       require('../assets/Images/tanker/tanker1.jpg'),
+       require('../assets/Images/tanker/tanker2.jpg'),
+       require('../assets/Images/tanker/tanker3.jpg'),
+       require('../assets/Images/tanker/tanker4.jpg'),
+     ],
+    word: "TANKER",
+    category: "Vehicle",
+    definition: "A tanker is a large ship or vehicle designed for the transport of liquids or gases in bulk. Tankers are commonly used to transport various substances, including oil, petroleum products, liquefied natural gas (LNG), chemicals, and water. In the maritime industry, tankers are specifically designed with one or more large tanks or compartments to hold and transport liquids across oceans and waterways. These ships come in different sizes and configurations depending on the type of cargo they carry and the distance they travel. Tankers can range from small coastal tankers used for regional transport to massive supertankers capable of carrying millions of barrels of oil across the world's oceans."
+  },
+
+  {
+    images: [
+       require('../assets/Images/elation/elation1.jpg'),
+       require('../assets/Images/elation/elation2.jpg'),
+       require('../assets/Images/elation/elation3.jpg'),
+       require('../assets/Images/elation/elation4.jpg'),
+     ],
+    word: "ELATION",
+    category: "Emotions",
+    definition: " "
+  },
+
+  {
+    images: [
+       require('../assets/Images/elation/elation1.jpg'),
+       require('../assets/Images/elation/elation2.jpg'),
+       require('../assets/Images/elation/elation3.jpg'),
+       require('../assets/Images/elation/elation4.jpg'),
+     ],
+    word: "ELATION",
+    category: "Emotions",
+    definition: " "
+  },
+
+  {
+    images: [
+       require('../assets/Images/elation/elation1.jpg'),
+       require('../assets/Images/elation/elation2.jpg'),
+       require('../assets/Images/elation/elation3.jpg'),
+       require('../assets/Images/elation/elation4.jpg'),
+     ],
+    word: "ELATION",
+    category: "Emotions",
+    definition: " "
+  },
+
+  {
+    images: [
+       require('../assets/Images/elation/elation1.jpg'),
+       require('../assets/Images/elation/elation2.jpg'),
+       require('../assets/Images/elation/elation3.jpg'),
+       require('../assets/Images/elation/elation4.jpg'),
+     ],
+    word: "ELATION",
+    category: "Emotions",
+    definition: " "
+  },
+
+  {
+    images: [
+       require('../assets/Images/elation/elation1.jpg'),
+       require('../assets/Images/elation/elation2.jpg'),
+       require('../assets/Images/elation/elation3.jpg'),
+       require('../assets/Images/elation/elation4.jpg'),
+     ],
+    word: "ELATION",
+    category: "Emotions",
+    definition: " "
+  },
+
+  {
+    images: [
+       require('../assets/Images/elation/elation1.jpg'),
+       require('../assets/Images/elation/elation2.jpg'),
+       require('../assets/Images/elation/elation3.jpg'),
+       require('../assets/Images/elation/elation4.jpg'),
+     ],
+    word: "ELATION",
+    category: "Emotions",
+    definition: " "
+  },
+
+  {
+    images: [
+       require('../assets/Images/elation/elation1.jpg'),
+       require('../assets/Images/elation/elation2.jpg'),
+       require('../assets/Images/elation/elation3.jpg'),
+       require('../assets/Images/elation/elation4.jpg'),
+     ],
+    word: "ELATION",
+    category: "Emotions",
+    definition: " "
+  },
+
+  {
+    images: [
+       require('../assets/Images/elation/elation1.jpg'),
+       require('../assets/Images/elation/elation2.jpg'),
+       require('../assets/Images/elation/elation3.jpg'),
+       require('../assets/Images/elation/elation4.jpg'),
+     ],
+    word: "ELATION",
+    category: "Emotions",
+    definition: " "
+  },
+
+  {
+    images: [
+       require('../assets/Images/elation/elation1.jpg'),
+       require('../assets/Images/elation/elation2.jpg'),
+       require('../assets/Images/elation/elation3.jpg'),
+       require('../assets/Images/elation/elation4.jpg'),
+     ],
+    word: "ELATION",
+    category: "Emotions",
+    definition: " "
+  },
+
+  {
+    images: [
+       require('../assets/Images/elation/elation1.jpg'),
+       require('../assets/Images/elation/elation2.jpg'),
+       require('../assets/Images/elation/elation3.jpg'),
+       require('../assets/Images/elation/elation4.jpg'),
+     ],
+    word: "ELATION",
+    category: "Emotions",
+    definition: " "
+  },
+
+  {
+    images: [
+       require('../assets/Images/elation/elation1.jpg'),
+       require('../assets/Images/elation/elation2.jpg'),
+       require('../assets/Images/elation/elation3.jpg'),
+       require('../assets/Images/elation/elation4.jpg'),
+     ],
+    word: "ELATION",
+    category: "Emotions",
+    definition: " "
+  },
+
+  {
+    images: [
+       require('../assets/Images/elation/elation1.jpg'),
+       require('../assets/Images/elation/elation2.jpg'),
+       require('../assets/Images/elation/elation3.jpg'),
+       require('../assets/Images/elation/elation4.jpg'),
+     ],
+    word: "ELATION",
+    category: "Emotions",
+    definition: " "
+  },
+
+  {
+    images: [
+       require('../assets/Images/elation/elation1.jpg'),
+       require('../assets/Images/elation/elation2.jpg'),
+       require('../assets/Images/elation/elation3.jpg'),
+       require('../assets/Images/elation/elation4.jpg'),
+     ],
+    word: "ELATION",
+    category: "Emotions",
+    definition: " "
+  },
+
+  {
+    images: [
+       require('../assets/Images/elation/elation1.jpg'),
+       require('../assets/Images/elation/elation2.jpg'),
+       require('../assets/Images/elation/elation3.jpg'),
+       require('../assets/Images/elation/elation4.jpg'),
+     ],
+    word: "ELATION",
+    category: "Emotions",
+    definition: " "
+  },
 
   
    

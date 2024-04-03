@@ -9,7 +9,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
   const [showAd, setShowAd] = useState<boolean>(false);
   const [score, setScore] = useState<number>(0);
   const [pendingScore, setPendingScore] = useState<number | null>(null);
-  const adUnitId = 'ca-app-pub-1458204118033702/9133923793';
+  const adUnitId = 'ca-app-pub-1458204118033702/4208576771';
   const rewarded = RewardedAd.createForAdRequest(adUnitId, {
     keywords: ['food', 'cooking', 'fruit'],
     requestNonPersonalizedAdsOnly: true,
