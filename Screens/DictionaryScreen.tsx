@@ -103,7 +103,7 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                   <Image key={index} source={image} style={{ width: 110, height: 110, margin: 5}} /> 
                 ))}
                 {definition ? (
-              <Text style={{ marginTop: '3%', fontSize: 15, color:'white', textAlign:'justify', right:'5%'}}>{definition}</Text>
+              <Text style={{ marginTop: '3%', fontSize: 15, color:'white', textAlign:'justify', right:'5%', fontStyle:'italic'}}>{definition}</Text>
             ) : null}
             {error ? <Text style={{ marginTop: 19, fontSize: 20, color: 'red' }}>{error}</Text> : null}
               </View>

@@ -6,20 +6,58 @@ import { Animation } from '../Components/Animation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StatusBar } from 'expo-status-bar';
 import StrokedText from '../Components/StrokedText';
-
+import Sound from 'react-native-sound';
+import SettingMenu from '../Components/SettingMenu'; 
+import { useSound } from '../SoundContext';
 
 const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navigation }) => {
   const [score, setScore] = useState<string>('0');
   const [currentLevel, setCurrentLevel] = useState<string>('1');
+  const [helpSound, setHelpSound] = useState<Sound | null>(null);
+  const { soundEnabled } = useSound();
+  
  
- 
-  const handleDailyPuzzlePress = () => {
-      navigation.push('DailyPuzzle')
-    
+  const playSound = (soundObject: Sound | null) => {
+    try {
+      if (soundObject && soundEnabled) { // Check if sound is enabled
+        soundObject.play();
+      }
+    } catch (error) {
+      console.error('Error playing sound:', error);
+    }
   };
 
-  
-  
+  useEffect(() => {
+    const loadSounds = async () => {
+      try {
+        const helpSoundObject = new Sound(require('../assets/sounds/sharpButton.mp3'), (error) => {
+          if (error) {
+            console.error('Failed to load the sound', error);
+            return;
+          }
+          setHelpSound(helpSoundObject);
+        });
+      } catch (error) {
+        console.error('Error loading sounds:', error);
+      }
+    };
+    loadSounds();
+
+    return () => {
+      helpSound && helpSound.release();
+    };
+  }, []);
+
+
+  const handleDailyPuzzlePress = () => {
+      navigation.push('DailyPuzzle')
+      playSound(helpSound);
+  };
+
+  const toggleSound = () => {
+    // You can add additional logic here if needed
+    // For now, we are only using the soundEnabled state from the SoundContext
+  };
   
   
 
@@ -53,19 +91,22 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
 
   const handlePlay = () => {
     navigation.push('Game' );
-    
+    playSound(helpSound);
   };
 
 
   
   const handleNav = () => {
     navigation.navigate('CoinPurchase', { score, currentLevel });
+    playSound(helpSound);
    }
    const handleWord = () => {
     navigation.navigate('Dictionary');
+    playSound(helpSound);
    }
    const handleLogin = () => {
     navigation.push('Login', { score, currentLevel });
+    playSound(helpSound);
    }
   
    useEffect(() => {
@@ -113,11 +154,12 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
         <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center', borderRadius: 9, borderColor:'#B59410', borderWidth:2.5, padding: 4, marginTop:12}}>
       
       <TouchableOpacity onPress={handleLogin} activeOpacity={0.8}>
-      <ImageBackground source={require('../assets/Images/cloud.png')} style={{width:60, height:60, top:5, left:'6%'}}/>  
+      <ImageBackground source={require('../assets/Images/cloud.png')} style={{width:65, height:60, top:5, left:'6%'}}/>  
       </TouchableOpacity>
+
       
       <TouchableOpacity onPress={handleWord} >
-      <ImageBackground source={require('../assets/Images/glossary.png')} style={{width:45, height:60, right:'15%'}}/>  
+      <ImageBackground source={require('../assets/glossary.png')} style={{width:90, height:50, right:'6%'}}/>  
       </TouchableOpacity>
     </View>
     <View style={{marginTop:-5}}>

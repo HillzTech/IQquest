@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { BackHandler, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { BackHandler, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View, Platform } from 'react-native';
 import Background from '../Components/Background';
-import { Audio } from 'expo-av';
+import Sound from 'react-native-sound';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
 import BackgroundBtn from '../Components/BackgroundBtn';
@@ -11,8 +11,13 @@ import levels from '../Components/Level';
 import { StatusBar } from 'expo-status-bar'
 import CorrectImage from '../Components/CorrectImage';
 import WrongImage from '../Components/WrongImage';
+import * as MediaLibrary from 'expo-media-library';
+import { captureRef } from 'react-native-view-shot';
 import { useInterstitialAd } from '../Components/useInterstitialAd';
 import { useFocusEffect } from '@react-navigation/native';
+import Share from 'react-native-share';
+import { useSound } from '../SoundContext';
+import iconSet from '@expo/vector-icons/build/Fontisto';
 
   const GameScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [currentLevel, setCurrentLevel] = useState(1); 
@@ -25,19 +30,155 @@ const [showWrongImage, setShowWrongImage] = useState(false);
 const fillAnimation = useRef(new Animated.Value(0)).current;
 const [coinVisible, setCoinVisible] = useState(false);
 const [iqVisible, setIqVisible] = useState(false);
-const [correctSound, setCorrectSound] = useState<Audio.Sound | null>(null);
-const [buttonSound, setButtonSound] = useState<Audio.Sound | null>(null);
-  const [helpSound, setHelpSound] = useState<Audio.Sound | null>(null);
-  const [removeSound, setRemoveSound] = useState<Audio.Sound | null>(null);
-  const [incorrectSound, setIncorrectSound] = useState<Audio.Sound | null>(null);
-  const [iqSound, setIqSound] = useState<Audio.Sound | null>(null);
- 
+const [correctSound, setCorrectSound] = useState<Sound | null>(null);
+const [buttonSound, setButtonSound] = useState<Sound | null>(null);
+const [helpSound, setHelpSound] = useState<Sound | null>(null);
+const [removeSound, setRemoveSound] = useState<Sound | null>(null);
+const [incorrectSound, setIncorrectSound] = useState<Sound | null>(null);
+const [iqSound, setIqSound] = useState<Sound | null>(null);
+
+
   const [coinAnimation] = useState(new Animated.ValueXY({ x: 0, y: 0 }));
   const [iqAnimation] = useState(new Animated.ValueXY({ x: 0, y: 0 }));
   const [pendingScore, setPendingScore] = useState<number | null>(null);
   const [showPartyPopper, setShowPartyPopper] = useState(false); 
   const translateX = useRef(new Animated.Value(500)).current;
   const { handleManualRefresh } = useInterstitialAd();
+  const [screenshotUri, setScreenshotUri] = useState<string>('');
+  const { soundEnabled } = useSound();
+  // Reference for capturing screenshot
+  const viewShotRef = useRef<View>(null);
+  const [permissionResponse, requestPermission] = MediaLibrary.usePermissions();
+  const [showTutorial, setShowTutorial] = useState(false);
+  const wobbleAnimation = useRef(new Animated.Value(0)).current;
+
+
+
+  useEffect(() => {
+    checkTutorialStatus();
+  }, []);
+
+  useEffect(() => {
+    if (showTutorial) {
+      startWobbleAnimation();
+    }
+  }, [showTutorial]);
+
+  const startWobbleAnimation = () => {
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(wobbleAnimation, {
+          toValue: 1,
+          duration: 70, // Decreased duration for faster animation
+          easing: Easing.linear,
+          useNativeDriver: true,
+        }),
+        Animated.timing(wobbleAnimation, {
+          toValue: -1,
+          duration: 70, // Decreased duration for faster animation
+          easing: Easing.linear,
+          useNativeDriver: true,
+        }),
+        Animated.timing(wobbleAnimation, {
+          toValue: 0,
+          duration: 70, // Decreased duration for faster animation
+          easing: Easing.linear,
+          useNativeDriver: true,
+        }),
+        
+        
+      ]),
+      {
+        iterations: 13,
+      }
+    ).start();
+  };
+
+  const wobbleInterpolate = wobbleAnimation.interpolate({
+    inputRange: [-1, 1],
+    outputRange: ['-3deg', '3deg'],
+  });
+
+  const wobbleStyle = {
+    transform: [{ rotate: wobbleInterpolate }],
+  };
+
+
+
+  const checkTutorialStatus = async () => {
+    try {
+      const tutorialShown = await AsyncStorage.getItem('tutorialShown');
+      if (!tutorialShown) {
+        setShowTutorial(true);
+      }
+    } catch (error) {
+      console.error('Error checking tutorial status:', error);
+    }
+  };
+
+  const hideTutorial = async () => {
+    try {
+      await AsyncStorage.setItem('tutorialShown', 'true');
+      setShowTutorial(false);
+    } catch (error) {
+      console.error('Error setting tutorial status:', error);
+    }
+  };
+
+
+  useEffect(() => {
+    if (screenshotUri !== '') {
+      // Call the function to share the screenshot
+      shareScreenshot();
+    }
+  }, [screenshotUri]);
+
+  // Function to capture screenshot
+  const takeScreenshot = async () => {
+    try {
+      // Capture the current screen
+      const uri = await captureRef(viewShotRef, { // using viewShotRef here
+        format: 'png',
+        quality: 1,
+      });
+      setScreenshotUri(uri);
+    } catch (error) {
+      console.error('Error capturing screenshot:', error);
+    }
+  };
+
+  // Function to share the screenshot
+  const shareScreenshot = async () => {
+    try {
+      // Save the image to the media library
+      const asset = await MediaLibrary.createAssetAsync(screenshotUri);
+      if (asset) {
+        // Define the message with the link
+        const link = 'https://hillztech.com.ng'; // Your game link
+        const message = `What do you think the word is? ${link}`;
+  
+        // Share the screenshot with the message as caption using react-native-share
+        await Share.open({
+          title: 'Share this awesome screenshot',
+          message: message,
+          url: asset.uri,
+          type: 'image/png',
+        });
+      } else {
+        console.error('Failed to create asset for sharing.');
+      }
+    } catch (error) {
+      console.error('Error sharing screenshot:', error);
+    }
+  };
+  
+ // Request permissions if not granted
+useEffect(() => {
+  if (permissionResponse && permissionResponse.status !== 'granted') {
+    requestPermission();
+  }
+}, [permissionResponse]); // Include permissionResponse in the dependency array
+
 
   // useEffect to handle the refresh when the screen is mounted
      useEffect(() => {
@@ -83,43 +224,65 @@ const [buttonSound, setButtonSound] = useState<Audio.Sound | null>(null);
   }, [navigation, score, currentLevel]);
   
    
-  const playSound = async (soundObject: Audio.Sound | null) => {
+  const playSound = (soundObject: Sound | null) => {
     try {
-      if (soundObject) {
-        await soundObject.replayAsync();
+      if (soundObject && soundEnabled) { // Check if sound is enabled
+        soundObject.play();
       }
     } catch (error) {
       console.error('Error playing sound:', error);
     }
   };
-  
   useEffect(() => {
     const loadSounds = async () => {
       try {
-        const buttonSoundObject = new Audio.Sound();
-        await buttonSoundObject.loadAsync(require('../assets/sounds/button.mp3'));
-        setButtonSound(buttonSoundObject);
-
-        const removeSoundObject = new Audio.Sound();
-        await removeSoundObject.loadAsync(require('../assets/sounds/remove.mp3'));
-        setRemoveSound(removeSoundObject);
-
-        const helpSoundObject = new Audio.Sound();
-        await helpSoundObject.loadAsync(require('../assets/sounds/sharpButton.mp3'));
-        setHelpSound(helpSoundObject);
-
-        const correctSoundObject = new Audio.Sound();
-        await correctSoundObject.loadAsync(require('../assets/sounds/correct.mp3'));
-        setCorrectSound(correctSoundObject);
-
+        const buttonSoundObject = new Sound(require('../assets/sounds/button.mp3'), (error) => {
+          if (error) {
+            console.error('Failed to load button sound', error);
+          } else {
+            setButtonSound(buttonSoundObject);
+          }
+        });
         
-        const incorrectSoundObject = new Audio.Sound();
-        await incorrectSoundObject.loadAsync(require('../assets/sounds/incorrect.mp3'));
-        setIncorrectSound(incorrectSoundObject); 
+        const removeSoundObject = new Sound(require('../assets/sounds/remove.mp3'), (error) => {
+          if (error) {
+            console.error('Failed to load remove sound', error);
+          } else {
+            setRemoveSound(removeSoundObject);
+          }
+        });
 
-        const iqSoundObject = new Audio.Sound();
-        await iqSoundObject.loadAsync(require('../assets/sounds/iq.mp3'));
-        setIqSound(iqSoundObject);
+        const helpSoundObject = new Sound(require('../assets/sounds/sharpButton.mp3'), (error) => {
+          if (error) {
+            console.error('Failed to load help sound', error);
+          } else {
+            setHelpSound(helpSoundObject);
+          }
+        });
+
+        const correctSoundObject = new Sound(require('../assets/sounds/correct.mp3'), (error) => {
+          if (error) {
+            console.error('Failed to load correct sound', error);
+          } else {
+            setCorrectSound(correctSoundObject);
+          }
+        });
+
+        const incorrectSoundObject = new Sound(require('../assets/sounds/incorrect.mp3'), (error) => {
+          if (error) {
+            console.error('Failed to load incorrect sound', error);
+          } else {
+            setIncorrectSound(incorrectSoundObject);
+          }
+        });
+
+        const iqSoundObject = new Sound(require('../assets/sounds/iq.mp3'), (error) => {
+          if (error) {
+            console.error('Failed to load iq sound', error);
+          } else {
+            setIqSound(iqSoundObject);
+          }
+        });
       } catch (error) {
         console.error('Error loading sounds:', error);
       }
@@ -128,15 +291,16 @@ const [buttonSound, setButtonSound] = useState<Audio.Sound | null>(null);
     loadSounds();
 
     return () => {
-      buttonSound && buttonSound.unloadAsync();
-      removeSound && removeSound.unloadAsync();
-      helpSound && helpSound.unloadAsync();
-      correctSound && correctSound.unloadAsync();
-      incorrectSound && incorrectSound.unloadAsync();
-      iqSound && iqSound.unloadAsync();
-      
+      // Cleanup function to unload sounds when component unmounts
+      buttonSound && buttonSound.release();
+      removeSound && removeSound.release();
+      helpSound && helpSound.release();
+      correctSound && correctSound.release();
+      incorrectSound && incorrectSound.release();
+      iqSound && iqSound.release();
     };
   }, []);
+
 
 
 
@@ -154,7 +318,7 @@ const [buttonSound, setButtonSound] = useState<Audio.Sound | null>(null);
   
   const moveCoin = () => {
     Animated.timing(coinAnimation, {
-      toValue: { x: 0, y: -620 }, // Adjust the value to move the coin to the score area
+      toValue: { x: 0, y: -660 }, // Adjust the value to move the coin to the score area
       duration: 1300, // Adjust the duration as needed
       easing: Easing.linear,
       useNativeDriver: false,
@@ -402,6 +566,7 @@ const handleNav = () => {
 
 
 
+
    
 return(
 
@@ -474,7 +639,8 @@ return(
        
       </View>
      
-   </View>
+   </View> 
+     <View ref={viewShotRef} collapsable={false}>
       <View style={{flexDirection:'row', justifyContent:'center', alignContent:'center',top:'15%', marginBottom:17}}>
          <Text style={{color:'#fffff1', fontSize: 17, fontWeight:'200',borderColor:'black', borderWidth: 1, backgroundColor:'black', paddingHorizontal:2, borderTopLeftRadius:8, borderBottomLeftRadius:8, paddingLeft:8}}>Category</Text>
       
@@ -545,7 +711,7 @@ return(
     
        
 
-    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', marginTop:'10%'}}>
+    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', marginTop:'9%'}}>
       {/* Guess boxes */}
       {currentGuess.map((letter, index) => (
         <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index) }>
@@ -559,7 +725,7 @@ return(
     
 
       {/* Render letter box */}
-      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"94%"}}>
+      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"90%"}}>
       <View style={styles.container}>
         {letterBox.map((letter, index) => (
           <TouchableOpacity
@@ -573,21 +739,46 @@ return(
 
         
       </View>
+
+      <View style={{position:'absolute', left:"90%"}}>
       
-      <TouchableOpacity onPress={openDrawer}>
+      <TouchableOpacity onPress={openDrawer} style={{position:'absolute', top:'7%'}}>
       <BackgroundBtn>
         <Text></Text>
       </BackgroundBtn>
   
           </TouchableOpacity>
-          
+          </View>
+      
+          </View>
+
+          </View>
       
 
-
+      
+      <View style={{backgroundColor:'#006400',bottom:'1.3%', width:'44%', left:'28%', borderRadius:10, borderWidth:1, borderBottomColor:'green', height:'4.8%', position:"absolute"}}>
+        <TouchableOpacity onPress={takeScreenshot} style={{position:'absolute'}}>
+        <Text style={{color:'white',left:'11%',  paddingVertical:5, fontSize:17, fontWeight:'700'}}>Ask A Friend</Text>
+        <ImageBackground source={require('../assets/share.png')} style={{width:28, height:28, bottom:'50%', left:'115%'}}/>
+        </TouchableOpacity>
+       
       </View>
-      
      
-      
+      {showTutorial && (
+        <TouchableOpacity style={styles.tutorialOverlay} onPress={hideTutorial}>
+          <Animated.View style={[styles.tutorialContent, wobbleStyle]}>
+           <Ionicons name="arrow-up" size={35} color={"white"}/>
+            <Text style={styles.tutorialText}>Get coins</Text>
+        
+          </Animated.View>
+
+          <Animated.View style={[styles.guess, wobbleStyle]}>
+            <Text style={{color:'white', fontSize:15 }}>Guess The Word</Text>
+          </Animated.View>
+        </TouchableOpacity>
+
+
+      )}
       
 
      
@@ -606,7 +797,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       flexWrap: 'wrap',
       justifyContent: 'center',
-      marginVertical: '12%',
+      marginVertical: '10%',
       width: '90%',
       marginLeft: '7.5%',
       marginRight:1
@@ -630,7 +821,7 @@ const styles = StyleSheet.create({
     },
     coinContainer: {
       position: 'absolute',
-      top: '78%', 
+      top: '87%', 
       left: '90%', 
       marginLeft: -11.5, 
       zIndex: 1000, 
@@ -647,7 +838,7 @@ const styles = StyleSheet.create({
 
     iqContainer: {
       position: 'absolute',
-      top: '100%', 
+      top: '112%', 
       left: '21%', 
       marginLeft: '-10%', 
       zIndex: 1000, 
@@ -677,6 +868,37 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       zIndex: 999, // Ensure the image appears above other content
+    },
+
+    startButton: {
+      backgroundColor: '#009688',
+      padding: 15,
+      borderRadius: 8,
+    },
+    startButtonText: {
+      color: '#ffffff',
+      fontSize: 18,
+    },
+    tutorialOverlay: {
+      ...StyleSheet.absoluteFillObject,
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    tutorialContent: {
+      left: "39%",
+      bottom: "38%",
+      alignItems: 'center',
+    },
+    
+    tutorialText: {
+      fontSize: 13,
+      textAlign: 'center',
+      color:'white'
+    },
+
+    guess: {
+    top: "24%"
     },
   });
   

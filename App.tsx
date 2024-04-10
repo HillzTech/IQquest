@@ -9,7 +9,7 @@ import LoginScreen from './Screens/LoginScreen';
 import DailyPuzzleScreen from './Screens/DailyPuzzleScreen';
 import SplashScreen from './Screens/SplashScreen';
 import 'expo-dev-client';
-
+import { SoundProvider } from './SoundContext';
 
 import Purchases, { PurchasesConfiguration}   from 'react-native-purchases';
 
@@ -30,7 +30,7 @@ const App: React.FC = () => {
   return (
     
     <NavigationContainer>
-      
+      <SoundProvider>
       <Stack.Navigator initialRouteName="Splash" screenOptions={{headerShown: false, gestureEnabled: true,
         cardStyleInterpolator: ({ current: { progress } }) => ({
           cardStyle: {
@@ -40,6 +40,7 @@ const App: React.FC = () => {
             }),
           },
         }), }}>
+          
         <Stack.Screen name="Splash" component={SplashScreen} options={{headerShown: false }}/>
         <Stack.Screen name="MainMenu" component={MainMenuScreen} options={{headerShown: false,    ...TransitionPresets.SlideFromRightIOS }}/>
         <Stack.Screen name="Game" component={GameScreen} options={{ ...TransitionPresets.SlideFromRightIOS }}/>
@@ -49,7 +50,7 @@ const App: React.FC = () => {
         <Stack.Screen name="DailyPuzzle" component={DailyPuzzleScreen}   options={{  ...TransitionPresets.SlideFromRightIOS }}/>
         
       </Stack.Navigator>
-      
+      </SoundProvider>
       
     </NavigationContainer>
    

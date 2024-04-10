@@ -346,17 +346,19 @@ const handleNav = () => {
       setCoinVisible(true); // Show the coin
       setTimeout(() => {
         playSound(correctSound);
-
+        
       }, 2900)
       
       setTimeout(() => {
         setLoading(true);
+        setCurrentPuzzle(currentPuzzle + 1);
         playSound(comicSound);
       }, 4500)
       saveCompletionTime();
       setTimeout(() => {
         setLoading(false);
-        setCurrentPuzzle(currentPuzzle + 1);
+        
+        
       }, 24 * 60 * 60 * 1000);
       setTimeout(() => {
         moveCoin(); // Move the coin to the score area
@@ -438,7 +440,7 @@ return(
 
     <ImageBackground source={require('../assets/board.png')} style={{width:'100%', height:60, top:'10%'}} />
    
-  <Text style={{color:'blue', textAlign:'center', fontSize:17, bottom:'35%', fontWeight:'800', fontStyle:'italic', fontFamily:'srif'}}>{Puzzle[currentPuzzle].question}</Text>
+  <Text style={{color:'white', textAlign:'center', fontSize:17, bottom:'35%', fontWeight:'800', fontStyle:'italic', fontFamily:'srif'}}>{Puzzle[currentPuzzle].question}</Text>
  </View>
       
      
