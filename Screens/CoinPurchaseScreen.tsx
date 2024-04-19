@@ -112,7 +112,7 @@ const rewardEventListener = rewarded.addAdEventListener(RewardedAdEventType.EARN
   useEffect(() => {
     const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
       // Navigate to MainMenuScreen and pass score and current level
-      navigation.push('MainMenu', { score: score });
+      navigation.push('Game', { score: score });
 
       return true; // Prevent default behavior (closing the app)
     });
@@ -192,11 +192,12 @@ const rewardEventListener = rewarded.addAdEventListener(RewardedAdEventType.EARN
 
   return (
     <Background>
-      <ImageBackground source={require('../assets/Images/coin.png')} style={{width:26, height: 26, top:'6%', left:'42%'}}/>
-      <View>
+
+      <ImageBackground source={require('../assets/Images/coin.png')} style={{width:26, height: 26, top:'10%', left:'42%'}}/>
+      <View style={{top:'6.7%'}}>
         
 
-        <Text style={{color:'white', textAlign:'center', top:'80%', fontSize:20, left:'3.3%', fontStyle:'italic'}}>{score}</Text>
+        <Text style={{color:'white', textAlign:'center', fontSize:20, left:'3.3%', fontStyle:'italic'}}>{score}</Text>
         
       </View>
 

@@ -1,14 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { BackHandler, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Background from '../Components/Background';
-import { Audio } from 'expo-av';
+import Sound from 'react-native-sound';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
 import { Animated, Easing } from 'react-native';
 import PartyPopperAnimation from '../Components/PartyPopperAnimation';
 import Puzzle from '../Components/Puzzle';
 import { StatusBar } from 'expo-status-bar';
-
+import {  useSound } from '../SoundContext';
 
 
 
@@ -18,16 +18,16 @@ import { StatusBar } from 'expo-status-bar';
   const [score, setScore] = useState(0);
   const [currentGuess, setCurrentGuess] = useState<string[]>(['', '', '', '']);
   const [letterBox, setLetterBox] = useState<string[]>([]);
-const [correctSound, setCorrectSound] = useState<Audio.Sound | null>(null);
-const [buttonSound, setButtonSound] = useState<Audio.Sound | null>(null);
-const [coinVisible, setCoinVisible] = useState(false);
-  const [removeSound, setRemoveSound] = useState<Audio.Sound | null>(null);
-  const [incorrectSound, setIncorrectSound] = useState<Audio.Sound | null>(null);
-  const [fanfareSound, setFanfareSound] = useState<Audio.Sound | null>(null);
-  const [comicSound, setComicSound] = useState<Audio.Sound | null>(null);
+  const [correctSound, setCorrectSound] = useState<Sound | null>(null);
+  const [buttonSound, setButtonSound] = useState<Sound | null>(null);
+  const [coinVisible, setCoinVisible] = useState(false);
+  const [removeSound, setRemoveSound] = useState<Sound | null>(null);
+  const [incorrectSound, setIncorrectSound] = useState<Sound | null>(null);
+  const [fanfareSound, setFanfareSound] = useState<Sound | null>(null);
+  const [comicSound, setComicSound] = useState<Sound | null>(null);
  
   const [coinAnimation] = useState(new Animated.ValueXY({ x: 0, y: 0 }));
-  
+  const { soundEnabled } = useSound();
   const [pendingScore, setPendingScore] = useState<number | null>(null);
   const [showPartyPopper, setShowPartyPopper] = useState(false); // Add this state variable
   const translateX = useRef(new Animated.Value(500)).current;
@@ -63,46 +63,58 @@ const [coinVisible, setCoinVisible] = useState(false);
   }, [navigation, score, currentPuzzle]);
 
   
- 
-  const playSound = async (soundObject: Audio.Sound | null) => {
+  const playSound = (soundObject: Sound | null) => {
     try {
-      if (soundObject) {
-        await soundObject.replayAsync();
+      if (soundObject && soundEnabled) { // Check if sound is enabled
+        soundObject.play();
       }
     } catch (error) {
       console.error('Error playing sound:', error);
     }
   };
-  
+
   useEffect(() => {
     const loadSounds = async () => {
       try {
-        const correctSoundObject = new Audio.Sound();
-        await correctSoundObject.loadAsync(require('../assets/sounds/dailycorrect.mp3'));
-        setCorrectSound(correctSoundObject);
+        const buttonSoundObject = new Sound(require('../assets/sounds/button.mp3'), (error) => {
+          if (error) {
+            console.error('Failed to load button sound', error);
+          } else {
+            setButtonSound(buttonSoundObject);
+          }
+        });
+        
+        const removeSoundObject = new Sound(require('../assets/sounds/remove.mp3'), (error) => {
+          if (error) {
+            console.error('Failed to load remove sound', error);
+          } else {
+            setRemoveSound(removeSoundObject);
+          }
+        });
 
-        const removeSoundObject = new Audio.Sound();
-        await removeSoundObject.loadAsync(require('../assets/sounds/remove.mp3'));
-        setRemoveSound(removeSoundObject);
+        const fanfareSoundObject = new Sound(require('../assets/sounds/fanfair.mp3'), (error) => {
+          if (error) {
+            console.error('Failed to load fanfare sound', error);
+          } else {
+            setFanfareSound(fanfareSoundObject);
+          }
+        });
 
-        const incorrectSoundObject = new Audio.Sound();
-        await incorrectSoundObject.loadAsync(require('../assets/sounds/incorrect.mp3'));
-        setIncorrectSound(incorrectSoundObject);
+        const incorrectSoundObject = new Sound(require('../assets/sounds/incorrect.mp3'), (error) => {
+          if (error) {
+            console.error('Failed to load incorrect sound', error);
+          } else {
+            setIncorrectSound(incorrectSoundObject);
+          }
+        });
 
-        const buttonSoundObject = new Audio.Sound();
-        await buttonSoundObject.loadAsync(require('../assets/sounds/button.mp3'));
-        setButtonSound(buttonSoundObject);
-
-        const fanfareSoundObject = new Audio.Sound();
-        await fanfareSoundObject.loadAsync(require('../assets/sounds/fanfair.mp3'));
-        setFanfareSound(fanfareSoundObject);
-
-        const comicSoundObject = new Audio.Sound();
-        await comicSoundObject.loadAsync(require('../assets/sounds/comic.mp3'));
-        setComicSound(comicSoundObject);
-
-
-
+        const correctSoundObject = new Sound(require('../assets/sounds/dailycorrect.mp3'), (error) => {
+          if (error) {
+            console.error('Failed to load correct sound', error);
+          } else {
+            setCorrectSound(correctSoundObject);
+          }
+        });
       } catch (error) {
         console.error('Error loading sounds:', error);
       }
@@ -111,14 +123,15 @@ const [coinVisible, setCoinVisible] = useState(false);
     loadSounds();
 
     return () => {
-      correctSound && correctSound.unloadAsync();
-      removeSound && removeSound.unloadAsync();
-      incorrectSound && incorrectSound.unloadAsync();
-      fanfareSound && fanfareSound.unloadAsync();
-      buttonSound && buttonSound.unloadAsync();
-      
+      // Cleanup function to unload sounds when component unmounts
+      buttonSound && buttonSound.release();
+      removeSound && removeSound.release();
+      correctSound && correctSound.release();
+      incorrectSound && incorrectSound.release();
     };
   }, []);
+
+
 
 
 
