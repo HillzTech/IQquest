@@ -19,7 +19,7 @@ const levels = [
        require('../assets/Images/fire/fire4.jpg'),
      ],
     word: "FIRE",
-    category: "Element",
+    category: "Nature",
     definition: "Fire is the rapid oxidation of a material in the exothermic chemical process of combustion, releasing heat, light, and various reaction products. At a certain point in the combustion reaction, called the ignition point, flames are produced. The flame is the visible portion of the fire."
   },
 
@@ -32,7 +32,7 @@ const levels = [
        require('../assets/Images/lava/lava4.jpg'),
      ],
     word: "LAVA",
-    category: "Element",
+    category: "Nature",
     definition: "Lava refers specifically to molten rock that erupts from a volcano onto the Earth's surface. It is typically extremely hot and can flow in streams, creating landscapes such as volcanic fields and lava flows."
   },
 
@@ -45,7 +45,7 @@ const levels = [
        require('../assets/Images/wind/wind4.jpg'),
      ],
     word: "AIR",
-    category: "Element",
+    category: "Nature",
     definition: "Air is the Earth's atmosphere. Air is a mixture of many gases and tiny dust particles. It is the clear gas in which living things live and breathe. It has an indefinite shape and volume. It has mass and weight, because it is matter. The weight of air creates atmospheric pressure. There is no air in outer space.Earth's atmosphere is composed of about 78 percent nitrogen, 21 percent oxygen, 0.9 percent argon, and 0.1 percent other gases."
   },
 
@@ -58,7 +58,7 @@ const levels = [
        require('../assets/Images/tornado/tornado4.jpg'),
      ],
     word: "TORNADO",
-    category: "Element",
+    category: "Nature",
     definition: "Tornado refers to a violently rotating column of air that is in contact with both the surface of the Earth and a cumulonimbus cloud or, in rare cases, the base of a cumulus cloud. Tornadoes can cause extensive damage to buildings and infrastructure and pose significant risks to human life."
   },
 
@@ -71,7 +71,7 @@ const levels = [
        require('../assets/Images/earth/earth4.jpg'),
      ],
     word: "EARTH",
-    category: "Element",
+    category: "Nature",
     definition: "The earth is full of a wide variety of rocks and minerals which provides the soil to grow vegetation and support life. The two most common elements in the earth's crust are oxygen (46%) and silicon (28%). Because of this, the most abundant mineral in the earth's crust is silica (silicon dioxide)."
   },
 
@@ -83,7 +83,7 @@ const levels = [
        require('../assets/Images/metal/metal4.jpg'),
      ],
     word: "METAL",
-    category: "Element",
+    category: "Nature",
     definition: "The metal element is one of the classical elements in ancient philosophy and alchemy, along with earth, water, and fire. In these traditions, metals were believed to represent fundamental aspects of the natural world and were associated with various qualities and characteristics."
   },
   
@@ -95,7 +95,7 @@ const levels = [
        require('../assets/Images/space/space4.jpg'),
      ],
     word: "SPACE",
-    category: "Element",
+    category: "Nature",
     definition: "The space element (akasha in Sanskrit, meaning not visible, space, or sky) is the most subtle of the five elements. Space gives rise to the other elements—air, fire, water, and earth. It is space that makes everything possible. All things arise in it and return to it. We can think of space as expressing in three different but interconnected ways: the infinite, unbounded space of Spirit; the space of individual consciousness defined within the endless field of Spirit; and physical space—which we perceive in our bodies and environment. The main attribute of space is its all-pervasiveness and freedom from obstruction."
   },
 
@@ -107,9 +107,34 @@ const levels = [
        require('../assets/Images/water/water4.jpg'),
      ],
     word: "WATER",
-    category: "Element",
+    category: "Nature",
     definition: "Water, a substance composed of the chemical elements hydrogen and oxygen and existing in gaseous, liquid, and solid states. It is one of the most plentiful and essential of compounds. A tasteless and odourless liquid at room temperature, it has the important ability to dissolve many other substances. Indeed, the versatility of water as a solvent is essential to living organisms. Life is believed to have originated in the aqueous solutions of the world's oceans, and living organisms depend on aqueous solutions, such as blood and digestive juices, for biological processes."
   },
+
+  {
+    images: [
+       require('../assets/Images/ice/ice1.jpg'),
+       require('../assets/Images/ice/ice2.jpg'),
+       require('../assets/Images/ice/ice3.jpg'),
+       require('../assets/Images/ice/ice4.jpg'),
+     ],
+    word: "ICE",
+    category: "Nature",
+    definition: "Ice is solid water, formed when water freezes at or below 0 degrees Celsius (32 degrees Fahrenheit). It's a crystalline form of water molecules, where the molecules are arranged in a specific repeating pattern. Ice is commonly found in glaciers, icebergs, and frozen lakes and rivers. It's also widely used in refrigeration to preserve food and in various recreational activities such as ice skating and ice hockey. Additionally, ice plays a crucial role in Earth's climate system, affecting global temperatures and sea levels."
+  },
+
+  {
+    images: [
+       require('../assets/Images/sunset/sunset1.jpg'),
+       require('../assets/Images/sunset/sunset2.jpg'),
+       require('../assets/Images/sunset/sunset3.jpg'),
+       require('../assets/Images/sunset/sunset4.jpg'),
+     ],
+    word: "SUNSET",
+    category: "Nature",
+    definition: "A sunset is the daily event where the sun dips below the horizon, marking the end of daylight and the transition to night. It's characterized by a stunning array of colors in the sky, ranging from vibrant oranges and pinks to deep purples and blues, as the sunlight scatters off particles in the Earth's atmosphere. Sunsets are often considered beautiful and romantic moments, enjoyed by people around the world as they pause to witness the natural spectacle."
+  },
+
 
   
   {
@@ -148,6 +173,19 @@ const levels = [
     category: "Furniture",
     definition: "A wardrobe, also known as an armoire, is a piece of furniture used for storing clothing and other items. It typically consists of a tall, upright cabinet with doors that open to reveal hanging space for garments, shelves for folded clothes, and sometimes drawers for smaller items. Wardrobes come in various styles, sizes, and materials to suit different needs and aesthetics. They are commonly found in bedrooms and serve as essential storage solutions for organizing clothing and accessories."
   },
+
+  {
+    images: [
+       require('../assets/Images/sofa/sofa1.jpg'),
+       require('../assets/Images/sofa/sofa2.jpg'),
+       require('../assets/Images/sofa/sofa3.jpg'),
+       require('../assets/Images/sofa/sofa4.jpg'),
+     ],
+    word: "SOFA",
+    category: "Furniture",
+    definition: "A sofa, also referred to as a couch or a settee, is a piece of furniture designed for seating multiple people. Sofas typically feature a padded seat, backrest, and armrests, providing comfort and support for lounging or sitting. They come in various sizes, styles, and configurations to suit different spaces and preferences. Sofas can be made from a variety of materials, including fabric, leather, or synthetic upholstery, and they may have wooden, metal, or plastic frames. Some sofas also come with additional features like reclining mechanisms, built-in storage compartments, or convertible designs that can transform into beds. As a staple of living rooms and family rooms, sofas serve as central pieces of furniture for relaxation, socializing, and entertainment. They can be paired with complementary items such as coffee tables, side tables, and accent chairs to create cohesive and inviting seating arrangements within a room."
+  },
+
 
   {
     images: [
@@ -197,6 +235,32 @@ const levels = [
     definition: "Chair, a chair is a type of seat, typically designed for one person and consisting of one or more legs, a flat or slightly angled seat and a back-rest. It may be made of wood, metal, or synthetic materials, and may be padded or upholstered in various colors and fabrics."
   },
 
+  {
+    images: [
+       require('../assets/Images/buffet/buffet1.jpg'),
+       require('../assets/Images/buffet/buffet2.jpg'),
+       require('../assets/Images/buffet/buffet3.jpg'),
+       require('../assets/Images/buffet/buffet4.jpg'),
+     ],
+    word: "BUFFET",
+    category: "Furniture",
+    definition: "A buffet is a piece of furniture typically used for serving food and drinks in a self-service manner. It often consists of a flat surface, such as a countertop or table, where dishes can be arranged, and may include shelves, drawers, or cabinets for storing utensils, plates, and other dining essentials. Buffets are commonly found in dining rooms, restaurants, hotels, and catering events, providing a convenient and versatile way to present and serve a variety of dishes to guests."
+  },
+
+  {
+    images: [
+       require('../assets/Images/ottoman/ottoman1.jpg'),
+       require('../assets/Images/ottoman/ottoman2.jpg'),
+       require('../assets/Images/ottoman/ottoman3.jpg'),
+       require('../assets/Images/ottoman/ottoman4.jpg'),
+     ],
+    word: "OTTOMAN",
+    category: "Furniture",
+    definition: "Ottoman furniture typically refers to pieces inspired by the design aesthetics of the Ottoman Empire, particularly popular during the 18th and 19th centuries. These furnishings often feature rich fabrics, intricate woodwork, and ornate detailing. One iconic piece of Ottoman furniture is, of course, the ottoman itself. Originally a low upholstered seat without a back or arms, ottomans have evolved over time to include storage compartments or serve as footrests. They're versatile and can complement various interior design styles."
+  },
+
+ 
+
    {
     images: [
        require('../assets/Images/fruits/Images1.jpeg'),
@@ -244,18 +308,43 @@ const levels = [
      category: "Food",
      definition: "A drink or beverage is a liquid intended for human consumption. In addition to their basic function of satisfying thirst, drinks play important roles in human culture. Common types of drinks include plain drinking water, milk, juice, smoothies and soft drinks"
    },
+
+   {
+    images: [
+       require('../assets/Images/sauce/sauce1.jpg'),
+       require('../assets/Images/sauce/sauce2.jpg'),
+       require('../assets/Images/sauce/sauce3.jpg'),
+       require('../assets/Images/sauce/sauce4.jpg'),
+     ],
+    word: "SAUCE",
+    category: "Food",
+    definition: "Sauce refers to a liquid or semi-liquid condiment that is used to enhance the flavor, moisture, or appearance of a dish. Sauces can vary widely in flavor, texture, and ingredients, and they play a crucial role in many cuisines around the world."
+  },
+
    
    {
      images: [
-        require('../assets/Images/diary/milk.jpg'),
-        require('../assets/Images/diary/cheese.jpg'),
-        require('../assets/Images/diary/custard.jpg'),
-        require('../assets/Images/diary/youghurt.jpg'),
+        require('../assets/Images/salad/salad1.jpg'),
+        require('../assets/Images/salad/salad2.jpg'),
+        require('../assets/Images/salad/salad3.jpg'),
+        require('../assets/Images/salad/salad4.jpg'),
       ],
-     word: "DIARY",
+     word: "SALAD",
      category: "Food",
-     definition: "Dairy products or milk products, also known as lacticinia, are food products made from milk. The most common dairy animals are cow, water buffalo, nanny goat, and ewe. Dairy products include common grocery store food around the world such as yogurt, cheese, milk and butter."
+     definition: "Salad is a dish typically made from a mixture of fresh vegetables, fruits, leafy greens, and other ingredients, often served chilled and dressed with a variety of sauces, dressings, or vinaigrettes. Salads can be enjoyed as appetizers, side dishes, or main courses, and they come in countless variations to suit different tastes and dietary preferences."
    },
+
+   {
+    images: [
+       require('../assets/Images/diary/milk.jpg'),
+       require('../assets/Images/diary/cheese.jpg'),
+       require('../assets/Images/diary/custard.jpg'),
+       require('../assets/Images/diary/youghurt.jpg'),
+     ],
+    word: "DIARY",
+    category: "Food",
+    definition: "Dairy products or milk products, also known as lacticinia, are food products made from milk. The most common dairy animals are cow, water buffalo, nanny goat, and ewe. Dairy products include common grocery store food around the world such as yogurt, cheese, milk and butter."
+  },
 
    {
     images: [
@@ -313,9 +402,9 @@ const levels = [
        require('../assets/Images/pale/pale3.jpg'),
        require('../assets/Images/pale/pale4.jpg'),
      ],
-    word: "PALE",
+    word: "BLONDE",
     category: "Race",
-    definition: "A pale color is a soft, light shade of a particular color. It typically lacks intensity or vibrancy and can have a delicate, subdued appearance. Examples of pale colors include pale blue, pale pink, pale yellow, and pale green. These colors are often gentle and soothing, creating a sense of calmness or serenity. They are commonly used in interior design, fashion, and art to evoke a subtle and understated aesthetic."
+    definition: "Blonde is an adjective used to describe a light hair color that is typically yellowish or golden in hue. It's commonly associated with individuals of European descent, particularly those from Northern and Western Europe. However, blond hair can occur in people of various ethnic backgrounds due to genetic variations. The term blonde is also used as a noun to refer to a person with blond hair, with blond being the masculine form and blonde being the feminine form."
   },
 
   {
@@ -344,6 +433,31 @@ const levels = [
 
   {
     images: [
+       require('../assets/Images/afro/afro1.jpg'),
+       require('../assets/Images/afro/afro2.jpg'),
+       require('../assets/Images/afro/afro3.jpg'),
+       require('../assets/Images/afro/afro4.jpg'),
+     ],
+    word: "AFRO",
+    category: "Race",
+    definition: "Afro refers to a hairstyle characterized by tightly coiled or curly hair that is styled outward from the scalp in a rounded shape. The term afro is derived from Afro-American, reflecting its association with African-American culture and identity, although it's worn by people of various racial and ethnic backgrounds. The afro became popular during the 1960s and 1970s as a symbol of black pride and cultural expression during the civil rights movement. Today, the afro remains an iconic hairstyle that symbolizes self-affirmation, natural beauty, and cultural heritage."
+  },
+
+  {
+    images: [
+       require('../assets/Images/asian/asian1.jpg'),
+       require('../assets/Images/asian/asian2.jpg'),
+       require('../assets/Images/asian/asian3.jpg'),
+       require('../assets/Images/asian/asian4.jpg'),
+     ],
+    word: "ASIAN",
+    category: "Race",
+    definition: "The term Asian typically refers to people or things originating from or associated with the continent of Asia. Asia is the largest and most populous continent on Earth, encompassing diverse countries, cultures, languages, and ethnicities. In a broader sense, Asian can also refer to individuals of Asian descent, including people with roots in countries such as China, Japan, Korea, India, Pakistan, Bangladesh, Vietnam, Thailand, the Philippines, and many others. The term Asian is used to describe both the geographic region and the racial or ethnic identity of individuals from this region."
+  },
+
+
+  {
+    images: [
        require('../assets/Images/biracial/biracial1.jpg'),
        require('../assets/Images/biracial/biracial2.jpg'),
        require('../assets/Images/biracial/biracial3.jpg'),
@@ -352,6 +466,18 @@ const levels = [
     word: "BIRACIAL",
     category: "Race",
     definition: "Biracial refers to a person who has parents from two different racial or ethnic backgrounds. This term is used to describe individuals who are of mixed race or ethnicity, often having features that reflect the heritage of both parents. Biracial individuals may identify with one or both of their parents' racial or ethnic backgrounds, and their experiences and cultural identity can vary widely depending on factors such as upbringing, environment, and personal identity."
+  },
+
+  {
+    images: [
+       require('../assets/Images/hispanic/hispanic1.jpg'),
+       require('../assets/Images/hispanic/hispanic2.jpg'),
+       require('../assets/Images/hispanic/hispanic3.jpg'),
+       require('../assets/Images/hispanic/hispanic4.jpg'),
+     ],
+    word: "HISPANIC",
+    category: "Race",
+    definition: "The term Hispanic typically refers to people or things originating from or associated with Spanish-speaking countries or cultures, particularly those in Latin America. It is often used to describe individuals with cultural or ancestral ties to Spanish-speaking countries in Latin America, as well as Spain itself. The term Hispanic encompasses a diverse range of countries and cultures, including but not limited to Mexico, Spain, Guatemala, Colombia, Argentina, and many others. Hispanic is commonly used as an ethnic identifier in the United States, where it is used to categorize people with roots in Spanish-speaking countries, regardless of their racial background."
   },
 
   {
@@ -365,6 +491,19 @@ const levels = [
     category: "Race",
     definition: "Racism is a belief system or ideology that asserts the superiority of one race over others and discriminates against individuals or groups based on their race or ethnicity. It involves prejudice, discrimination, and the systematic mistreatment of people of certain racial or ethnic backgrounds."
   },
+
+  {
+    images: [
+       require('../assets/Images/albino/albino1.jpg'),
+       require('../assets/Images/albino/albino2.jpg'),
+       require('../assets/Images/albino/albino3.jpg'),
+       require('../assets/Images/albino/albino4.jpg'),
+     ],
+    word: "ALBINO",
+    category: "Race",
+    definition: "Albino is a term used to describe a person with a genetic condition called albinism. Albinism is characterized by a lack of melanin pigment in the skin, hair, and eyes, resulting in very pale or white skin, hair, and light-colored eyes. People with albinism often have vision problems, including sensitivity to light and poor eyesight, due to the absence of melanin in their retinas. Albinism can occur in individuals of any race or ethnic background, but it is more noticeable in individuals with darker skin tones. It is important to treat individuals with albinism with respect and understanding, as they may face discrimination or stigma due to their appearance."
+  },
+
 
   
 
@@ -415,6 +554,30 @@ const levels = [
     word: "ELVES",
     category: "Creatures",
     definition: "Elves were said to possess supernatural qualities which could be used to create good deeds such as healing, or bad deeds such as creating illnesses. Female elves were seen to have magical qualities and could trap young men through their charms. Elves were often believed to be immortal beings. An elf sitting in a tree."
+  },
+
+  {
+    images: [
+       require('../assets/Images/siren/siren1.jpg'),
+       require('../assets/Images/siren/siren2.jpg'),
+       require('../assets/Images/siren/siren3.jpg'),
+       require('../assets/Images/siren/siren4.jpg'),
+     ],
+    word: "SIREN",
+    category: "Creatures",
+    definition: "The siren creature originates from Greek mythology. Often depicted as part woman and part bird, sirens were believed to inhabit rocky islands and lure sailors to their doom with their enchanting songs. These creatures were said to possess irresistible voices that would lead sailors astray, causing them to crash their ships upon the rocks where the sirens dwelled. In various myths, heroes like Odysseus encountered sirens during their voyages and had to devise clever strategies to resist their allure and safely navigate past them."
+  },
+
+  {
+    images: [
+       require('../assets/Images/djinn/djinn1.jpg'),
+       require('../assets/Images/djinn/djinn2.jpg'),
+       require('../assets/Images/djinn/djinn3.jpg'),
+       require('../assets/Images/djinn/djinn4.jpg'),
+     ],
+    word: "DJINN",
+    category: "Creatures",
+    definition: "Djinn, also spelled jinn or genie, are supernatural beings from Islamic mythology and folklore. They are sentient entities created from smokeless fire by Allah (God) and possess free will like humans. Djinn are believed to inhabit a parallel world to humans and are capable of interacting with and influencing the physical world. In Islamic tradition, there are good and evil djinn, with the latter often associated with mischief and malevolence. Djinn are known for their shapeshifting abilities, allowing them to take various forms, including animals, humans, and even inanimate objects. They are also believed to have the power to grant wishes to humans, although this ability is often depicted with cautionary tales of unintended consequences. Djinn play a significant role in Islamic literature, folklore, and religious texts, including the Quran (the central religious text of Islam), where they are mentioned alongside humans and angels as one of the three sentient creations of Allah. The concept of djinn has also influenced various cultural beliefs and narratives beyond the Islamic world, including in Western literature and popular culture, where they are often depicted as magical beings capable of granting wishes."
   },
 
   {
@@ -538,6 +701,19 @@ const levels = [
     definition: "Beige can also refer to a neutral tone that is light and soft, often used in interior design, fashion, and other creative contexts to denote a subtle and understated aesthetic."
   },
 
+
+  {
+    images: [
+       require('../assets/Images/coral/coral1.jpg'),
+       require('../assets/Images/coral/coral2.jpg'),
+       require('../assets/Images/coral/coral3.jpg'),
+       require('../assets/Images/coral/coral4.jpg'),
+     ],
+    word: "CORAL",
+    category: "Color",
+    definition: "The color coral is a warm shade that lies somewhere between pink and orange. It's often described as a pinkish-orange or an orange-pink hue, reminiscent of the color of the outer skeleton of marine coral. It's a vibrant and lively color that can add a pop of warmth and energy to any palette."
+  },
+
   {
     images: [
        require('../assets/Images/silver/silver1.jpg'),
@@ -560,6 +736,18 @@ const levels = [
     word: "CYAN",
     category: "Color",
     definition: "Cyan is a bright blue-green color, often described as a mixture of blue and green pigments. It is commonly used in printing and graphic design, as well as in digital displays and textiles."
+  },
+
+  {
+    images: [
+       require('../assets/Images/maroon/maroon1.jpg'),
+       require('../assets/Images/maroon/maroon2.jpg'),
+       require('../assets/Images/maroon/maroon3.jpg'),
+       require('../assets/Images/maroon/maroon4.jpg'),
+     ],
+    word: "MAROON",
+    category: "Color",
+    definition: "Maroon is a deep, dark red color with a hint of brown or purple. It's a rich and warm shade, often associated with sophistication and elegance. The name maroon comes from the French word marron, which originally referred to chestnut, but later evolved to describe this deep reddish-brown color."
   },
 
 
