@@ -850,6 +850,30 @@ const levels = [
     definition:"Arachnids are a class of joint-legged invertebrate animals in the arthropod phylum. This class includes spiders, scorpions, ticks, mites, and harvestmen (also known as daddy longlegs). Arachnids are characterized by having eight legs, two main body segments (cephalothorax and abdomen), and often possess specialized structures such as spinnerets (for producing silk) and venomous glands."
   },
 
+  {
+    images: [
+       require('../assets/Images/rodent/rodent1.jpg'),
+       require('../assets/Images/rodent/rodent2.jpg'),
+       require('../assets/Images/rodent/rodent3.jpg'),
+       require('../assets/Images/rodent/rodent4.jpg'),
+     ],
+    word: "RODENT",
+    category: "Animals",
+    definition:"Rodents are a diverse group of mammals characterized by a single pair of continuously growing incisors in the upper and lower jaws, which must be kept trimmed through gnawing. They are found on every continent except Antarctica and include a wide range of species, from tiny mice to large capybaras."
+  },
+
+  {
+    images: [
+       require('../assets/Images/felids/felids1.jpg'),
+       require('../assets/Images/felids/felids2.jpg'),
+       require('../assets/Images/felids/felids3.jpg'),
+       require('../assets/Images/felids/felids4.jpg'),
+     ],
+    word: "FELIDS",
+    category: "Animals",
+    definition:"Felids is the term used to refer to the family of mammals known as Felidae, which includes all members of the cat family. Felids are characterized by their retractable claws, sharp teeth, and carnivorous diet."
+  },
+
 
   
   
@@ -864,6 +888,19 @@ const levels = [
     category: "Geography",
     definition:"Europe is a continent located entirely in the Northern Hemisphere and mostly in the Eastern Hemisphere. It is bordered by the Arctic Ocean to the north, the Atlantic Ocean to the west, the Mediterranean Sea to the south, and Asia to the east."
   },
+
+  {
+    images: [
+       require('../assets/Images/island/island1.png'),
+       require('../assets/Images/island/island2.jpg'),
+       require('../assets/Images/island/island3.jpg'),
+       require('../assets/Images/island/island4.jpg'),
+     ],
+    word: "ISLAND",
+    category: "Geography",
+    definition:"Islands are patches of land that are completely surrounded by water. They can vary greatly in size, ranging from small islets to massive landmasses like Greenland. Islands can be found in oceans, seas, lakes, and rivers all around the world. They are formed through various geological processes, including volcanic activity, erosion, and the rising of land from beneath the sea. Some islands are volcanic in origin, formed by the accumulation of volcanic material rising from the ocean floor. For example, the Hawaiian Islands are a chain of volcanic islands formed by the movement of the Pacific Plate over a hotspot in the Earth's mantle."
+  },
+
 
   {
     images: [
@@ -908,9 +945,9 @@ const levels = [
        require('../assets/Images/desert/desert3.jpg'),
        require('../assets/Images/desert/desert4.jpg'),
      ],
-    word: "DESERT",
+    word: "SAHARA",
     category: "Geography",
-    definition:"Desert typically refers to a barren area of land where little precipitation occurs, making it difficult for most forms of life to survive. Deserts are characterized by their arid climate, with hot temperatures during the day and cooler temperatures at night. They can be sandy, rocky, or even icy, depending on the specific type of desert."
+    definition:"The Sahara Desert is the largest hot desert in the world, stretching across North Africa. Covering approximately 9.2 million square kilometers (3.6 million square miles), it is roughly the size of the United States. The Sahara is characterized by its vast stretches of sand dunes, rocky plateaus, and gravel plains. It experiences an arid climate with extremely high temperatures during the day and sharp drops in temperature at night. Rainfall is scarce, and large areas of the desert receive less than 100 millimeters (4 inches) of rain per year. Despite its harsh conditions, the Sahara supports a variety of plant and animal life adapted to the desert environment. The desert has a rich cultural history, with evidence of early human settlements and ancient civilizations found throughout the region. "
   },
 
   {
@@ -924,6 +961,19 @@ const levels = [
    category: "Geography",
    definition:"The Americas, sometimes collectively called America, are a landmass comprising the totality of North and South America. The Americas make up most of the land in Earth's Western Hemisphere and comprise the New World."
  },
+
+ {
+  images: [
+     require('../assets/Images/bermuda/bermuda1.jpg'),
+     require('../assets/Images/bermuda/bermuda2.jpg'),
+     require('../assets/Images/bermuda/bermuda3.jpg'),
+     require('../assets/Images/bermuda/bermuda4.jpg'),
+   ],
+  word: "BERMUDA",
+  category: "Geography",
+  definition:"Bermuda is a British Overseas Territory located in the North Atlantic Ocean, known for its stunning pink sand beaches, crystal-clear turquoise waters, and vibrant coral reefs. The Bermuda Triangle however, also known as the Devil's Triangle, is a loosely defined region in the western part of the North Atlantic Ocean. The triangle's vertices are generally considered to be Miami, Florida; Bermuda; and San Juan, Puerto Rico. "
+},
+
 
  {
   images: [
@@ -959,6 +1009,18 @@ const levels = [
     word: "BICYCLE",
     category: "Vehicle",
     definition: "A bicycle is a two-wheeled vehicle propelled by pedals and operated by a person sitting on a seat. It is a popular mode of transportation, recreational activity, and sport around the world. Bicycles typically consist of a frame, handlebars for steering, pedals connected to a chain and gears, wheels with tires, and brakes for slowing down or stopping. Bicycles come in various styles and designs, including road bikes, mountain bikes, hybrid bikes, and cruiser bikes, each tailored for different purposes and terrains. They can be used for commuting, exercise, touring, racing, or simply enjoying leisurely rides."
+  },
+
+  {
+    images: [
+       require('../assets/Images/train/train1.jpg'),
+       require('../assets/Images/train/train2.jpg'),
+       require('../assets/Images/train/train3.jpg'),
+       require('../assets/Images/train/train4.jpg'),
+     ],
+    word: "TRAIN",
+    category: "Vehicle",
+    definition: "Trains are rail vehicles designed for transporting passengers and freight along railway tracks. They are a vital mode of transportation used for commuting, long-distance travel, freight transportation, and industrial purposes."
   },
 
 
