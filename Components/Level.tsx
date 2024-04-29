@@ -1062,6 +1062,30 @@ const levels = [
 
   {
     images: [
+       require('../assets/Images/glider/glider1.jpg'),
+       require('../assets/Images/glider/glider2.jpg'),
+       require('../assets/Images/glider/glider3.jpg'),
+       require('../assets/Images/glider/glider4.jpg'),
+     ],
+    word: "GLIDER",
+    category: "Vehicle",
+    definition: "A glider is an aircraft that flies without an engine. It's designed to glide through the air using natural forces such as gravity and air currents. Gliders are typically launched into the air by being towed behind another aircraft or by being released from a high point such as a hill or a winch. Once airborne, glider pilots use their skill to find rising air currents, such as thermals, ridge lift, or wave lift, to maintain or gain altitude and stay aloft for extended periods of time. Gliders are popular for both recreational flying and competitive soaring events."
+  },
+
+  {
+    images: [
+       require('../assets/Images/tricycle/tricycle1.jpg'),
+       require('../assets/Images/tricycle/tricycle2.jpg'),
+       require('../assets/Images/tricycle/tricycle3.jpg'),
+       require('../assets/Images/tricycle/tricycle4.jpg'),
+     ],
+    word: "TRICYCLE",
+    category: "Vehicle",
+    definition: "A tricycle is a three-wheeled vehicle typically powered by human pedaling or a small engine. It's commonly used for transportation, recreation, or as a means of exercise. Tricycles come in various forms, from traditional pedal-powered models for children to motorized versions for adults. They offer stability and ease of use, making them popular among people of all ages and abilities. Tricycles are often seen as a fun and practical mode of transportation for short distances."
+  },
+
+  {
+    images: [
        require('../assets/Images/yacht/yacht1.jpg'),
        require('../assets/Images/yacht/yacht2.jpg'),
        require('../assets/Images/yacht/yacht3.jpg'),
@@ -1097,7 +1121,7 @@ const levels = [
     definition: "A tanker is a large ship or vehicle designed for the transport of liquids or gases in bulk. Tankers are commonly used to transport various substances, including oil, petroleum products, liquefied natural gas (LNG), chemicals, and water. In the maritime industry, tankers are specifically designed with one or more large tanks or compartments to hold and transport liquids across oceans and waterways. These ships come in different sizes and configurations depending on the type of cargo they carry and the distance they travel. Tankers can range from small coastal tankers used for regional transport to massive supertankers capable of carrying millions of barrels of oil across the world's oceans."
   },
 
-
+   
   {
     images: [
        require('../assets/Images/stadium/stadium1.jpg'),
@@ -1147,6 +1171,19 @@ const levels = [
     category: "Sport",
     definition:"Sprint, in athletics (track and field), a footrace over a short distance with an all-out or nearly all-out burst of speed, the chief distances being 100, 200, and 400 metres and 100, 220, and 440 yards.The course for sprint races is usually marked off in lanes within which each runner must remain for the entire race. Originally sprinters used a standing start, but after 1884 sprinters started from a crouched position using a device called a starting block (legalized in the 1930s) to brace their feet (see photograph). Races are begun by a pistol shot; at 55 to 65 metres (60 to 70 yards), top sprinters attain maximum speed, more than 40 km per hour (25 miles per hour). After the 65-metre mark the runner begins to lose speed through fatigue."
   },
+
+  {
+    images: [
+       require('../assets/Images/puck/puck1.jpg'),
+       require('../assets/Images/puck/puck2.jpg'),
+       require('../assets/Images/puck/puck3.jpg'),
+       require('../assets/Images/puck/puck4.jpg'),
+     ],
+    word: "PUCK",
+    category: "Sport",
+    definition:"A puck is a hard, rubberized disk used in the sport of ice hockey. It serves as the primary object of play, being propelled by players using their hockey sticks. The puck is typically black in color, made of vulcanized rubber, and measures about three inches in diameter and one inch in thickness. During a hockey game, players pass, shoot, and control the puck as they attempt to score goals by shooting it into the opposing team's net while also defending their own net from the opposing team's offensive attempts."
+  },
+
   {
     images: [
        require('../assets/Images/soccer/soccer1.jpg'),
@@ -1184,6 +1221,19 @@ const levels = [
     category: "Sport",
     definition:"Rugby, football game played with an oval ball by two teams of 15 players (in rugby union play) or 13 players (in rugby league play). Both rugby union and rugby league have their origins in the style of football played at Rugby School in England. According to the sport's lore, in 1823 William Webb Ellis, a pupil at Rugby School, defied the conventions of the day (that the ball may only be kicked forward) to pick up the ball and run with it in a game, thus creating the distinct handling game of rugby football. "
   },
+
+  {
+    images: [
+       require('../assets/Images/volley/volley1.jpg'),
+       require('../assets/Images/volley/volley2.jpg'),
+       require('../assets/Images/volley/volley3.jpg'),
+       require('../assets/Images/volley/volley4.jpg'),
+     ],
+    word: "VOLLEY",
+    category: "Sport",
+    definition:"Volley refers to a play in various sports where the ball is struck or kicked in mid-air before it touches the ground. It's commonly used in sports like volleyball, tennis, and soccer. In volleyball, a volley occurs when players hit the ball back and forth over the net without letting it touch the ground. In tennis, a volley is a shot made by hitting the ball before it bounces on the ground. And in soccer, a volley is a technique where a player kicks the ball while it's in the air, often resulting in a powerful shot on goal."
+  },
+
   {
    images: [
       require('../assets/Images/baseball/baseball1.jpg'),
@@ -1232,6 +1282,18 @@ const levels = [
     word: "STAFF",
     category: "Music",
     definition: "Staff notation, also known as standard notation, is the system of musical notation used by most Western classical and popular music. It consists of a set of five horizontal lines called a staff (plural: staves) on which musical symbols such as notes, rests, and other symbols are placed to represent pitch and rhythm. The pitch of a note is determined by its vertical position on the staff, and the duration of a note is indicated by the shape of the note head and any accompanying flags or stems."
+  },
+
+  {
+    images: [
+       require('../assets/Images/banjo/banjo1.jpg'),
+       require('../assets/Images/banjo/banjo2.jpg'),
+       require('../assets/Images/banjo/banjo3.jpg'),
+       require('../assets/Images/banjo/banjo4.jpg'),
+     ],
+    word: "BANJO",
+    category: "Music",
+    definition: "A banjo is a stringed musical instrument that originated in West Africa and was later adopted in the Americas, particularly in the United States. It typically consists of a circular body, often made of wood or a synthetic material, with a drum-like membrane stretched over the top. The banjo has a distinctive sound produced by plucking or strumming the strings, which are stretched over a bridge and fretboard. It is commonly used in folk, bluegrass, country, and traditional African music, and it has a unique twangy tone that sets it apart from other stringed instruments."
   },
    
   
@@ -1282,6 +1344,20 @@ const levels = [
     category: "Music",
     definition:"Hip-hop, cultural movement that attained widespread popularity in the 1980s and 90s and also the backing music for rap, the musical style incorporating rhythmic and/or rhyming speech that became the movement's most lasting and influential art form."
   },
+
+  {
+    images: [
+       require('../assets/Images/chorale/chorale1.jpg'),
+       require('../assets/Images/chorale/chorale2.jpg'),
+       require('../assets/Images/chorale/chorale3.jpg'),
+       require('../assets/Images/chorale/chorale4.jpg'),
+     ],
+    word: "CHORALE",
+    category: "Music",
+    definition:"A chorale can also refer to a group of singers who specialize in performing choral music, often in a choir setting. Chorales typically consist of multiple vocal parts, such as soprano, alto, tenor, and bass, and they may perform a wide range of repertoire, including classical, sacred, secular, and contemporary music. Chorales play an important role in both amateur and professional music communities, contributing to the cultural and artistic landscape through their vocal performances."
+  },
+
+
   {
     images: [
        require('../assets/Images/afrobeat/afrobeat1.jpg'),
@@ -1301,9 +1377,21 @@ const levels = [
       require('../assets/Images/fantasy/fantasy4.jpg'),
     ],
    word: "FANTASY",
-   category: "Movies",
+   category: "Film",
    definition:"Fantasy, imaginative fiction dependent for effect on strangeness of setting (such as other worlds or times) and of characters (such as supernatural or unnatural beings). Examples include William Shakespeare's A Midsummer Night's Dream, Jonathan Swift's Gulliver's Travels, J.R.R. Tolkien's The Lord of the Rings, and T.H. White's The Once and Future King. Fantasy is set in an imaginary world and features the magic of mythical beings."
  },
+
+ {
+  images: [
+     require('../assets/Images/rental/rental1.jpg'),
+     require('../assets/Images/rental/rental2.jpg'),
+     require('../assets/Images/rental/rental3.jpg'),
+     require('../assets/Images/rental/rental4.jpg'),
+   ],
+  word: "RENTAL",
+  category: "Film",
+  definition:"Rental refers to the act of temporarily obtaining or leasing something, such as a movie, for a specified period of time in exchange for payment. In the context of movies, rental typically refers to the process of renting or borrowing a film for a short-term viewing period, usually from a rental store, online streaming service, or digital platform. Renting a movie allows individuals to watch it at their convenience without needing to purchase a permanent copy."
+},
 
 
  {
@@ -1314,8 +1402,21 @@ const levels = [
      require('../assets/Images/lighting/lighting4.jpg'),
    ],
   word: "LIGHTING",
-  category: "Movies",
+  category: "Film",
   definition:"Lighting in movies plays a crucial role in setting the mood, atmosphere, and visual tone of a scene. It serves both practical and artistic purposes, enhancing the storytelling and conveying emotions to the audience. "
+},
+
+
+{
+  images: [
+     require('../assets/Images/crew/crew1.jpg'),
+     require('../assets/Images/crew/crew2.jpg'),
+     require('../assets/Images/crew/crew3.jpg'),
+     require('../assets/Images/crew/crew4.jpg'),
+   ],
+  word: "CREW",
+  category: "Film",
+  definition:"A crew is a group of individuals who work together on a movie or television production. They fulfill various roles, including director, producer, cinematographer, and sound technician, among others. Each member contributes their expertise to bring the production to life, from managing the creative vision to handling technical aspects like lighting and sound. Together, the crew collaborates to create a cohesive and engaging final product for audiences to enjoy."
 },
 
  {
@@ -1326,7 +1427,7 @@ const levels = [
        require('../assets/Images/scifi/scifi4.jpg'),
      ],
     word: "SCIFI",
-    category: "Movies",
+    category: "Film",
     definition:"Science fiction, popularly shortened as sci-fi, is a genre of fiction that creatively depicts real or imaginary science and technology as part of its plot, setting, or theme. The fiction part of science fiction means, of course, that it's a fictional story—not a real-life account."
   },
 
@@ -1338,7 +1439,7 @@ const levels = [
        require('../assets/Images/lighting/lighting4.jpg'),
      ],
     word: "LIGHTING",
-    category: "Movies",
+    category: "Film",
     definition:"Lighting in movies plays a crucial role in setting the mood, atmosphere, and visual tone of a scene. It serves both practical and artistic purposes, enhancing the storytelling and conveying emotions to the audience. "
   },
 
@@ -1350,7 +1451,7 @@ const levels = [
        require('../assets/Images/horror/horror4.jpg'),
      ],
     word: "HORROR",
-    category: "Movies",
+    category: "Film",
     definition:"Horror is a film genre that seeks to elicit fear or disgust in its audience for entertainment purposes. Horror films often explore dark subject matter and may deal with transgressive topics or themes. Broad elements include monsters, apocalyptic events, and religious or folk beliefs."
   },
 
@@ -1362,7 +1463,7 @@ const levels = [
        require('../assets/Images/costume/costume4.jpg'),
      ],
     word: "COSTUME",
-    category: "Movies",
+    category: "Film",
     definition:"Costume refers to the clothing and accessories worn by actors or performers in a theatrical production, film, television show, or other forms of entertainment. Costumes play a significant role in bringing characters to life, establishing setting and time period, and enhancing storytelling."
   },
   
@@ -1374,7 +1475,7 @@ const levels = [
        require('../assets/Images/action/action4.jpg'),
      ],
     word: "ACTION",
-    category: "Movies",
+    category: "Film",
     definition: "Action film is a film genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, and frantic chases."
   },
   {
@@ -1385,7 +1486,7 @@ const levels = [
        require('../assets/Images/musical/musical4.jpg'),
      ],
     word: "MUSICAL",
-    category: "Movies",
+    category: "Film",
     definition:"Musical film is a film genre in which songs by the characters are interwoven into the narrative, sometimes accompanied by dancing. The songs usually advance the plot or develop the film's characters, but in some cases, they serve merely as breaks in the storyline, often as elaborate production numbers"
   },
   {
@@ -1439,6 +1540,31 @@ const levels = [
    category: "Dance",
    definition:"Tango, is a ballroom dance of Latin American origin in ²/₄ time with a basic pattern of step-step-step-step-close and characterized by long pauses and stylized body positions."
  },
+
+ {
+  images: [
+     require('../assets/Images/twerk/twerk1.jpeg'),
+     require('../assets/Images/twerk/twerk2.jpeg'),
+     require('../assets/Images/twerk/twerk3.jpeg'),
+     require('../assets/Images/twerk/twerk4.jpeg'),
+   ],
+  word: "TWERK",
+  category: "Dance",
+  definition:"Twerking is a dance move characterized by rapid, rhythmic movements of the hips and buttocks. It involves thrusting the hips forward and backward in a shaking or bouncing motion, often in a squatting position. Twerking originated in African American communities in the southern United States and gained widespread popularity in the 2000s, particularly in hip-hop and pop music culture. It is often performed as a form of self-expression, celebration, or social interaction, and has become a prominent feature in dance routines, music videos, and popular culture."
+},
+
+ {
+  images: [
+     require('../assets/Images/split/split1.jpeg'),
+     require('../assets/Images/split/split2.jpeg'),
+     require('../assets/Images/split/split3.jpeg'),
+     require('../assets/Images/split/split4.jpeg'),
+   ],
+  word: "SPLIT",
+  category: "Dance",
+  definition:"A split dance involves a movement where a dancer stretches their legs apart in opposite directions, often while maintaining an upright or controlled position. It showcases flexibility, balance, and strength, requiring dancers to extend their legs either to the front and back (front split), to the sides (side split), or in a straight line with the body between them (center split). Splits are commonly used in dance as a display of skill and grace, adding visual interest and dynamic range to choreography."
+},
+
 
  {
   images: [
