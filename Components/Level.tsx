@@ -1613,6 +1613,8 @@ const levels = [
     definition:"The moonwalk, or backslide, is a popping dance move in which the performer glides backwards but their body actions suggest forward motion. It became popular around the world when Michael Jackson performed the move during the performance of Billie Jean on Motown 25: Yesterday, Today, Forever, which was broadcast in 1983. He included the moonwalk in tours and live performances."
   },
 
+  
+
   {
     images: [
        require('../assets/Images/chapel/chapel1.jpg'),
@@ -1624,6 +1626,21 @@ const levels = [
     category: "Religion",
     definition:"A chapel (from Latin: cappella) is a Christian place of prayer and worship that is usually relatively small. The term has several meanings. First, smaller spaces inside a church that have their own altar are often called chapels; the Lady chapel is a common type of these. Second, a chapel is a place of worship, sometimes interfaith, that is part of a building, complex, or vessel with some other main purpose, such as a school, college, hospital, palace or large aristocratic house, castle, barracks, prison, funeral home, cemetery, airport, or a military or commercial ship."
   },
+
+  {
+    images: [
+       require('../assets/Images/quran/quran1.jpeg'),
+       require('../assets/Images/quran/quran2.png'),
+       require('../assets/Images/quran/quran3.jpeg'),
+       require('../assets/Images/quran/quran4.jpeg'),
+     ], 
+    word: "QURAN",
+    category: "Religion",
+    definition:"The Quran is the central religious text of Islam, considered by Muslims to be a revelation from God (Allah). It is written in Arabic and is divided into chapters called Surahs, which are further divided into verses called Ayahs. The Quran covers a wide range of topics, including theology, morality, guidance for personal conduct, and laws governing social and religious practices. It is revered as the literal word of God and serves as the primary source of guidance for Muslims worldwide."
+  },
+
+
+
   {
     images: [
        require('../assets/Images/buddha/buddha1.jpg'),
@@ -1660,6 +1677,18 @@ const levels = [
    category: "Religion",
    definition: "A shrine is a sacred or holy space dedicated to a specific deity, ancestor, hero, martyr, saint, daemon, or similar figure of respect, wherein they are venerated or worshipped. Shrines often contain idols, relics, or other such objects associated with the figure being venerated."
  },
+
+ {
+  images: [
+     require('../assets/Images/mandala/mandala1.jpeg'),
+     require('../assets/Images/mandala/mandala2.jpeg'),
+     require('../assets/Images/mandala/mandala3.jpeg'),
+     require('../assets/Images/mandala/mandala4.jpeg'),
+   ],
+  word: "MANDALA",
+  category: "Religion",
+  definition: "A mandala is a geometric or symbolic design that represents the universe in Hinduism and Buddhism. It is often used as a tool for meditation and spiritual guidance. Mandalas typically feature intricate patterns arranged around a central point, representing the interconnectedness of all things and the balance between the inner and outer worlds. Creating or contemplating mandalas is believed to promote focus, relaxation, and a sense of harmony within oneself."
+},
 
  {
     images: [
@@ -1796,6 +1825,30 @@ const levels = [
     word: "WAGE",
     category: "Career",
     definition: "Wage refers to the monetary compensation or payment that an employer provides to an employee in exchange for the work or services they perform. Wages are typically calculated on an hourly, daily, weekly, or monthly basis, depending on the terms of the employment agreement and the prevailing labor laws and practices in a particular jurisdiction. Wages can vary widely depending on factors such as the nature of the job, the level of skill or experience required, the industry, geographic location, and prevailing market conditions. Some employees may receive a fixed hourly wage, while others may be paid a salary that is agreed upon for a set period of time, regardless of the number of hours worked."
+  },
+
+  {
+    images: [
+       require('../assets/Images/teamwork/teamwork1.jpeg'),
+       require('../assets/Images/teamwork/teamwork2.jpeg'),
+       require('../assets/Images/teamwork/teamwork3.jpeg'),
+       require('../assets/Images/teamwork/teamwork4.jpeg'),
+     ],
+    word: "TEAMWORK",
+    category: "Career",
+    definition: "Teamwork refers to the collaborative effort of a group of individuals working together towards a common goal or objective. It involves the coordination of individual skills, talents, and efforts to achieve shared outcomes. Effective teamwork requires communication, cooperation, mutual respect, and a willingness to support and rely on each other's contributions. It often leads to increased productivity, innovation, and success in achieving organizational objectives."
+  },
+
+  {
+    images: [
+       require('../assets/Images/resign/resign1.jpeg'),
+       require('../assets/Images/resign/resign2.jpeg'),
+       require('../assets/Images/resign/resign3.jpeg'),
+       require('../assets/Images/resign/resign4.jpeg'),
+     ],
+    word: "RESIGN",
+    category: "Career",
+    definition: "To resign means to formally announce one's intention to leave a job or position. This typically involves submitting a resignation letter to one's employer, indicating the date of departure and often providing reasons for the decision. Resigning from a job is usually done when an individual has found a new job opportunity, wishes to pursue further education, or is no longer satisfied with their current position. Resigning is considered a professional courtesy and allows both the employee and the employer to plan for the transition period."
   },
 
 
