@@ -34,7 +34,7 @@ const WrongImage = () => {
           source={require('../assets/wrongImg.png')}
           style={styles.imageStyle}
         />
-        <Text style={{color:'white', fontSize:27, textAlign:'center', fontWeight:'900', fontFamily:'serif', top:"15.5%"}}>Try Again!</Text>
+        <Text style={{color:'white', fontSize:27, textAlign:'center', fontWeight:'900', fontFamily:'serif', top:"18.5%"}}>Try Again!</Text>
       </Animated.View>
     );
   };

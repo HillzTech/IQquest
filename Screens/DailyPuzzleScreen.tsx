@@ -463,12 +463,14 @@ return(
       justifyContent: 'center',
       alignContent: 'center',
       flexWrap: 'wrap',
+      marginBottom:'40%',
+      marginTop:'50%',
       transform: [{ translateX }]
     }}>
       {Puzzle[currentPuzzle].images.map((imageSource, index) => (
         <Image key={index} source={imageSource} style={{
           width: '43%',
-          height: 160,
+          height: '480%',
           margin: 5,
           borderWidth: 3,
           borderColor: 'grey',
@@ -600,8 +602,8 @@ const styles = StyleSheet.create({
     
 
     imageStyle: {
-      width: 320,
-      height: 210,
+      width: 80,
+      height: 75,
       position: 'absolute',
       top: '35%', // Adjust this as needed
       left: '6%',
@@ -613,8 +615,8 @@ const styles = StyleSheet.create({
     },
 
     wrongImageStyle: {
-      width: 250,
-      height: 240,
+      width: 80,
+      height: 75,
       position: 'absolute',
       top: '35%', // Adjust this as needed
       left: '14%',

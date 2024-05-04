@@ -501,11 +501,11 @@ const handleNav = () => {
         setPendingScore(score + 5); // Increment score after animation
       }, 500);
       setTimeout(() => {
-         // Move the coin to the score area
+         // Move the iq to the iq area
         moveIq();
         playSound(iqSound);
       }, 1500);
-      const newProgress = progress + 0.5;
+      const newProgress = progress + 0.1;
     setProgress(newProgress); 
       // Move to the next level
       setTimeout(() => {
@@ -563,9 +563,6 @@ const handleNav = () => {
     navigation.navigate('CoinPurchase')
   }
 };
-
-
-
 
    
 return(
@@ -654,13 +651,14 @@ return(
       alignContent: 'center',
       flexWrap: 'wrap',
       marginTop: '17%',
-      marginBottom: '2%',
+      marginBottom: '84%',
+      top:'42%',
       transform: [{ translateX }]
     }}>
       {levels[currentLevel].images.map((imageSource, index) => (
         <Image key={index} source={imageSource} style={{
           width: '43%',
-          height: 160,
+          height: '480%',
           margin: 5,
           borderWidth: 3,
           borderColor: 'grey',
@@ -838,17 +836,17 @@ const styles = StyleSheet.create({
 
     iqContainer: {
       position: 'absolute',
-      top: '112%', 
+      top: '114%', 
       left: '21%', 
       marginLeft: '-10%', 
       zIndex: 1000, 
     },
 
     imageStyle: {
-      width: 320,
-      height: 210,
+      width: '80%',
+      height: '75%',
       position: 'absolute',
-      top: '35%', // Adjust this as needed
+      top: '35%', 
       left: '6%',
       right: 0,
       bottom: 0,
@@ -858,10 +856,10 @@ const styles = StyleSheet.create({
     },
 
     wrongImageStyle: {
-      width: 250,
-      height: 240,
+      width: '80%',
+      height: '75%',
       position: 'absolute',
-      top: '35%', // Adjust this as needed
+      top: '35%', 
       left: '14%',
       right: 0,
       bottom: 0,
