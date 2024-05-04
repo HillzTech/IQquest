@@ -891,7 +891,7 @@ const levels = [
 
   {
     images: [
-       require('../assets/Images/island/island1.png'),
+       require('../assets/Images/island/island1.jpg'),
        require('../assets/Images/island/island2.jpg'),
        require('../assets/Images/island/island3.jpg'),
        require('../assets/Images/island/island4.jpg'),
