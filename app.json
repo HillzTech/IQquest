@@ -16,12 +16,6 @@
       
     ],
       
-        "expo-media-library":
-        {
-          "photosPermission": "Allow $(expo-media-library) to access your photos.",
-          "savePhotosPermission": "Allow $(expo-media-library) to save photos.",
-          "isAccessMediaLocationEnabled": true
-        },
     
     "assetBundlePatterns": [
       "**/*"
