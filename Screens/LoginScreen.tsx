@@ -214,15 +214,15 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           
         )}
         {!userInfo && (
-          <View style={{ marginTop: '33%', backgroundColor:'#00007B', width:'95%', left:'2.5%', borderColor:"blue", borderWidth:2, borderRadius:20 , height:'76%'}}>
-            <ImageBackground source={require('../assets/cloudVector.png')} style={{width:200, height:209, left:'20%', bottom:'17%'}}/>
-            <Text style={{ color: "white", fontSize: 15, textAlign: "center", bottom:'23%', paddingHorizontal:'6%' }}>Sign in and save your game progress!{'\n'} You can then access your score on other devices</Text>
-            <ImageBackground source={require('../assets/adaptive-icon.png')} style={{width:250, height:259, left:'13%', bottom:'25%'}}/>
+          <View style={{ marginTop: '33%', backgroundColor:'#00007B', width:'95%', left:'2.5%', borderColor:"blue", borderWidth:2, borderRadius:20 , height:'73%'}}>
+            <ImageBackground source={require('../assets/cloudVector.png')} style={{width:230, height:170, left:'16%', bottom:'19%'}}/>
+            <Text style={{ color: "white", fontSize: 15, textAlign: "center", bottom:'18%', paddingHorizontal:'6%' }}>Sign in and save your game progress!{'\n'} You can then access your score on other devices</Text>
+            <ImageBackground source={require('../assets/adaptive-icon.png')} style={{width:250, height:259, left:'13%', bottom:'20%'}}/>
             <GoogleSigninButton
               size={GoogleSigninButton.Size.Wide}
               color={GoogleSigninButton.Color.Dark}
               onPress={signin}
-              style={{ left: '3.9%', bottom:'21%', height:56}}
+              style={{ left: '3.9%', bottom:'19%', height:56}}
             />
           </View>
         )}

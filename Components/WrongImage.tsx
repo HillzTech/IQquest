@@ -43,10 +43,10 @@ const WrongImage = () => {
 const styles = StyleSheet.create({
     imageContainer: {
         position: 'absolute',
-        top: '6%',
+        top: '2%',
         left: '4%',
         right: 0,
-        bottom: 0,
+        bottom: '3%',
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 999,

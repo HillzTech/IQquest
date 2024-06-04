@@ -1,4 +1,4 @@
-rootProject.name = 'IQquest'
+rootProject.name = 'IQ Quest'
 
 dependencyResolutionManagement {
   versionCatalogs {

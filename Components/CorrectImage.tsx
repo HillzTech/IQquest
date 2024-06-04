@@ -1,4 +1,3 @@
-
 import React, { useEffect,  useRef } from 'react';
 import { Animated, ImageBackground, StyleSheet, Text } from 'react-native';
 
@@ -43,10 +42,10 @@ const CorrectImage = () => {
 const styles = StyleSheet.create({
     imageContainer: {
         position: 'absolute',
-        top: '6%',
+        top: '3%',
         left: '4%',
         right: 0,
-        bottom: 0,
+        bottom: '2%',
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 999,

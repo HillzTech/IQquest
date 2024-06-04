@@ -195,7 +195,7 @@ const rewardEventListener = rewarded.addAdEventListener(RewardedAdEventType.EARN
 
       
       <View style={{top:'6.7%'}}>
-      <ImageBackground source={require('../assets/Images/coin.png')} style={{width:26, height: 26, top:'50%', left:'40%'}}/>
+      <ImageBackground source={require('../assets/Images/coin.png')} style={{width:26, height: 26, top:'50%', left:'44%'}}/>
 
         <Text style={{color:'white', textAlign:'center', fontSize:20, left:'3.3%', fontStyle:'italic'}}>{score}</Text>
         
