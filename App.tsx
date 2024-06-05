@@ -10,23 +10,21 @@ import DailyPuzzleScreen from './Screens/DailyPuzzleScreen';
 import SplashScreen from './Screens/SplashScreen';
 import 'expo-dev-client';
 import { SoundProvider } from './SoundContext';
-
-import Purchases, { PurchasesConfiguration}   from 'react-native-purchases';
-
-// Initialize Purchases SDK
-const purchasesConfig: PurchasesConfiguration = {
-  apiKey: 'your_api_key',
-};
+import registerNNPushToken from 'native-notify';
+import  Purchases  from 'react-native-purchases';
 
 
 const Stack = createStackNavigator();
 
 
 const App: React.FC = () => {
-
+ React.useEffect(() => {
+    // Initialize Purchases SDK
+    Purchases.setLogLevel(Purchases.LOG_LEVEL.DEBUG); // Set log level to debug
+    Purchases.configure({ apiKey: 'YOUR_REVENUECAT_API_KEY' });
+  }, []);
+  
  
-  
-  
   return (
     
     <NavigationContainer>
