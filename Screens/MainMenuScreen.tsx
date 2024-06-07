@@ -185,13 +185,13 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
         <Animation />
      
         <View>
+        
+
+        <TouchableOpacity onPress={handlePlay} style={{ top: '-100%', width:100, left:'11%'}}>
         <ImageBackground 
         source={require('../assets/Images/playImg.png')}
-        style={{width:250, height:190, flexDirection: 'row', justifyContent:'center', alignContent:"center", marginLeft:'14%', marginTop: "-44%"}}
+        style={{width:270, height:120, flexDirection: 'row', justifyContent:'center', alignContent:"center"}}
         />
-
-        <TouchableOpacity onPress={handlePlay} style={{ top: '-133%', width:100, left:'36%'}}>
-        <StrokedText text="Play" strokeColor="black" strokeWidth={2} fontSize={33} />
       </TouchableOpacity>
        </View>
          

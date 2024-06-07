@@ -113,7 +113,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
 
   const handlePurchaseProduct1 = async () => {
     try {
-      const result = await purchaseProduct('IQquest_score_1000');
+      const result = await purchaseProduct('iqquest_score_1000');
       Alert.alert('Purchase successful', `Product: ${result.productIdentifier}`);
       AsyncStorage.setItem('score', score.toString());
       setPendingScore(score + 1000);
@@ -126,7 +126,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
 
   const handlePurchaseProduct2 = async () => {
     try {
-      const result = await purchaseProduct('IQquest_score_5000');
+      const result = await purchaseProduct('iqquest_score_5000');
       Alert.alert('Purchase successful', `Product: ${result.productIdentifier}`);
       AsyncStorage.setItem('score', score.toString());
       setPendingScore(score + 5000);
@@ -139,7 +139,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
 
   const handlePurchaseProduct3 = async () => {
     try {
-      const result = await purchaseProduct('IQquest_score_10000');
+      const result = await purchaseProduct('iqquest_score_10000');
       Alert.alert('Purchase successful', `Product: ${result.productIdentifier}`);
       AsyncStorage.setItem('score', score.toString());
       setPendingScore(score + 10000);
@@ -161,10 +161,13 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
 
   return (
     <Background>
-      <View style={{ top: '6.7%' }}>
-        <ImageBackground source={require('../assets/Images/coin.png')} style={{ width: 26, height: 26, top: '50%', left: '43%' }} />
+        <View>
+        <ImageBackground source={require('../assets/Images/newcoin.png')} style={{ width: 90, height: 90, top: '51%', left: '37.7%' }} />
+      
+      
+      <Text style={{ color: 'white', textAlign: 'center', fontSize: 22, fontWeight: '900' }}>{score}</Text>
       </View>
-      <Text style={{ color: 'white', textAlign: 'center', fontSize: 20, left: '3.3%', fontStyle: 'italic', fontWeight: '800', top:'5%' }}>{score}</Text>
+      
 
       <View style={{ flex: 1, justifyContent: 'center', alignContent: 'center', left: '13%', top: '2%' }}>
         <TouchableOpacity onPress={handleShowAd}>
@@ -172,16 +175,16 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
         </TouchableOpacity>
       </View>
 
-      <View style={{ top: '-20%' }}>
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignContent: 'center', gap: 2 }}>
+      <View style={{ top: '-13%' }}>
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignContent: 'center', gap: 4 }}>
           <TouchableOpacity onPress={handlePurchaseProduct1}>
-            <ImageBackground source={require('../assets/Images/1000.png')} style={{ width: 170, height: 180 }} />
+            <ImageBackground source={require('../assets/Images/1000.png')} style={{ width: 170, height: 200 }} />
           </TouchableOpacity>
           <TouchableOpacity onPress={handlePurchaseProduct2}>
-            <ImageBackground source={require('../assets/Images/5000.png')} style={{ width: 170, height: 180 }} />
+            <ImageBackground source={require('../assets/Images/5000.png')} style={{ width: 170, height: 200 }} />
           </TouchableOpacity>
           <TouchableOpacity onPress={handlePurchaseProduct3}>
-            <ImageBackground source={require('../assets/Images/10000.png')} style={{ width: 170, height: 180, bottom:'20%' }} />
+            <ImageBackground source={require('../assets/Images/10000.png')} style={{ width: 170, height: 200, bottom:'27%' }} />
           </TouchableOpacity>
         </View>
       </View>

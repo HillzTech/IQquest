@@ -436,7 +436,7 @@ useEffect(() => {
  
 
 const handleNav = () => {
-  navigation.navigate('CoinPurchase', { score, currentLevel });
+  navigation.push('CoinPurchase', { score, currentLevel });
   playSound(helpSound)
  }
 
@@ -497,7 +497,6 @@ const handleNav = () => {
       }, 3900);
       setTimeout(() => {
         moveCoin(); // Move the coin to the score area
-      
         setPendingScore(score + 5); // Increment score after animation
       }, 500);
       setTimeout(() => {
@@ -560,7 +559,7 @@ const handleNav = () => {
       setLetterBox(letterBox.filter((letter) => letter !== randomLetter));
     }
   } else {
-    navigation.navigate('CoinPurchase')
+    navigation.push('CoinPurchase')
   }
 };
 
