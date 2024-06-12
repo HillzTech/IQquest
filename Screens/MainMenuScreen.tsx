@@ -171,7 +171,7 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
         <Text style={{position:'relative',top: '-88%', textAlign: 'center', color: '#fff', fontWeight: "700", fontSize: 16}}>{currentLevel}</Text>
      </View>
      
-     <View style={{flex: 1, justifyContent:"center", alignContent:'center', left:'24%', bottom:'4%'}}>
+     <View style={{flex: 1, justifyContent:"center", alignItems:'center', bottom:'4%'}}>
       
       
       <TouchableOpacity onPress={handleDailyPuzzlePress}>
@@ -181,14 +181,14 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
       
      
     </View>
-        <View style={{top:'90%', marginTop:'7%'}}>
+        <View style={{top:'90%', marginTop:'8%'}}>
         <Animation />
         </View>
         
      
         
         
-         <View style={{flex:1, justifyContent:'center', alignContent:"center", left:'12%', top:'120%'}}>
+         <View style={{flex:1, justifyContent:'center', alignItems:"center", top:'120%'}}>
         <TouchableOpacity onPress={handlePlay} >
         <ImageBackground 
         source={require('../assets/Images/playImg.png')}

@@ -202,7 +202,7 @@ useEffect(() => {
   useEffect(() => {
     Animated.timing(translateX, {
       toValue: 0,
-      duration: 600, // Adjust duration as needed
+      duration: 1000, // Adjust duration as needed
       useNativeDriver: true,
     }).start();
   }, [currentLevel]);
