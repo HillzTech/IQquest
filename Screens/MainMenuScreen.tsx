@@ -171,11 +171,11 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
         <Text style={{position:'relative',top: '-84%', textAlign: 'center', color: '#fff', fontFamily:'Poppins-Bold', fontSize: 16}}>{currentLevel}</Text>
      </View>
      
-     <View style={{flex: 1, justifyContent:"center", alignItems:'center', bottom:'4%'}}>
+     <View style={{flex: 1, justifyContent:"center", alignItems:'center', top:'9%'}}>
       
       
       <TouchableOpacity onPress={handleDailyPuzzlePress}>
-        <ImageBackground source={require('../assets/dailyimg.png')} style={{width:180, height:150}}/>
+        <ImageBackground source={require('../assets/dailyimge.png')} style={{width:188, height:70}}/>
 
       </TouchableOpacity>
       
@@ -191,8 +191,8 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
          <View style={{flex:1, justifyContent:'center', alignItems:"center", top:'120%'}}>
         <TouchableOpacity onPress={handlePlay} >
         <ImageBackground 
-        source={require('../assets/Images/playImg.png')}
-        style={{width:270, height:120, flexDirection: 'row', justifyContent:'center', alignContent:"center"}}
+        source={require('../assets/playimge.png')}
+        style={{width:265, height:120, flexDirection: 'row', justifyContent:'center', alignContent:"center"}}
         />
       </TouchableOpacity>
       

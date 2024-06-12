@@ -154,7 +154,7 @@ const [iqSound, setIqSound] = useState<Sound | null>(null);
       const asset = await MediaLibrary.createAssetAsync(screenshotUri);
       if (asset) {
         // Define the message with the link
-        const link = 'https://hillztech.com.ng'; // Your game link
+        const link = 'https://play.google.com/store/apps/details?id=com.harrison.ugwu.IQquest'; // Your game link
         const message = `What do you think the word is? ${link}`;
   
         // Share the screenshot with the message as caption using react-native-share
@@ -318,7 +318,7 @@ useEffect(() => {
   
   const moveCoin = () => {
     Animated.timing(coinAnimation, {
-      toValue: { x: 0, y: -660 }, // Adjust the value to move the coin to the score area
+      toValue: { x: 0, y: -640 }, // Adjust the value to move the coin to the score area
       duration: 1300, // Adjust the duration as needed
       easing: Easing.linear,
       useNativeDriver: false,
@@ -524,8 +524,8 @@ const handleNav = () => {
       playSound(incorrectSound);
       setShowWrongImage(true);
       setTimeout(() => {
-        setShowWrongImage(false); // Hide the correct image after 2 seconds
-      }, 2000);
+        setShowWrongImage(false); // Hide the wrong image after 2 seconds
+      }, 1300);
       
     }
   };
