@@ -129,7 +129,7 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
     <Background>
       <StatusBar />
     <SafeAreaView>
-      <ScrollView style={{paddingHorizontal:7}}>
+      
        <View style={{flexDirection: 'row', justifyContent:"flex-end", marginVertical:14,right:'1%'}}>
       
 
@@ -171,32 +171,35 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
         <Text style={{position:'relative',top: '-88%', textAlign: 'center', color: '#fff', fontWeight: "700", fontSize: 16}}>{currentLevel}</Text>
      </View>
      
-     <View style={{width:160,left:'28%', top:'3%', marginTop:'5%'}}>
+     <View style={{flex: 1, justifyContent:"center", alignContent:'center', left:'24%', bottom:'4%'}}>
       
-    
-      <TouchableOpacity onPress={handleDailyPuzzlePress} style={{backgroundColor:'green', padding:15, borderRadius:10, borderBottomWidth:1, borderColor:'#4CAF50'}}>
-        <Text style={{textAlign:'center', color:'yellow', fontSize:23, fontWeight:'700'}}>Daily Puzzle</Text>
+      
+      <TouchableOpacity onPress={handleDailyPuzzlePress}>
+        <ImageBackground source={require('../assets/dailyimg.png')} style={{width:180, height:150}}/>
 
       </TouchableOpacity>
       
      
     </View>
- 
+        <View style={{top:'90%', marginTop:'7%'}}>
         <Animation />
-     
-        <View>
+        </View>
         
-
-        <TouchableOpacity onPress={handlePlay} style={{ top: '-100%', width:100, left:'11%'}}>
+     
+        
+        
+         <View style={{flex:1, justifyContent:'center', alignContent:"center", left:'12%', top:'120%'}}>
+        <TouchableOpacity onPress={handlePlay} >
         <ImageBackground 
         source={require('../assets/Images/playImg.png')}
         style={{width:270, height:120, flexDirection: 'row', justifyContent:'center', alignContent:"center"}}
         />
       </TouchableOpacity>
+      
        </View>
          
     
-      </ScrollView>
+      
       
 
     </SafeAreaView>

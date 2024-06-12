@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { BackHandler, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View, Platform } from 'react-native';
+import { BackHandler, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View, Platform, SafeAreaView } from 'react-native';
 import Background from '../Components/Background';
 import Sound from 'react-native-sound';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -567,6 +567,7 @@ const handleNav = () => {
 return(
 
 <Background>
+<SafeAreaView style={{ flex: 1 }}>
 <StatusBar />
    <View style={{backgroundColor:'black', height:'9%', flexDirection: 'row', justifyContent:'space-between', alignContent:'space-between'}}>
       <View>
@@ -778,7 +779,7 @@ return(
       )}
       
 
-     
+     </SafeAreaView>
    </Background>
 
 )
