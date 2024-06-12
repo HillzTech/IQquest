@@ -612,19 +612,19 @@ return(
                
          />
 
-         <Text style={{position:'relative', textAlign: 'center', color: '#fff', fontWeight: "700", fontSize: 17, top:-20, right:3}}>{currentLevel}</Text>
+         <Text style={{fontFamily: 'Poppins-Bold', position:'relative', textAlign: 'center', color: '#fff', fontSize: 17, top:-20, right:3}}>{currentLevel}</Text>
      
       </View>
 
    <View style={{ flexDirection:"row",justifyContent:'space-around', alignContent:'flex-start', top:43, right:10, borderColor:'#859410', borderWidth:1, borderRadius:10, marginBottom:50, paddingHorizontal:5, gap:1}}>
    <ImageBackground
             source={require('../assets/Images/coins.png')} 
-            style={{width: 20, height: 20}}
+            style={{width: 15, height: 17, top:'5%'}}
                
          /> 
         <TouchableOpacity onPress={handleNav} >
         
-         <Text style={{ fontWeight: '600', color: "white", fontSize: 16, fontStyle: 'italic' }}>{score}<Ionicons name="add-circle" size={11} color="green" /></Text>
+         <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 14, bottom:'2%'}}>{score}<Ionicons name="add-circle" size={10} color="green" /></Text>
 
 
         </TouchableOpacity>
@@ -638,10 +638,10 @@ return(
      
    </View> 
      <View ref={viewShotRef} collapsable={false}>
-      <View style={{flexDirection:'row', justifyContent:'center', alignContent:'center',top:'15%', marginBottom:17}}>
-         <Text style={{color:'#fffff1', fontSize: 17, fontWeight:'200',borderColor:'black', borderWidth: 1, backgroundColor:'black', paddingHorizontal:2, borderTopLeftRadius:8, borderBottomLeftRadius:8, paddingLeft:8}}>Category</Text>
+      <View style={{flexDirection:'row', justifyContent:'center', alignContent:'center',top:'15%', marginBottom:13}}>
+         <Text style={{color:'#fffff1', fontSize: 16, fontFamily:'Poppins-Regular',borderColor:'black', borderWidth: 1, backgroundColor:'black', paddingHorizontal:2, borderTopLeftRadius:8, borderBottomLeftRadius:8, paddingLeft:8}}>Category</Text>
       
-         <Text style={{color:'white', fontSize: 18, fontStyle:'italic',fontWeight:'500', borderColor:'black', borderWidth: 2, paddingHorizontal:9,borderTopRightRadius:8, borderBottomRightRadius:8, backgroundColor:'grey'}}>{levels[currentLevel].category}</Text>
+         <Text style={{color:'white', fontSize: 18, fontFamily:'Poppins-BoldItalic',borderColor:'black', borderWidth: 2, paddingHorizontal:9,borderTopRightRadius:8, borderBottomRightRadius:8, backgroundColor:'grey'}}>{levels[currentLevel].category}</Text>
    
       </View>
       
@@ -714,7 +714,7 @@ return(
       {currentGuess.map((letter, index) => (
         <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index) }>
           <View style={{ padding: 5, margin: 2,paddingHorizontal:'3.5%', backgroundColor:'black', borderRadius:5, borderWidth:1, borderColor:'white'}}>
-            <Text style={{fontSize:21, fontWeight:'900', color:'white', textAlign:'center'}}>{letter}</Text>
+            <Text style={{fontSize:21, fontFamily: 'Poppins-ExtraBold', color:'white', textAlign:'center'}}>{letter}</Text>
           </View>
         </TouchableOpacity>
       ))}
@@ -731,7 +731,7 @@ return(
             onPress={() => handleLetterBoxPress(index)}
             style={styles.box}
           >
-            <Text style={{fontSize:28,fontWeight:'900',textAlign:'center'}}>{letter}</Text>
+            <Text style={{fontSize:28,fontFamily: 'Poppins-ExtraBold',textAlign:'center'}}>{letter}</Text>
           </TouchableOpacity>
         ))}
 
@@ -756,8 +756,8 @@ return(
       
       <View style={{backgroundColor:'#006400',bottom:'1.3%', width:'44%', left:'28%', borderRadius:10, borderWidth:1, borderBottomColor:'green', height:'4.8%', position:"absolute"}}>
         <TouchableOpacity onPress={takeScreenshot} style={{position:'absolute'}}>
-        <Text style={{color:'white',left:'11%',  paddingVertical:5, fontSize:17, fontWeight:'700'}}>Ask A Friend</Text>
-        <ImageBackground source={require('../assets/share.png')} style={{width:28, height:28, bottom:'50%', left:'115%'}}/>
+        <Text style={{color:'white',left:'11%',  paddingVertical:5, fontSize:17, fontFamily: 'Poppins-ExtraBold'}}>Ask A Friend</Text>
+        <ImageBackground source={require('../assets/share.png')} style={{width:28, height:28, bottom:'53%', left:'115%'}}/>
         </TouchableOpacity>
        
       </View>
@@ -771,7 +771,7 @@ return(
           </Animated.View>
 
           <Animated.View style={[styles.guess, wobbleStyle]}>
-            <Text style={{color:'white', fontSize:15 }}>Guess The Word</Text>
+            <Text style={{color:'white', fontSize:15, fontFamily: 'Poppins-Bold' }}>Guess The Word</Text>
           </Animated.View>
         </TouchableOpacity>
 
@@ -806,7 +806,7 @@ const styles = StyleSheet.create({
     box: {
       borderWidth: 2,
       borderColor: 'black',
-      padding: 5,
+      padding: 1,
       margin: 1,
       borderRadius: 6,
       backgroundColor: 'white',
@@ -825,10 +825,8 @@ const styles = StyleSheet.create({
       zIndex: 1000, 
     },
     coinText: {
-      fontWeight: '600',
       color: 'white',
       fontSize: 17,
-      fontStyle: 'italic',
       position: 'absolute',
       top: 0,
       left: '-10%',

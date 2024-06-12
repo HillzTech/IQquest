@@ -410,15 +410,15 @@ return(
          </View>
          
 
-   <View style={{ flexDirection:"row",justifyContent:'space-around', alignContent:'flex-start', top:43, right:10, borderColor:'#859410', borderWidth:1, borderRadius:10, marginBottom:50, paddingHorizontal:5, gap:1}}>
+   <View style={{ flexDirection:"row",justifyContent:'space-around', alignContent:'flex-start', top:43, right:10, borderColor:'#859410', borderWidth:1, borderRadius:10, marginBottom:50, paddingHorizontal:7, gap:1}}>
    <ImageBackground
             source={require('../assets/Images/coins.png')} 
-            style={{width: 20, height: 20}}
+            style={{width: 15, height: 22}}
                
          /> 
         <TouchableOpacity onPress={handleNav} >
         
-         <Text style={{ fontWeight: '600', color: "white", fontSize: 16, fontStyle: 'italic' }}>{score}<Ionicons name="add-circle" size={11} color="green" /></Text>
+         <Text style={{ fontFamily:'Poppins-Regular', color: "white", fontSize: 16}}>{score}<Ionicons name="add-circle" size={11} color="green" /></Text>
 
 
         </TouchableOpacity>
@@ -438,7 +438,7 @@ return(
           
           <ImageBackground source={require('../assets/adaptive-icon.png')} style={{width:300, height:300, left:'5%', bottom:30}}/>
 
-          <Text style={{color:'white', padding:'7%', textAlign:'center', fontSize:16, marginTop:-70}}> You have played your puzzle for the day!</Text>
+          <Text style={{fontFamily:'Poppins-Bold',color:'white', padding:'7%', textAlign:'center', fontSize:16, marginTop:-70}}> You have played your puzzle for the day!</Text>
           
         </View>
          
@@ -451,9 +451,9 @@ return(
  <View>
    <View style={{paddingHorizontal:'5%'}}>
 
-    <ImageBackground source={require('../assets/board.png')} style={{width:'100%', height:60, top:'10%'}} />
+    <ImageBackground source={require('../assets/board.png')} style={{width:'100%', height:60, top:'23%'}} />
    
-  <Text style={{color:'white', textAlign:'center', fontSize:17, bottom:'35%', fontWeight:'800', fontStyle:'italic', fontFamily:'srif'}}>{Puzzle[currentPuzzle].question}</Text>
+  <Text style={{fontFamily:'Poppins-BoldItalic',color:'white', textAlign:'center', fontSize:17, bottom:'20%'}}>{Puzzle[currentPuzzle].question}</Text>
  </View>
       
      
@@ -508,7 +508,7 @@ return(
       {currentGuess.map((letter, index) => (
         <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index) }>
           <View style={{ padding: 5, margin: 2,paddingHorizontal:'3.5%', backgroundColor:'black', borderRadius:5, borderWidth:1, borderColor:'white'}}>
-            <Text style={{fontSize:21, fontWeight:'900', color:'white', textAlign:'center'}}>{letter}</Text>
+            <Text style={{fontFamily:'Poppins-ExtraBold',fontSize:21,  color:'white', textAlign:'center'}}>{letter}</Text>
           </View>
         </TouchableOpacity>
       ))}
@@ -525,7 +525,7 @@ return(
             onPress={() => handleLetterBoxPress(index)}
             style={styles.box}
           >
-            <Text style={{fontSize:28,fontWeight:'900',textAlign:'center'}}>{letter}</Text>
+            <Text style={{fontFamily:'Poppins-ExtraBold',fontSize:28,textAlign:'center'}}>{letter}</Text>
           </TouchableOpacity>
         ))}
 
@@ -571,7 +571,7 @@ const styles = StyleSheet.create({
     box: {
       borderWidth: 2,
       borderColor: 'black',
-      padding: 5,
+      padding: 2,
       margin: 1,
       borderRadius: 6,
       backgroundColor: 'white',
@@ -597,6 +597,7 @@ const styles = StyleSheet.create({
       position: 'absolute',
       top: 0,
       left: '-10%',
+      fontFamily:'Poppins-Bold',
     },
 
     

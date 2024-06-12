@@ -133,15 +133,15 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
        <View style={{flexDirection: 'row', justifyContent:"flex-end", marginVertical:14,right:'1%'}}>
       
 
-       <View style={{flexDirection:'row',justifyContent:'space-around', alignItems:'flex-start', top:22, borderWidth:1, borderColor:'#859410', borderRadius:10, paddingHorizontal:2, gap:1, backgroundColor:'black' }}>
+       <View style={{flexDirection:'row',justifyContent:'space-around', alignItems:'flex-start', top:22, borderWidth:1, borderColor:'#859410', borderRadius:10, paddingHorizontal:4, gap:1, backgroundColor:'black' }}>
        <ImageBackground
           source={require('../assets/Images/coins.png')} 
-          style={{width: 22, height: 20}}
+          style={{width: 15, height: 17, top:'7%'}}
           
         />
        <TouchableOpacity onPress={handleNav} >
        
-        <Text style={{ fontWeight: 'bold', color: "white", fontSize: 16, fontStyle: 'italic' }}>{score}<Ionicons name="add-circle" size={15} color="green" /></Text>
+        <Text style={{ fontFamily: 'Poppins-Regular',color: "white", fontSize: 14, top:'4%'}}>{score}<Ionicons name="add-circle" size={13} color="green" /></Text>
         
         
        </TouchableOpacity>
@@ -168,7 +168,7 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
           style={{width: 100, height: 79, position:'relative', top: '-35%', left: '36.5%'}}
           
         />
-        <Text style={{position:'relative',top: '-88%', textAlign: 'center', color: '#fff', fontWeight: "700", fontSize: 16}}>{currentLevel}</Text>
+        <Text style={{position:'relative',top: '-84%', textAlign: 'center', color: '#fff', fontFamily:'Poppins-Bold', fontSize: 16}}>{currentLevel}</Text>
      </View>
      
      <View style={{flex: 1, justifyContent:"center", alignItems:'center', bottom:'4%'}}>
