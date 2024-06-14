@@ -67,12 +67,14 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
               <Ionicons name="search" size={21} color="white" style={{ right: 30 }} onPress={searchDictionary} />
             </View>
 
-            <View style={{ flexDirection: 'column', justifyContent: 'center', alignContent: 'center', padding: 3, top: '3%', width: '90%', borderRadius: 20 }}>
+            <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: 3, top: '3%', width: '90%', borderRadius: 20 }}>
               {images.length > 0 && (
-                <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginTop: '3%', left: '9%' }}>
+                <View style={{flex:1, justifyContent:'center', alignItems:'center', left:'15%'}}> 
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginTop: '3%' }}>
                   {images.map((image, index) => (
                     <Image key={index} source={image} style={{ width: 110, height: 110, margin: 5 }} />
                   ))}
+                  </View>
                 </View>
               )}
 
@@ -83,7 +85,7 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                   </Text>
                 ) : null}
                 {error ? (
-                  <Text style={{ marginTop: 19, fontSize: 20, color: 'red' }}>
+                  <Text style={{ marginTop: 19, fontSize: 20, color: 'red', fontFamily: 'Regular', textAlign:'center' }}>
                     {error}
                   </Text>
                 ) : null}

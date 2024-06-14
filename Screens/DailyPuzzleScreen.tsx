@@ -431,17 +431,20 @@ return(
    </View>
 
     
-   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+   <View style={{ }}>
+    
       {loading ? (
-        <View style={{ backgroundColor:'#00007B', width:'95%', borderColor:"blue", borderWidth:2, borderRadius:20}}>
-          <Image source={LoadingImage} style={{width:240, height: 240, left:'17%'}}/>
+        <View style={{ marginTop: '21%', backgroundColor:'#00007B', width:'97%', borderColor:"blue", borderWidth:2, borderRadius:20 , height:'79%', left:'1%'}}>
+            <View style={{flex:1, justifyContent:'center', alignItems:'center'}}> 
           
-          <ImageBackground source={require('../assets/adaptive-icon.png')} style={{width:300, height:300, left:'5%', bottom:30}}/>
+          <Image source={LoadingImage} style={{width:240, height: 240}}/>
+          
+          <ImageBackground source={require('../assets/adaptive-icon.png')} style={{width:300, height:300, bottom:30}}/>
 
           <Text style={{fontFamily:'Poppins-Bold',color:'white', padding:'7%', textAlign:'center', fontSize:16, marginTop:-70}}> You have played your puzzle for the day!</Text>
           
         </View>
-         
+         </View>
         
       
       ) : (

@@ -163,15 +163,18 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
       </TouchableOpacity>
     </View>
     <View style={{marginTop:-5}}>
+    
+    <View style={{flex:1, justifyContent:'center', alignItems:'center'}}> 
      <ImageBackground
           source={require('../assets/Images/LevelImg.png')} 
-          style={{width: 100, height: 79, position:'relative', top: '-35%', left: '36.5%'}}
+          style={{width: 100, height: 79, top: '-35%'}}
           
         />
-        <Text style={{position:'relative',top: '-84%', textAlign: 'center', color: '#fff', fontFamily:'Poppins-Bold', fontSize: 16}}>{currentLevel}</Text>
+        </View>
+        <Text style={{position:'relative',top: '-50%', textAlign: 'center', color: '#fff', fontFamily:'Poppins-Bold', fontSize: 16}}>{currentLevel}</Text>
      </View>
      
-     <View style={{flex: 1, justifyContent:"center", alignItems:'center', top:'9%'}}>
+     <View style={{flex: 1, justifyContent:"center", alignItems:'center', marginTop:'20%', top:'7%'}}>
       
       
       <TouchableOpacity onPress={handleDailyPuzzlePress}>

@@ -652,13 +652,13 @@ return(
       flexWrap: 'wrap',
       marginTop: '17%',
       marginBottom: '84%',
-      top:'42%',
+      top:'38%',
       transform: [{ translateX }]
     }}>
       {levels[currentLevel].images.map((imageSource, index) => (
         <Image key={index} source={imageSource} style={{
           width: '43%',
-          height: '480%',
+          height: '470%',
           margin: 5,
           borderWidth: 3,
           borderColor: 'grey',
@@ -709,11 +709,11 @@ return(
     
        
 
-    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', marginTop:'9%'}}>
+    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', marginTop:'1%'}}>
       {/* Guess boxes */}
       {currentGuess.map((letter, index) => (
         <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index) }>
-          <View style={{ padding: 5, margin: 2,paddingHorizontal:'3.5%', backgroundColor:'black', borderRadius:5, borderWidth:1, borderColor:'white'}}>
+          <View style={{ padding:5, margin: 2,paddingHorizontal:'3.5%', backgroundColor:'black', borderRadius:5, borderWidth:1, borderColor:'white'}}>
             <Text style={{fontSize:21, fontFamily: 'Poppins-ExtraBold', color:'white', textAlign:'center'}}>{letter}</Text>
           </View>
         </TouchableOpacity>
@@ -723,7 +723,7 @@ return(
     
 
       {/* Render letter box */}
-      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"90%"}}>
+      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"90%", bottom:'1.5%'}}>
       <View style={styles.container}>
         {letterBox.map((letter, index) => (
           <TouchableOpacity
@@ -795,7 +795,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       flexWrap: 'wrap',
       justifyContent: 'center',
-      marginVertical: '10%',
+      marginVertical: '8%',
       width: '90%',
       marginLeft: '7.5%',
       marginRight:1
@@ -806,7 +806,6 @@ const styles = StyleSheet.create({
     box: {
       borderWidth: 2,
       borderColor: 'black',
-      padding: 1,
       margin: 1,
       borderRadius: 6,
       backgroundColor: 'white',
@@ -834,7 +833,7 @@ const styles = StyleSheet.create({
 
     iqContainer: {
       position: 'absolute',
-      top: '114%', 
+      top: '123%', 
       left: '21%', 
       marginLeft: '-10%', 
       zIndex: 1000, 

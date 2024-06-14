@@ -188,24 +188,28 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   return (
     <Background>
       <View>
-        <Text>{error}</Text>
+        <Text style={{textAlign:'center', color:'white', fontFamily:'Poppins-Regular', fontSize:10, top:'4%'}}>{error}</Text>
         {userInfo && (
           <View style={{top:'32%', backgroundColor:'#00007B', width:'95%', left:'2.5%', borderColor:"blue", borderWidth:2, borderRadius:20 }}>
           <ImageBackground
           source={require('../assets/comeback.png') } style={{width:200, height:200, left:'20%', bottom:'20%'}}
         
         />
-          <Text style={{ color: 'white', textAlign: 'center', fontSize: 23, marginTop:"-25%" , fontWeight:'900'}}>Done, Progress saved!</Text>
-          <Text style={{ color: 'yellow', textAlign: 'center', fontSize: 17,  fontWeight:'300', fontStyle:'italic'}}>Synchronized via Google</Text>
+          <Text style={{ color: 'white', textAlign: 'center', fontSize: 23, marginTop:"-25%" , fontFamily:'Poppins-ExtraBold'}}>Done, Progress saved!</Text>
+          <Text style={{ color: 'yellow', textAlign: 'center', fontSize: 17, fontFamily:'Poppins-BoldItalic'}}>Synchronized via Google</Text>
           <>
-          <ImageBackground source={require('../assets/Images/coin.png')} style={{width:33, height:33, left:'40%', top:'3%'}}/> 
-          <Text style={{ fontSize:20, color:'white', fontWeight:"700", left:'50%', bottom:'3%'}}>{score}</Text>
+          <View style={{flex:1, justifyContent:'center', alignItems:'center', top:'23%'}}>
+          <ImageBackground source={require('../assets/Images/coin.png')} style={{width:27, height:27, right:'4%'}}/> 
+          </View>
+          
+          <Text style={{ fontSize:20, color:'white', fontFamily:'Poppins-Bold',textAlign:'center', left:'4%', top:'20%'}}>{score}</Text>
           </>
-          <>
-          <ImageBackground source={require('../assets/Images/LevelImg.png')} style={{width:90, height:72, left:'37.5%', bottom:'2%'}}/> 
-          <Text style={{ fontSize:14, color:'white', fontWeight:"700", textAlign:'center', bottom:'11%'}}>{currentLevel}</Text>
-          </>
-          <Text style={{color:"white",textAlign:'center', top:'18%'}}>Click save to continue</Text>
+          <View style={{flex:1, justifyContent:'center', alignItems:'center', top:'4%'}}>
+          <ImageBackground source={require('../assets/Images/LevelImg.png')} style={{width:90, height:72}}/> 
+          
+          </View>
+          <Text style={{ fontSize:16, color:'white', fontFamily:'Poppins-Bold', textAlign:'center', top:'1%'}}>{currentLevel}</Text>
+          <Text style={{color:"white",textAlign:'center', top:'18%', fontFamily:'Poppins-Regular', fontSize:11}}>Click save to continue</Text>
           <TouchableOpacity onPress={handleNext} style={{backgroundColor:'green', width:130, height:43, left:'30.7%', top:"19%", borderRadius:10, borderBottomColor:'yellow', borderWidth:1,marginBottom:"47%", paddingRight:20}}>
           <StrokedText text="Save" strokeColor="black" strokeWidth={2} fontSize={25} /><Ionicons name='cloud-upload' size={23} color={'white'} style={{left:'80%', bottom:'60%'}}/>
           </TouchableOpacity>
@@ -214,16 +218,18 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           
         )}
         {!userInfo && (
-          <View style={{ marginTop: '33%', backgroundColor:'#00007B', width:'95%', left:'2.5%', borderColor:"blue", borderWidth:2, borderRadius:20 , height:'73%'}}>
-            <ImageBackground source={require('../assets/cloudVector.png')} style={{width:230, height:170, left:'16%', bottom:'19%'}}/>
-            <Text style={{ color: "white", fontSize: 15, textAlign: "center", bottom:'18%', paddingHorizontal:'6%' }}>Sign in and save your game progress!{'\n'} You can then access your score on other devices</Text>
-            <ImageBackground source={require('../assets/adaptive-icon.png')} style={{width:250, height:259, left:'13%', bottom:'20%'}}/>
+          <View style={{ marginTop: '33%', backgroundColor:'#00007B', width:'97%',left:'1%', borderColor:"blue", borderWidth:2, borderRadius:20 , height:'73%'}}>
+            <View style={{flex:1, justifyContent:'center', alignItems:'center'}}> 
+            <ImageBackground source={require('../assets/cloudVector.png')} style={{width:230, height:170, bottom:'19%'}}/>
+            <Text style={{ color: "white", fontSize: 15, textAlign: "center", bottom:'18%', paddingHorizontal:'6%', fontFamily:'Poppins-Bold' }}>Sign in and save your game progress!{'\n'} You can then access your score on other devices</Text>
+            <ImageBackground source={require('../assets/adaptive-icon.png')} style={{width:250, height:259, bottom:'20%'}}/>
             <GoogleSigninButton
               size={GoogleSigninButton.Size.Wide}
               color={GoogleSigninButton.Color.Dark}
               onPress={signin}
-              style={{ left: '3.9%', bottom:'19%', height:56}}
+              style={{ bottom:'19%', height:56}}
             />
+            </View>
           </View>
         )}
       </View>
