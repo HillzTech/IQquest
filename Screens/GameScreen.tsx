@@ -557,6 +557,7 @@ const handleNav = () => {
       updatedGuess[emptyIndex] = randomLetter.toUpperCase();
       setCurrentGuess(updatedGuess);
       setLetterBox(letterBox.filter((letter) => letter !== randomLetter));
+      
     }
   } else {
     navigation.push('CoinPurchase')
@@ -658,7 +659,7 @@ return(
       {levels[currentLevel].images.map((imageSource, index) => (
         <Image key={index} source={imageSource} style={{
           width: '43%',
-          height: '470%',
+          height: '475%',
           margin: 5,
           borderWidth: 3,
           borderColor: 'grey',
@@ -709,7 +710,7 @@ return(
     
        
 
-    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', marginTop:'1%'}}>
+    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', marginTop:'2%'}}>
       {/* Guess boxes */}
       {currentGuess.map((letter, index) => (
         <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index) }>
@@ -723,7 +724,7 @@ return(
     
 
       {/* Render letter box */}
-      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"90%", bottom:'1.5%'}}>
+      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"90%", top:'2%'}}>
       <View style={styles.container}>
         {letterBox.map((letter, index) => (
           <TouchableOpacity
@@ -738,30 +739,38 @@ return(
         
       </View>
 
-      <View style={{position:'absolute', left:"90%"}}>
       
-      <TouchableOpacity onPress={openDrawer} style={{position:'absolute', top:'7%'}}>
+
+      
+          </View>
+
+          </View>
+         <View style={{position:'absolute', left:"79%", top:'74%'}}>
+      
+      <TouchableOpacity onPress={openDrawer} style={{position:'absolute'}}>
       <BackgroundBtn>
         <Text></Text>
       </BackgroundBtn>
   
           </TouchableOpacity>
           </View>
-      
-          </View>
 
+
+
+
+
+          <View style={{position:'absolute', left:"79%", top:'83.3%'}}>
+      
+      <TouchableOpacity onPress={takeScreenshot} style={{position:'absolute' }}>
+      <ImageBackground source={require('../assets/share.png')} style={{width:65, height:64}} />
+      
+  
+          </TouchableOpacity>
           </View>
       
 
       
-      <View style={{backgroundColor:'#006400',bottom:'1.3%', width:'44%', left:'28%', borderRadius:10, borderWidth:1, borderBottomColor:'green', height:'4.8%', position:"absolute"}}>
-        <TouchableOpacity onPress={takeScreenshot} style={{position:'absolute'}}>
-        <Text style={{color:'white',left:'11%',  paddingVertical:5, fontSize:17, fontFamily: 'Poppins-ExtraBold'}}>Ask A Friend</Text>
-        <ImageBackground source={require('../assets/share.png')} style={{width:28, height:28, bottom:'53%', left:'115%'}}/>
-        </TouchableOpacity>
-       
-      </View>
-     
+      
       {showTutorial && (
         <TouchableOpacity style={styles.tutorialOverlay} onPress={hideTutorial}>
           <Animated.View style={[styles.tutorialContent, wobbleStyle]}>
@@ -797,7 +806,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       marginVertical: '8%',
       width: '90%',
-      marginLeft: '7.5%',
+      marginLeft: '4%',
       marginRight:1
       
       
@@ -811,14 +820,14 @@ const styles = StyleSheet.create({
       backgroundColor: 'white',
       minWidth: '17%',
       maxWidth: '17%',
-      
+      padding: 2
 
       
       
     },
     coinContainer: {
       position: 'absolute',
-      top: '87%', 
+      top: '83%', 
       left: '90%', 
       marginLeft: -11.5, 
       zIndex: 1000, 
@@ -843,7 +852,7 @@ const styles = StyleSheet.create({
       width: '80%',
       height: '75%',
       position: 'absolute',
-      top: '35%', 
+      top: '20%', 
       left: '6%',
       right: 0,
       bottom: 0,
@@ -856,7 +865,7 @@ const styles = StyleSheet.create({
       width: '80%',
       height: '75%',
       position: 'absolute',
-      top: '35%', 
+      top: '27%', 
       left: '14%',
       right: 0,
       bottom: 0,
