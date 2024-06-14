@@ -744,7 +744,7 @@ return(
           </View>
 
           </View>
-         <View style={{position:'absolute', left:"79%", top:'74%'}}>
+         <View style={{position:'absolute', left:"78%", top:'74%'}}>
       
       <TouchableOpacity onPress={openDrawer} style={{position:'absolute'}}>
       <BackgroundBtn>
@@ -758,7 +758,7 @@ return(
 
 
 
-          <View style={{position:'absolute', left:"79%", top:'83.3%'}}>
+          <View style={{position:'absolute', left:"78%", top:'83.3%'}}>
       
       <TouchableOpacity onPress={takeScreenshot} style={{position:'absolute' }}>
       <ImageBackground source={require('../assets/share.png')} style={{width:65, height:64}} />
@@ -813,7 +813,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       marginVertical: '8%',
       width: '90%',
-      marginLeft: '4%',
+      marginLeft: '1%',
       marginRight:1
       
       

@@ -227,7 +227,7 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
         {!userInfo && (
           <View style={{ marginTop: '36%', backgroundColor:'#00007B', width:'97%',left:'1%', borderColor:"blue", borderWidth:2, borderRadius:20 , height:'73%'}}>
             <View style={{flex:1, justifyContent:'center', alignItems:'center'}}> 
-            <ImageBackground source={require('../assets/cloudVector.png')} style={{width:230, height:170, bottom:'19%'}}/>
+            <ImageBackground source={require('../assets/cloudVector.png')} style={{width:180, height:170, bottom:'19%'}}/>
             <Text style={{ color: "white", fontSize: 15, textAlign: "center", bottom:'18%', paddingHorizontal:'6%', fontFamily:'Poppins-Bold' }}>Sign in and save your game progress!{'\n'} You can then access your score on other devices</Text>
             <ImageBackground source={require('../assets/adaptive-icon.png')} style={{width:250, height:259, bottom:'20%'}}/>
             <GoogleSigninButton

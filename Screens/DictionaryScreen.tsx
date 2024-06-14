@@ -48,7 +48,7 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       >
        
         <View>
-          <Text style={{ textAlign: 'center', color: 'white', marginTop: '9%', fontFamily: 'Poppins-BoldItalic', fontSize: 18 }}>
+          <Text style={{ textAlign: 'center', color: 'white', marginTop: '9%', fontFamily: 'Poppins-BoldItalic', fontSize: 18, top:'1%' }}>
             Welcome to the Glossary!
           </Text>
           <Text style={{ fontFamily: 'Regular', textAlign: 'center', color: 'white', marginBottom: '7%', paddingHorizontal: '13%' }}>

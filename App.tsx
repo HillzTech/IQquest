@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import MainMenuScreen from './Screens/MainMenuScreen';
 import GameScreen from './Screens/GameScreen';
-import { CoinPurchaseScreen } from './Screens/CoinPurchaseScreen';
+import { CoinPurchaseScreen} from './Screens/CoinPurchaseScreen'; // Corrected import
 import DictionaryScreen from './Screens/DictionaryScreen';
 import LoginScreen from './Screens/LoginScreen';
 import DailyPuzzleScreen from './Screens/DailyPuzzleScreen';
 import { SoundProvider } from './SoundContext';
-import registerNNPushToken from 'native-notify';
 import Purchases from 'react-native-purchases';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 const Stack = createStackNavigator();
 
 const App: React.FC = () => {
-  // Use state to manage font loading state
   const [fontsLoaded, fontError] = useFonts({
     'Poppins-Bold': require('./assets/fonts/Poppins-Bold.otf'),
     'Poppins-ExtraBold': require('./assets/fonts/Poppins-ExtraBold.otf'),
@@ -25,31 +23,31 @@ const App: React.FC = () => {
     'Poppins-BoldItalic': require('./assets/fonts/Poppins-BoldItalic.otf'),
   });
 
-  // Use state to manage SplashScreen visibility
   const [splashVisible, setSplashVisible] = useState(true);
 
-  // Hide SplashScreen when fonts are loaded or an error occurs
+  useEffect(() => {
+    SplashScreen.preventAutoHideAsync();
+  }, []);
+
   useEffect(() => {
     if (fontsLoaded || fontError) {
-      SplashScreen.hideAsync();
       setSplashVisible(false);
+      SplashScreen.hideAsync();
     }
   }, [fontsLoaded, fontError]);
 
-  // Effect to initialize Purchases SDK
   useEffect(() => {
     Purchases.setLogLevel(Purchases.LOG_LEVEL.DEBUG);
     Purchases.configure({ apiKey: 'goog_xPhhFyZWbrmRZoMWRJqXyZHZzqi' });
   }, []);
 
   if (!fontsLoaded && !fontError) {
-    return null;
+    return null; // Return null to avoid rendering anything until fonts are loaded
   }
 
   return (
     <NavigationContainer>
       <SoundProvider>
-        {/* Render SplashScreen conditionally */}
         {splashVisible ? (
           <SplashScreenComponent />
         ) : (
@@ -58,6 +56,7 @@ const App: React.FC = () => {
             screenOptions={{
               headerShown: false,
               gestureEnabled: true,
+              cardStyle: { backgroundColor: '#152238' },
               cardStyleInterpolator: ({ current: { progress } }) => ({
                 cardStyle: {
                   opacity: progress.interpolate({
@@ -66,13 +65,14 @@ const App: React.FC = () => {
                   }),
                 },
               }),
-            }}>
-            <Stack.Screen name="MainMenu" component={MainMenuScreen} options={{ ...TransitionPresets.SlideFromRightIOS }} />
-            <Stack.Screen name="Game" component={GameScreen} options={{ ...TransitionPresets.SlideFromRightIOS }} />
-            <Stack.Screen name="CoinPurchase" component={CoinPurchaseScreen} options={{ ...TransitionPresets.SlideFromRightIOS }} />
-            <Stack.Screen name="Dictionary" component={DictionaryScreen} options={{ ...TransitionPresets.SlideFromRightIOS }} />
-            <Stack.Screen name="Login" component={LoginScreen} options={{ ...TransitionPresets.SlideFromRightIOS }} />
-            <Stack.Screen name="DailyPuzzle" component={DailyPuzzleScreen} options={{ ...TransitionPresets.SlideFromRightIOS }} />
+            }}
+          >
+            <Stack.Screen name="MainMenu" component={MainMenuScreen} />
+            <Stack.Screen name="Game" component={GameScreen} />
+            <Stack.Screen name="CoinPurchase" component={CoinPurchaseScreen} />
+            <Stack.Screen name="Dictionary" component={DictionaryScreen} />
+            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="DailyPuzzle" component={DailyPuzzleScreen} />
           </Stack.Navigator>
         )}
       </SoundProvider>
@@ -80,15 +80,21 @@ const App: React.FC = () => {
   );
 };
 
-// Custom SplashScreen component
 const SplashScreenComponent: React.FC = () => {
   return (
-    // Customize SplashScreen as needed
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'white' }}>
+    <View style={styles.splashContainer}>
       {/* Render SplashScreen UI */}
-      
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  splashContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#152238',
+  },
+});
 
 export default App;

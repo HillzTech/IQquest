@@ -34,6 +34,7 @@ import {  useSound } from '../SoundContext';
   const [loading, setLoading] = useState(false);
   const LoadingImage = require('../assets/loadingImg.gif');
   const completionTimeKey = 'lastCompletionTime';
+  const [remainingTime, setRemainingTime] = useState<number | null>(null);
 
 
   useEffect(() => {
@@ -210,11 +211,11 @@ import {  useSound } from '../SoundContext';
           const timeDifference = Date.now() - parseInt(lastCompletionTime);
           if (timeDifference < 24 * 60 * 60 * 1000) {
             const remainingTime = 24 * 60 * 60 * 1000 - timeDifference;
-          console.log('Remaining time:', remainingTime);
+            setRemainingTime(remainingTime); // Update remaining time state
             setLoading(true);
             setTimeout(() => {
               setLoading(false);
-            }, 24 * 60 * 60 * 1000 - timeDifference);
+            }, remainingTime);
           }
         }
       }
@@ -223,7 +224,6 @@ import {  useSound } from '../SoundContext';
       console.error('Error loading game progress:', error);
     }
   };
-
 
   const saveCompletionTime = async () => {
     try {
@@ -389,6 +389,15 @@ const handleNav = () => {
   const handleMovement = () => {
    navigation.push('MainMenu', { score, currentPuzzle }); 
  };
+
+ const formatTime = (milliseconds: number) => {
+  const totalSeconds = Math.floor(milliseconds / 1000);
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+  return `${hours}h ${minutes}m ${seconds}s`;
+};
+
  
     
 return(
@@ -437,12 +446,19 @@ return(
         <View style={{ marginTop: '21%', backgroundColor:'#00007B', width:'97%', borderColor:"blue", borderWidth:2, borderRadius:20 , height:'79%', left:'1%'}}>
             <View style={{flex:1, justifyContent:'center', alignItems:'center'}}> 
           
-          <Image source={LoadingImage} style={{width:240, height: 240}}/>
+          <Image source={LoadingImage} style={{width:180, height: 180}}/>
           
-          <ImageBackground source={require('../assets/adaptive-icon.png')} style={{width:300, height:300, bottom:30}}/>
+          <ImageBackground source={require('../assets/adaptive-icon.png')} style={{width:280, height:280, bottom:30}}/>
 
-          <Text style={{fontFamily:'Poppins-Bold',color:'white', padding:'7%', textAlign:'center', fontSize:16, marginTop:-70}}> You have played your puzzle for the day!</Text>
           
+          <Text style={{fontFamily:'Poppins-Bold',color:'white', padding:'7%', textAlign:'center', fontSize:16, marginTop:-70}}>You have played your puzzle for the day!</Text>
+        {remainingTime !== null && (
+          <View style={{backgroundColor:'#152238', borderRadius:12}}>
+          <Text style={{fontFamily:'Poppins-Regular',color:'white', padding:'2%', textAlign:'center', fontSize:13, marginTop:10}}>
+            Remaining time: {formatTime(remainingTime)}
+          </Text>
+          </View>
+           )}
         </View>
          </View>
         
