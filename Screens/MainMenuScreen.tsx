@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground, BackHandler } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground, BackHandler, Alert } from 'react-native';
 import Background from '../Components/Background';
 import { Ionicons } from '@expo/vector-icons';
 import { Animation } from '../Components/Animation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StatusBar } from 'expo-status-bar';
-import StrokedText from '../Components/StrokedText';
 import Sound from 'react-native-sound';
-import SettingMenu from '../Components/SettingMenu'; 
 import { useSound } from '../SoundContext';
 
 const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navigation }) => {
@@ -15,7 +13,8 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
   const [currentLevel, setCurrentLevel] = useState<string>('1');
   const [helpSound, setHelpSound] = useState<Sound | null>(null);
   const { soundEnabled } = useSound();
-  
+  const [showLevelRequirement, setShowLevelRequirement] = useState<boolean>(false);
+
  
   const playSound = (soundObject: Sound | null) => {
     try {
@@ -50,14 +49,15 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
 
 
   const handleDailyPuzzlePress = () => {
-      navigation.push('DailyPuzzle')
+    if (parseInt(currentLevel, 10) >= 20) {
+      navigation.push('DailyPuzzle');
       playSound(helpSound);
+    } else {
+      setShowLevelRequirement(true);
+      setTimeout(() => setShowLevelRequirement(false), 3000); // Hide message after 3 seconds
+    }
   };
 
-  const toggleSound = () => {
-    // You can add additional logic here if needed
-    // For now, we are only using the soundEnabled state from the SoundContext
-  };
   
   
 
@@ -133,7 +133,7 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
        <View style={{flexDirection: 'row', justifyContent:"flex-end", marginVertical:14,right:'1%'}}>
       
 
-       <View style={{flexDirection:'row',justifyContent:'space-around', alignItems:'flex-start', top:22, borderWidth:1, borderColor:'#859410', borderRadius:10, paddingHorizontal:4, gap:1, backgroundColor:'black' }}>
+       <View style={{flexDirection:'row',justifyContent:'space-around', alignItems:'flex-start', top:22, borderWidth:1, borderColor:'#859410', borderRadius:10, paddingHorizontal:5, gap:1, backgroundColor:'black', right:3 }}>
        <ImageBackground
           source={require('../assets/Images/coin.png')} 
           style={{width: 15, height: 17, top:'6%'}}
@@ -174,16 +174,16 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
         <Text style={{position:'relative',top: '-50%', textAlign: 'center', color: '#fff', fontFamily:'Poppins-Bold', fontSize: 16}}>{currentLevel}</Text>
      </View>
      
-     <View style={{flex: 1, justifyContent:"center", alignItems:'center', marginTop:'20%', top:'7%'}}>
-      
-      
-      <TouchableOpacity onPress={handleDailyPuzzlePress}>
-        <ImageBackground source={require('../assets/dailyimge.png')} style={{width:188, height:70}}/>
-
-      </TouchableOpacity>
-      
+     <View style={{ flex: 1, justifyContent: "center", alignItems: 'center', marginTop: '20%', top: '14%' }}>
+          {showLevelRequirement && (
+            <Text style={styles.levelRequirementText}>You need to reach level 20 to access this feature.</Text>
+          )}
+          <TouchableOpacity onPress={handleDailyPuzzlePress}>
+            <ImageBackground source={require('../assets/dailyimge.png')} style={{ width: 188, height: 70 }} />
+          </TouchableOpacity>
+        </View>
      
-    </View>
+
         <View style={{top:'90%', marginTop:'8%'}}>
         <Animation />
         </View>
@@ -211,34 +211,23 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
 };
 
 const styles = StyleSheet.create({
-  button: {
-    backgroundColor: 'green',
-    borderRadius: 10,
-    paddingHorizontal: 25,
-    paddingVertical: 10,
-    marginHorizontal: 10,
-    marginVertical: 5,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-    borderColor: '#4CAF50',
-    borderBottomWidth: 1
+  
 
-  },
-  text: {
+  levelRequirementText: {
+    fontFamily:'Poppins-Regular',
     color: 'white',
-    fontWeight: 'bold',
-    fontSize: 16,
-    textTransform: 'uppercase',
+    fontSize: 13,
+    marginBottom: 13,
+    textAlign: 'center',
+    position: 'absolute',
+    top: -75, 
+    width:170,
+    backgroundColor:'black',
+    borderRadius:20,
+    padding:8
     
-
-
   }
+
 })
 
 export default MainMenuScreen;

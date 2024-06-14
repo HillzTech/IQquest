@@ -17,7 +17,6 @@ import { useInterstitialAd } from '../Components/useInterstitialAd';
 import { useFocusEffect } from '@react-navigation/native';
 import Share from 'react-native-share';
 import { useSound } from '../SoundContext';
-import iconSet from '@expo/vector-icons/build/Fontisto';
 
   const GameScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [currentLevel, setCurrentLevel] = useState(1); 
@@ -782,6 +781,14 @@ return(
           <Animated.View style={[styles.guess, wobbleStyle]}>
             <Text style={{color:'white', fontSize:15, fontFamily: 'Poppins-Bold' }}>Guess The Word</Text>
           </Animated.View>
+         
+          <Animated.View style={[styles.hint, wobbleStyle]}>
+          <Text style={styles.tutorialTexts}>Get Hint</Text>
+           <Ionicons name="arrow-down" size={36} color={"white"}/>
+            
+        
+          </Animated.View>
+          
         </TouchableOpacity>
 
 
@@ -891,19 +898,32 @@ const styles = StyleSheet.create({
     },
     tutorialContent: {
       left: "39%",
-      bottom: "38%",
+      bottom: "33%",
       alignItems: 'center',
     },
     
     tutorialText: {
       fontSize: 13,
       textAlign: 'center',
-      color:'white'
+      color:'white',
+      fontFamily:'Poppins-Regular'
+    },
+
+    tutorialTexts: {
+      fontSize: 13,
+      textAlign: 'center',
+      color:'white',
+      fontFamily:'Poppins-Regular',
+      right:7
     },
 
     guess: {
     top: "24%"
     },
+    hint: {
+      top: "17.4%",
+      left:"38%"
+    }
   });
   
   
