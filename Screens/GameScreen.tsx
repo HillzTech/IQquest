@@ -569,13 +569,13 @@ return(
 <Background>
 <SafeAreaView style={{ flex: 1 }}>
 <StatusBar />
-   <View style={{backgroundColor:'black', height:'9%', flexDirection: 'row', justifyContent:'space-between', alignContent:'space-between'}}>
+   <View style={{backgroundColor:'black', height:'10%', flexDirection: 'row', justifyContent:'space-between', alignContent:'space-between'}}>
       <View>
-         <View>
+         <View style={{top:'58%'}}>
             <TouchableOpacity onPress={handleNavigation} >
             <ImageBackground 
             source={require('../assets/Images/backIcon.png')}
-            style={{width:30, height: 30, marginTop: 43, marginBottom:-81, left:9}}
+            style={{width:30, height: 30, marginBottom:-81, left:9}}
             
             />
                
@@ -584,11 +584,11 @@ return(
          </View>
          
 
-         <View>
-            <Image source={require('../assets/Images/brain.png')} style={{width:20, height:30, top:42, left:45}}/>
+         <View style={{top:'59%'}}>
+            <Image source={require('../assets/Images/brain.png')} style={{width:20, height:30, left:45}}/>
             
          </View>
-         <View style={{ flexDirection: 'row', alignItems: 'center',top:14, left: 66,backgroundColor:'white', width:28, height:8, borderRadius: 10  }}>
+         <View style={{ flexDirection: 'row', alignItems: 'center',top:'59%', left: 66,backgroundColor:'white', width:28, height:8, borderRadius: 10  }}>
           <Animated.View
             style={{
               height: 6,
@@ -605,26 +605,26 @@ return(
                 
       </View>
       
-      <View style={{left:14, marginRight:-20}}>
+      <View style={{left:14, marginRight:-20, top:'12%'}}>
         <ImageBackground
             source={require('../assets/Images/LevelImg.png')} 
-            style={{width: 100, height: 79, top:34}}
+            style={{width: 100, height: 79}}
                
          />
 
-         <Text style={{fontFamily: 'Poppins-Bold', position:'relative', textAlign: 'center', color: '#fff', fontSize: 17, top:-20, right:3}}>{currentLevel}</Text>
+         <Text style={{fontFamily: 'Poppins-Bold', position:'relative', textAlign: 'center', color: '#fff', fontSize: 17, top:'-70%', right:'3%'}}>{currentLevel}</Text>
      
       </View>
 
-   <View style={{ flexDirection:"row",justifyContent:'space-around', alignContent:'flex-start', top:43, right:10, borderColor:'#859410', borderWidth:1, borderRadius:10, marginBottom:50, paddingHorizontal:5, gap:1}}>
+   <View style={{ flexDirection:"row",justifyContent:'space-around', alignContent:'flex-start', top:'60%', right:10, borderColor:'#859410', borderWidth:1, borderRadius:10, marginBottom:57, paddingHorizontal:5, gap:1}}>
    <ImageBackground
-            source={require('../assets/Images/coins.png')} 
-            style={{width: 15, height: 17, top:'5%'}}
+            source={require('../assets/Images/coin.png')} 
+            style={{width: 15, height: 17, top:'6%'}}
                
          /> 
         <TouchableOpacity onPress={handleNav} >
         
-         <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 14, bottom:'2%'}}>{score}<Ionicons name="add-circle" size={10} color="green" /></Text>
+         <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 14, top:'7%'}}>{score}<Ionicons name="add-circle" size={10} color="green" /></Text>
 
 
         </TouchableOpacity>

@@ -135,7 +135,7 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
 
        <View style={{flexDirection:'row',justifyContent:'space-around', alignItems:'flex-start', top:22, borderWidth:1, borderColor:'#859410', borderRadius:10, paddingHorizontal:4, gap:1, backgroundColor:'black' }}>
        <ImageBackground
-          source={require('../assets/Images/coins.png')} 
+          source={require('../assets/Images/coin.png')} 
           style={{width: 15, height: 17, top:'7%'}}
           
         />
