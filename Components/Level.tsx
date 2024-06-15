@@ -20,22 +20,9 @@ const levels = [
      ],
     word: "FIRE",
     category: "Nature",
-    definition: "Fire is the rapid oxidation of a material in the exothermic chemical process of combustion, releasing heat, light, and various reaction products. At a certain point in the combustion reaction, called the ignition point, flames are produced. The flame is the visible portion of the fire."
+    definition: "Fire is the rapid oxidation of a material in the exothermic chemical process of combustion, releasing heat, light, and various reaction products. At a certain point in the combustion reaction, called the ignition point, flames are produced. The flame is the visible portion of the fire.",
+    difficulty: "Easy"
   },
-
-  
-  {
-    images: [
-       require('../assets/Images/lava/lava1.jpg'),
-       require('../assets/Images/lava/lava2.jpg'),
-       require('../assets/Images/lava/lava3.jpg'),
-       require('../assets/Images/lava/lava4.jpg'),
-     ],
-    word: "LAVA",
-    category: "Nature",
-    definition: "Lava refers specifically to molten rock that erupts from a volcano onto the Earth's surface. It is typically extremely hot and can flow in streams, creating landscapes such as volcanic fields and lava flows."
-  },
-
 
   {
     images: [
@@ -46,57 +33,8 @@ const levels = [
      ],
     word: "AIR",
     category: "Nature",
-    definition: "Air is the Earth's atmosphere. Air is a mixture of many gases and tiny dust particles. It is the clear gas in which living things live and breathe. It has an indefinite shape and volume. It has mass and weight, because it is matter. The weight of air creates atmospheric pressure. There is no air in outer space.Earth's atmosphere is composed of about 78 percent nitrogen, 21 percent oxygen, 0.9 percent argon, and 0.1 percent other gases."
-  },
-
-  
-  {
-    images: [
-       require('../assets/Images/tornado/tornado1.jpg'),
-       require('../assets/Images/tornado/tornado2.jpg'),
-       require('../assets/Images/tornado/tornado3.jpg'),
-       require('../assets/Images/tornado/tornado4.jpg'),
-     ],
-    word: "TORNADO",
-    category: "Nature",
-    definition: "Tornado refers to a violently rotating column of air that is in contact with both the surface of the Earth and a cumulonimbus cloud or, in rare cases, the base of a cumulus cloud. Tornadoes can cause extensive damage to buildings and infrastructure and pose significant risks to human life."
-  },
-
-
-  {
-    images: [
-       require('../assets/Images/earth/earth1.jpg'),
-       require('../assets/Images/earth/earth2.jpg'),
-       require('../assets/Images/earth/earth3.jpg'),
-       require('../assets/Images/earth/earth4.jpg'),
-     ],
-    word: "EARTH",
-    category: "Nature",
-    definition: "The earth is full of a wide variety of rocks and minerals which provides the soil to grow vegetation and support life. The two most common elements in the earth's crust are oxygen (46%) and silicon (28%). Because of this, the most abundant mineral in the earth's crust is silica (silicon dioxide)."
-  },
-
-  {
-    images: [
-       require('../assets/Images/metal/metal1.jpg'),
-       require('../assets/Images/metal/metal2.jpg'),
-       require('../assets/Images/metal/metal3.jpg'),
-       require('../assets/Images/metal/metal4.jpg'),
-     ],
-    word: "METAL",
-    category: "Nature",
-    definition: "The metal element is one of the classical elements in ancient philosophy and alchemy, along with earth, water, and fire. In these traditions, metals were believed to represent fundamental aspects of the natural world and were associated with various qualities and characteristics."
-  },
-  
-  {
-    images: [
-       require('../assets/Images/space/space1.jpg'),
-       require('../assets/Images/space/space2.jpg'),
-       require('../assets/Images/space/space3.jpg'),
-       require('../assets/Images/space/space4.jpg'),
-     ],
-    word: "SPACE",
-    category: "Nature",
-    definition: "The space element (akasha in Sanskrit, meaning not visible, space, or sky) is the most subtle of the five elements. Space gives rise to the other elements—air, fire, water, and earth. It is space that makes everything possible. All things arise in it and return to it. We can think of space as expressing in three different but interconnected ways: the infinite, unbounded space of Spirit; the space of individual consciousness defined within the endless field of Spirit; and physical space—which we perceive in our bodies and environment. The main attribute of space is its all-pervasiveness and freedom from obstruction."
+    definition: "Air is the Earth's atmosphere. Air is a mixture of many gases and tiny dust particles. It is the clear gas in which living things live and breathe. It has an indefinite shape and volume. It has mass and weight, because it is matter. The weight of air creates atmospheric pressure. There is no air in outer space.Earth's atmosphere is composed of about 78 percent nitrogen, 21 percent oxygen, 0.9 percent argon, and 0.1 percent other gases.",
+    difficulty: "Easy"
   },
 
   {
@@ -108,9 +46,52 @@ const levels = [
      ],
     word: "WATER",
     category: "Nature",
-    definition: "Water, a substance composed of the chemical elements hydrogen and oxygen and existing in gaseous, liquid, and solid states. It is one of the most plentiful and essential of compounds. A tasteless and odourless liquid at room temperature, it has the important ability to dissolve many other substances. Indeed, the versatility of water as a solvent is essential to living organisms. Life is believed to have originated in the aqueous solutions of the world's oceans, and living organisms depend on aqueous solutions, such as blood and digestive juices, for biological processes."
+    definition: "Water, a substance composed of the chemical elements hydrogen and oxygen and existing in gaseous, liquid, and solid states. It is one of the most plentiful and essential of compounds. A tasteless and odourless liquid at room temperature, it has the important ability to dissolve many other substances. Indeed, the versatility of water as a solvent is essential to living organisms. Life is believed to have originated in the aqueous solutions of the world's oceans, and living organisms depend on aqueous solutions, such as blood and digestive juices, for biological processes.",
+    difficulty: "Easy"
   },
 
+ 
+
+  {
+    images: [
+       require('../assets/Images/earth/earth1.jpg'),
+       require('../assets/Images/earth/earth2.jpg'),
+       require('../assets/Images/earth/earth3.jpg'),
+       require('../assets/Images/earth/earth4.jpg'),
+     ],
+    word: "EARTH",
+    category: "Nature",
+    definition: "The earth is full of a wide variety of rocks and minerals which provides the soil to grow vegetation and support life. The two most common elements in the earth's crust are oxygen (46%) and silicon (28%). Because of this, the most abundant mineral in the earth's crust is silica (silicon dioxide).",
+    difficulty: "Easy"
+  },
+
+  {
+    images: [
+       require('../assets/Images/metal/metal1.jpg'),
+       require('../assets/Images/metal/metal2.jpg'),
+       require('../assets/Images/metal/metal3.jpg'),
+       require('../assets/Images/metal/metal4.jpg'),
+     ],
+    word: "METAL",
+    category: "Nature",
+    definition: "The metal element is one of the classical elements in ancient philosophy and alchemy, along with earth, water, and fire. In these traditions, metals were believed to represent fundamental aspects of the natural world and were associated with various qualities and characteristics.",
+    difficulty: "Medium"
+  },
+  
+  {
+    images: [
+       require('../assets/Images/space/space1.jpg'),
+       require('../assets/Images/space/space2.jpg'),
+       require('../assets/Images/space/space3.jpg'),
+       require('../assets/Images/space/space4.jpg'),
+     ],
+    word: "SPACE",
+    category: "Nature",
+    definition: "The space element (akasha in Sanskrit, meaning not visible, space, or sky) is the most subtle of the five elements. Space gives rise to the other elements—air, fire, water, and earth. It is space that makes everything possible. All things arise in it and return to it. We can think of space as expressing in three different but interconnected ways: the infinite, unbounded space of Spirit; the space of individual consciousness defined within the endless field of Spirit; and physical space—which we perceive in our bodies and environment. The main attribute of space is its all-pervasiveness and freedom from obstruction.",
+    difficulty: "Medium"
+  },
+
+  
   {
     images: [
        require('../assets/Images/ice/ice1.jpg'),
@@ -120,8 +101,23 @@ const levels = [
      ],
     word: "ICE",
     category: "Nature",
-    definition: "Ice is solid water, formed when water freezes at or below 0 degrees Celsius (32 degrees Fahrenheit). It's a crystalline form of water molecules, where the molecules are arranged in a specific repeating pattern. Ice is commonly found in glaciers, icebergs, and frozen lakes and rivers. It's also widely used in refrigeration to preserve food and in various recreational activities such as ice skating and ice hockey. Additionally, ice plays a crucial role in Earth's climate system, affecting global temperatures and sea levels."
+    definition: "Ice is solid water, formed when water freezes at or below 0 degrees Celsius (32 degrees Fahrenheit). It's a crystalline form of water molecules, where the molecules are arranged in a specific repeating pattern. Ice is commonly found in glaciers, icebergs, and frozen lakes and rivers. It's also widely used in refrigeration to preserve food and in various recreational activities such as ice skating and ice hockey. Additionally, ice plays a crucial role in Earth's climate system, affecting global temperatures and sea levels.",
+    difficulty: "Medium"
   },
+
+  {
+    images: [
+       require('../assets/Images/tornado/tornado1.jpg'),
+       require('../assets/Images/tornado/tornado2.jpg'),
+       require('../assets/Images/tornado/tornado3.jpg'),
+       require('../assets/Images/tornado/tornado4.jpg'),
+     ],
+    word: "TORNADO",
+    category: "Nature",
+    definition: "Tornado refers to a violently rotating column of air that is in contact with both the surface of the Earth and a cumulonimbus cloud or, in rare cases, the base of a cumulus cloud. Tornadoes can cause extensive damage to buildings and infrastructure and pose significant risks to human life.",
+    difficulty: "Hard"
+  },
+
 
   {
     images: [
@@ -132,9 +128,22 @@ const levels = [
      ],
     word: "SUNSET",
     category: "Nature",
-    definition: "A sunset is the daily event where the sun dips below the horizon, marking the end of daylight and the transition to night. It's characterized by a stunning array of colors in the sky, ranging from vibrant oranges and pinks to deep purples and blues, as the sunlight scatters off particles in the Earth's atmosphere. Sunsets are often considered beautiful and romantic moments, enjoyed by people around the world as they pause to witness the natural spectacle."
+    definition: "A sunset is the daily event where the sun dips below the horizon, marking the end of daylight and the transition to night. It's characterized by a stunning array of colors in the sky, ranging from vibrant oranges and pinks to deep purples and blues, as the sunlight scatters off particles in the Earth's atmosphere. Sunsets are often considered beautiful and romantic moments, enjoyed by people around the world as they pause to witness the natural spectacle.",
+    difficulty: "Hard"
   },
 
+  {
+    images: [
+       require('../assets/Images/lava/lava1.jpg'),
+       require('../assets/Images/lava/lava2.jpg'),
+       require('../assets/Images/lava/lava3.jpg'),
+       require('../assets/Images/lava/lava4.jpg'),
+     ],
+    word: "LAVA",
+    category: "Nature",
+    definition: "Lava refers specifically to molten rock that erupts from a volcano onto the Earth's surface. It is typically extremely hot and can flow in streams, creating landscapes such as volcanic fields and lava flows.",
+    
+  },
 
   
   {

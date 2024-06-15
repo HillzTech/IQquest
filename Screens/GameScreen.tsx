@@ -17,6 +17,7 @@ import { useInterstitialAd } from '../Components/useInterstitialAd';
 import { useFocusEffect } from '@react-navigation/native';
 import Share from 'react-native-share';
 import { useSound } from '../SoundContext';
+import ProgressBar from '../Components/ProgressBar'; 
 
   const GameScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [currentLevel, setCurrentLevel] = useState(1); 
@@ -26,6 +27,7 @@ import { useSound } from '../SoundContext';
   const [showImage, setShowImage] = useState(false);
 const [showWrongImage, setShowWrongImage] = useState(false);
  const [progress, setProgress] = useState(0);
+ const [progresse, setProgresse] = useState(1);
 const fillAnimation = useRef(new Animated.Value(0)).current;
 const [coinVisible, setCoinVisible] = useState(false);
 const [iqVisible, setIqVisible] = useState(false);
@@ -502,12 +504,19 @@ const handleNav = () => {
          // Move the iq to the iq area
         moveIq();
         playSound(iqSound);
+        
       }, 1500);
       const newProgress = progress + 0.1;
     setProgress(newProgress); 
+    
       // Move to the next level
       setTimeout(() => {
       
+      setProgresse((prevProgresse) => {
+      
+          const newProgresse = progresse + 1;
+          return newProgresse >= 11 ? 1 : newProgresse; // Reset progress after it gets full
+        });
         setCurrentLevel(currentLevel + 1);
         AsyncStorage.setItem('progress', JSON.stringify(newProgress))
         .then(() => console.log('Progress saved successfully'))
@@ -638,11 +647,20 @@ return(
      
    </View> 
      <View ref={viewShotRef} collapsable={false}>
-      <View style={{flexDirection:'row', justifyContent:'center', alignContent:'center',top:'15%', marginBottom:13}}>
+      <View style={{flexDirection:'row', justifyContent:'center', alignContent:'center',top:'14%', marginBottom:13}}>
          <Text style={{color:'#fffff1', fontSize: 16, fontFamily:'Poppins-Regular',borderColor:'black', borderWidth: 1, backgroundColor:'black', paddingHorizontal:2, borderTopLeftRadius:8, borderBottomLeftRadius:8, paddingLeft:8}}>Category</Text>
       
          <Text style={{color:'white', fontSize: 18, fontFamily:'Poppins-BoldItalic',borderColor:'black', borderWidth: 2, paddingHorizontal:9,borderTopRightRadius:8, borderBottomRightRadius:8, backgroundColor:'grey'}}>{levels[currentLevel].category}</Text>
    
+      </View>
+      <View style={{position:'absolute', top:'9%', left:'26%'}}>
+      <View style={{position:'relative' }}>
+      <Text style={{color:'white', textAlign:'center', top:'50%',fontFamily:'Poppins-Regular', fontSize:9,}}>Difficulty</Text>
+      <View style={{left:'76%'}}>
+        
+      <ProgressBar progresse={progresse} />
+      </View>
+      </View>
       </View>
       
       <Animated.View style={{
@@ -650,9 +668,9 @@ return(
       justifyContent: 'center',
       alignContent: 'center',
       flexWrap: 'wrap',
-      marginTop: '17%',
+      marginTop: '20.9%',
       marginBottom: '84%',
-      top:'38%',
+      top:'36.8%',
       transform: [{ translateX }]
     }}>
       {levels[currentLevel].images.map((imageSource, index) => (
@@ -709,7 +727,7 @@ return(
     
        
 
-    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', marginTop:'2%'}}>
+    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', marginTop:'0.2%'}}>
       {/* Guess boxes */}
       {currentGuess.map((letter, index) => (
         <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index) }>
@@ -723,7 +741,7 @@ return(
     
 
       {/* Render letter box */}
-      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"90%", top:'2%'}}>
+      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"90%", top:'1%'}}>
       <View style={styles.container}>
         {letterBox.map((letter, index) => (
           <TouchableOpacity
@@ -744,7 +762,7 @@ return(
           </View>
 
           </View>
-         <View style={{position:'absolute', left:"78%", top:'74%'}}>
+         <View style={{position:'absolute', left:"78%", top:'74.7%'}}>
       
       <TouchableOpacity onPress={openDrawer} style={{position:'absolute'}}>
       <BackgroundBtn>
@@ -758,7 +776,7 @@ return(
 
 
 
-          <View style={{position:'absolute', left:"78%", top:'83.3%'}}>
+          <View style={{position:'absolute', left:"78%", top:'83.9%'}}>
       
       <TouchableOpacity onPress={takeScreenshot} style={{position:'absolute' }}>
       <ImageBackground source={require('../assets/share.png')} style={{width:65, height:64}} />
