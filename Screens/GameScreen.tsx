@@ -27,7 +27,6 @@ import ProgressBar from '../Components/ProgressBar';
   const [showImage, setShowImage] = useState(false);
 const [showWrongImage, setShowWrongImage] = useState(false);
  const [progress, setProgress] = useState(0);
- const [progresse, setProgresse] = useState(1);
 const fillAnimation = useRef(new Animated.Value(0)).current;
 const [coinVisible, setCoinVisible] = useState(false);
 const [iqVisible, setIqVisible] = useState(false);
@@ -52,6 +51,7 @@ const [iqSound, setIqSound] = useState<Sound | null>(null);
   const [permissionResponse, requestPermission] = MediaLibrary.usePermissions();
   const [showTutorial, setShowTutorial] = useState(false);
   const wobbleAnimation = useRef(new Animated.Value(0)).current;
+  
 
 
 
@@ -350,11 +350,16 @@ useEffect(() => {
     // Save game progress whenever score or current level changes
     saveGameProgress();
   }, [score, currentLevel]);
+
+  
+
   const loadGameProgress = async () => {
     try {
       const savedLevel = await AsyncStorage.getItem('currentLevel');
       const savedScore = await AsyncStorage.getItem('score');
       const savedProgress = await AsyncStorage.getItem('progress');
+      
+
 
       if (savedLevel !== null && savedScore !== null) {
         setCurrentLevel(parseInt(savedLevel));
@@ -363,6 +368,7 @@ useEffect(() => {
       if (savedProgress !== null) {
         setProgress(JSON.parse(savedProgress));
       }
+      
     } catch (error) {
       console.error('Error loading game progress:', error);
     }
@@ -372,6 +378,7 @@ useEffect(() => {
     try {
       await AsyncStorage.setItem('currentLevel', currentLevel.toString());
       await AsyncStorage.setItem('score', score.toString());
+      
     } catch (error) {
       console.error('Error saving game progress:', error);
     }
@@ -512,11 +519,7 @@ const handleNav = () => {
       // Move to the next level
       setTimeout(() => {
       
-      setProgresse((prevProgresse) => {
-      
-          const newProgresse = progresse + 1;
-          return newProgresse >= 11 ? 1 : newProgresse; // Reset progress after it gets full
-        });
+      increaseDifficulty();
         setCurrentLevel(currentLevel + 1);
         AsyncStorage.setItem('progress', JSON.stringify(newProgress))
         .then(() => console.log('Progress saved successfully'))
@@ -537,6 +540,7 @@ const handleNav = () => {
       
     }
   };
+  
   
   
 
@@ -572,7 +576,38 @@ const handleNav = () => {
   }
 };
 
-   
+ const [difficulty, setDifficulty] = useState(1);
+
+  useEffect(() => {
+    // Load difficulty from AsyncStorage when component mounts
+    AsyncStorage.getItem('difficulty')
+      .then((storedDifficulty) => {
+        if (storedDifficulty) {
+          setDifficulty(parseInt(storedDifficulty));
+        } else {
+          setDifficulty(1); // Default starting difficulty
+        }
+      })
+      .catch((error) => {
+        console.error('Error loading difficulty from AsyncStorage:', error);
+      });
+  }, []);
+
+  const increaseDifficulty = () => {
+    setDifficulty((prevDifficulty) => {
+      const newDifficulty = prevDifficulty + 1;
+      return newDifficulty >= 11 ? 1 : newDifficulty; // Reset difficulty after it gets full
+    });
+  };
+  useEffect(() => {
+    // Store the current difficulty in AsyncStorage whenever it changes
+    AsyncStorage.setItem('difficulty', difficulty.toString())
+      .catch((error) => {
+        console.error('Error saving difficulty to AsyncStorage:', error);
+      });
+  }, [difficulty]);
+
+
 return(
 
 <Background>
@@ -658,7 +693,7 @@ return(
       <Text style={{color:'white', textAlign:'center', top:'50%',fontFamily:'Poppins-Regular', fontSize:9,}}>Difficulty</Text>
       <View style={{left:'76%'}}>
         
-      <ProgressBar progresse={progresse} />
+      <ProgressBar difficulty={difficulty} />
       </View>
       </View>
       </View>

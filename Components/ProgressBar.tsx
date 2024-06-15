@@ -2,10 +2,10 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
 interface ProgressBarProps {
-  progresse: number;
+  difficulty: number;
 }
 
-const ProgressBar: React.FC<ProgressBarProps> = ({ progresse }) => {
+const ProgressBar: React.FC<ProgressBarProps> = ({ difficulty }) => {
   const renderBars = () => {
     const bars = [];
     for (let i = 1; i <= 10; i++) {
@@ -16,7 +16,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progresse }) => {
         backgroundColor = '#00FF00'; // Green for medium levels
       }
 
-      const completed = progresse >= i;
+      const completed = difficulty >= i;
 
       bars.push(
         <View
