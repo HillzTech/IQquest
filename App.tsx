@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { TransitionPresets, createStackNavigator } from '@react-navigation/stack';
 import MainMenuScreen from './Screens/MainMenuScreen';
 import GameScreen from './Screens/GameScreen';
 import { CoinPurchaseScreen} from './Screens/CoinPurchaseScreen'; // Corrected import

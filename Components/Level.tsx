@@ -145,20 +145,17 @@ const levels = [
     
   },
 
-  
   {
     images: [
-       require('../assets/Images/bench/bench1.jpg'),
-       require('../assets/Images/bench/bench2.jpg'),
-       require('../assets/Images/bench/bench3.jpg'),
-       require('../assets/Images/bench/bench4.jpg'),
+       require('../assets/Images/chair/chair1.jpg'),
+       require('../assets/Images/chair/chair2.jpg'),
+       require('../assets/Images/chair/chair3.jpg'),
+       require('../assets/Images/chair/chair4.jpg'),
      ],
-    word: "BENCH",
+    word: "CHAIR",
     category: "Furniture",
-    definition: "Bench typically refers to seating furniture designed for sitting, usually with a long seat and often with some form of backrest or armrests. Benches can vary widely in style, material, and purpose. Here are some common types of bench furniture"
+    definition: "Chair, a chair is a type of seat, typically designed for one person and consisting of one or more legs, a flat or slightly angled seat and a back-rest. It may be made of wood, metal, or synthetic materials, and may be padded or upholstered in various colors and fabrics."
   },
-
-
   {
     images: [
        require('../assets/Images/bed/bed1.jpg'),
@@ -169,43 +166,6 @@ const levels = [
     word: "BED",
     category: "Furniture",
     definition: " Bed, a piece of furniture upon which or within which a person sleeps, rests, or stays when not well. the mattress and bedclothes together with the bedstead of a bed."
-  },
-
-  {
-    images: [
-       require('../assets/Images/wardrobe/wardrobe1.jpg'),
-       require('../assets/Images/wardrobe/wardrobe2.jpg'),
-       require('../assets/Images/wardrobe/wardrobe3.jpg'),
-       require('../assets/Images/wardrobe/wardrobe4.jpg'),
-     ],
-    word: "WARDROBE",
-    category: "Furniture",
-    definition: "A wardrobe, also known as an armoire, is a piece of furniture used for storing clothing and other items. It typically consists of a tall, upright cabinet with doors that open to reveal hanging space for garments, shelves for folded clothes, and sometimes drawers for smaller items. Wardrobes come in various styles, sizes, and materials to suit different needs and aesthetics. They are commonly found in bedrooms and serve as essential storage solutions for organizing clothing and accessories."
-  },
-
-  {
-    images: [
-       require('../assets/Images/sofa/sofa1.jpg'),
-       require('../assets/Images/sofa/sofa2.jpg'),
-       require('../assets/Images/sofa/sofa3.jpg'),
-       require('../assets/Images/sofa/sofa4.jpg'),
-     ],
-    word: "SOFA",
-    category: "Furniture",
-    definition: "A sofa, also referred to as a couch or a settee, is a piece of furniture designed for seating multiple people. Sofas typically feature a padded seat, backrest, and armrests, providing comfort and support for lounging or sitting. They come in various sizes, styles, and configurations to suit different spaces and preferences. Sofas can be made from a variety of materials, including fabric, leather, or synthetic upholstery, and they may have wooden, metal, or plastic frames. Some sofas also come with additional features like reclining mechanisms, built-in storage compartments, or convertible designs that can transform into beds. As a staple of living rooms and family rooms, sofas serve as central pieces of furniture for relaxation, socializing, and entertainment. They can be paired with complementary items such as coffee tables, side tables, and accent chairs to create cohesive and inviting seating arrangements within a room."
-  },
-
-
-  {
-    images: [
-       require('../assets/Images/cabinet/cabinet1.jpg'),
-       require('../assets/Images/cabinet/cabinet2.jpg'),
-       require('../assets/Images/cabinet/cabinet3.jpg'),
-       require('../assets/Images/cabinet/cabinet4.jpg'),
-     ],
-    word: "CABINET",
-    category: "Furniture",
-    definition: "A cabinet is a case or cupboard with shelves and/or drawers for storing or displaying items. Some cabinets are stand alone while others are built in to a wall or are attached to it like a medicine cabinet. Cabinets are typically made of wood, coated steel, or synthetic materials."
   },
 
   {
@@ -234,15 +194,58 @@ const levels = [
 
   {
     images: [
-       require('../assets/Images/chair/chair1.jpg'),
-       require('../assets/Images/chair/chair2.jpg'),
-       require('../assets/Images/chair/chair3.jpg'),
-       require('../assets/Images/chair/chair4.jpg'),
+       require('../assets/Images/bench/bench1.jpg'),
+       require('../assets/Images/bench/bench2.jpg'),
+       require('../assets/Images/bench/bench3.jpg'),
+       require('../assets/Images/bench/bench4.jpg'),
      ],
-    word: "CHAIR",
+    word: "BENCH",
     category: "Furniture",
-    definition: "Chair, a chair is a type of seat, typically designed for one person and consisting of one or more legs, a flat or slightly angled seat and a back-rest. It may be made of wood, metal, or synthetic materials, and may be padded or upholstered in various colors and fabrics."
+    definition: "Bench typically refers to seating furniture designed for sitting, usually with a long seat and often with some form of backrest or armrests. Benches can vary widely in style, material, and purpose. Here are some common types of bench furniture"
   },
+
+  {
+    images: [
+       require('../assets/Images/sofa/sofa1.jpg'),
+       require('../assets/Images/sofa/sofa2.jpg'),
+       require('../assets/Images/sofa/sofa3.jpg'),
+       require('../assets/Images/sofa/sofa4.jpg'),
+     ],
+    word: "SOFA",
+    category: "Furniture",
+    definition: "A sofa, also referred to as a couch or a settee, is a piece of furniture designed for seating multiple people. Sofas typically feature a padded seat, backrest, and armrests, providing comfort and support for lounging or sitting. They come in various sizes, styles, and configurations to suit different spaces and preferences. Sofas can be made from a variety of materials, including fabric, leather, or synthetic upholstery, and they may have wooden, metal, or plastic frames. Some sofas also come with additional features like reclining mechanisms, built-in storage compartments, or convertible designs that can transform into beds. As a staple of living rooms and family rooms, sofas serve as central pieces of furniture for relaxation, socializing, and entertainment. They can be paired with complementary items such as coffee tables, side tables, and accent chairs to create cohesive and inviting seating arrangements within a room."
+  },
+
+  
+  {
+    images: [
+       require('../assets/Images/wardrobe/wardrobe1.jpg'),
+       require('../assets/Images/wardrobe/wardrobe2.jpg'),
+       require('../assets/Images/wardrobe/wardrobe3.jpg'),
+       require('../assets/Images/wardrobe/wardrobe4.jpg'),
+     ],
+    word: "WARDROBE",
+    category: "Furniture",
+    definition: "A wardrobe, also known as an armoire, is a piece of furniture used for storing clothing and other items. It typically consists of a tall, upright cabinet with doors that open to reveal hanging space for garments, shelves for folded clothes, and sometimes drawers for smaller items. Wardrobes come in various styles, sizes, and materials to suit different needs and aesthetics. They are commonly found in bedrooms and serve as essential storage solutions for organizing clothing and accessories."
+  },
+
+ 
+
+  {
+    images: [
+       require('../assets/Images/cabinet/cabinet1.jpg'),
+       require('../assets/Images/cabinet/cabinet2.jpg'),
+       require('../assets/Images/cabinet/cabinet3.jpg'),
+       require('../assets/Images/cabinet/cabinet4.jpg'),
+     ],
+    word: "CABINET",
+    category: "Furniture",
+    definition: "A cabinet is a case or cupboard with shelves and/or drawers for storing or displaying items. Some cabinets are stand alone while others are built in to a wall or are attached to it like a medicine cabinet. Cabinets are typically made of wood, coated steel, or synthetic materials."
+  },
+
+  
+
+  
 
   {
     images: [
@@ -281,18 +284,18 @@ const levels = [
     category: "Food",
     definition: "Fruit, the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Thus, apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits. Popularly, however, the term is restricted to the ripened ovaries that are sweet and either succulent or pulpy. For treatment of the cultivation of fruits, see fruit farming. For treatment of the nutrient composition and processing of fruits, see fruit processing."
   },
-
   {
-     images: [
-        require('../assets/Images/seafood/shrimp.jpg'),
-        require('../assets/Images/seafood/crab.jpg'),
-        require('../assets/Images/seafood/fish.jpg'),
-        require('../assets/Images/seafood/lobster.jpg'),
-      ],
-     word: "SEAFOOD",
-     category: "Food",
-     definition: "Seafood, edible aquatic animals, excluding mammals, but including both freshwater and ocean creatures. Most nontoxic aquatic species are exploited for food by humans. Even those with toxic properties, such as certain blowfish, can be prepared so as to circumvent harm to the consumer"
-   },
+    images: [
+       require('../assets/Images/soup/soup1.jpg'),
+       require('../assets/Images/soup/soup2.jpg'),
+       require('../assets/Images/soup/soup3.jpg'),
+       require('../assets/Images/soup/soup4.jpg'),
+     ],
+    word: "SOUP",
+    category: "Food",
+    definition: "Soup is a popular dish made by combining various ingredients such as vegetables, meat, seafood, herbs, and spices with broth or water. It's a versatile and comforting food that's enjoyed worldwide in countless variations. Soups can be thick or thin, clear or creamy, hot or cold, and they can be served as a starter, main course, or even as a snack."
+  },
+  
    {
     images: [
        require('../assets/Images/snack/snack1.jpg'),
@@ -306,18 +309,7 @@ const levels = [
   },
 
 
-   {
-     images: [
-        require('../assets/Images/beverage/smoothie.jpg'),
-        require('../assets/Images/beverage/tea.jpg'),
-        require('../assets/Images/beverage/soda.jpg'),
-        require('../assets/Images/beverage/cocktaail.jpg'),
-      ],
-     word: "BEVERAGE",
-     category: "Food",
-     definition: "A drink or beverage is a liquid intended for human consumption. In addition to their basic function of satisfying thirst, drinks play important roles in human culture. Common types of drinks include plain drinking water, milk, juice, smoothies and soft drinks"
-   },
-
+  
    {
     images: [
        require('../assets/Images/sauce/sauce1.jpg'),
@@ -343,17 +335,7 @@ const levels = [
      definition: "Salad is a dish typically made from a mixture of fresh vegetables, fruits, leafy greens, and other ingredients, often served chilled and dressed with a variety of sauces, dressings, or vinaigrettes. Salads can be enjoyed as appetizers, side dishes, or main courses, and they come in countless variations to suit different tastes and dietary preferences."
    },
 
-   {
-    images: [
-       require('../assets/Images/diary/milk.jpg'),
-       require('../assets/Images/diary/cheese.jpg'),
-       require('../assets/Images/diary/custard.jpg'),
-       require('../assets/Images/diary/youghurt.jpg'),
-     ],
-    word: "DIARY",
-    category: "Food",
-    definition: "Dairy products or milk products, also known as lacticinia, are food products made from milk. The most common dairy animals are cow, water buffalo, nanny goat, and ewe. Dairy products include common grocery store food around the world such as yogurt, cheese, milk and butter."
-  },
+   
 
    {
     images: [
@@ -367,18 +349,18 @@ const levels = [
     definition: "Dessert refers to a sweet course or dish typically served at the end of a meal. It is often enjoyed as a treat or indulgence to satisfy a craving for something sweet. Desserts can come in various forms and flavors, including cakes, pies, pastries, cookies, ice cream, puddings, custards, fruit salads, and more."
   },
 
+ 
   {
     images: [
-       require('../assets/Images/soup/soup1.jpg'),
-       require('../assets/Images/soup/soup2.jpg'),
-       require('../assets/Images/soup/soup3.jpg'),
-       require('../assets/Images/soup/soup4.jpg'),
+       require('../assets/Images/diary/milk.jpg'),
+       require('../assets/Images/diary/cheese.jpg'),
+       require('../assets/Images/diary/custard.jpg'),
+       require('../assets/Images/diary/youghurt.jpg'),
      ],
-    word: "SOUP",
+    word: "DIARY",
     category: "Food",
-    definition: "Soup is a popular dish made by combining various ingredients such as vegetables, meat, seafood, herbs, and spices with broth or water. It's a versatile and comforting food that's enjoyed worldwide in countless variations. Soups can be thick or thin, clear or creamy, hot or cold, and they can be served as a starter, main course, or even as a snack."
+    definition: "Dairy products or milk products, also known as lacticinia, are food products made from milk. The most common dairy animals are cow, water buffalo, nanny goat, and ewe. Dairy products include common grocery store food around the world such as yogurt, cheese, milk and butter."
   },
-
 
    {
      images: [
@@ -394,15 +376,29 @@ const levels = [
 
    {
     images: [
-       require('../assets/Images/melanin/melanin1.jpg'),
-       require('../assets/Images/melanin/melanin2.jpg'),
-       require('../assets/Images/melanin/melanin3.jpg'),
-       require('../assets/Images/melanin/melanin4.jpg'),
+       require('../assets/Images/seafood/shrimp.jpg'),
+       require('../assets/Images/seafood/crab.jpg'),
+       require('../assets/Images/seafood/fish.jpg'),
+       require('../assets/Images/seafood/lobster.jpg'),
      ],
-    word: "MELANIN",
-    category: "Race",
-    definition: "Melanin is a natural pigment produced by specialized cells called melanocytes, found in the skin, hair follicles, and eyes of humans and other animals. Its primary function is to protect the skin from the harmful effects of ultraviolet (UV) radiation from the sun by absorbing and scattering UV rays."
+    word: "SEAFOOD",
+    category: "Food",
+    definition: "Seafood, edible aquatic animals, excluding mammals, but including both freshwater and ocean creatures. Most nontoxic aquatic species are exploited for food by humans. Even those with toxic properties, such as certain blowfish, can be prepared so as to circumvent harm to the consumer"
   },
+   {
+    images: [
+       require('../assets/Images/beverage/smoothie.jpg'),
+       require('../assets/Images/beverage/tea.jpg'),
+       require('../assets/Images/beverage/soda.jpg'),
+       require('../assets/Images/beverage/cocktaail.jpg'),
+     ],
+    word: "BEVERAGE",
+    category: "Food",
+    definition: "A drink or beverage is a liquid intended for human consumption. In addition to their basic function of satisfying thirst, drinks play important roles in human culture. Common types of drinks include plain drinking water, milk, juice, smoothies and soft drinks"
+  },
+
+
+  
 
   {
     images: [
@@ -415,6 +411,18 @@ const levels = [
     category: "Race",
     definition: "Blonde is an adjective used to describe a light hair color that is typically yellowish or golden in hue. It's commonly associated with individuals of European descent, particularly those from Northern and Western Europe. However, blond hair can occur in people of various ethnic backgrounds due to genetic variations. The term blonde is also used as a noun to refer to a person with blond hair, with blond being the masculine form and blonde being the feminine form."
   },
+  {
+    images: [
+       require('../assets/Images/afro/afro1.jpg'),
+       require('../assets/Images/afro/afro2.jpg'),
+       require('../assets/Images/afro/afro3.jpg'),
+       require('../assets/Images/afro/afro4.jpg'),
+     ],
+    word: "AFRO",
+    category: "Race",
+    definition: "Afro refers to a hairstyle characterized by tightly coiled or curly hair that is styled outward from the scalp in a rounded shape. The term afro is derived from Afro-American, reflecting its association with African-American culture and identity, although it's worn by people of various racial and ethnic backgrounds. The afro became popular during the 1960s and 1970s as a symbol of black pride and cultural expression during the civil rights movement. Today, the afro remains an iconic hairstyle that symbolizes self-affirmation, natural beauty, and cultural heritage."
+  },
+
 
   {
     images: [
@@ -430,30 +438,6 @@ const levels = [
 
   {
     images: [
-       require('../assets/Images/ginger/ginger1.jpg'),
-       require('../assets/Images/ginger/ginger2.jpg'),
-       require('../assets/Images/ginger/ginger3.jpg'),
-       require('../assets/Images/ginger/ginger4.jpg'),
-     ],
-    word: "GINGER",
-    category: "Race",
-    definition: "Ginger in the context of race typically refers to a person with red or reddish-brown hair, often accompanied by fair skin and freckles. This term is commonly used in informal language and is not a formal racial category. It's worth noting that hair color alone does not determine race, as race is a complex social construct that encompasses various factors such as ancestry, culture, and identity."
-  },
-
-  {
-    images: [
-       require('../assets/Images/afro/afro1.jpg'),
-       require('../assets/Images/afro/afro2.jpg'),
-       require('../assets/Images/afro/afro3.jpg'),
-       require('../assets/Images/afro/afro4.jpg'),
-     ],
-    word: "AFRO",
-    category: "Race",
-    definition: "Afro refers to a hairstyle characterized by tightly coiled or curly hair that is styled outward from the scalp in a rounded shape. The term afro is derived from Afro-American, reflecting its association with African-American culture and identity, although it's worn by people of various racial and ethnic backgrounds. The afro became popular during the 1960s and 1970s as a symbol of black pride and cultural expression during the civil rights movement. Today, the afro remains an iconic hairstyle that symbolizes self-affirmation, natural beauty, and cultural heritage."
-  },
-
-  {
-    images: [
        require('../assets/Images/asian/asian1.jpg'),
        require('../assets/Images/asian/asian2.jpg'),
        require('../assets/Images/asian/asian3.jpg'),
@@ -464,31 +448,17 @@ const levels = [
     definition: "The term Asian typically refers to people or things originating from or associated with the continent of Asia. Asia is the largest and most populous continent on Earth, encompassing diverse countries, cultures, languages, and ethnicities. In a broader sense, Asian can also refer to individuals of Asian descent, including people with roots in countries such as China, Japan, Korea, India, Pakistan, Bangladesh, Vietnam, Thailand, the Philippines, and many others. The term Asian is used to describe both the geographic region and the racial or ethnic identity of individuals from this region."
   },
 
-
   {
     images: [
-       require('../assets/Images/biracial/biracial1.jpg'),
-       require('../assets/Images/biracial/biracial2.jpg'),
-       require('../assets/Images/biracial/biracial3.jpg'),
-       require('../assets/Images/biracial/biracial4.jpg'),
+       require('../assets/Images/ginger/ginger1.jpg'),
+       require('../assets/Images/ginger/ginger2.jpg'),
+       require('../assets/Images/ginger/ginger3.jpg'),
+       require('../assets/Images/ginger/ginger4.jpg'),
      ],
-    word: "BIRACIAL",
+    word: "GINGER",
     category: "Race",
-    definition: "Biracial refers to a person who has parents from two different racial or ethnic backgrounds. This term is used to describe individuals who are of mixed race or ethnicity, often having features that reflect the heritage of both parents. Biracial individuals may identify with one or both of their parents' racial or ethnic backgrounds, and their experiences and cultural identity can vary widely depending on factors such as upbringing, environment, and personal identity."
+    definition: "Ginger in the context of race typically refers to a person with red or reddish-brown hair, often accompanied by fair skin and freckles. This term is commonly used in informal language and is not a formal racial category. It's worth noting that hair color alone does not determine race, as race is a complex social construct that encompasses various factors such as ancestry, culture, and identity."
   },
-
-  {
-    images: [
-       require('../assets/Images/hispanic/hispanic1.jpg'),
-       require('../assets/Images/hispanic/hispanic2.jpg'),
-       require('../assets/Images/hispanic/hispanic3.jpg'),
-       require('../assets/Images/hispanic/hispanic4.jpg'),
-     ],
-    word: "HISPANIC",
-    category: "Race",
-    definition: "The term Hispanic typically refers to people or things originating from or associated with Spanish-speaking countries or cultures, particularly those in Latin America. It is often used to describe individuals with cultural or ancestral ties to Spanish-speaking countries in Latin America, as well as Spain itself. The term Hispanic encompasses a diverse range of countries and cultures, including but not limited to Mexico, Spain, Guatemala, Colombia, Argentina, and many others. Hispanic is commonly used as an ethnic identifier in the United States, where it is used to categorize people with roots in Spanish-speaking countries, regardless of their racial background."
-  },
-
   {
     images: [
        require('../assets/Images/racist/racism1.jpg'),
@@ -512,35 +482,50 @@ const levels = [
     category: "Race",
     definition: "Albino is a term used to describe a person with a genetic condition called albinism. Albinism is characterized by a lack of melanin pigment in the skin, hair, and eyes, resulting in very pale or white skin, hair, and light-colored eyes. People with albinism often have vision problems, including sensitivity to light and poor eyesight, due to the absence of melanin in their retinas. Albinism can occur in individuals of any race or ethnic background, but it is more noticeable in individuals with darker skin tones. It is important to treat individuals with albinism with respect and understanding, as they may face discrimination or stigma due to their appearance."
   },
-
-
+  
   
 
 
-   {
+  {
     images: [
-       require('../assets/Images/fairy/fairy1.jpg'),
-       require('../assets/Images/fairy/fairy2.jpg'),
-       require('../assets/Images/fairy/fairy3.jpg'),
-       require('../assets/Images/fairy/fairy4.jpg'),
+       require('../assets/Images/biracial/biracial1.jpg'),
+       require('../assets/Images/biracial/biracial2.jpg'),
+       require('../assets/Images/biracial/biracial3.jpg'),
+       require('../assets/Images/biracial/biracial4.jpg'),
      ],
-    word: "FAIRY",
-    category: "Creatures",
-    definition: "A fairy is a type of mythical being or legendary creature, generally described as anthropomorphic, found in the folklore of multiple European cultures, a form of spirit, often with metaphysical, supernatural, or preternatural qualities."
+    word: "BIRACIAL",
+    category: "Race",
+    definition: "Biracial refers to a person who has parents from two different racial or ethnic backgrounds. This term is used to describe individuals who are of mixed race or ethnicity, often having features that reflect the heritage of both parents. Biracial individuals may identify with one or both of their parents' racial or ethnic backgrounds, and their experiences and cultural identity can vary widely depending on factors such as upbringing, environment, and personal identity."
   },
 
   {
     images: [
-       require('../assets/Images/goblin/goblin1.jpg'),
-       require('../assets/Images/goblin/goblin2.jpg'),
-       require('../assets/Images/goblin/goblin3.jpg'),
-       require('../assets/Images/goblin/goblin4.jpg'),
+       require('../assets/Images/melanin/melanin1.jpg'),
+       require('../assets/Images/melanin/melanin2.jpg'),
+       require('../assets/Images/melanin/melanin3.jpg'),
+       require('../assets/Images/melanin/melanin4.jpg'),
      ],
-    word: "GOBLIN",
-    category: "Creatures",
-    definition: "Goblins supposedly live in grottoes but attach themselves to households, where they are believed to bang upon pots and pans, snatch nightclothes off the bodies of sleeping people, move furniture at night, and flee after rapping on walls and doors."
+    word: "MELANIN",
+    category: "Race",
+    definition: "Melanin is a natural pigment produced by specialized cells called melanocytes, found in the skin, hair follicles, and eyes of humans and other animals. Its primary function is to protect the skin from the harmful effects of ultraviolet (UV) radiation from the sun by absorbing and scattering UV rays."
   },
 
+  {
+    images: [
+       require('../assets/Images/hispanic/hispanic1.jpg'),
+       require('../assets/Images/hispanic/hispanic2.jpg'),
+       require('../assets/Images/hispanic/hispanic3.jpg'),
+       require('../assets/Images/hispanic/hispanic4.jpg'),
+     ],
+    word: "HISPANIC",
+    category: "Race",
+    definition: "The term Hispanic typically refers to people or things originating from or associated with Spanish-speaking countries or cultures, particularly those in Latin America. It is often used to describe individuals with cultural or ancestral ties to Spanish-speaking countries in Latin America, as well as Spain itself. The term Hispanic encompasses a diverse range of countries and cultures, including but not limited to Mexico, Spain, Guatemala, Colombia, Argentina, and many others. Hispanic is commonly used as an ethnic identifier in the United States, where it is used to categorize people with roots in Spanish-speaking countries, regardless of their racial background."
+  },
+
+  
+
+
+  
   {
     images: [
        require('../assets/Images/dragon/dragon1.jpg'),
@@ -553,40 +538,17 @@ const levels = [
     definition: "A dragon is a magical legendary creature that appears in the folklore of multiple cultures worldwide. Beliefs about dragons vary considerably through regions, but dragons in Western cultures since the High Middle Ages have often been depicted as winged, horned, and capable of breathing fire. Dragons in eastern cultures are usually depicted as wingless, four-legged, serpentine creatures with above-average intelligence. Commonalities between dragons' traits are often a hybridization of feline, reptilian, mammalian, and avian features. Some scholars believe large extinct or migrating crocodiles bear the closest resemblance, especially when encountered in forested or swampy areas, and are most likely the template of modern Asian dragon imagery"
   },
 
-  {
-    images: [
-       require('../assets/Images/elves/elves1.jpg'),
-       require('../assets/Images/elves/elves2.jpg'),
-       require('../assets/Images/elves/elves3.jpg'),
-       require('../assets/Images/elves/elves4.jpg'),
-     ],
-    word: "ELVES",
-    category: "Creatures",
-    definition: "Elves were said to possess supernatural qualities which could be used to create good deeds such as healing, or bad deeds such as creating illnesses. Female elves were seen to have magical qualities and could trap young men through their charms. Elves were often believed to be immortal beings. An elf sitting in a tree."
-  },
 
-  {
+   {
     images: [
-       require('../assets/Images/siren/siren1.jpg'),
-       require('../assets/Images/siren/siren2.jpg'),
-       require('../assets/Images/siren/siren3.jpg'),
-       require('../assets/Images/siren/siren4.jpg'),
+       require('../assets/Images/fairy/fairy1.jpg'),
+       require('../assets/Images/fairy/fairy2.jpg'),
+       require('../assets/Images/fairy/fairy3.jpg'),
+       require('../assets/Images/fairy/fairy4.jpg'),
      ],
-    word: "SIREN",
+    word: "FAIRY",
     category: "Creatures",
-    definition: "The siren creature originates from Greek mythology. Often depicted as part woman and part bird, sirens were believed to inhabit rocky islands and lure sailors to their doom with their enchanting songs. These creatures were said to possess irresistible voices that would lead sailors astray, causing them to crash their ships upon the rocks where the sirens dwelled. In various myths, heroes like Odysseus encountered sirens during their voyages and had to devise clever strategies to resist their allure and safely navigate past them."
-  },
-
-  {
-    images: [
-       require('../assets/Images/djinn/djinn1.jpg'),
-       require('../assets/Images/djinn/djinn2.jpg'),
-       require('../assets/Images/djinn/djinn3.jpg'),
-       require('../assets/Images/djinn/djinn4.jpg'),
-     ],
-    word: "DJINN",
-    category: "Creatures",
-    definition: "Djinn, also spelled jinn or genie, are supernatural beings from Islamic mythology and folklore. They are sentient entities created from smokeless fire by Allah (God) and possess free will like humans. Djinn are believed to inhabit a parallel world to humans and are capable of interacting with and influencing the physical world. In Islamic tradition, there are good and evil djinn, with the latter often associated with mischief and malevolence. Djinn are known for their shapeshifting abilities, allowing them to take various forms, including animals, humans, and even inanimate objects. They are also believed to have the power to grant wishes to humans, although this ability is often depicted with cautionary tales of unintended consequences. Djinn play a significant role in Islamic literature, folklore, and religious texts, including the Quran (the central religious text of Islam)."
+    definition: "A fairy is a type of mythical being or legendary creature, generally described as anthropomorphic, found in the folklore of multiple European cultures, a form of spirit, often with metaphysical, supernatural, or preternatural qualities."
   },
 
   {
@@ -616,6 +578,31 @@ const levels = [
 
   {
     images: [
+       require('../assets/Images/goblin/goblin1.jpg'),
+       require('../assets/Images/goblin/goblin2.jpg'),
+       require('../assets/Images/goblin/goblin3.jpg'),
+       require('../assets/Images/goblin/goblin4.jpg'),
+     ],
+    word: "GOBLIN",
+    category: "Creatures",
+    definition: "Goblins supposedly live in grottoes but attach themselves to households, where they are believed to bang upon pots and pans, snatch nightclothes off the bodies of sleeping people, move furniture at night, and flee after rapping on walls and doors."
+  },
+
+  
+  {
+    images: [
+       require('../assets/Images/elves/elves1.jpg'),
+       require('../assets/Images/elves/elves2.jpg'),
+       require('../assets/Images/elves/elves3.jpg'),
+       require('../assets/Images/elves/elves4.jpg'),
+     ],
+    word: "ELVES",
+    category: "Creatures",
+    definition: "Elves were said to possess supernatural qualities which could be used to create good deeds such as healing, or bad deeds such as creating illnesses. Female elves were seen to have magical qualities and could trap young men through their charms. Elves were often believed to be immortal beings. An elf sitting in a tree."
+  },
+
+  {
+    images: [
        require('../assets/Images/troll/troll1.jpg'),
        require('../assets/Images/troll/troll2.jpg'),
        require('../assets/Images/troll/troll3.jpg'),
@@ -626,6 +613,34 @@ const levels = [
     definition: "A troll is a mythical creature often depicted as a grotesque, humanoid being, typically characterized by its large size, monstrous appearance, and antisocial behavior. In folklore and mythology, trolls are commonly associated with forests, caves, bridges, or other remote and secluded places. Trolls are often portrayed as malevolent beings that delight in causing mischief, terrorizing travelers, and wreaking havoc on unsuspecting communities. They may be depicted as solitary creatures or as part of larger groups or families, depending on the specific cultural or literary tradition. One of the most well-known characteristics of trolls is their aversion to sunlight, which is often depicted as turning them to stone or causing them great discomfort. This trait is frequently exploited by protagonists in folktales and fairy tales as a means of defeating or escaping from trolls."
   },
 
+
+  {
+    images: [
+       require('../assets/Images/siren/siren1.jpg'),
+       require('../assets/Images/siren/siren2.jpg'),
+       require('../assets/Images/siren/siren3.jpg'),
+       require('../assets/Images/siren/siren4.jpg'),
+     ],
+    word: "SIREN",
+    category: "Creatures",
+    definition: "The siren creature originates from Greek mythology. Often depicted as part woman and part bird, sirens were believed to inhabit rocky islands and lure sailors to their doom with their enchanting songs. These creatures were said to possess irresistible voices that would lead sailors astray, causing them to crash their ships upon the rocks where the sirens dwelled. In various myths, heroes like Odysseus encountered sirens during their voyages and had to devise clever strategies to resist their allure and safely navigate past them."
+  },
+
+  {
+    images: [
+       require('../assets/Images/djinn/djinn1.jpg'),
+       require('../assets/Images/djinn/djinn2.jpg'),
+       require('../assets/Images/djinn/djinn3.jpg'),
+       require('../assets/Images/djinn/djinn4.jpg'),
+     ],
+    word: "DJINN",
+    category: "Creatures",
+    definition: "Djinn, also spelled jinn or genie, are supernatural beings from Islamic mythology and folklore. They are sentient entities created from smokeless fire by Allah (God) and possess free will like humans. Djinn are believed to inhabit a parallel world to humans and are capable of interacting with and influencing the physical world. In Islamic tradition, there are good and evil djinn, with the latter often associated with mischief and malevolence. Djinn are known for their shapeshifting abilities, allowing them to take various forms, including animals, humans, and even inanimate objects. They are also believed to have the power to grant wishes to humans, although this ability is often depicted with cautionary tales of unintended consequences. Djinn play a significant role in Islamic literature, folklore, and religious texts, including the Quran (the central religious text of Islam)."
+  },
+
+  
+
+ 
   {
     images: [
        require('../assets/Images/chimera/chimera1.jpg'),
@@ -661,6 +676,19 @@ const levels = [
     category: "Color",
     definition: "Yellow is a color often associated with brightness, energy, and warmth. It is one of the primary colors in the subtractive color model, along with red and blue, and can be created by mixing red and green light in the additive color model. Yellow is typically perceived as a light hue, but it can vary in intensity from pale to vibrant."
   },
+
+  {
+    images: [
+       require('../assets/Images/silver/silver1.jpg'),
+       require('../assets/Images/silver/silver2.jpg'),
+       require('../assets/Images/silver/silver3.jpg'),
+       require('../assets/Images/silver/silver4.jpg'),
+     ],
+    word: "SILVER",
+    category: "Color",
+    definition: "Silver is a metallic color resembling the shiny gray-white appearance of the metal silver. It is often associated with qualities such as elegance, sophistication, and modernity."
+  },
+
 
   {
     images: [
@@ -723,17 +751,7 @@ const levels = [
     definition: "The color coral is a warm shade that lies somewhere between pink and orange. It's often described as a pinkish-orange or an orange-pink hue, reminiscent of the color of the outer skeleton of marine coral. It's a vibrant and lively color that can add a pop of warmth and energy to any palette."
   },
 
-  {
-    images: [
-       require('../assets/Images/silver/silver1.jpg'),
-       require('../assets/Images/silver/silver2.jpg'),
-       require('../assets/Images/silver/silver3.jpg'),
-       require('../assets/Images/silver/silver4.jpg'),
-     ],
-    word: "SILVER",
-    category: "Color",
-    definition: "Silver is a metallic color resembling the shiny gray-white appearance of the metal silver. It is often associated with qualities such as elegance, sophistication, and modernity."
-  },
+  
 
   {
     images: [
@@ -757,6 +775,133 @@ const levels = [
     word: "MAROON",
     category: "Color",
     definition: "Maroon is a deep, dark red color with a hint of brown or purple. It's a rich and warm shade, often associated with sophistication and elegance. The name maroon comes from the French word marron, which originally referred to chestnut, but later evolved to describe this deep reddish-brown color."
+  },
+
+  {
+    images: [
+       require('../assets/Images/stadium/stadium1.jpg'),
+       require('../assets/Images/stadium/stadium2.jpg'),
+       require('../assets/Images/stadium/stadium3.jpg'),
+       require('../assets/Images/stadium/stadium4.jpg'),
+     ],
+    word: "STADIUM",
+    category: "Sport",
+    definition:"A stadium is a large outdoor or indoor venue designed to host sports events, concerts, or other entertainment activities. It typically features a central field or playing surface surrounded by seating for spectators. "
+  },
+
+
+  {
+    images: [
+       require('../assets/Images/golf/golf1.jpg'),
+       require('../assets/Images/golf/golf2.jpg'),
+       require('../assets/Images/golf/golf3.jpg'),
+       require('../assets/Images/golf/golf4.jpg'),
+     ],
+    word: "GOLF",
+    category: "Sport",
+    definition:"A game played on a large open-air course, in which a small hard ball is struck with a club into a series of small holes in the ground, the object being to use the fewest possible strokes to complete the course."
+  },
+
+  {
+    images: [
+       require('../assets/Images/soccer/soccer1.jpg'),
+       require('../assets/Images/soccer/soccer2.jpg'),
+       require('../assets/Images/soccer/soccer3.jpg'),
+       require('../assets/Images/soccer/soccer4.jpg'),
+     ],
+    word: "SOCCER",
+    category: "Sport",
+    definition:"Soccer is the world's most popular ball game in numbers of participants and spectators. Simple in its principal rules and essential equipment, the sport can be played almost anywhere, from official football playing fields (pitches) to gymnasiums, streets, school playgrounds, parks, or beaches. Football's governing body, the Fédération Internationale de Football Association (FIFA), estimated that at the turn of the 21st century there were approximately 250 million football players and over 1.3 billion people “interested” in football; in 2010 a combined television audience of more than 26 billion watched football's premier tournament, the quadrennial monthlong World Cup finals."
+  },
+  
+
+  
+  {
+    images: [
+       require('../assets/Images/sprint/sprint1.jpg'),
+       require('../assets/Images/sprint/sprint2.jpg'),
+       require('../assets/Images/sprint/sprint3.jpg'),
+       require('../assets/Images/sprint/sprint4.jpg'),
+     ],
+    word: "SPRINT",
+    category: "Sport",
+    definition:"Sprint, in athletics (track and field), a footrace over a short distance with an all-out or nearly all-out burst of speed, the chief distances being 100, 200, and 400 metres and 100, 220, and 440 yards.The course for sprint races is usually marked off in lanes within which each runner must remain for the entire race. Originally sprinters used a standing start, but after 1884 sprinters started from a crouched position using a device called a starting block (legalized in the 1930s) to brace their feet (see photograph). Races are begun by a pistol shot; at 55 to 65 metres (60 to 70 yards), top sprinters attain maximum speed, more than 40 km per hour (25 miles per hour). After the 65-metre mark the runner begins to lose speed through fatigue."
+  },
+
+
+  
+
+  {
+    images: [
+       require('../assets/Images/coach/coach1.jpg'),
+       require('../assets/Images/coach/coach2.jpg'),
+       require('../assets/Images/coach/coach3.jpg'),
+       require('../assets/Images/coach/coach4.jpg'),
+     ],
+    word: "COACH",
+    category: "Sport",
+    definition:"A coach is an individual who provides guidance, instruction, and support to athletes or teams to help them improve their performance and achieve their goals in sports. Coaches play a crucial role in athlete development, both physically and mentally, and their responsibilities extend beyond technical training."
+  },
+  
+  {
+    images: [
+       require('../assets/Images/baseball/baseball1.jpg'),
+       require('../assets/Images/baseball/baseball2.jpg'),
+       require('../assets/Images/baseball/baseball3.jpg'),
+       require('../assets/Images/baseball/baseball4.jpg'),
+     ],
+    word: "BASEBALL",
+    category: "Sport",
+    definition:"Baseball, game played with a bat, a ball, and gloves between two teams of nine players each on a field with four white bases laid out in a diamond (i.e., a square oriented so that its diagonal line is vertical). Teams alternate positions as batters (offense) and fielders (defense), exchanging places when three members of the batting team are “put out.” As batters, players try to hit the ball out of the reach of the fielding team and make a complete circuit around the bases for a “run.” The team that scores the most runs in nine innings (times at bat) wins the game."
+  },
+  {
+    images: [
+       require('../assets/Images/puck/puck1.jpg'),
+       require('../assets/Images/puck/puck2.jpg'),
+       require('../assets/Images/puck/puck3.jpg'),
+       require('../assets/Images/puck/puck4.jpg'),
+     ],
+    word: "PUCK",
+    category: "Sport",
+    definition:"A puck is a hard, rubberized disk used in the sport of ice hockey. It serves as the primary object of play, being propelled by players using their hockey sticks. The puck is typically black in color, made of vulcanized rubber, and measures about three inches in diameter and one inch in thickness. During a hockey game, players pass, shoot, and control the puck as they attempt to score goals by shooting it into the opposing team's net while also defending their own net from the opposing team's offensive attempts."
+  },
+
+  {
+    images: [
+       require('../assets/Images/training/training1.jpg'),
+       require('../assets/Images/training/training2.jpg'),
+       require('../assets/Images/training/training3.jpg'),
+       require('../assets/Images/training/training4.jpg'),
+     ],
+    word: "TRAINING",
+    category: "Sport",
+    definition:"Training in sports encompasses a wide range of activities and practices aimed at improving athletes' physical abilities, technical skills, tactical understanding, and mental resilience."
+  },
+  
+  
+
+  {
+    images: [
+       require('../assets/Images/rugby/rugby1.jpg'),
+       require('../assets/Images/rugby/rugby2.jpg'),
+       require('../assets/Images/rugby/rugby3.jpg'),
+       require('../assets/Images/rugby/rugby4.jpg'),
+     ],
+    word: "RUGBY",
+    category: "Sport",
+    definition:"Rugby, football game played with an oval ball by two teams of 15 players (in rugby union play) or 13 players (in rugby league play). Both rugby union and rugby league have their origins in the style of football played at Rugby School in England. According to the sport's lore, in 1823 William Webb Ellis, a pupil at Rugby School, defied the conventions of the day (that the ball may only be kicked forward) to pick up the ball and run with it in a game, thus creating the distinct handling game of rugby football. "
+  },
+
+  {
+    images: [
+       require('../assets/Images/volley/volley1.jpg'),
+       require('../assets/Images/volley/volley2.jpg'),
+       require('../assets/Images/volley/volley3.jpg'),
+       require('../assets/Images/volley/volley4.jpg'),
+     ],
+    word: "VOLLEY",
+    category: "Sport",
+    definition:"Volley refers to a play in various sports where the ball is struck or kicked in mid-air before it touches the ground. It's commonly used in sports like volleyball, tennis, and soccer. In volleyball, a volley occurs when players hit the ball back and forth over the net without letting it touch the ground. In tennis, a volley is a shot made by hitting the ball before it bounces on the ground. And in soccer, a volley is a technique where a player kicks the ball while it's in the air, often resulting in a powerful shot on goal."
   },
 
 
@@ -786,18 +931,6 @@ const levels = [
     definition: "Reptile, any member of the class Reptilia, the group of air breathing vertebrates that have internal fertilization, amniotic development, and epidermal scales covering part or all of their body. The major groups of living reptiles the turtles (order Testudines), tuatara (order Rhynchocephalia [Sphenodontida]), lizards and snakes (order Squamata), and crocodiles (order Crocodylia, or Crocodilia) account for over 8,700 species. Birds (class Aves) share a common ancestor with crocodiles in subclass Archosauria and are technically one lineage of reptiles, but they are treated separately"
   },
   {
-   images: [
-      require('../assets/Images/Birds/bird1.jpg'),
-      require('../assets/Images/Birds/bird2.jpg'),
-      require('../assets/Images/Birds/bird3.jpg'),
-      require('../assets/Images/Birds/bird4.jpg'),
-    ],
-   word: "AVES",
-   category: "Animals",
-   definition: "Birds are a group of warm-blooded vertebrates constituting the class Aves, characterised by feathers, toothless beaked jaws, the laying of hard-shelled eggs, a high metabolic rate, a four-chambered heart, and a strong yet lightweight skeleton. "
- },
-
- {
     images: [
        require('../assets/Images/insect/insect1.jpg'),
        require('../assets/Images/insect/insect2.jpg'),
@@ -808,32 +941,43 @@ const levels = [
     category: "Animals",
     definition:"Insects are hexapod invertebrates of the class Insecta. They are the largest group within the arthropod phylum. Insects have a chitinous exoskeleton, a three-part body, three pairs of jointed legs, compound eyes, and a pair of antennae."
   },
+
   {
     images: [
-       require('../assets/Images/porifera/porifera1.jpg'),
-       require('../assets/Images/porifera/porifera2.jpg'),
-       require('../assets/Images/porifera/porifera3.jpg'),
-       require('../assets/Images/porifera/porifera4.jpg'),
+       require('../assets/Images/rodent/rodent1.jpg'),
+       require('../assets/Images/rodent/rodent2.jpg'),
+       require('../assets/Images/rodent/rodent3.jpg'),
+       require('../assets/Images/rodent/rodent4.jpg'),
      ],
-    word: "PORIFERA",
+    word: "RODENT",
     category: "Animals",
-    definition:"Porifera is the scientific name for the phylum of multicellular animals commonly known as sponges. Sponges are simple aquatic creatures that are characterized by their lack of true tissues and organs. They are filter feeders, meaning they obtain food by filtering particles from water that passes through their bodies. Sponges come in various shapes, sizes, and colors, and they play important roles in marine ecosystems by providing habitats for other organisms and participating in nutrient cycling."
+    definition:"Rodents are a diverse group of mammals characterized by a single pair of continuously growing incisors in the upper and lower jaws, which must be kept trimmed through gnawing. They are found on every continent except Antarctica and include a wide range of species, from tiny mice to large capybaras."
   },
+
+  {
+   images: [
+      require('../assets/Images/Birds/bird1.jpg'),
+      require('../assets/Images/Birds/bird2.jpg'),
+      require('../assets/Images/Birds/bird3.jpg'),
+      require('../assets/Images/Birds/bird4.jpg'),
+    ],
+   word: "AVES",
+   category: "Animals",
+   definition: "Birds are a group of warm-blooded vertebrates constituting the class Aves, characterised by feathers, toothless beaked jaws, the laying of hard-shelled eggs, a high metabolic rate, a four-chambered heart, and a strong yet lightweight skeleton. "
+ },
+ {
+  images: [
+     require('../assets/Images/mammals/mammal1.jpg'),
+     require('../assets/Images/mammals/mammal2.jpg'),
+     require('../assets/Images/mammals/mammal3.jpg'),
+     require('../assets/Images/mammals/mammal4.jpg'),
+   ],
+  word: "MAMMAL",
+  category: "Animals",
+  definition:"A mammal is a vertebrate animal of the class Mammalia. Mammals are characterized by the presence of milk-producing mammary glands for feeding their young, a neocortex region of the brain, fur or hair, and three middle ear bones."
+},
+ 
   
-
-
-
-  {
-    images: [
-       require('../assets/Images/mammals/mammal1.jpg'),
-       require('../assets/Images/mammals/mammal2.jpg'),
-       require('../assets/Images/mammals/mammal3.jpg'),
-       require('../assets/Images/mammals/mammal4.jpg'),
-     ],
-    word: "MAMMAL",
-    category: "Animals",
-    definition:"A mammal is a vertebrate animal of the class Mammalia. Mammals are characterized by the presence of milk-producing mammary glands for feeding their young, a neocortex region of the brain, fur or hair, and three middle ear bones."
-  },
 
   {
     images: [
@@ -859,18 +1003,7 @@ const levels = [
     definition:"Arachnids are a class of joint-legged invertebrate animals in the arthropod phylum. This class includes spiders, scorpions, ticks, mites, and harvestmen (also known as daddy longlegs). Arachnids are characterized by having eight legs, two main body segments (cephalothorax and abdomen), and often possess specialized structures such as spinnerets (for producing silk) and venomous glands."
   },
 
-  {
-    images: [
-       require('../assets/Images/rodent/rodent1.jpg'),
-       require('../assets/Images/rodent/rodent2.jpg'),
-       require('../assets/Images/rodent/rodent3.jpg'),
-       require('../assets/Images/rodent/rodent4.jpg'),
-     ],
-    word: "RODENT",
-    category: "Animals",
-    definition:"Rodents are a diverse group of mammals characterized by a single pair of continuously growing incisors in the upper and lower jaws, which must be kept trimmed through gnawing. They are found on every continent except Antarctica and include a wide range of species, from tiny mice to large capybaras."
-  },
-
+  
   {
     images: [
        require('../assets/Images/felids/felids1.jpg'),
@@ -883,7 +1016,18 @@ const levels = [
     definition:"Felids is the term used to refer to the family of mammals known as Felidae, which includes all members of the cat family. Felids are characterized by their retractable claws, sharp teeth, and carnivorous diet."
   },
 
-
+  {
+    images: [
+       require('../assets/Images/porifera/porifera1.jpg'),
+       require('../assets/Images/porifera/porifera2.jpg'),
+       require('../assets/Images/porifera/porifera3.jpg'),
+       require('../assets/Images/porifera/porifera4.jpg'),
+     ],
+    word: "PORIFERA",
+    category: "Animals",
+    definition:"Porifera is the scientific name for the phylum of multicellular animals commonly known as sponges. Sponges are simple aquatic creatures that are characterized by their lack of true tissues and organs. They are filter feeders, meaning they obtain food by filtering particles from water that passes through their bodies. Sponges come in various shapes, sizes, and colors, and they play important roles in marine ecosystems by providing habitats for other organisms and participating in nutrient cycling."
+  },
+  
   
   
   {
@@ -911,18 +1055,7 @@ const levels = [
   },
 
 
-  {
-    images: [
-       require('../assets/Images/tropics/tropics1.jpg'),
-       require('../assets/Images/tropics/tropics2.jpg'),
-       require('../assets/Images/tropics/tropics3.jpg'),
-       require('../assets/Images/tropics/tropics4.jpg'),
-     ],
-    word: "TROPICS",
-    category: "Geography",
-    definition:"The tropics refer to the region of the Earth surrounding the Equator, between the Tropic of Cancer in the Northern Hemisphere and the Tropic of Capricorn in the Southern Hemisphere. This area is characterized by generally warm temperatures year-round, high humidity, and distinct wet and dry seasons. The tropics encompass a wide variety of ecosystems, including rainforests, savannas, and tropical oceans, and are home to a diverse array of plant and animal species. "
-  },
-
+ 
 
   {
     images: [
@@ -970,6 +1103,19 @@ const levels = [
    category: "Geography",
    definition:"The Americas, sometimes collectively called America, are a landmass comprising the totality of North and South America. The Americas make up most of the land in Earth's Western Hemisphere and comprise the New World."
  },
+
+ {
+  images: [
+     require('../assets/Images/tropics/tropics1.jpg'),
+     require('../assets/Images/tropics/tropics2.jpg'),
+     require('../assets/Images/tropics/tropics3.jpg'),
+     require('../assets/Images/tropics/tropics4.jpg'),
+   ],
+  word: "TROPICS",
+  category: "Geography",
+  definition:"The tropics refer to the region of the Earth surrounding the Equator, between the Tropic of Cancer in the Northern Hemisphere and the Tropic of Capricorn in the Southern Hemisphere. This area is characterized by generally warm temperatures year-round, high humidity, and distinct wet and dry seasons. The tropics encompass a wide variety of ecosystems, including rainforests, savannas, and tropical oceans, and are home to a diverse array of plant and animal species. "
+},
+
 
  {
   images: [
@@ -1045,18 +1191,7 @@ const levels = [
     definition: "A tractor is a powerful motor vehicle designed primarily for hauling or pulling machinery used in agriculture or construction. Tractors typically have large, heavily treaded tires or tracks for stability and traction, allowing them to operate effectively in rough or muddy terrain. They are equipped with a powerful engine, often diesel-powered, and may feature various attachments such as plows, cultivators, seeders, or loaders, depending on the specific tasks they're intended to perform."
   },
 
-  {
-    images: [
-       require('../assets/Images/scooter/scooter1.jpg'),
-       require('../assets/Images/scooter/scooter2.jpg'),
-       require('../assets/Images/scooter/scooter3.jpg'),
-       require('../assets/Images/scooter/scooter4.jpg'),
-     ],
-    word: "SCOOTER",
-    category: "Vehicle",
-    definition: "A scooter is a two-wheeled vehicle typically powered by a small engine or electric motor. It features a platform for the rider to stand or sit on, handlebars for steering, and wheels for movement. Scooters are commonly used for short-distance transportation in urban areas, offering a convenient and economical alternative to cars or bicycles."
-  },
-
+ 
   {
     images: [
        require('../assets/Images/aircraft/aircraft1.jpg'),
@@ -1071,15 +1206,18 @@ const levels = [
 
   {
     images: [
-       require('../assets/Images/glider/glider1.jpg'),
-       require('../assets/Images/glider/glider2.jpg'),
-       require('../assets/Images/glider/glider3.jpg'),
-       require('../assets/Images/glider/glider4.jpg'),
+       require('../assets/Images/scooter/scooter1.jpg'),
+       require('../assets/Images/scooter/scooter2.jpg'),
+       require('../assets/Images/scooter/scooter3.jpg'),
+       require('../assets/Images/scooter/scooter4.jpg'),
      ],
-    word: "GLIDER",
+    word: "SCOOTER",
     category: "Vehicle",
-    definition: "A glider is an aircraft that flies without an engine. It's designed to glide through the air using natural forces such as gravity and air currents. Gliders are typically launched into the air by being towed behind another aircraft or by being released from a high point such as a hill or a winch. Once airborne, glider pilots use their skill to find rising air currents, such as thermals, ridge lift, or wave lift, to maintain or gain altitude and stay aloft for extended periods of time. Gliders are popular for both recreational flying and competitive soaring events."
+    definition: "A scooter is a two-wheeled vehicle typically powered by a small engine or electric motor. It features a platform for the rider to stand or sit on, handlebars for steering, and wheels for movement. Scooters are commonly used for short-distance transportation in urban areas, offering a convenient and economical alternative to cars or bicycles."
   },
+
+
+  
 
   {
     images: [
@@ -1130,130 +1268,19 @@ const levels = [
     definition: "A tanker is a large ship or vehicle designed for the transport of liquids or gases in bulk. Tankers are commonly used to transport various substances, including oil, petroleum products, liquefied natural gas (LNG), chemicals, and water. In the maritime industry, tankers are specifically designed with one or more large tanks or compartments to hold and transport liquids across oceans and waterways. These ships come in different sizes and configurations depending on the type of cargo they carry and the distance they travel. Tankers can range from small coastal tankers used for regional transport to massive supertankers capable of carrying millions of barrels of oil across the world's oceans."
   },
 
-   
   {
     images: [
-       require('../assets/Images/stadium/stadium1.jpg'),
-       require('../assets/Images/stadium/stadium2.jpg'),
-       require('../assets/Images/stadium/stadium3.jpg'),
-       require('../assets/Images/stadium/stadium4.jpg'),
+       require('../assets/Images/glider/glider1.jpg'),
+       require('../assets/Images/glider/glider2.jpg'),
+       require('../assets/Images/glider/glider3.jpg'),
+       require('../assets/Images/glider/glider4.jpg'),
      ],
-    word: "STADIUM",
-    category: "Sport",
-    definition:"A stadium is a large outdoor or indoor venue designed to host sports events, concerts, or other entertainment activities. It typically features a central field or playing surface surrounded by seating for spectators. "
+    word: "GLIDER",
+    category: "Vehicle",
+    definition: "A glider is an aircraft that flies without an engine. It's designed to glide through the air using natural forces such as gravity and air currents. Gliders are typically launched into the air by being towed behind another aircraft or by being released from a high point such as a hill or a winch. Once airborne, glider pilots use their skill to find rising air currents, such as thermals, ridge lift, or wave lift, to maintain or gain altitude and stay aloft for extended periods of time. Gliders are popular for both recreational flying and competitive soaring events."
   },
 
 
-  {
-    images: [
-       require('../assets/Images/golf/golf1.jpg'),
-       require('../assets/Images/golf/golf2.jpg'),
-       require('../assets/Images/golf/golf3.jpg'),
-       require('../assets/Images/golf/golf4.jpg'),
-     ],
-    word: "GOLF",
-    category: "Sport",
-    definition:"A game played on a large open-air course, in which a small hard ball is struck with a club into a series of small holes in the ground, the object being to use the fewest possible strokes to complete the course."
-  },
-
-  {
-    images: [
-       require('../assets/Images/training/training1.jpg'),
-       require('../assets/Images/training/training2.jpg'),
-       require('../assets/Images/training/training3.jpg'),
-       require('../assets/Images/training/training4.jpg'),
-     ],
-    word: "TRAINING",
-    category: "Sport",
-    definition:"Training in sports encompasses a wide range of activities and practices aimed at improving athletes' physical abilities, technical skills, tactical understanding, and mental resilience."
-  },
-  
-  
-  {
-    images: [
-       require('../assets/Images/sprint/sprint1.jpg'),
-       require('../assets/Images/sprint/sprint2.jpg'),
-       require('../assets/Images/sprint/sprint3.jpg'),
-       require('../assets/Images/sprint/sprint4.jpg'),
-     ],
-    word: "SPRINT",
-    category: "Sport",
-    definition:"Sprint, in athletics (track and field), a footrace over a short distance with an all-out or nearly all-out burst of speed, the chief distances being 100, 200, and 400 metres and 100, 220, and 440 yards.The course for sprint races is usually marked off in lanes within which each runner must remain for the entire race. Originally sprinters used a standing start, but after 1884 sprinters started from a crouched position using a device called a starting block (legalized in the 1930s) to brace their feet (see photograph). Races are begun by a pistol shot; at 55 to 65 metres (60 to 70 yards), top sprinters attain maximum speed, more than 40 km per hour (25 miles per hour). After the 65-metre mark the runner begins to lose speed through fatigue."
-  },
-
-  {
-    images: [
-       require('../assets/Images/puck/puck1.jpg'),
-       require('../assets/Images/puck/puck2.jpg'),
-       require('../assets/Images/puck/puck3.jpg'),
-       require('../assets/Images/puck/puck4.jpg'),
-     ],
-    word: "PUCK",
-    category: "Sport",
-    definition:"A puck is a hard, rubberized disk used in the sport of ice hockey. It serves as the primary object of play, being propelled by players using their hockey sticks. The puck is typically black in color, made of vulcanized rubber, and measures about three inches in diameter and one inch in thickness. During a hockey game, players pass, shoot, and control the puck as they attempt to score goals by shooting it into the opposing team's net while also defending their own net from the opposing team's offensive attempts."
-  },
-
-  {
-    images: [
-       require('../assets/Images/soccer/soccer1.jpg'),
-       require('../assets/Images/soccer/soccer2.jpg'),
-       require('../assets/Images/soccer/soccer3.jpg'),
-       require('../assets/Images/soccer/soccer4.jpg'),
-     ],
-    word: "SOCCER",
-    category: "Sport",
-    definition:"Soccer is the world's most popular ball game in numbers of participants and spectators. Simple in its principal rules and essential equipment, the sport can be played almost anywhere, from official football playing fields (pitches) to gymnasiums, streets, school playgrounds, parks, or beaches. Football's governing body, the Fédération Internationale de Football Association (FIFA), estimated that at the turn of the 21st century there were approximately 250 million football players and over 1.3 billion people “interested” in football; in 2010 a combined television audience of more than 26 billion watched football's premier tournament, the quadrennial monthlong World Cup finals."
-  },
-  
-
-  {
-    images: [
-       require('../assets/Images/coach/coach1.jpg'),
-       require('../assets/Images/coach/coach2.jpg'),
-       require('../assets/Images/coach/coach3.jpg'),
-       require('../assets/Images/coach/coach4.jpg'),
-     ],
-    word: "COACH",
-    category: "Sport",
-    definition:"A coach is an individual who provides guidance, instruction, and support to athletes or teams to help them improve their performance and achieve their goals in sports. Coaches play a crucial role in athlete development, both physically and mentally, and their responsibilities extend beyond technical training."
-  },
-
-
-  {
-    images: [
-       require('../assets/Images/rugby/rugby1.jpg'),
-       require('../assets/Images/rugby/rugby2.jpg'),
-       require('../assets/Images/rugby/rugby3.jpg'),
-       require('../assets/Images/rugby/rugby4.jpg'),
-     ],
-    word: "RUGBY",
-    category: "Sport",
-    definition:"Rugby, football game played with an oval ball by two teams of 15 players (in rugby union play) or 13 players (in rugby league play). Both rugby union and rugby league have their origins in the style of football played at Rugby School in England. According to the sport's lore, in 1823 William Webb Ellis, a pupil at Rugby School, defied the conventions of the day (that the ball may only be kicked forward) to pick up the ball and run with it in a game, thus creating the distinct handling game of rugby football. "
-  },
-
-  {
-    images: [
-       require('../assets/Images/volley/volley1.jpg'),
-       require('../assets/Images/volley/volley2.jpg'),
-       require('../assets/Images/volley/volley3.jpg'),
-       require('../assets/Images/volley/volley4.jpg'),
-     ],
-    word: "VOLLEY",
-    category: "Sport",
-    definition:"Volley refers to a play in various sports where the ball is struck or kicked in mid-air before it touches the ground. It's commonly used in sports like volleyball, tennis, and soccer. In volleyball, a volley occurs when players hit the ball back and forth over the net without letting it touch the ground. In tennis, a volley is a shot made by hitting the ball before it bounces on the ground. And in soccer, a volley is a technique where a player kicks the ball while it's in the air, often resulting in a powerful shot on goal."
-  },
-
-  {
-   images: [
-      require('../assets/Images/baseball/baseball1.jpg'),
-      require('../assets/Images/baseball/baseball2.jpg'),
-      require('../assets/Images/baseball/baseball3.jpg'),
-      require('../assets/Images/baseball/baseball4.jpg'),
-    ],
-   word: "BASEBALL",
-   category: "Sport",
-   definition:"Baseball, game played with a bat, a ball, and gloves between two teams of nine players each on a field with four white bases laid out in a diamond (i.e., a square oriented so that its diagonal line is vertical). Teams alternate positions as batters (offense) and fielders (defense), exchanging places when three members of the batting team are “put out.” As batters, players try to hit the ball out of the reach of the fielding team and make a complete circuit around the bases for a “run.” The team that scores the most runs in nine innings (times at bat) wins the game."
- },
 
  {
   images: [
@@ -1293,20 +1320,7 @@ const levels = [
     definition: "Staff notation, also known as standard notation, is the system of musical notation used by most Western classical and popular music. It consists of a set of five horizontal lines called a staff (plural: staves) on which musical symbols such as notes, rests, and other symbols are placed to represent pitch and rhythm. The pitch of a note is determined by its vertical position on the staff, and the duration of a note is indicated by the shape of the note head and any accompanying flags or stems."
   },
 
-  {
-    images: [
-       require('../assets/Images/banjo/banjo1.jpg'),
-       require('../assets/Images/banjo/banjo2.jpg'),
-       require('../assets/Images/banjo/banjo3.jpg'),
-       require('../assets/Images/banjo/banjo4.jpg'),
-     ],
-    word: "BANJO",
-    category: "Music",
-    definition: "A banjo is a stringed musical instrument that originated in West Africa and was later adopted in the Americas, particularly in the United States. It typically consists of a circular body, often made of wood or a synthetic material, with a drum-like membrane stretched over the top. The banjo has a distinctive sound produced by plucking or strumming the strings, which are stretched over a bridge and fretboard. It is commonly used in folk, bluegrass, country, and traditional African music, and it has a unique twangy tone that sets it apart from other stringed instruments."
-  },
-   
   
-
   {
     images: [
        require('../assets/Images/country/country1.jpg'),
@@ -1356,6 +1370,19 @@ const levels = [
 
   {
     images: [
+       require('../assets/Images/banjo/banjo1.jpg'),
+       require('../assets/Images/banjo/banjo2.jpg'),
+       require('../assets/Images/banjo/banjo3.jpg'),
+       require('../assets/Images/banjo/banjo4.jpg'),
+     ],
+    word: "BANJO",
+    category: "Music",
+    definition: "A banjo is a stringed musical instrument that originated in West Africa and was later adopted in the Americas, particularly in the United States. It typically consists of a circular body, often made of wood or a synthetic material, with a drum-like membrane stretched over the top. The banjo has a distinctive sound produced by plucking or strumming the strings, which are stretched over a bridge and fretboard. It is commonly used in folk, bluegrass, country, and traditional African music, and it has a unique twangy tone that sets it apart from other stringed instruments."
+  },
+   
+
+  {
+    images: [
        require('../assets/Images/chorale/chorale1.jpg'),
        require('../assets/Images/chorale/chorale2.jpg'),
        require('../assets/Images/chorale/chorale3.jpg'),
@@ -1378,79 +1405,6 @@ const levels = [
     category: "Music",
     definition:"Afrobeat (also known as Afrofunk) is a Nigerian music genre that involves the combination of West African musical styles from mainly Nigeria such as the traditional Yoruba and Igbo music and highlife with American funk, jazz, and soul influences."
   },
-  {
-   images: [
-      require('../assets/Images/fantasy/fantasy1.jpg'),
-      require('../assets/Images/fantasy/fantasy2.jpg'),
-      require('../assets/Images/fantasy/fantasy3.jpg'),
-      require('../assets/Images/fantasy/fantasy4.jpg'),
-    ],
-   word: "FANTASY",
-   category: "Film",
-   definition:"Fantasy, imaginative fiction dependent for effect on strangeness of setting (such as other worlds or times) and of characters (such as supernatural or unnatural beings). Examples include William Shakespeare's A Midsummer Night's Dream, Jonathan Swift's Gulliver's Travels, J.R.R. Tolkien's The Lord of the Rings, and T.H. White's The Once and Future King. Fantasy is set in an imaginary world and features the magic of mythical beings."
- },
-
- {
-  images: [
-     require('../assets/Images/rental/rental1.jpg'),
-     require('../assets/Images/rental/rental2.jpg'),
-     require('../assets/Images/rental/rental3.jpg'),
-     require('../assets/Images/rental/rental4.jpg'),
-   ],
-  word: "RENTAL",
-  category: "Film",
-  definition:"Rental refers to the act of temporarily obtaining or leasing something, such as a movie, for a specified period of time in exchange for payment. In the context of movies, rental typically refers to the process of renting or borrowing a film for a short-term viewing period, usually from a rental store, online streaming service, or digital platform. Renting a movie allows individuals to watch it at their convenience without needing to purchase a permanent copy."
-},
-
-
- {
-  images: [
-     require('../assets/Images/lighting/lighting1.jpg'),
-     require('../assets/Images/lighting/lighting2.jpg'),
-     require('../assets/Images/lighting/lighting3.jpg'),
-     require('../assets/Images/lighting/lighting4.jpg'),
-   ],
-  word: "LIGHTING",
-  category: "Film",
-  definition:"Lighting in movies plays a crucial role in setting the mood, atmosphere, and visual tone of a scene. It serves both practical and artistic purposes, enhancing the storytelling and conveying emotions to the audience. "
-},
-
-
-{
-  images: [
-     require('../assets/Images/crew/crew1.jpg'),
-     require('../assets/Images/crew/crew2.jpg'),
-     require('../assets/Images/crew/crew3.jpg'),
-     require('../assets/Images/crew/crew4.jpg'),
-   ],
-  word: "CREW",
-  category: "Film",
-  definition:"A crew is a group of individuals who work together on a movie or television production. They fulfill various roles, including director, producer, cinematographer, and sound technician, among others. Each member contributes their expertise to bring the production to life, from managing the creative vision to handling technical aspects like lighting and sound. Together, the crew collaborates to create a cohesive and engaging final product for audiences to enjoy."
-},
-
- {
-    images: [
-       require('../assets/Images/scifi/scifi1.jpg'),
-       require('../assets/Images/scifi/scifi2.jpg'),
-       require('../assets/Images/scifi/scifi3.jpg'),
-       require('../assets/Images/scifi/scifi4.jpg'),
-     ],
-    word: "SCIFI",
-    category: "Film",
-    definition:"Science fiction, popularly shortened as sci-fi, is a genre of fiction that creatively depicts real or imaginary science and technology as part of its plot, setting, or theme. The fiction part of science fiction means, of course, that it's a fictional story—not a real-life account."
-  },
-
-  {
-    images: [
-       require('../assets/Images/lighting/lighting1.jpg'),
-       require('../assets/Images/lighting/lighting2.jpg'),
-       require('../assets/Images/lighting/lighting3.jpg'),
-       require('../assets/Images/lighting/lighting4.jpg'),
-     ],
-    word: "LIGHTING",
-    category: "Film",
-    definition:"Lighting in movies plays a crucial role in setting the mood, atmosphere, and visual tone of a scene. It serves both practical and artistic purposes, enhancing the storytelling and conveying emotions to the audience. "
-  },
 
   {
     images: [
@@ -1466,6 +1420,64 @@ const levels = [
 
   {
     images: [
+       require('../assets/Images/action/action1.jpg'),
+       require('../assets/Images/action/action2.jpg'),
+       require('../assets/Images/action/action3.jpg'),
+       require('../assets/Images/action/action4.jpg'),
+     ],
+    word: "ACTION",
+    category: "Film",
+    definition: "Action film is a film genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, and frantic chases."
+  },
+
+  {
+    images: [
+       require('../assets/Images/lighting/lighting1.jpg'),
+       require('../assets/Images/lighting/lighting2.jpg'),
+       require('../assets/Images/lighting/lighting3.jpg'),
+       require('../assets/Images/lighting/lighting4.jpg'),
+     ],
+    word: "LIGHTING",
+    category: "Film",
+    definition:"Lighting in movies plays a crucial role in setting the mood, atmosphere, and visual tone of a scene. It serves both practical and artistic purposes, enhancing the storytelling and conveying emotions to the audience. "
+  },
+  {
+   images: [
+      require('../assets/Images/fantasy/fantasy1.jpg'),
+      require('../assets/Images/fantasy/fantasy2.jpg'),
+      require('../assets/Images/fantasy/fantasy3.jpg'),
+      require('../assets/Images/fantasy/fantasy4.jpg'),
+    ],
+   word: "FANTASY",
+   category: "Film",
+   definition:"Fantasy, imaginative fiction dependent for effect on strangeness of setting (such as other worlds or times) and of characters (such as supernatural or unnatural beings). Examples include William Shakespeare's A Midsummer Night's Dream, Jonathan Swift's Gulliver's Travels, J.R.R. Tolkien's The Lord of the Rings, and T.H. White's The Once and Future King. Fantasy is set in an imaginary world and features the magic of mythical beings."
+ },
+ 
+ 
+
+ 
+
+
+
+{
+  images: [
+     require('../assets/Images/crew/crew1.jpg'),
+     require('../assets/Images/crew/crew2.jpg'),
+     require('../assets/Images/crew/crew3.jpg'),
+     require('../assets/Images/crew/crew4.jpg'),
+   ],
+  word: "CREW",
+  category: "Film",
+  definition:"A crew is a group of individuals who work together on a movie or television production. They fulfill various roles, including director, producer, cinematographer, and sound technician, among others. Each member contributes their expertise to bring the production to life, from managing the creative vision to handling technical aspects like lighting and sound. Together, the crew collaborates to create a cohesive and engaging final product for audiences to enjoy."
+},
+
+
+
+  
+  
+
+  {
+    images: [
        require('../assets/Images/costume/costume1.jpg'),
        require('../assets/Images/costume/costume2.jpg'),
        require('../assets/Images/costume/costume3.jpg'),
@@ -1476,17 +1488,7 @@ const levels = [
     definition:"Costume refers to the clothing and accessories worn by actors or performers in a theatrical production, film, television show, or other forms of entertainment. Costumes play a significant role in bringing characters to life, establishing setting and time period, and enhancing storytelling."
   },
   
-  {
-    images: [
-       require('../assets/Images/action/action1.jpg'),
-       require('../assets/Images/action/action2.jpg'),
-       require('../assets/Images/action/action3.jpg'),
-       require('../assets/Images/action/action4.jpg'),
-     ],
-    word: "ACTION",
-    category: "Film",
-    definition: "Action film is a film genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, and frantic chases."
-  },
+ 
   {
     images: [
        require('../assets/Images/musical/musical1.jpg'),
@@ -1498,6 +1500,44 @@ const levels = [
     category: "Film",
     definition:"Musical film is a film genre in which songs by the characters are interwoven into the narrative, sometimes accompanied by dancing. The songs usually advance the plot or develop the film's characters, but in some cases, they serve merely as breaks in the storyline, often as elaborate production numbers"
   },
+
+  {
+    images: [
+       require('../assets/Images/scifi/scifi1.jpg'),
+       require('../assets/Images/scifi/scifi2.jpg'),
+       require('../assets/Images/scifi/scifi3.jpg'),
+       require('../assets/Images/scifi/scifi4.jpg'),
+     ],
+    word: "SCIFI",
+    category: "Film",
+    definition:"Science fiction, popularly shortened as sci-fi, is a genre of fiction that creatively depicts real or imaginary science and technology as part of its plot, setting, or theme. The fiction part of science fiction means, of course, that it's a fictional story—not a real-life account."
+  },
+
+  {
+    images: [
+       require('../assets/Images/subtitle/subtitle1.jpeg'),
+       require('../assets/Images/subtitle/subtitle2.jpeg'),
+       require('../assets/Images/subtitle/subtitle3.jpeg'),
+       require('../assets/Images/subtitle/subtitle4.jpeg'),
+     ],
+    word: "SUBTITLE",
+    category: "Film",
+    definition:"Subtitles are texts representing the contents of the audio in a film, television show, opera or other audiovisual media. Subtitles might provide a transcription or translation of spoken dialogue. Although naming conventions can vary, captions are subtitles that include written descriptions of other elements of the audio, like music or sound effects. Captions are thus especially helpful to people who are deaf or hard-of-hearing. Subtitles may also add information that is not present in the audio. Localizing subtitles provide cultural context to viewers. For example, a subtitle could be used to explain to an audience unfamiliar with sake that it is a type of Japanese wine. Lastly, subtitles are sometimes used for humor, as in Annie Hall, where subtitles show the characters' inner thoughts, which contradict what they were saying in the audio."
+  },
+
+
+  {
+    images: [
+       require('../assets/Images/rental/rental1.jpg'),
+       require('../assets/Images/rental/rental2.jpg'),
+       require('../assets/Images/rental/rental3.jpg'),
+       require('../assets/Images/rental/rental4.jpg'),
+     ],
+    word: "RENTAL",
+    category: "Film",
+    definition:"Rental refers to the act of temporarily obtaining or leasing something, such as a movie, for a specified period of time in exchange for payment. In the context of movies, rental typically refers to the process of renting or borrowing a film for a short-term viewing period, usually from a rental store, online streaming service, or digital platform. Renting a movie allows individuals to watch it at their convenience without needing to purchase a permanent copy."
+  },
+  
   {
     images: [
        require('../assets/Images/ballet/ballet1.jpg'),
@@ -1509,6 +1549,19 @@ const levels = [
     category: "Dance",
     definition:"Ballet, theatrical dance in which a formal academic dance technique—the danse d'école—is combined with other artistic elements such as music, costume, and stage scenery. The academic technique itself is also known as ballet. This article surveys the history of ballet."
   },
+
+  {
+    images: [
+       require('../assets/Images/tango/tango1.jpg'),
+       require('../assets/Images/tango/tango2.jpg'),
+       require('../assets/Images/tango/tango3.jpg'),
+       require('../assets/Images/tango/tango44.jpg'),
+     ],
+    word: "TANGO",
+    category: "Dance",
+    definition:"Tango, is a ballroom dance of Latin American origin in ²/₄ time with a basic pattern of step-step-step-step-close and characterized by long pauses and stylized body positions."
+  },
+ 
 
 
   {
@@ -1524,31 +1577,6 @@ const levels = [
   },
 
 
-
-  {
-    images: [
-       require('../assets/Images/vogue/vogue1.jpg'),
-       require('../assets/Images/vogue/vogue2.jpg'),
-       require('../assets/Images/vogue/vogue3.jpg'),
-       require('../assets/Images/vogue/vogue4.jpg'),
-     ],
-    word: "VOGUE",
-    category: "Dance",
-    definition:"Vogue dance is a highly stylized form of dance that originated in the late 1980s within the LGBTQ+ ballroom scene in New York City. It emerged as a part of the broader ballroom culture, which encompasses various competitive dance categories. Vogue dance draws its inspiration from the poses and movements found in the pages of fashion magazines like Vogue, hence its name. The dance form is characterized by exaggerated, fluid movements, often mimicking the poses and gestures of models on a runway. Vogue dancers typically strike angular and graceful poses, incorporating elements of mime and exaggerated facial expressions. Vogue dance is not only about technical skill but also about attitude, confidence, and self-expression."
-  },
-
-
-  {
-   images: [
-      require('../assets/Images/tango/tango1.jpg'),
-      require('../assets/Images/tango/tango2.jpg'),
-      require('../assets/Images/tango/tango3.jpg'),
-      require('../assets/Images/tango/tango44.jpg'),
-    ],
-   word: "TANGO",
-   category: "Dance",
-   definition:"Tango, is a ballroom dance of Latin American origin in ²/₄ time with a basic pattern of step-step-step-step-close and characterized by long pauses and stylized body positions."
- },
 
  {
   images: [
@@ -1576,18 +1604,6 @@ const levels = [
 
 
  {
-  images: [
-     require('../assets/Images/waltz/waltz1.jpg'),
-     require('../assets/Images/waltz/waltz2.jpg'),
-     require('../assets/Images/waltz/waltz3.jpg'),
-     require('../assets/Images/waltz/waltz4.jpg'),
-   ],
-  word: "WALTZ",
-  category: "Dance",
-  definition:"The waltz is a graceful and elegant ballroom dance that originated in the late 18th century in the German-speaking areas of Europe. It gained popularity throughout the 19th century and has since become one of the most well-known and beloved social dances worldwide.Characterized by its smooth, flowing movements and 3/4 time signature, the waltz is danced in a closed position, with partners holding each other closely as they move around the dance floor. The basic steps involve a series of box-like patterns, with dancers taking steps forward, backward, and to the side in a rotating motion."
-},
-
- {
     images: [
        require('../assets/Images/belly/belly1.jpg'),
        require('../assets/Images/belly/belly2.jpg'),
@@ -1609,7 +1625,20 @@ const levels = [
     category: "Dance",
     definition:"Tap dance is a form of dance which uses the sounds of tap shoes striking the floor as a form of percussion; it is often accompanied by music. Tap dancing can also be a cappella, with no musical accompaniment; the sound of the taps is its own music.It is an American art form that began with the combination of West African and British dance traditions: British soft-shoe and hard-shoe step dances and a variety of secular and religious African step dances. The fusion of African rhythms and performance styles with European techniques of footwork led to the creation of tap dance. This fusion began in the mid-17th century but did not become popular until the mid-19th century."
   },
-  
+
+  {
+    images: [
+       require('../assets/Images/waltz/waltz1.jpg'),
+       require('../assets/Images/waltz/waltz2.jpg'),
+       require('../assets/Images/waltz/waltz3.jpg'),
+       require('../assets/Images/waltz/waltz4.jpg'),
+     ],
+    word: "WALTZ",
+    category: "Dance",
+    definition:"The waltz is a graceful and elegant ballroom dance that originated in the late 18th century in the German-speaking areas of Europe. It gained popularity throughout the 19th century and has since become one of the most well-known and beloved social dances worldwide.Characterized by its smooth, flowing movements and 3/4 time signature, the waltz is danced in a closed position, with partners holding each other closely as they move around the dance floor. The basic steps involve a series of box-like patterns, with dancers taking steps forward, backward, and to the side in a rotating motion."
+  },
+
+
   {
     images: [
        require('../assets/Images/moonwalk/moonwalk1.jpg'),
@@ -1621,7 +1650,17 @@ const levels = [
     category: "Dance",
     definition:"The moonwalk, or backslide, is a popping dance move in which the performer glides backwards but their body actions suggest forward motion. It became popular around the world when Michael Jackson performed the move during the performance of Billie Jean on Motown 25: Yesterday, Today, Forever, which was broadcast in 1983. He included the moonwalk in tours and live performances."
   },
-
+  {
+    images: [
+       require('../assets/Images/vogue/vogue1.jpg'),
+       require('../assets/Images/vogue/vogue2.jpg'),
+       require('../assets/Images/vogue/vogue3.jpg'),
+       require('../assets/Images/vogue/vogue4.jpg'),
+     ],
+    word: "VOGUE",
+    category: "Dance",
+    definition:"Vogue dance is a highly stylized form of dance that originated in the late 1980s within the LGBTQ+ ballroom scene in New York City. It emerged as a part of the broader ballroom culture, which encompasses various competitive dance categories. Vogue dance draws its inspiration from the poses and movements found in the pages of fashion magazines like Vogue, hence its name. The dance form is characterized by exaggerated, fluid movements, often mimicking the poses and gestures of models on a runway. Vogue dancers typically strike angular and graceful poses, incorporating elements of mime and exaggerated facial expressions. Vogue dance is not only about technical skill but also about attitude, confidence, and self-expression."
+  },
   
 
   {
@@ -1634,6 +1673,18 @@ const levels = [
     word: "CHAPEL",
     category: "Religion",
     definition:"A chapel (from Latin: cappella) is a Christian place of prayer and worship that is usually relatively small. The term has several meanings. First, smaller spaces inside a church that have their own altar are often called chapels; the Lady chapel is a common type of these. Second, a chapel is a place of worship, sometimes interfaith, that is part of a building, complex, or vessel with some other main purpose, such as a school, college, hospital, palace or large aristocratic house, castle, barracks, prison, funeral home, cemetery, airport, or a military or commercial ship."
+  },
+
+  {
+    images: [
+       require('../assets/Images/shrine/shrine1.jpg'),
+       require('../assets/Images/shrine/shrine2.jpg'),
+       require('../assets/Images/shrine/shrine3.jpg'),
+       require('../assets/Images/shrine/shrine4.jpg'),
+     ],
+    word: "SHRINE",
+    category: "Religion",
+    definition: "A shrine is a sacred or holy space dedicated to a specific deity, ancestor, hero, martyr, saint, daemon, or similar figure of respect, wherein they are venerated or worshipped. Shrines often contain idols, relics, or other such objects associated with the figure being venerated."
   },
 
   {
@@ -1662,43 +1713,7 @@ const levels = [
     definition:"Siddhartha Gautama, most commonly referred to as the Buddha ('the awakened'), was a wandering ascetic and religious teacher who lived in South Asia during the 6th or 5th century BCE and founded Buddhism. According to Buddhist legends, he was born in Lumbini, in what is now Nepal, to royal parents of the Shakya clan, but renounced his home life to live as a wandering ascetic. After leading a life of mendicancy, asceticism, and meditation, he attained nirvana at Bodh Gaya in what is now India. The Buddha then wandered through the lower Indo-Gangetic Plain, teaching and building a monastic order. He died in Kushinagar, reaching parinirvana, final extinction."
   },
 
-  {
-    images: [
-       require('../assets/Images/devotion/devotion1.jpg'),
-       require('../assets/Images/devotion/devotion2.jpg'),
-       require('../assets/Images/devotion/devotion3.jpg'),
-       require('../assets/Images/devotion/devotion4.jpg'),
-     ],
-    word: "DEVOTION",
-    category: "Religion",
-    definition:"Devotion refers to a profound dedication, commitment, or loyalty to a person, cause, belief, or practice. It often involves strong feelings of admiration, love, or reverence towards the object of one's devotion. Devotion can manifest in various forms, including religious worship, loyalty to a leader or cause, or steadfast commitment to a particular activity or practice. In the context of religious or spiritual devotion, individuals may demonstrate their commitment through prayer, meditation, rituals, acts of service, or adherence to religious doctrines and teachings. Devotion to a higher power or deity is often seen as a central aspect of many religious traditions, serving as a means of expressing faith, seeking guidance, and deepening one's spiritual connection."
-  },
-
-
-  {
-   images: [
-      require('../assets/Images/shrine/shrine1.jpg'),
-      require('../assets/Images/shrine/shrine2.jpg'),
-      require('../assets/Images/shrine/shrine3.jpg'),
-      require('../assets/Images/shrine/shrine4.jpg'),
-    ],
-   word: "SHRINE",
-   category: "Religion",
-   definition: "A shrine is a sacred or holy space dedicated to a specific deity, ancestor, hero, martyr, saint, daemon, or similar figure of respect, wherein they are venerated or worshipped. Shrines often contain idols, relics, or other such objects associated with the figure being venerated."
- },
-
- {
-  images: [
-     require('../assets/Images/mandala/mandala1.jpeg'),
-     require('../assets/Images/mandala/mandala2.jpeg'),
-     require('../assets/Images/mandala/mandala3.jpeg'),
-     require('../assets/Images/mandala/mandala4.jpeg'),
-   ],
-  word: "MANDALA",
-  category: "Religion",
-  definition: "A mandala is a geometric or symbolic design that represents the universe in Hinduism and Buddhism. It is often used as a tool for meditation and spiritual guidance. Mandalas typically feature intricate patterns arranged around a central point, representing the interconnectedness of all things and the balance between the inner and outer worlds. Creating or contemplating mandalas is believed to promote focus, relaxation, and a sense of harmony within oneself."
-},
-
+  
  {
     images: [
        require('../assets/Images/cardinal/cardinal1.jpg'),
@@ -1751,40 +1766,43 @@ const levels = [
     category: "Religion",
     definition:"A deity is a supernatural being or divine entity that is worshiped or revered as having control over certain aspects of the world or possessing supernatural powers. Deities are often central figures in religious beliefs and are typically associated with specific cultures, religions, or mythologies. Deities can take on various forms, including anthropomorphic beings with human-like attributes, animalistic forms, or abstract concepts. They are often believed to have influence or dominion over natural phenomena, such as the sun, moon, earth, weather, fertility, and war, among others."
   },
-  
+
   {
     images: [
-       require('../assets/Images/chemist/chemist1.jpg'),
-       require('../assets/Images/chemist/chemist2.jpg'),
-       require('../assets/Images/chemist/chemist3.jpg'),
-       require('../assets/Images/chemist/chemist4.jpg'),
+       require('../assets/Images/devotion/devotion1.jpg'),
+       require('../assets/Images/devotion/devotion2.jpg'),
+       require('../assets/Images/devotion/devotion3.jpg'),
+       require('../assets/Images/devotion/devotion4.jpg'),
      ],
-    word: "CHEMIST",
-    category: "Career",
-    definition: "A chemist (from Greek chēm(ía) alchemy; replacing chymist from Medieval Latin alchemist) is a graduated scientist trained in the study of chemistry, or an officially enrolled student in the relevant field. Chemists study the composition of matter and its properties. Chemists carefully describe the properties they study in terms of quantities, with detail on the level of molecules and their component atoms. Chemists carefully measure substance proportions, chemical reaction rates, and other chemical properties. In Commonwealth English, pharmacists are often called chemists."
-  },
-  {
-    images: [
-       require('../assets/Images/violist/violist1.jpg'),
-       require('../assets/Images/violist/violist2.jpg'),
-       require('../assets/Images/violist/violist3.jpg'),
-       require('../assets/Images/violist/violist4.jpg'),
-     ],
-    word: "VIOLIST",
-    category: "Career",
-    definition: "A violist is a person that plays the viola. The viola is a string instrument that is usually bowed. Slightly larger than a violin, it has a lower and deeper sound. Since the 18th century, it has been the middle or alto voice of the violin family, between the violin (which is tuned a perfect fifth higher) and the cello (which is tuned an octave lower). The strings from low to high are typically tuned to C3, G3, D4, and A4."
+    word: "DEVOTION",
+    category: "Religion",
+    definition:"Devotion refers to a profound dedication, commitment, or loyalty to a person, cause, belief, or practice. It often involves strong feelings of admiration, love, or reverence towards the object of one's devotion. Devotion can manifest in various forms, including religious worship, loyalty to a leader or cause, or steadfast commitment to a particular activity or practice. In the context of religious or spiritual devotion, individuals may demonstrate their commitment through prayer, meditation, rituals, acts of service, or adherence to religious doctrines and teachings. Devotion to a higher power or deity is often seen as a central aspect of many religious traditions, serving as a means of expressing faith, seeking guidance, and deepening one's spiritual connection."
   },
 
   {
     images: [
-       require('../assets/Images/resume/resume1.jpg'),
-       require('../assets/Images/resume/resume2.jpg'),
-       require('../assets/Images/resume/resume3.jpg'),
-       require('../assets/Images/resume/resume4.jpg'),
+       require('../assets/Images/mandala/mandala1.jpeg'),
+       require('../assets/Images/mandala/mandala2.jpeg'),
+       require('../assets/Images/mandala/mandala3.jpeg'),
+       require('../assets/Images/mandala/mandala4.jpeg'),
      ],
-    word: "RESUME",
+    word: "MANDALA",
+    category: "Religion",
+    definition: "A mandala is a geometric or symbolic design that represents the universe in Hinduism and Buddhism. It is often used as a tool for meditation and spiritual guidance. Mandalas typically feature intricate patterns arranged around a central point, representing the interconnectedness of all things and the balance between the inner and outer worlds. Creating or contemplating mandalas is believed to promote focus, relaxation, and a sense of harmony within oneself."
+  },
+  
+  
+  
+  {
+    images: [
+       require('../assets/Images/theater/theater1.jpg'),
+       require('../assets/Images/theater/theater2.jpg'),
+       require('../assets/Images/theater/theater3.jpg'),
+       require('../assets/Images/theater/theater4.jpg'),
+     ],
+    word: "THEATRE",
     category: "Career",
-    definition: "A resume is a concise document that outlines an individual's education, work experience, skills, achievements, and qualifications relevant to a particular job or career field. It serves as a marketing tool designed to highlight a candidate's strengths and suitability for employment opportunities."
+    definition: "Theatre or theater is a collaborative form of performing art that uses live performers, usually actors or actresses, to present the experience of a real or imagined event before a live audience in a specific place, often a stage. The performers may communicate this experience to the audience through combinations of gesture, speech, song, music, and dance. It is the oldest form of drama, though live theatre has now been joined by modern recorded forms. Elements of art, such as painted scenery and stagecraft such as lighting are used to enhance the physicality, presence and immediacy of the experience."
   },
 
   {
@@ -1861,17 +1879,82 @@ const levels = [
   },
 
 
+  
+
   {
     images: [
-       require('../assets/Images/theater/theater1.jpg'),
-       require('../assets/Images/theater/theater2.jpg'),
-       require('../assets/Images/theater/theater3.jpg'),
-       require('../assets/Images/theater/theater4.jpg'),
+       require('../assets/Images/chemist/chemist1.jpg'),
+       require('../assets/Images/chemist/chemist2.jpg'),
+       require('../assets/Images/chemist/chemist3.jpg'),
+       require('../assets/Images/chemist/chemist4.jpg'),
      ],
-    word: "THEATRE",
+    word: "CHEMIST",
     category: "Career",
-    definition: "Theatre or theater is a collaborative form of performing art that uses live performers, usually actors or actresses, to present the experience of a real or imagined event before a live audience in a specific place, often a stage. The performers may communicate this experience to the audience through combinations of gesture, speech, song, music, and dance. It is the oldest form of drama, though live theatre has now been joined by modern recorded forms. Elements of art, such as painted scenery and stagecraft such as lighting are used to enhance the physicality, presence and immediacy of the experience."
+    definition: "A chemist (from Greek chēm(ía) alchemy; replacing chymist from Medieval Latin alchemist) is a graduated scientist trained in the study of chemistry, or an officially enrolled student in the relevant field. Chemists study the composition of matter and its properties. Chemists carefully describe the properties they study in terms of quantities, with detail on the level of molecules and their component atoms. Chemists carefully measure substance proportions, chemical reaction rates, and other chemical properties. In Commonwealth English, pharmacists are often called chemists."
   },
+  
+
+  {
+    images: [
+       require('../assets/Images/violist/violist1.jpg'),
+       require('../assets/Images/violist/violist2.jpg'),
+       require('../assets/Images/violist/violist3.jpg'),
+       require('../assets/Images/violist/violist4.jpg'),
+     ],
+    word: "VIOLIST",
+    category: "Career",
+    definition: "A violist is a person that plays the viola. The viola is a string instrument that is usually bowed. Slightly larger than a violin, it has a lower and deeper sound. Since the 18th century, it has been the middle or alto voice of the violin family, between the violin (which is tuned a perfect fifth higher) and the cello (which is tuned an octave lower). The strings from low to high are typically tuned to C3, G3, D4, and A4."
+  },
+
+
+  {
+    images: [
+       require('../assets/Images/resume/resume1.jpg'),
+       require('../assets/Images/resume/resume2.jpg'),
+       require('../assets/Images/resume/resume3.jpg'),
+       require('../assets/Images/resume/resume4.jpg'),
+     ],
+    word: "RESUME",
+    category: "Career",
+    definition: "A resume is a concise document that outlines an individual's education, work experience, skills, achievements, and qualifications relevant to a particular job or career field. It serves as a marketing tool designed to highlight a candidate's strengths and suitability for employment opportunities."
+  },
+
+  {
+    images: [
+       require('../assets/Images/lanterns/lanterns1.jpg'),
+       require('../assets/Images/lanterns/lanterns2.jpg'),
+       require('../assets/Images/lanterns/lanterns3.jpg'),
+       require('../assets/Images/lanterns/lanterns4.jpg'),
+     ],
+    word: "LANTERNS",
+    category: "Comics",
+    definition: "The Lantern Corps are organizations that harness the Emotional Electromagnetic Spectrum. Originally just the Green Lantern Corps, it has since expanded with the Red, Orange, Yellow, Blue, Indigo and Violet, as well as the Black, White and Ultraviolet. "
+  },
+
+  {
+    images: [
+       require('../assets/Images/villain/villain1.jpg'),
+       require('../assets/Images/villain/villain2.jpg'),
+       require('../assets/Images/villain/villain3.jpg'),
+       require('../assets/Images/villain/villain4.jpg'),
+     ],
+    word: "VILLAIN",
+    category: "Comics",
+    definition: "A villain is a fictional character in literature, film, or other forms of media who serves as an antagonist or adversary to the protagonist or heroes of the story. Villains are often portrayed as morally reprehensible individuals who engage in malicious or evil actions with the intent of causing harm, conflict, or chaos.Villains can take many forms and may possess various motivations for their actions. Some villains are driven by greed, seeking power, wealth, or control over others. Others may be motivated by revenge, seeking to settle perceived wrongs or injustices they have suffered. Some villains may simply revel in chaos and destruction, deriving pleasure from causing harm to others."
+  },
+  {
+    images: [
+       require('../assets/Images/avengers/avengers1.jpg'),
+       require('../assets/Images/avengers/avengers2.jpg'),
+       require('../assets/Images/avengers/avengers3.jpg'),
+       require('../assets/Images/avengers/avengers4.jpg'),
+     ],
+    word: "AVENGERS",
+    category: "Comics",
+    definition: "The Avengers Initiative was the brainchild of S.H.I.E.L.D. Director Nick Fury. He first approached Tony Stark with the idea, following Tony's defeat of Obadiah Stane and his subsequent public announcement that he was Iron Man. Fury kept his eye on several potential members, as Bruce Banner struggled with life as the Hulk, the Asgardian Thor appeared on Earth, and Steve Rogers, AKA World War II hero Captain America, was discovered alive decades after his apparent death. In the meantime, some of S.H.I.E.L.D.'s most skilled members, Black Widow (Natasha Romanoff), and Hawkeye (Clint Barton), were making a name for themselves and impressing Fury."
+  },
+
+
 
   {
     images: [
@@ -1898,6 +1981,19 @@ const levels = [
     definition: "In comic books, mutants are a fictional subspecies of humans who are born with superhuman abilities or powers as a result of a genetic mutation. Mutants are a common trope in comic book universes, particularly in superhero stories published by companies like Marvel Comics and DC Comics. In the Marvel Comics universe, mutants are often depicted as a marginalized and persecuted minority, facing discrimination and prejudice from ordinary humans who fear their powers. The X-Men series, created by writer Stan Lee and artist Jack Kirby, is one of the most prominent comic book franchises featuring mutants. The X-Men are a team of mutants led by Professor Charles Xavier, who advocates for peaceful coexistence between mutants and humans while also protecting both groups from threats."
   },
 
+ 
+  {
+    images: [
+       require('../assets/Images/sidekick/sidekick1.jpg'),
+       require('../assets/Images/sidekick/sidekick2.jpg'),
+       require('../assets/Images/sidekick/sidekick3.jpg'),
+       require('../assets/Images/sidekick/sidekick4.png'),
+     ],
+    word: "SIDEKICK",
+    category: "Comics",
+    definition: "A sidekick is a fictional character who serves as a close companion or assistant to the protagonist of a story, often in literature, comics, film, or television. Sidekicks are typically depicted as loyal, supportive, and helpful to the main character, often providing assistance, comic relief, or moral support during their adventures.Sidekicks can take on various forms and roles depending on the genre and context of the story. They may be skilled in combat or possess special abilities that complement those of the protagonist, or they may provide expertise in a particular field that aids the main character in their endeavors. In some cases, sidekicks may serve as surrogate audience members, asking questions or providing exposition to help clarify plot points or advance the narrative. "
+  },
+
   {
     images: [
        require('../assets/Images/gotham/gotham1.jpg'),
@@ -1912,58 +2008,6 @@ const levels = [
 
   {
     images: [
-       require('../assets/Images/lanterns/lanterns1.jpg'),
-       require('../assets/Images/lanterns/lanterns2.jpg'),
-       require('../assets/Images/lanterns/lanterns3.jpg'),
-       require('../assets/Images/lanterns/lanterns4.jpg'),
-     ],
-    word: "LANTERNS",
-    category: "Comics",
-    definition: "The Lantern Corps are organizations that harness the Emotional Electromagnetic Spectrum. Originally just the Green Lantern Corps, it has since expanded with the Red, Orange, Yellow, Blue, Indigo and Violet, as well as the Black, White and Ultraviolet. "
-  },
-
-  {
-    images: [
-       require('../assets/Images/villain/villain1.jpg'),
-       require('../assets/Images/villain/villain2.jpg'),
-       require('../assets/Images/villain/villain3.jpg'),
-       require('../assets/Images/villain/villain4.jpg'),
-     ],
-    word: "VILLAIN",
-    category: "Comics",
-    definition: "A villain is a fictional character in literature, film, or other forms of media who serves as an antagonist or adversary to the protagonist or heroes of the story. Villains are often portrayed as morally reprehensible individuals who engage in malicious or evil actions with the intent of causing harm, conflict, or chaos.Villains can take many forms and may possess various motivations for their actions. Some villains are driven by greed, seeking power, wealth, or control over others. Others may be motivated by revenge, seeking to settle perceived wrongs or injustices they have suffered. Some villains may simply revel in chaos and destruction, deriving pleasure from causing harm to others."
-  },
-
-
-
-  {
-    images: [
-       require('../assets/Images/avengers/avengers1.jpg'),
-       require('../assets/Images/avengers/avengers2.jpg'),
-       require('../assets/Images/avengers/avengers3.jpg'),
-       require('../assets/Images/avengers/avengers4.jpg'),
-     ],
-    word: "AVENGERS",
-    category: "Comics",
-    definition: "The Avengers Initiative was the brainchild of S.H.I.E.L.D. Director Nick Fury. He first approached Tony Stark with the idea, following Tony's defeat of Obadiah Stane and his subsequent public announcement that he was Iron Man. Fury kept his eye on several potential members, as Bruce Banner struggled with life as the Hulk, the Asgardian Thor appeared on Earth, and Steve Rogers, AKA World War II hero Captain America, was discovered alive decades after his apparent death. In the meantime, some of S.H.I.E.L.D.'s most skilled members, Black Widow (Natasha Romanoff), and Hawkeye (Clint Barton), were making a name for themselves and impressing Fury."
-  },
-
-
-  {
-    images: [
-       require('../assets/Images/sidekick/sidekick1.jpg'),
-       require('../assets/Images/sidekick/sidekick2.jpg'),
-       require('../assets/Images/sidekick/sidekick3.jpg'),
-       require('../assets/Images/sidekick/sidekick4.png'),
-     ],
-    word: "SIDEKICK",
-    category: "Comics",
-    definition: "A sidekick is a fictional character who serves as a close companion or assistant to the protagonist of a story, often in literature, comics, film, or television. Sidekicks are typically depicted as loyal, supportive, and helpful to the main character, often providing assistance, comic relief, or moral support during their adventures.Sidekicks can take on various forms and roles depending on the genre and context of the story. They may be skilled in combat or possess special abilities that complement those of the protagonist, or they may provide expertise in a particular field that aids the main character in their endeavors. In some cases, sidekicks may serve as surrogate audience members, asking questions or providing exposition to help clarify plot points or advance the narrative. "
-  },
-
-
-  {
-    images: [
        require('../assets/Images/atlantis/atlantis1.jpg'),
        require('../assets/Images/atlantis/atlantis2.jpg'),
        require('../assets/Images/atlantis/atlantis3.jpg'),
@@ -1972,6 +2016,30 @@ const levels = [
     word: "ATLANTIS",
     category: "Comics",
     definition: "Atlantis is a British fantasy-adventure television programme inspired by Greek mythology and created by Johnny Capps and Julian Murphy with Howard Overman. It premiered on 28 September 2013 on BBC One. In the show, submarine pilot Jason washes up on the shores of legendary Atlantis and must navigate the powerful leaders of the mythological realm. Atlantis was the biggest new Saturday night drama series launch across all BBC channels since 2006, even up on the launch of hit show Merlin. It also managed to draw 1 million viewers away from the highly popular ITV show The X Factor, which aired at the same time in the UK. On 26 October 2013, BBC One ordered a second series of the show, which began airing on 15 November 2014. On 23 January 2015, it was announced that the series had been cancelled"
+  },
+
+  {
+    images: [
+       require('../assets/Images/manga/manga1.jpeg'),
+       require('../assets/Images/manga/manga2.png'),
+       require('../assets/Images/manga/manga3.jpeg'),
+       require('../assets/Images/manga/manga4.jpeg'),
+     ],
+    word: "MANGA",
+    category: "Comics",
+    definition: "Manga are comics or graphic novels originating from Japan. Most manga conform to a style developed in Japan in the late 19th century, and the form has a long history in earlier Japanese art. The term manga is used in Japan to refer to both comics and cartooning. Outside of Japan, the word is typically used to refer to comics originally published in Japan. In Japan, people of all ages and walks of life read manga. The medium includes works in a broad range of genres: action, adventure, business and commerce, comedy, detective, drama, historical, horror, mystery, romance, science fiction and fantasy, erotica (hentai and ecchi), sports and games, and suspense, among others. Many manga are translated into other languages. Since the 1950s, manga has become an increasingly major part of the Japanese publishing industry. By 1995, the manga market in Japan was valued at ¥586.4 billion ($6-7 billion), with annual sales of 1.9 billion manga books and manga magazines (also known as manga anthologies) in Japan (equivalent to 15 issues per person). In 2020 Japan's manga market value hit a new record of ¥612.6 billion due to the fast growth of digital manga sales as well as increase of print sales. In 2022 Japan's manga market hit yet another record value of ¥675.9 billion. Manga have also gained a significant worldwide readership. Beginning with the late 2010s manga started massively outselling American comics."
+  },
+
+  {
+    images: [
+       require('../assets/Images/fanzine/fanzine1.jpeg'),
+       require('../assets/Images/fanzine/fanzine2.jpeg'),
+       require('../assets/Images/fanzine/fanzine3.jpeg'),
+       require('../assets/Images/fanzine/fanzine4.jpeg'),
+     ],
+    word: "FANZINE",
+    category: "Comics",
+    definition: "A fanzine (blend of fan and magazine or -zine) is a non-professional and non-official publication produced by enthusiasts of a particular cultural phenomenon (such as comics) for the pleasure of others who share their interest. The term was coined in an October 1940 science fiction fanzine by Russ Chauvenet and first popularized within science fiction fandom, and from there the term was adopted by other communities.Typically, publishers, editors, writers and other contributors of articles or illustrations to fanzines are not paid. Fanzines are traditionally circulated free of charge, or for a nominal cost to defray postage or production expenses. Copies are often offered in exchange for similar publications, or for contributions of art, articles, or letters of comment (LoCs), which are then published.Some fanzines are typed and photocopied by amateurs using standard home office equipment. A few fanzines have developed into professional publications (sometimes known as prozines), and many professional writers were first published in fanzines; some continue to contribute to them after establishing a professional reputation. The term fanzine is sometimes confused with fan magazine, but the latter term most often refers to commercially produced publications for (rather than by) fans."
   },
 
   {
@@ -2035,20 +2103,6 @@ const levels = [
     definition: "Formal wear refers to clothing that is worn for formal events or occasions that require a more polished and sophisticated appearance. This type of attire is typically reserved for events such as weddings, galas, formal dinners, award ceremonies, or business functions where a certain level of decorum is expected. Formal wear often includes garments such as suits, tuxedos, evening gowns, cocktail dresses."
   },
 
- 
-
-  {
-    images: [
-       require('../assets/Images/couture/couture1.jpg'),
-       require('../assets/Images/couture/couture2.jpg'),
-       require('../assets/Images/couture/couture3.jpg'),
-       require('../assets/Images/couture/couture4.jpg'),
-     ],
-    word: "COUTURE",
-    category: "Fashion",
-    definition: "Couture is a term used in the fashion industry to refer to high-end, custom-made clothing that is created by skilled artisans and designers. It originates from the French word couture which means sewing or dressmaking. Couture garments are typically handmade with meticulous attention to detail and craftsmanship, using high-quality fabrics, intricate embellishments, and precise tailoring techniques."
-  },
-
   {
     images: [
        require('../assets/Images/gothic/gothic1.jpg'),
@@ -2075,6 +2129,31 @@ const levels = [
 
   {
     images: [
+       require('../assets/Images/couture/couture1.jpg'),
+       require('../assets/Images/couture/couture2.jpg'),
+       require('../assets/Images/couture/couture3.jpg'),
+       require('../assets/Images/couture/couture4.jpg'),
+     ],
+    word: "COUTURE",
+    category: "Fashion",
+    definition: "Couture is a term used in the fashion industry to refer to high-end, custom-made clothing that is created by skilled artisans and designers. It originates from the French word couture which means sewing or dressmaking. Couture garments are typically handmade with meticulous attention to detail and craftsmanship, using high-quality fabrics, intricate embellishments, and precise tailoring techniques."
+  },
+
+  {
+    images: [
+       require('../assets/Images/draping/draping1.jpeg'),
+       require('../assets/Images/draping/draping2.jpeg'),
+       require('../assets/Images/draping/draping3.jpeg'),
+       require('../assets/Images/draping/draping4.jpeg'),
+     ],
+    word: "DRAPING",
+    category: "Fashion",
+    definition: "Draping is the process of transforming a clothing design into a three-dimensional form. The art of draping dates back to 3500 BCE, beginning with the Mesopotamians and Ancient Egyptians. Greek fashion followed with the invention of draped silhouettes like the chiton, peplos, chlamys and himation. The Etruscans and Ancient Romans invented the toga, a length of fabric that wraps and drapes around the body. Throughout the ages, clothing was categorized as either “fitted” or “draped.” A “fitted” garment would be sewn together and worn close to body, in contrast to a “draped” garment, such as a toga that doesn't require sewing. In today's fashion world, both fitted and draped garments can be patterned using the draping process."
+  },
+
+
+  {
+    images: [
        require('../assets/Images/bohemian/bohemian1.jpg'),
        require('../assets/Images/bohemian/bohemian2.jpg'),
        require('../assets/Images/bohemian/bohemian3.jpg'),
@@ -2082,24 +2161,9 @@ const levels = [
      ],
     word: "BOHEMIAN",
     category: "Fashion",
-    definition: "Bohemian fashion, often shortened to is a style inspired by the unconventional and free-spirited lifestyle associated with bohemian culture. Bohemian clothing is characterized by its relaxed, eclectic, and artistic aesthetic, drawing inspiration from various cultures, eras, and natural elements. Key features of bohemian fashion include"
+    definition: "Bohemian fashion, often shortened to is a style inspired by the unconventional and free-spirited lifestyle associated with bohemian culture. Bohemian clothing is characterized by its relaxed, eclectic, and artistic aesthetic, drawing inspiration from various cultures, eras, and natural elements."
   },
 
-
-  
- 
-
-  {
-    images: [
-       require('../assets/Images/cruise/cruise1.jpg'),
-       require('../assets/Images/cruise/cruise2.jpg'),
-       require('../assets/Images/cruise/cruise3.jpg'),
-       require('../assets/Images/cruise/cruise4.jpg'),
-     ],
-    word: "CRUISE",
-    category: "Lifestyle",
-    definition: "A cruise typically refers to a voyage or journey, especially one taken for pleasure or leisure, on a large passenger ship or vessel. These ships are specifically designed to accommodate passengers for extended periods, offering various amenities and facilities for entertainment, dining, and relaxation. Cruises often travel along predetermined routes, visiting multiple destinations, which may include coastal cities, islands, or other scenic locations."
-  },
 
   {
     images: [
@@ -2113,22 +2177,29 @@ const levels = [
     definition: "Sleep is a natural state of rest for the body and mind, characterized by reduced consciousness, decreased sensory awareness, and lowered physiological activity. It is an essential part of the human sleep-wake cycle, allowing the body to rest, repair, and restore energy for optimal functioning. During sleep, the brain goes through different stages of activity, including rapid eye movement (REM) sleep and non-rapid eye movement (NREM) sleep. Each stage serves various functions, such as memory consolidation, emotional processing, and physical recovery.A typical sleep cycle consists of multiple stages of NREM sleep followed by a period of REM sleep, with the cycle repeating several times throughout the night. The duration and quality of sleep can vary depending on factors such as age, lifestyle, and individual sleep patterns."
   },
 
-
-
-
   {
     images: [
-       require('../assets/Images/rafting/rafting1.jpg'),
-       require('../assets/Images/rafting/rafting2.jpg'),
-       require('../assets/Images/rafting/rafting3.jpg'),
-       require('../assets/Images/rafting/rafting4.jpg'),
+       require('../assets/Images/cruise/cruise1.jpg'),
+       require('../assets/Images/cruise/cruise2.jpg'),
+       require('../assets/Images/cruise/cruise3.jpg'),
+       require('../assets/Images/cruise/cruise4.jpg'),
      ],
-    word: "RAFTING",
+    word: "CRUISE",
     category: "Lifestyle",
-    definition: "Rafting and whitewater rafting are recreational outdoor activities which use an inflatable raft to navigate a river or other body of water. This is often done on whitewater or different degrees of rough water. Dealing with risk is often a part of the experience. This activity as an adventure sport has become popular since the 1950s, if not earlier, evolving from individuals paddling 10 feet (3.0 m) to 14 feet (4.3 m) rafts with double-bladed paddles or oars to multi-person rafts propelled by single-bladed paddles and steered by a person at the stern, or by the use of oars"
+    definition: "A cruise typically refers to a voyage or journey, especially one taken for pleasure or leisure, on a large passenger ship or vessel. These ships are specifically designed to accommodate passengers for extended periods, offering various amenities and facilities for entertainment, dining, and relaxation. Cruises often travel along predetermined routes, visiting multiple destinations, which may include coastal cities, islands, or other scenic locations."
+  },
+  {
+    images: [
+       require('../assets/Images/marriage/marriage1.jpeg'),
+       require('../assets/Images/marriage/marriage2.jpeg'),
+       require('../assets/Images/marriage/marriage3.jpeg'),
+       require('../assets/Images/marriage/marriage4.jpeg'),
+     ],
+    word: "MARRIAGE",
+    category: "Lifestyle",
+    definition: "Marriage, a legally and socially sanctioned union, usually between two adults, that is regulated by laws, rules, customs, beliefs, and attitudes that prescribe the rights and duties of the partners and accords status to their offspring (if any). The universality of marriage within different societies and cultures is attributed to the many basic social and personal functions for which it provides structure, such as sexual gratification and regulation, division of labour between the sexes, economic production and consumption, and satisfaction of personal needs for affection, status, and companionship. Perhaps its strongest function concerns procreation, the care of children and their education and socialization, and regulation of lines of descent. Through the ages, marriages have taken a great number of forms."
   },
 
-  
   {
     images: [
        require('../assets/Images/workout/workout1.jpg'),
@@ -2143,6 +2214,33 @@ const levels = [
 
   {
     images: [
+       require('../assets/Images/culinary/culinary1.jpg'),
+       require('../assets/Images/culinary/culinary2.jpg'),
+       require('../assets/Images/culinary/culinary3.jpg'),
+       require('../assets/Images/culinary/culinary4.jpg'),
+     ],
+    word: "CULINARY",
+    category: "Lifestyle",
+    definition: "Culinary refers to anything related to cooking, food preparation, or cuisine. It encompasses a wide range of activities, techniques, and practices associated with the selection, preparation, and presentation of food. Culinary arts involve the mastery of various cooking methods, such as grilling, baking, sautéing, frying, and roasting, as well as the use of different ingredients, spices, and seasonings to create flavorful dishes. Culinary professionals, such as chefs and cooks, often undergo training and education to develop their skills and knowledge in the culinary arts. Culinary traditions and cuisines vary widely across cultures and regions, reflecting local ingredients, cooking techniques, and cultural influences. From French haute cuisine to Japanese sushi to Mexican street food, culinary diversity is celebrated worldwide, with each cuisine offering its own unique flavors, textures, and culinary experiences."
+  },
+ 
+  
+  
+  
+  {
+    images: [
+       require('../assets/Images/hygiene/hygiene1.jpeg'),
+       require('../assets/Images/hygiene/hygiene2.jpeg'),
+       require('../assets/Images/hygiene/hygiene3.jpeg'),
+       require('../assets/Images/hygiene/hygiene4.jpeg'),
+     ],
+    word: "HYGIENE",
+    category: "Lifestle",
+    definition: "Hygiene is a set of practices performed to preserve health. According to the World Health Organization (WHO), Hygiene refers to conditions and practices that help to maintain health and prevent the spread of diseases.Personal hygiene refers to maintaining the body's cleanliness. Hygiene activities can be grouped into the following: home and everyday hygiene, personal hygiene, medical hygiene, sleep hygiene, and food hygiene. Home and every day hygiene includes hand washing, respiratory hygiene, food hygiene at home, hygiene in the kitchen, hygiene in the bathroom, laundry hygiene, and medical hygiene at home. Many people equate hygiene with cleanliness, but hygiene is a broad term. It includes such personal habit choices as how frequently to take a shower or bath, wash hands, trim fingernails, and wash clothes. It also includes attention to keeping surfaces in the home and workplace clean, including bathroom facilities. Adherence to regular hygiene practices is often regarded as a socially responsible and respectable behavior, while neglecting proper hygiene can be perceived as unclean or unsanitary, and may be considered socially unacceptable or disrespectful, while also posing a risk to public health."
+  },
+
+  {
+    images: [
        require('../assets/Images/seminar/seminar1.jpg'),
        require('../assets/Images/seminar/seminar2.jpg'),
        require('../assets/Images/seminar/seminar3.jpg'),
@@ -2152,6 +2250,8 @@ const levels = [
     category: "Lifestyle",
     definition: "A seminar is a structured meeting or gathering where individuals come together to discuss a particular topic, exchange ideas, share knowledge, and engage in interactive learning. Seminars are often organized for educational, professional, or informational purposes and may vary in size and format, ranging from small group discussions to larger, more formal presentations."
   },
+
+  
 
   {
     images: [
@@ -2164,20 +2264,54 @@ const levels = [
     category: "Lifestyle",
     definition: "Leisure refers to the time and activities that individuals engage in for relaxation, enjoyment, and personal satisfaction outside of work, responsibilities, or obligations. It encompasses a wide range of recreational, entertainment, and leisurely pursuits that people undertake during their free time. Leisure activities vary greatly from person to person and can be pursued individually or in groups, depending on personal preferences, interests, and available resources."
   },
+  {
+    images: [
+       require('../assets/Images/rafting/rafting1.jpg'),
+       require('../assets/Images/rafting/rafting2.jpg'),
+       require('../assets/Images/rafting/rafting3.jpg'),
+       require('../assets/Images/rafting/rafting4.jpg'),
+     ],
+    word: "RAFTING",
+    category: "Lifestyle",
+    definition: "Rafting and whitewater rafting are recreational outdoor activities which use an inflatable raft to navigate a river or other body of water. This is often done on whitewater or different degrees of rough water. Dealing with risk is often a part of the experience. This activity as an adventure sport has become popular since the 1950s, if not earlier, evolving from individuals paddling 10 feet (3.0 m) to 14 feet (4.3 m) rafts with double-bladed paddles or oars to multi-person rafts propelled by single-bladed paddles and steered by a person at the stern, or by the use of oars"
+  },
 
   {
     images: [
-       require('../assets/Images/culinary/culinary1.jpg'),
-       require('../assets/Images/culinary/culinary2.jpg'),
-       require('../assets/Images/culinary/culinary3.jpg'),
-       require('../assets/Images/culinary/culinary4.jpg'),
+       require('../assets/Images/veganism/veganism1.jpeg'),
+       require('../assets/Images/veganism/veganism2.jpeg'),
+       require('../assets/Images/veganism/veganism3.jpeg'),
+       require('../assets/Images/veganism/veganism4.jpeg'),
      ],
-    word: "CULINARY",
+    word: "VEGANISM",
     category: "Lifestyle",
-    definition: "Culinary refers to anything related to cooking, food preparation, or cuisine. It encompasses a wide range of activities, techniques, and practices associated with the selection, preparation, and presentation of food. Culinary arts involve the mastery of various cooking methods, such as grilling, baking, sautéing, frying, and roasting, as well as the use of different ingredients, spices, and seasonings to create flavorful dishes. Culinary professionals, such as chefs and cooks, often undergo training and education to develop their skills and knowledge in the culinary arts. Culinary traditions and cuisines vary widely across cultures and regions, reflecting local ingredients, cooking techniques, and cultural influences. From French haute cuisine to Japanese sushi to Mexican street food, culinary diversity is celebrated worldwide, with each cuisine offering its own unique flavors, textures, and culinary experiences."
+    definition: "Veganism, the theory or practice of abstaining from the consumption and use of animal products. While some vegans avoid only animal-derived food, many others also exclude any items that use animals as ingredients or for testing. These prohibited products can range from clothing (e.g., leather) to makeup. Dietary veganism differs from vegetarianism in that vegetarians may choose to consume some animal-derived foods such as milk, eggs, and honey on the grounds that animals do not need to be slaughtered to obtain these products. Veganism is motivated by a variety of reasons, including personal health, animal rights, environmentalism, and ethics. It is generally practiced less as a dietary preference and more as a lifestyle choice and form of activism."
+  },
+  
+
+  {
+    images: [
+       require('../assets/Images/meme/meme1.jpeg'),
+       require('../assets/Images/meme/meme2.jpeg'),
+       require('../assets/Images/meme/meme3.jpeg'),
+       require('../assets/Images/meme/meme4.jpeg'),
+     ],
+    word: "MEME",
+    category: "Pop-Culture",
+    definition: "A meme is a piece of content, often humorous, that spreads rapidly and widely online, typically in the form of an image, video, or text. Memes often feature recognizable formats, like specific images or phrases, and are shared across social media platforms, forums, and websites."
   },
 
-
+  {
+    images: [
+       require('../assets/Images/hashtag/hashtag1.png'),
+       require('../assets/Images/hashtag/hashtag2.png'),
+       require('../assets/Images/hashtag/hashtag3.png'),
+       require('../assets/Images/hashtag/hashtag4.jpeg'),
+     ],
+    word: "HASHTAG",
+    category: "Pop-Culture",
+    definition: "A hashtag is a word or phrase preceded by the pound or hash sign (#) used on social media platforms to categorize content and make it more discoverable. Hashtags help users find posts related to specific topics, trends, or events and are used to facilitate searchability and participation in larger conversations."
+  },
 
   {
     images: [
@@ -2191,17 +2325,33 @@ const levels = [
     definition: "The Oscars, formally known as the Academy Awards, is an annual awards ceremony honoring outstanding achievements in the film industry. Organized by the Academy of Motion Picture Arts and Sciences (AMPAS), the Oscars recognize excellence in various categories, including acting, directing, writing, cinematography, editing, and production design, among others."
   },
 
+  
+
   {
     images: [
-       require('../assets/Images/rupaul/rupaul1.jpg'),
-       require('../assets/Images/rupaul/rupaul2.jpg'),
-       require('../assets/Images/rupaul/rupaul3.jpg'),
+       require('../assets/Images/rupaul/rupaul1.jpeg'),
+       require('../assets/Images/rupaul/rupaul2.jpeg'),
+       require('../assets/Images/rupaul/rupaul3.jpeg'),
        require('../assets/Images/rupaul/rupaul4.jpg'),
      ],
-    word: "RUPAUL",
+    word: "DRAG",
     category: "Pop-Culture",
-    definition: "RuPaul, born RuPaul Andre Charles, is an American drag queen, actor, model, singer, songwriter, and television personality. He is best known for his influential contributions to drag culture and for hosting the reality competition television series RuPaul's Drag Race."
+    definition: "Drag refers to a form of entertainment and performance art where individuals, often known as drag queens or drag kings, dress in exaggerated and stylized clothing, makeup, and personas that typically represent the opposite gender or an amplified version of their own gender. Drag is often associated with the LGBTQ+ community and has become a significant cultural phenomenon, celebrated for its creativity, theatricality, and social commentary."
   },
+
+  {
+    images: [
+       require('../assets/Images/fandom/fandom1.png'),
+       require('../assets/Images/fandom/fandom2.jpeg'),
+       require('../assets/Images/fandom/fandom3.jpeg'),
+       require('../assets/Images/fandom/fandom4.jpeg'),
+     ],
+    word: "FANDOM",
+    category: "Pop-Culture",
+    definition: "A fandom is a community of fans who share a common interest in a particular cultural phenomenon, such as a book, movie, TV show, video game, or even a specific celebrity or band. Fandoms often have their own cultures, traditions, and social norms, and they interact through various platforms, including social media, forums, conventions, and fan fiction websites."
+  },
+
+  
 
   {
     images: [
@@ -2217,6 +2367,42 @@ const levels = [
 
   {
     images: [
+       require('../assets/Images/diss/diss1.jpeg'),
+       require('../assets/Images/diss/diss2.jpeg'),
+       require('../assets/Images/diss/diss3.jpeg'),
+       require('../assets/Images/diss/diss4.jpeg'),
+     ],
+    word: "DISS",
+    category: "Pop-Culture",
+    definition: "The term diss is slang that generally means to disrespect or insult someone. It's often used in casual conversation to describe situations where one person has said or done something negative or demeaning to another person. For example, if someone makes a derogatory comment about another person's appearance or abilities, that person might say they were dissed"
+  },
+
+  {
+    images: [
+       require('../assets/Images/unboxing/unboxing1.jpeg'),
+       require('../assets/Images/unboxing/unboxing2.jpeg'),
+       require('../assets/Images/unboxing/unboxing3.jpeg'),
+       require('../assets/Images/unboxing/unboxing4.jpeg'),
+     ],
+    word: "UNBOXING",
+    category: "Pop-Culture",
+    definition: "Unboxing refers to the process of unpacking a new product and documenting the experience, often through video or photos. This type of content is typically shared on platforms like YouTube, Instagram, and TikTok. Unboxing videos are popular because they offer viewers a detailed look at the product, its packaging, and its features, providing a first-hand impression of what it's like to receive and open the item."
+  },
+  {
+    images: [
+       require('../assets/Images/podcast/podcast1.jpeg'),
+       require('../assets/Images/podcast/podcast2.jpeg'),
+       require('../assets/Images/podcast/podcast3.jpeg'),
+       require('../assets/Images/podcast/podcast4.jpeg'),
+     ],
+    word: "PODCAST",
+    category: "Pop-Culture",
+    definition: "A podcast is a digital audio or video program that is available for streaming or download over the internet. Podcasts are typically produced as a series with new episodes released regularly. They cover a wide range of topics including news, education, storytelling, interviews, and entertainment, and can be listened to on-demand on various devices such as smartphones, tablets, and computers."
+  },
+
+
+  {
+    images: [
        require('../assets/Images/premier/premier1.jpg'),
        require('../assets/Images/premier/premier2.jpg'),
        require('../assets/Images/premier/premier3.jpg'),
@@ -2225,6 +2411,18 @@ const levels = [
     word: "PREMIERE",
     category: "Pop-Culture",
     definition: "A premiere refers to the first public presentation or showing of a new movie, television show, play, musical composition, or other artistic work. It is an event that marks the debut or release of the work to the public, often attended by the creators, cast, crew, and invited guests, as well as members of the media and industry professionals."
+  },
+
+  {
+    images: [
+       require('../assets/Images/court/court1.jpeg'),
+       require('../assets/Images/court/court2.jpeg'),
+       require('../assets/Images/court/court3.png'),
+       require('../assets/Images/court/court4.jpeg'),
+     ],
+    word: "ORDER",
+    category: "Politics",
+    definition: "In politics, order typically refers to the structured and systematic arrangement of power, laws, institutions, and norms that govern a society. It implies a state of stability, security, and functioning governance where rules are established and followed, and where there is a degree of predictability in social and political interactions. "
   },
 
   {
@@ -2239,19 +2437,7 @@ const levels = [
     definition: "A campaign refers to a coordinated series of planned activities, efforts, or actions undertaken to achieve a specific goal, objective, or outcome within a defined timeframe. Campaigns are commonly used in various contexts, including marketing, advertising, politics, advocacy, fundraising, and social causes, among others. They involve strategic planning, implementation, and evaluation to effectively reach and engage target audiences and drive desired results."
   },
 
-
-  {
-    images: [
-       require('../assets/Images/congress/congress1.jpg'),
-       require('../assets/Images/congress/congress2.jpg'),
-       require('../assets/Images/congress/congress3.jpg'),
-       require('../assets/Images/congress/congress4.png'),
-     ],
-    word: "CONGRESS",
-    category: "Politics",
-    definition: "Congress refers to a legislative body, typically consisting of elected representatives who are responsible for making laws, overseeing government activities, and representing the interests of their constituents. In the United States, Congress specifically refers to the national legislative body composed of two chambers, the senate, and the house of representatives"
-  },
-
+  
   {
     images: [
        require('../assets/Images/monarch/monarch1.jpg'),
@@ -2263,20 +2449,6 @@ const levels = [
     category: "Politics",
     definition: "A monarch is a ruler who holds supreme authority and power over a state or territory. Monarchs may inherit their position through hereditary means, such as being born into a royal family, or they may acquire it through other means, such as election or appointment. Monarchs can have varying levels of authority, ranging from absolute monarchs who wield unlimited power to constitutional monarchs who serve as ceremonial figureheads with limited or symbolic authority, while the actual governance is carried out by elected officials or a separate branch of government."
   },
-
-
-  {
-    images: [
-       require('../assets/Images/lobbying/lobbying1.jpg'),
-       require('../assets/Images/lobbying/lobbying2.jpg'),
-       require('../assets/Images/lobbying/lobbying3.jpg'),
-       require('../assets/Images/lobbying/lobbying4.jpg'),
-     ],
-    word: "LOBBYING",
-    category: "Politics",
-    definition: "Lobbying is the act of attempting to influence decisions made by government officials, particularly legislators and policymakers, in favor of a particular cause, issue, or interest group. Lobbying can take various forms, including direct communication with lawmakers, providing information, research, and analysis, organizing grassroots campaigns, and advocating for specific policies or legislation. Lobbying is a common practice in democratic societies, where individuals, organizations, corporations, and interest groups seek to shape public policy to advance their own interests or agendas. Lobbyists may represent a wide range of sectors and interests, including businesses, labor unions, nonprofit organizations, professional associations, and advocacy groups."
-  },
-
 
   {
     images: [
@@ -2292,6 +2464,18 @@ const levels = [
 
   {
     images: [
+       require('../assets/Images/congress/congress1.jpg'),
+       require('../assets/Images/congress/congress2.jpg'),
+       require('../assets/Images/congress/congress3.jpg'),
+       require('../assets/Images/congress/congress4.png'),
+     ],
+    word: "CONGRESS",
+    category: "Politics",
+    definition: "Congress refers to a legislative body, typically consisting of elected representatives who are responsible for making laws, overseeing government activities, and representing the interests of their constituents. In the United States, Congress specifically refers to the national legislative body composed of two chambers, the senate, and the house of representatives"
+  },
+
+  {
+    images: [
        require('../assets/Images/nazist/nazist1.png'),
        require('../assets/Images/nazist/nazist2.jpg'),
        require('../assets/Images/nazist/nazist3.jpg'),
@@ -2301,7 +2485,10 @@ const levels = [
     category: "Politics",
     definition: "Nazism, the ideology and practices associated with the National Socialist German Workers' Party (NSDAP) under Adolf Hitler's leadership in Germany during the 1930s and 1940s. Nazism was characterized by extreme nationalism, authoritarianism, racism, anti-Semitism, and the pursuit of a totalitarian state."
   },
+  
 
+
+  
   {
     images: [
        require('../assets/Images/democrat/democrat1.png'),
@@ -2316,28 +2503,56 @@ const levels = [
 
   {
     images: [
-       require('../assets/Images/ranch/ranch1.jpg'),
-       require('../assets/Images/ranch/ranch2.jpg'),
-       require('../assets/Images/ranch/ranch3.jpg'),
-       require('../assets/Images/ranch/ranch4.jpg'),
+       require('../assets/Images/papacy/papacy1.jpeg'),
+       require('../assets/Images/papacy/papacy2.jpeg'),
+       require('../assets/Images/papacy/papacy3.jpeg'),
+       require('../assets/Images/papacy/papacy4.jpeg'),
      ],
-    word: "RANCH",
-    category: "Architecture",
-    definition: "A ranch is a large farm, especially in the western United States and Canada, typically devoted to raising cattle or other livestock. Ranches can vary in size from a few hundred acres to thousands of acres and may include land for grazing, as well as facilities for managing and tending to the animals. Ranching often involves activities such as herding, branding, feeding, and caring for the livestock. In addition to cattle, some ranches may also raise horses, sheep, goats, or other animals, and may engage in other agricultural activities or recreational pursuits."
+    word: "PAPACY",
+    category: "Politics",
+    definition: "Papacy, the office and jurisdiction of the bishop of Rome, the pope (Latin papa, from Greek pappas, “father”), who presides over the Holy See (the central government) of the Roman Catholic Church. The term pope was originally applied to all the bishops in the West and also used to describe the patriarch of Alexandria, who still retains the title. In 1073, however, Pope Gregory VII restricted its use to the bishop of Rome, confirming a practice that had existed since the 9th century. According to the Annuario Pontificio, the papal annual, there have been more than 260 popes since St. Peter, traditionally considered the first pope. Among these, 82 have been proclaimed saints, as have some antipopes (rival claimants to the papal throne who were appointed or elected in opposition to the legitimate pope). The Annuario Pontificio does not identify popes by consecutive number, having stated that at times the legitimate succession between multiple claimants was impossible to determine. Most holders of the office have been Roman or Italian, with a sprinkling of other Europeans, including one Pole, and one Latin American pope. All have been male, though the legend of a female Pope Joan appeared in the 13th century. During the course of the 2,000 years in which the papal system and the practice of electing popes in the papal conclave have evolved, the papacy has played a crucial role in both Western and world history. The history of the papacy can be divided into five major periods: the early papacy, from St. Peter through Pelagius II (until 590); the medieval papacy, from St. Gregory I through Boniface VIII (590-1303); the Renaissance and Reformation papacy, from Benedict XI through Pius IV (1303-1565); the early modern papacy, from St. Pius V through Clement XIV (1566-1774); and the modern papacy, from Pius VI (1775-99)."
   },
 
   {
     images: [
-       require('../assets/Images/facade/facade1.jpg'),
-       require('../assets/Images/facade/facade2.jpg'),
-       require('../assets/Images/facade/facade3.jpg'),
-       require('../assets/Images/facade/facade4.jpg'),
+       require('../assets/Images/lobbying/lobbying1.jpg'),
+       require('../assets/Images/lobbying/lobbying2.jpg'),
+       require('../assets/Images/lobbying/lobbying3.jpg'),
+       require('../assets/Images/lobbying/lobbying4.jpg'),
      ],
-    word: "FACADE",
-    category: "Architecture",
-    definition: "Facade refers to the front-facing exterior of a building or structure, typically the side that is most visible from the street or public area. It is the part of a building that is designed to be aesthetically pleasing and often serves as the main point of entry or focal point for architectural features.The facade of a building plays a crucial role in defining its architectural style, character, and identity. It may incorporate elements such as windows, doors, decorative trim, balconies, columns, and other architectural ornamentation. Facades can vary widely in design, ranging from simple and understated to elaborate and ornate, depending on the architectural style, cultural influences, and historical context of the building."
+    word: "LOBBYING",
+    category: "Politics",
+    definition: "Lobbying is the act of attempting to influence decisions made by government officials, particularly legislators and policymakers, in favor of a particular cause, issue, or interest group. Lobbying can take various forms, including direct communication with lawmakers, providing information, research, and analysis, organizing grassroots campaigns, and advocating for specific policies or legislation. Lobbying is a common practice in democratic societies, where individuals, organizations, corporations, and interest groups seek to shape public policy to advance their own interests or agendas. Lobbyists may represent a wide range of sectors and interests, including businesses, labor unions, nonprofit organizations, professional associations, and advocacy groups."
   },
 
+
+
+
+  {
+    images: [
+       require('../assets/Images/activism/activism1.jpeg'),
+       require('../assets/Images/activism/activism2.jpeg'),
+       require('../assets/Images/activism/activism3.jpeg'),
+       require('../assets/Images/activism/activism4.png'),
+     ],
+    word: "ACTIVISM",
+    category: "Politics",
+    definition: "Activism (or advocacy) consists of efforts to promote, impede, direct or intervene in social, political, economic or environmental reform with the desire to make changes in society toward a perceived greater good. Forms of activism range from mandate building in a community (including writing letters to newspapers), petitioning elected officials, running or contributing to a political campaign, preferential patronage (or boycott) of businesses, and demonstrative forms of activism like rallies, street marches, strikes, sit-ins, or hunger strikes. Activism may be performed on a day-to-day basis in a wide variety of ways, including through the creation of art (artivism), computer hacking (hacktivism), or simply in how one chooses to spend their money (economic activism). For example, the refusal to buy clothes or other merchandise from a company as a protest against the exploitation of workers by that company could be considered an expression of activism. However, the most highly visible and impactful activism often comes in the form of collective action, in which numerous individuals coordinate an act of protest together in order to make a bigger impact. Collective action that is purposeful, organized, and sustained over a period of time becomes known as a social movement."
+  },
+
+  {
+    images: [
+       require('../assets/Images/stairs/stairs1.jpeg'),
+       require('../assets/Images/stairs/stairs2.jpeg'),
+       require('../assets/Images/stairs/stairs3.jpeg'),
+       require('../assets/Images/stairs/stairs4.jpeg'),
+     ],
+    word: "STAIRS",
+    category: "Architecture",
+    definition: "Stairs are a structure designed to bridge a large vertical distance between lower and higher levels by dividing it into smaller vertical distances. This is achieved as a diagonal series of horizontal platforms called steps which enable passage to the other level by stepping from one to another step in turn. Steps are very typically rectangular. Stairs may be straight, round, or may consist of two or more straight pieces connected at angles.Types of stairs include staircases (also called stairways) and escalators. Some alternatives to stairs are elevators (also called lifts), stairlifts, inclined moving walkways, ladders, and ramps. A stairwell is a vertical shaft or opening that contains a staircase. A flight (of stairs) is an inclined part of a staircase consisting of steps (and their lateral supports if supports are separate from steps)."
+  },
+  
+   
 
   {
     images: [
@@ -2365,6 +2580,18 @@ const levels = [
 
   {
     images: [
+       require('../assets/Images/balcony/balcony1.jpg'),
+       require('../assets/Images/balcony/balcony2.jpg'),
+       require('../assets/Images/balcony/balcony3.jpg'),
+       require('../assets/Images/balcony/balcony4.jpg'),
+     ],
+    word: "BALCONY",
+    category: "Architecture",
+    definition: "A balcony is a platform or extension that protrudes from the exterior of a building, typically on an upper floor, and is surrounded by a railing or balustrade. Balconies are often used as outdoor spaces for relaxation, recreation, or observation, providing occupants with views of the surrounding area. Balconies can vary in size, shape, and design, ranging from small Juliet balconies that are barely large enough to step onto, to larger terraces or verandas that can accommodate seating, plants, and other furnishings. Some balconies may be open to the elements, while others are enclosed or partially enclosed with walls or screens for privacy or protection from wind and weather. In residential buildings, balconies are often associated with apartments, condominiums, or homes with multiple stories, providing residents with a private outdoor space to enjoy fresh air and outdoor activities. In hotels, resorts, and restaurants, balconies may be used as dining or seating areas with panoramic views."
+  },
+
+  {
+    images: [
        require('../assets/Images/interior/interior1.jpg'),
        require('../assets/Images/interior/interior2.jpg'),
        require('../assets/Images/interior/interior3.jpg'),
@@ -2373,6 +2600,18 @@ const levels = [
     word: "INTERIOR",
     category: "Architecture",
     definition: "Interior refers to the inner or internal part of a building or space, as opposed to its exterior or facade. It encompasses the design, layout, and furnishings of the inside of a building, including its rooms, corridors, and other enclosed areas.The interior of a building is often designed to be functional, comfortable, and aesthetically pleasing, taking into account factors such as ergonomics, usability, and the needs and preferences of its occupants. Interior design involves the selection and arrangement of furniture, fixtures, lighting, color schemes, materials, and decorative elements to create a cohesive and harmonious environment. Interior design can vary widely depending on the purpose and function of the space, as well as the stylistic preferences of the designer or client. Styles range from traditional and classical to modern and contemporary, with influences from various cultural, historical, and artistic movements."
+  },
+
+  {
+    images: [
+       require('../assets/Images/ranch/ranch1.jpg'),
+       require('../assets/Images/ranch/ranch2.jpg'),
+       require('../assets/Images/ranch/ranch3.jpg'),
+       require('../assets/Images/ranch/ranch4.jpg'),
+     ],
+    word: "RANCH",
+    category: "Architecture",
+    definition: "A ranch is a large farm, especially in the western United States and Canada, typically devoted to raising cattle or other livestock. Ranches can vary in size from a few hundred acres to thousands of acres and may include land for grazing, as well as facilities for managing and tending to the animals. Ranching often involves activities such as herding, branding, feeding, and caring for the livestock. In addition to cattle, some ranches may also raise horses, sheep, goats, or other animals, and may engage in other agricultural activities or recreational pursuits."
   },
 
   {
@@ -2387,17 +2626,9 @@ const levels = [
     definition: "A manor is a large country house, typically with lands and other buildings, often belonging to or associated with a wealthy landowner or noble family. In historical contexts, manors were often centers of agricultural production and administration, with the lord of the manor overseeing the estate and its tenants. Manors were common in feudal societies, particularly in medieval Europe, where they served as the economic and social hubs of rural areas. The term manor can also refer more broadly to the landed estate or the administrative district associated with the manor house."
   },
 
-  {
-    images: [
-       require('../assets/Images/balcony/balcony1.jpg'),
-       require('../assets/Images/balcony/balcony2.jpg'),
-       require('../assets/Images/balcony/balcony3.jpg'),
-       require('../assets/Images/balcony/balcony4.jpg'),
-     ],
-    word: "BALCONY",
-    category: "Architecture",
-    definition: "A balcony is a platform or extension that protrudes from the exterior of a building, typically on an upper floor, and is surrounded by a railing or balustrade. Balconies are often used as outdoor spaces for relaxation, recreation, or observation, providing occupants with views of the surrounding area. Balconies can vary in size, shape, and design, ranging from small Juliet balconies that are barely large enough to step onto, to larger terraces or verandas that can accommodate seating, plants, and other furnishings. Some balconies may be open to the elements, while others are enclosed or partially enclosed with walls or screens for privacy or protection from wind and weather. In residential buildings, balconies are often associated with apartments, condominiums, or homes with multiple stories, providing residents with a private outdoor space to enjoy fresh air and outdoor activities. In hotels, resorts, and restaurants, balconies may be used as dining or seating areas with panoramic views."
-  },
+  
+
+  
 
 
   {
@@ -2414,6 +2645,40 @@ const levels = [
 
   {
     images: [
+       require('../assets/Images/skylight/skylight1.jpeg'),
+       require('../assets/Images/skylight/skylight2.jpeg'),
+       require('../assets/Images/skylight/skylight3.jpeg'),
+       require('../assets/Images/skylight/skylight4.jpeg'),
+     ],
+    word: "SKYLIGHT",
+    category: "Architecture",
+    definition: "A skylight refers to a window or opening in a roof or ceiling that allows natural light to enter a building from above. Skylights are typically installed to brighten interior spaces that may not have access to windows on exterior walls, such as rooms in the center of a building or areas where additional daylighting is desired."
+  },
+  {
+    images: [
+       require('../assets/Images/facade/facade1.jpg'),
+       require('../assets/Images/facade/facade2.jpg'),
+       require('../assets/Images/facade/facade3.jpg'),
+       require('../assets/Images/facade/facade4.jpg'),
+     ],
+    word: "FACADE",
+    category: "Architecture",
+    definition: "Facade refers to the front-facing exterior of a building or structure, typically the side that is most visible from the street or public area. It is the part of a building that is designed to be aesthetically pleasing and often serves as the main point of entry or focal point for architectural features.The facade of a building plays a crucial role in defining its architectural style, character, and identity. It may incorporate elements such as windows, doors, decorative trim, balconies, columns, and other architectural ornamentation. Facades can vary widely in design, ranging from simple and understated to elaborate and ornate, depending on the architectural style, cultural influences, and historical context of the building."
+  },
+
+  {
+    images: [
+       require('../assets/Images/planet/planet1.jpeg'),
+       require('../assets/Images/planet/planet2.jpeg'),
+       require('../assets/Images/planet/planet3.jpeg'),
+       require('../assets/Images/planet/planet4.jpeg'),
+     ],
+    word: "PLANET",
+    category: "Planet, (from Greek planētes, “wanderers”), broadly, any relatively large natural body that revolves in an orbit around the Sun or around some other star and that is not radiating energy from internal nuclear fusion reactions. In addition to the above description, some scientists impose additional constraints regarding characteristics such as size (e.g., the object should be more than about 1,000 km [600 miles] across, or a little larger than the largest known asteroid, Ceres), shape (it should be large enough to have been squeezed by its own gravity into a sphere—i.e., roughly 700 km [435 miles] across, depending on its density), or mass (it must have a mass insufficient for its core to have experienced even temporary nuclear fusion). As the term is applied to bodies in Earth's solar system, the International Astronomical Union (IAU), which is charged by the scientific community with classifying astronomical objects, lists eight planets orbiting the Sun; in order of increasing distance, they are Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune. Pluto also was listed as a planet until 2006. Until the close of the 20th century, the only planets to be recognized were components of Earth's solar system. At that time astronomers confirmed that other stars have objects that appear to be planets in orbit around them."
+  },
+
+  {
+    images: [
        require('../assets/Images/eclipse/eclipse1.jpg'),
        require('../assets/Images/eclipse/eclipse2.jpg'),
        require('../assets/Images/eclipse/eclipse3.jpg'),
@@ -2422,6 +2687,18 @@ const levels = [
     word: "ECLIPSE",
     category: "Astronomy",
     definition: "An eclipse occurs when one celestial body passes into the shadow of another celestial body, resulting in a temporary dimming or blocking of light. There are two main types of eclipses: solar eclipses and lunar eclipses."
+  },
+
+  {
+    images: [
+       require('../assets/Images/gravity/gravity1.jpeg'),
+       require('../assets/Images/gravity/gravity2.jpeg'),
+       require('../assets/Images/gravity/gravity3.jpeg'),
+       require('../assets/Images/gravity/gravity4.jpeg'),
+     ],
+    word: "GRAVITY",
+    category: "Astronomy",
+    definition: "Gravity, in mechanics, the universal force of attraction acting between all matter. It is by far the weakest known force in nature and thus plays no role in determining the internal properties of everyday matter. On the other hand, through its long reach and universal action, it controls the trajectories of bodies in the solar system and elsewhere in the universe and the structures and evolution of stars, galaxies, and the whole cosmos. On Earth all bodies have a weight, or downward force of gravity, proportional to their mass, which Earth's mass exerts on them. Gravity is measured by the acceleration that it gives to freely falling objects. At Earth's surface the acceleration of gravity is about 9.8 metres (32 feet) per second per second. Thus, for every second an object is in free fall, its speed increases by about 9.8 metres per second. At the surface of the Moon the acceleration of a freely falling body is about 1.6 metres per second per second."
   },
 
   {
@@ -2446,6 +2723,18 @@ const levels = [
     word: "ORBIT",
     category: "Astronomy",
     definition: "Orbit refers to the curved path that an object, such as a planet, satellite, or spacecraft, follows as it revolves around another object in space due to gravitational attraction. Orbits are elliptical in shape, with the object being orbited typically located at one of the foci of the ellipse.In astronomy, orbits play a fundamental role in understanding the motion of celestial bodies within our solar system and beyond. The orbit of a planet around the Sun, for example, determines its position, speed, and duration of its journey through space. Similarly, the orbit of a moon around its parent planet dictates its position and relationship to the planet."
+  },
+
+  {
+    images: [
+       require('../assets/Images/zodiac/zodiac1.jpeg'),
+       require('../assets/Images/zodiac/zodiac2.jpeg'),
+       require('../assets/Images/zodiac/zodiac3.jpeg'),
+       require('../assets/Images/zodiac/zodiac4.jpeg'),
+     ],
+    word: "ZODIAC",
+    category: "Astronomy",
+    definition: "Zodiac, a belt around the sky extending 9° on either side of the ecliptic, the Sun's apparent annual path, which contains 12 constellations or astrological signs. In astrology, the outcome of an event (most notably, someone's birth) is affected by the zodiacal positions of the Sun, the Moon, and the planets when that event happened. The orbits of the Moon and of the naked-eye planets also lie entirely within the zodiac.The zodiac was divided into 12 astrological signs, each occupying 1/12 (or 30°) of its great circle, by the Babylonians about 500 BCE. Many of the Babylonian signs (for example, the Twins [Gemini], the Crab [Cancer], the Balance [Libra], among others) are still used today. Since most of the constellations through which the ecliptic passes represent animals, the ancient Greeks called its zone zōdiakos kyklos, “circle of animals,” or ta zōdia, “the little animals.”"
   },
 
   {
@@ -2513,15 +2802,29 @@ const levels = [
 
   {
     images: [
-       require('../assets/Images/botany/botany1.jpg'),
-       require('../assets/Images/botany/botany2.jpg'),
-       require('../assets/Images/botany/botany3.jpg'),
-       require('../assets/Images/botany/botany4.jpg'),
+       require('../assets/Images/herbs/herbs1.jpeg'),
+       require('../assets/Images/herbs/herbs2.jpeg'),
+       require('../assets/Images/herbs/herbs3.jpeg'),
+       require('../assets/Images/herbs/herbs4.jpeg'),
      ],
-    word: "BOTANY",
+    word: "HERBS",
     category: "Plant",
-    definition: "Botany is the scientific study of plants, encompassing their physiology, structure, genetics, ecology, distribution, classification, and economic importance. It is a branch of biology that examines various aspects of plant life, ranging from microscopic organisms like algae to complex multicellular organisms like trees. Botanists study plants at different levels, from molecular and cellular biology to ecosystems and global patterns of plant distribution."
+    definition: "Herbs are plants with savory or aromatic properties that are used for flavoring food, medicine, or fragrances. They can be used fresh or dried, and they play an important role in culinary traditions, health practices, and various cultural rituals."
   },
+
+  {
+    images: [
+       require('../assets/Images/thorns/thorns1.jpeg'),
+       require('../assets/Images/thorns/thorns2.jpeg'),
+       require('../assets/Images/thorns/thorns3.jpeg'),
+       require('../assets/Images/thorns/thorns4.jpeg'),
+     ],
+    word: "THORNS",
+    category: "Plant",
+    definition: "Thorns are sharp, pointed structures that can be found on various plants. They serve primarily as a defense mechanism to protect the plant from herbivores. "
+  },
+  
+  
 
   {
     images: [
@@ -2537,6 +2840,18 @@ const levels = [
 
   {
     images: [
+       require('../assets/Images/botany/botany1.jpg'),
+       require('../assets/Images/botany/botany2.jpg'),
+       require('../assets/Images/botany/botany3.jpg'),
+       require('../assets/Images/botany/botany4.jpg'),
+     ],
+    word: "BOTANY",
+    category: "Plant",
+    definition: "Botany is the scientific study of plants, encompassing their physiology, structure, genetics, ecology, distribution, classification, and economic importance. It is a branch of biology that examines various aspects of plant life, ranging from microscopic organisms like algae to complex multicellular organisms like trees. Botanists study plants at different levels, from molecular and cellular biology to ecosystems and global patterns of plant distribution."
+  },
+
+  {
+    images: [
        require('../assets/Images/shrub/shrub1.jpg'),
        require('../assets/Images/shrub/shrub2.jpg'),
        require('../assets/Images/shrub/shrub3.jpg'),
@@ -2545,6 +2860,20 @@ const levels = [
     word: "SHRUB",
     category: "Plant",
     definition: "A shrub is a type of woody plant characterized by multiple stems or branches arising from the base of the plant. Unlike trees, which typically have a single main trunk, shrubs have a more compact and bushy growth habit. Shrubs vary greatly in size, ranging from low-growing ground covers to tall specimens several meters in height. They can be evergreen or deciduous, meaning they may retain their leaves year-round or shed them seasonally"
+  },
+
+  
+
+  {
+    images: [
+       require('../assets/Images/floral/floral1.jpg'),
+       require('../assets/Images/floral/floral2.jpg'),
+       require('../assets/Images/floral/floral3.jpg'),
+       require('../assets/Images/floral/floral4.jpg'),
+     ],
+    word: "FLORAL",
+    category: "Plant",
+    definition: "Floral refers to anything related to flowers or floral arrangements. It encompasses the beauty, fragrance, and various characteristics associated with flowers."
   },
 
   {
@@ -2561,18 +2890,6 @@ const levels = [
 
   {
     images: [
-       require('../assets/Images/floral/floral1.jpg'),
-       require('../assets/Images/floral/floral2.jpg'),
-       require('../assets/Images/floral/floral3.jpg'),
-       require('../assets/Images/floral/floral4.jpg'),
-     ],
-    word: "FLORAL",
-    category: "Plant",
-    definition: "Floral refers to anything related to flowers or floral arrangements. It encompasses the beauty, fragrance, and various characteristics associated with flowers."
-  },
-
-  {
-    images: [
        require('../assets/Images/foliage/foliage1.jpg'),
        require('../assets/Images/foliage/foliage2.jpg'),
        require('../assets/Images/foliage/foliage3.jpg'),
@@ -2583,6 +2900,30 @@ const levels = [
     definition: "Foliage refers to the leaves of plants collectively, especially on trees and shrubs. It encompasses all the greenery and plant material that is primarily composed of leaves. Foliage plays a crucial role in the ecosystem, as it performs photosynthesis, converting sunlight into energy and releasing oxygen into the atmosphere. Additionally, foliage contributes to the aesthetics of landscapes, gardens, and natural environments, providing various colors, textures, and shapes."
   },
 
+  {
+    images: [
+       require('../assets/Images/tendril/tendril1.jpeg'),
+       require('../assets/Images/tendril/tendril2.jpeg'),
+       require('../assets/Images/tendril/tendril3.jpeg'),
+       require('../assets/Images/tendril/tendril4.jpeg'),
+     ],
+    word: "TENDRIL",
+    category: "Plant",
+    definition: "Tendril, in botany, plant organ specialized to anchor and support vining stems. Tendrils may be modified leaves, leaflets, leaf tips, or leaf stipules; they may, however, be derived as modified stem branches (e.g., grapes). Other special plant structures fulfill a similar function, but the tendril is distinctive in being a specialized lateral organ strongly possessing a twining tendency causing it to encircle any object encountered. A tendril is a slender whiplike or threadlike strand, produced usually from the node of a stem, by which a vine or other plant may climb. Its anatomy may be of stem tissue or of leafstalk tissue. Common examples of tendril-producing plants are the grape, members of the squash or melon family (Cucurbitaceae), the sweet pea (Lathyrus odoratus), and the passionflowers (Passiflora species). Tendrils are prehensile and sensitive to contact. When stroked lightly on its lower side, the tendril will, in a minute or two, curve toward that side. As it brushes against an object, it turns toward it and—the shape of the object permitting—wraps about it, clinging for as long as the stimulation persists. Later, strong mechanical tissue (sclerenchyma) develops in the tendrils, thus rendering them strong enough to support the weight of the plant. In addition to their twining character, some tendrils produce terminal enlargements that, on contact with a firm surface, flatten and secrete an adhesive, firmly cementing the tendril to the substrate."
+  },
+
+
+  {
+    images: [
+       require('../assets/Images/mouse/mouse1.jpeg'),
+       require('../assets/Images/mouse/mouse2.jpeg'),
+       require('../assets/Images/mouse/mouse3.jpeg'),
+       require('../assets/Images/mouse/mouse4.jpeg'),
+     ],
+    word: "MOUSE",
+    category: "Technology",
+    definition: "Mouse, hand-controlled electromechanical device for interacting with a digital computer that has a graphical user interface. The mouse can be moved around on a flat surface to control the movement of a cursor on the computer display screen. Equipped with one or more buttons, it can be used to select text, activate programs, or move items around the screen by quickly pressing and releasing one of the buttons (“clicking”) or by keeping a button depressed while moving the device (“clicking and dragging”). Mechanical mice convert the movement of a ball into cursor movement, and optical mice use a beam from a light-emitting diode or a laser. American inventor Douglas Engelbart invented the mouse in 1963-64."
+  },
   {
     images: [
        require('../assets/Images/mobile/mobile1.jpg'),
@@ -2645,10 +2986,12 @@ const levels = [
     definition: "A gadget typically refers to a small, specialized electronic device or tool designed for a particular purpose. Gadgets often serve practical functions or provide entertainment and are characterized by their portability and convenience. Examples of gadgets include smartphones, tablets, fitness trackers, smartwatches, digital cameras, portable gaming consoles, and various other electronic devices. Gadgets are commonly associated with modern technology and are often designed to enhance productivity, communication, or leisure activities."
   },
 
+
+
   {
     images: [
        require('../assets/Images/hardware/hardware1.jpg'),
-       require('../assets/Images/hardware/hardware2.jpg'),
+       require('../assets/Images/hardware/hardware2.jpeg'),
        require('../assets/Images/hardware/hardware3.jpg'),
        require('../assets/Images/hardware/hardware4.jpg'),
      ],
@@ -2656,6 +2999,19 @@ const levels = [
     category: "Technology",
     definition: "Hardware refers to the physical components of a computer system or electronic device. Unlike software, which encompasses programs, applications, and data, hardware includes tangible objects such as the computer's central processing unit (CPU), memory modules (RAM), storage devices (hard drives, solid-state drives), input/output devices (keyboard, mouse, monitor, printer), and other components necessary for the device to function."
   },
+
+  {
+    images: [
+       require('../assets/Images/firewall/firewall1.jpeg'),
+       require('../assets/Images/firewall/firewall2.png'),
+       require('../assets/Images/firewall/firewall3.jpeg'),
+       require('../assets/Images/firewall/firewall4.jpeg'),
+     ],
+    word: "FIREWALL",
+    category: "Technology",
+    definition: "Firewall is a network security device that observes and filters incoming and outgoing network traffic, adhering to the security policies defined by an organization. Essentially, it acts as a protective wall between a private internal network and the public Internet. Fencing your property protects your house and keeps trespassers at bay; similarly, firewalls are used to secure a computer network. Firewalls are network security systems that prevent unauthorized access to a network. It can be a hardware or software unit that filters the incoming and outgoing traffic within a private network, according to a set of rules to spot and prevent cyberattacks. Firewalls are used in enterprise and personal settings. They are a vital component of network security. Most operating systems have a basic built-in firewall. However, using a third-party firewall application provides better protection."
+  },
+
 
   {
     images: [
@@ -2667,6 +3023,18 @@ const levels = [
     word: "ROBOTICS",
     category: "Technology",
     definition: "Robotics is the interdisciplinary field that involves the design, construction, operation, and use of robots. A robot is a programmable machine capable of carrying out a complex series of actions automatically, especially when controlled by a computer or electronic system."
+  },
+
+  {
+    images: [
+       require('../assets/Images/chatbot/chatbot1.jpeg'),
+       require('../assets/Images/chatbot/chatbot2.jpeg'),
+       require('../assets/Images/chatbot/chatbot3.jpeg'),
+       require('../assets/Images/chatbot/chatbot4.jpeg'),
+     ],
+    word: "CHATBOT",
+    category: "Technology",
+    definition: "A chatbot (originally chatterbot) is a software application or web interface that is designed to mimic human conversation through text or voice interactions. Modern chatbots are typically online and use generative artificial intelligence systems that are capable of maintaining a conversation with a user in natural language and simulating the way a human would behave as a conversational partner. Such chatbots often use deep learning and natural language processing, but simpler chatbots have existed for decades. Since late 2022, the field has gained widespread attention due to the popularity of OpenAI's ChatGPT, followed by alternatives such as Microsoft's Copilot and Google's Gemini. Such examples reflect the recent practice of basing such products upon broad foundational large language models, such as GPT-4 or the Gemini language model, that get fine-tuned so as to target specific tasks or applications (i.e., simulating human conversation, in the case of chatbots). Chatbots can also be designed or customized to further target even more specific situations and/or particular subject-matter domains. A major area where chatbots have long been used is in customer service and support, with various sorts of virtual assistants. Companies spanning a wide range of industries have begun using the latest generative artificial intelligence technologies to power more advanced developments in such areas."
   },
 
   
@@ -2682,16 +3050,30 @@ const levels = [
     definition: "Shame is a complex and powerful emotion that arises from feelings of guilt, embarrassment, or disgrace about one's actions, thoughts, or circumstances. It is often accompanied by a sense of moral or social judgment, leading individuals to feel remorseful or unworthy. Shame can result from both internal self-evaluation and external criticism or social expectations."
   },
 
+  
+
   {
     images: [
-       require('../assets/Images/relief/relief1.jpg'),
-       require('../assets/Images/relief/relief2.jpg'),
-       require('../assets/Images/relief/relief3.jpg'),
-       require('../assets/Images/relief/relief4.jpg'),
+       require('../assets/Images/envy/envy1.jpeg'),
+       require('../assets/Images/envy/envy2.jpeg'),
+       require('../assets/Images/envy/envy3.jpeg'),
+       require('../assets/Images/envy/envy4.jpeg'),
      ],
-    word: "RELIEF",
+    word: "ENVY",
     category: "Emotions",
-    definition: "Relief is a feeling of comfort, ease, or reassurance that follows the removal of a burden, stress, or difficulty. It is the sensation of being freed from pain, worry, or anxiety, often accompanied by a sense of relaxation and contentment."
+    definition: "Envy is a complex and often negative emotion that arises when a person lacks another's superior quality, achievement, or possession and either desires it or wishes that the other lacked it. It is a common human experience and can manifest in various forms and contexts."
+  },
+
+  {
+    images: [
+       require('../assets/Images/stress/stress1.jpeg'),
+       require('../assets/Images/stress/stress2.jpeg'),
+       require('../assets/Images/stress/stress3.jpeg'),
+       require('../assets/Images/stress/stress4.jpeg'),
+     ],
+    word: "STRESS",
+    category: "Emotions",
+    definition: "Stress can be defined as a state of worry or mental tension caused by a difficult situation. Stress is a natural human response that prompts us to address challenges and threats in our lives. Everyone experiences stress to some degree. The way we respond to stress, however, makes a big difference to our overall well-being. Stress affects both the mind and the body. A little bit of stress is good and can help us perform daily activities. Too much stress can cause physical and mental health problems. Learning how to cope with stress can help us feel less overwhelmed and support our mental and physical well-being. Stress makes it hard for us to relax and can come with a range of emotions, including anxiety and irritability. When stressed, we may find it difficult to concentrate. We may experience headaches or other body pains, an upset stomach or trouble sleeping. We may find we lose our appetite or eat more than usual. Chronic stress can worsen pre-existing health problems and may increase our use of alcohol, tobacco and other substances. Stressful situations can also cause or exacerbate mental health conditions, most commonly anxiety and depression, which require access to health care. When we suffer from a mental health condition, it may be because our symptoms of stress have become persistent and have started affecting our daily functioning, including at work or school."
   },
 
   {
@@ -2704,6 +3086,18 @@ const levels = [
     word: "LONELY",
     category: "Emotions",
     definition: "Loneliness is a feeling of isolation or lack of connection with others, even when surrounded by people. It's a subjective experience and can be influenced by various factors such as social support, relationships, and individual temperament. People may feel lonely for different reasons, including physical isolation, lack of meaningful social interactions, or feeling misunderstood or disconnected from others. Loneliness can have significant effects on mental and physical health, leading to symptoms such as sadness, anxiety, low self-esteem, and even physical ailments like high blood pressure and weakened immune function."
+  },
+
+  {
+    images: [
+       require('../assets/Images/relief/relief1.jpg'),
+       require('../assets/Images/relief/relief2.jpg'),
+       require('../assets/Images/relief/relief3.jpg'),
+       require('../assets/Images/relief/relief4.jpg'),
+     ],
+    word: "RELIEF",
+    category: "Emotions",
+    definition: "Relief is a feeling of comfort, ease, or reassurance that follows the removal of a burden, stress, or difficulty. It is the sensation of being freed from pain, worry, or anxiety, often accompanied by a sense of relaxation and contentment."
   },
 
   {
@@ -2768,6 +3162,19 @@ const levels = [
 
   {
     images: [
+       require('../assets/Images/hammer/hammer1.jpeg'),
+       require('../assets/Images/hammer/hammer2.jpeg'),
+       require('../assets/Images/hammer/hammer3.jpeg'),
+       require('../assets/Images/hammer/hammer4.jpeg'),
+     ],
+    word: "HAMMER",
+    category: "Instruments",
+    definition: "A hammer is an instrument, most often a hand tool, consisting of a weighted head fixed to a long handle that is swung to deliver an impact to a small area of an object. This can be, for example, to drive nails into wood, to shape metal (as with a forge), or to crush rock. Hammers are used for a wide range of driving, shaping, breaking and non-destructive striking applications. Traditional disciplines include carpentry, blacksmithing, warfare, and percussive musicianship (as with a gong)."
+  },
+
+
+  {
+    images: [
        require('../assets/Images/gavel/gavel1.jpg'),
        require('../assets/Images/gavel/gavel2.jpg'),
        require('../assets/Images/gavel/gavel3.jpg'),
@@ -2802,18 +3209,7 @@ const levels = [
     definition: "A cello, short for violoncello, is a bowed string instrument known for its deep, rich tone and versatile musical capabilities. It is part of the violin family, which also includes the violin, viola, and double bass. The cello is larger than the violin and viola but smaller than the double bass, with a resonating chamber, a neck, and four strings tuned in perfect fifths (C-G-D-A). The cello is played while seated, with the player holding the instrument between their knees and supporting it with an endpin that rests on the floor. The strings are typically played with a bow made of horsehair or with the fingers of the left hand, which press down on the strings to change pitch."
   },
 
-  {
-    images: [
-       require('../assets/Images/palette/palette1.jpg'),
-       require('../assets/Images/palette/palette2.jpg'),
-       require('../assets/Images/palette/palette3.jpg'),
-       require('../assets/Images/palette/palette4.jpg'),
-     ],
-    word: "PALETTE",
-    category: "Instruments",
-    definition: "A palette refers to a flat surface or board on which artists mix and arrange their paints. It can be made of various materials such as wood, plastic, or metal. Palettes come in different shapes and sizes, depending on the preferences of the artist and the type of painting they're working on. In addition to being a physical tool, palette can also refer to the range of colors available to an artist. This can include both the actual paints on their palette and the broader spectrum of colors they have access to for their artwork."
-  },
-
+  
   {
     images: [
        require('../assets/Images/scalpel/scalpel1.jpg'),
@@ -2860,6 +3256,30 @@ const levels = [
     word: "SCALER",
     category: "Instruments",
     definition: "A scaler is a dental instrument used by dentists and dental hygienists to remove plaque, tartar, and stains from the surfaces of teeth. It typically consists of a thin, pointed metal tip attached to a handle, which vibrates or oscillates at high frequencies to dislodge and scrape away buildup from the teeth."
+  },
+  {
+    images: [
+       require('../assets/Images/palette/palette1.jpg'),
+       require('../assets/Images/palette/palette2.jpg'),
+       require('../assets/Images/palette/palette3.jpg'),
+       require('../assets/Images/palette/palette4.jpg'),
+     ],
+    word: "PALETTE",
+    category: "Instruments",
+    definition: "A palette refers to a flat surface or board on which artists mix and arrange their paints. It can be made of various materials such as wood, plastic, or metal. Palettes come in different shapes and sizes, depending on the preferences of the artist and the type of painting they're working on. In addition to being a physical tool, palette can also refer to the range of colors available to an artist. This can include both the actual paints on their palette and the broader spectrum of colors they have access to for their artwork."
+  },
+
+
+  {
+    images: [
+       require('../assets/Images/burette/burette1.jpeg'),
+       require('../assets/Images/burette/burette2.png'),
+       require('../assets/Images/burette/burette3.jpeg'),
+       require('../assets/Images/burette/burette4.jpeg'),
+     ],
+    word: "BURETTE",
+    category: "Instruments",
+    definition: "Burette, laboratory apparatus used in quantitative chemical analysis to measure the volume of a liquid or a gas. It consists of a graduated glass tube with a stopcock (turning plug, or spigot) at one end. On a liquid burette, the stopcock is at the bottom, and the precise volume of the liquid dispensed can be determined by reading the graduations marked on the glass tube at the liquid level before and after dispensing it. In a gas burette, the stopcock is at the top; the tube of the burette is filled with a fluid, such as water, oil, or mercury, and the bottom of the tube is attached to a reservoir of the fluid. Gas is collected by displacing fluid from the burette, and the amount of gas is measured by the volume of fluid displaced."
   },
 
   {
@@ -2912,6 +3332,18 @@ const levels = [
 
   {
     images: [
+       require('../assets/Images/resort/resort1.jpeg'),
+       require('../assets/Images/resort/resort2.jpeg'),
+       require('../assets/Images/resort/resort3.jpeg'),
+       require('../assets/Images/resort/resort4.jpeg'),
+     ],
+    word: "RESORT",
+    category: "Tourism",
+    definition: "A resort is a destination that provides lodging, entertainment, and recreational facilities, offering guests a wide range of amenities designed for relaxation and leisure. Resorts can be found in various settings, such as beaches, mountains, cities, or countryside, and they cater to different types of travelers."
+  },
+
+  {
+    images: [
        require('../assets/Images/explore/explore1.jpg'),
        require('../assets/Images/explore/explore2.jpg'),
        require('../assets/Images/explore/explore3.jpg'),
@@ -2944,6 +3376,18 @@ const levels = [
     word: "ARTIFACT",
     category: "Tourism",
     definition: "An artifact is an object made or modified by humans that has historical, cultural, scientific, or artistic significance. Artifacts provide tangible evidence of past civilizations, societies, or human activities, offering insights into ancient technologies, customs, beliefs, and lifestyles. They are typically found through archaeological excavations, historical research, or cultural preservation efforts and are carefully studied, preserved, and interpreted by scholars and experts."
+  },
+
+  {
+    images: [
+       require('../assets/Images/safari/safari1.jpeg'),
+       require('../assets/Images/safari/safari2.jpeg'),
+       require('../assets/Images/safari/safari3.jpeg'),
+       require('../assets/Images/safari/safari4.jpeg'),
+     ],
+    word: "SAFARI",
+    category: "Tourism",
+    definition: "Safari is an overland expedition, commonly taken by tourists to the African continent to explore the culture, geography, scenery, and wildlife. It is linked to the development of national parks, and its origins can be traced back to the period of big game hunting expeditions in Southern and Eastern Africa during colonial rule (Anderson and Grove 1987). The centralized political and administrative institutions that emerged during the colonial era generated the preliminary socioeconomic and political environment which prompted and remained to shape safari tourism. Originally, safari tourism focused on consumptive tours through game hunting, but currently such explorations may be dedicated to game viewing, filming, research, and photography. Safaris have evolved over time and have become economic drivers for many Eastern and Southern African countries, surpassing traditional industries such as farming. Safari experiences include guided, mobile, self-drive, walking, and hiking "
   },
 
   {
@@ -3017,6 +3461,31 @@ const levels = [
     category: "Art",
     definition: "Abstract refers to a style that does not attempt to represent an accurate depiction of visual reality. Instead, abstract art often emphasizes shapes, colors, forms, and gestural marks to convey emotions, ideas, or concepts. Examples of abstract art include the works of artists like Wassily Kandinsky, Piet Mondrian, and Jackson Pollock."
   },
+ 
+
+  {
+    images: [
+       require('../assets/Images/portrait/portrait1.jpeg'),
+       require('../assets/Images/portrait/portrait2.jpeg'),
+       require('../assets/Images/portrait/portrait3.jpeg'),
+       require('../assets/Images/portrait/portrait4.jpeg'),
+     ],
+    word: "PORTRAIT",
+    category: "Art",
+    definition: "A portrait is an artistic representation of a person, capturing their likeness, personality, and even their mood. Portraits can be created using various mediums, including painting, photography, drawing, and sculpture. They have been a significant form of art throughout history, serving various purposes and conveying different messages."
+  },
+
+  {
+    images: [
+       require('../assets/Images/collage/collage1.jpeg'),
+       require('../assets/Images/collage/collage2.jpeg'),
+       require('../assets/Images/collage/collage3.jpeg'),
+       require('../assets/Images/collage/collage4.jpeg'),
+     ],
+    word: "COLLAGE",
+    category: "Art",
+    definition: "Collage from the French coller, to glue or to stick together; is a technique of art creation, primarily used in the visual arts, but in music too, by which art results from an assemblage of different forms, thus creating a new whole. A collage may sometimes include magazine and newspaper clippings, ribbons, paint, bits of colored or handmade papers, portions of other artwork or texts, photographs and other found objects, glued to a piece of paper or canvas. The origins of collage can be traced back hundreds of years, but this technique made a dramatic reappearance in the early 20th century as an art form of novelty. The term Papier collé was coined by both Georges Braque and Pablo Picasso in the beginning of the 20th century when collage became a distinctive part of modern art."
+  },
 
   {
     images: [
@@ -3040,6 +3509,18 @@ const levels = [
     word: "REALISM",
     category: "Art",
     definition: "Realism is an artistic movement that emerged in the 19th century, primarily in Europe, as a reaction against the idealized and romanticized depictions of subjects in art. Realist artists sought to portray the world as it is, focusing on ordinary, everyday subjects and presenting them with accuracy and attention to detail."
+  },
+
+  {
+    images: [
+       require('../assets/Images/graffiti/graffiti1.jpeg'),
+       require('../assets/Images/graffiti/graffiti2.jpeg'),
+       require('../assets/Images/graffiti/graffiti3.jpeg'),
+       require('../assets/Images/graffiti/graffiti4.jpeg'),
+     ],
+    word: "GRAFFITI",
+    category: "Art",
+    definition: "Graffiti, form of visual communication, usually illegal, involving the unauthorized marking of public space by an individual or group. Although the common image of graffiti is a stylistic symbol or phrase spray-painted on a wall by a member of a street gang, some graffiti is not gang-related. Graffiti can be understood as antisocial behaviour performed in order to gain attention or as a form of thrill seeking, but it also can be understood as an expressive art form. Derived from the Italian word graffio (“scratch”), graffiti (“incised inscriptions,” plural but often used as singular) has a long history. For example, markings have been found in ancient Roman ruins, in the remains of the Mayan city of Tikal in Central America, on rocks in Spain dating to the 16th century, and in medieval English churches. During the 20th century, graffiti in the United States and Europe was closely associated with gangs, who used it for a variety of purposes: for identifying or claiming territory, for memorializing dead gang members in an informal “obituary,” for boasting about acts (e.g., crimes) committed by gang members, and for challenging rival gangs as a prelude to violent confrontations. Graffiti was particularly prominent in major urban centres throughout the world, especially in the United States and Europe; common targets were subways, billboards, and walls. In the 1990s there emerged a new form of graffiti, known as “tagging,” which entailed the repeated use of a single symbol or series of symbols to mark territory. In order to attract the most attention possible, this type of graffiti us"
   },
 
 
@@ -3066,20 +3547,7 @@ const levels = [
     category: "Geology",
     definition: "A mineral is a naturally occurring, inorganic solid substance with a definite chemical composition and a crystalline structure. Minerals are the building blocks of rocks and are formed through various geological processes over millions of years. They can be found in a wide range of environments, including the Earth's crust, oceans, and even outer space."
   },
-
   {
-    images: [
-       require('../assets/Images/fossil/fossil1.jpg'),
-       require('../assets/Images/fossil/fossil2.jpg'),
-       require('../assets/Images/fossil/fossil3.jpg'),
-       require('../assets/Images/fossil/fossil4.jpg'),
-     ],
-    word: "FOSSIL",
-    category: "Geology",
-    definition: "A fossil is the preserved remains or traces of ancient organisms that lived in the distant past. Fossils can include the remains of plants, animals, fungi, bacteria, and other organisms, as well as imprints or traces of their activities, such as footprints, burrows, or fossilized dung. Fossilization occurs when the remains or traces of an organism are buried in sedimentary rock layers, where they undergo a process of mineralization over time. This process replaces the original organic material with minerals, preserving the structure of the organism or its traces."
-  },
-
-   {
     images: [
        require('../assets/Images/pebble/pebble1.jpg'),
        require('../assets/Images/pebble/pebble2.jpg'),
@@ -3091,6 +3559,32 @@ const levels = [
     definition: "A pebble is a small, rounded rock typically found on beaches, riverbeds, or lake shores. It is often smooth and polished due to the erosive action of water and friction over time. Pebbles come in various colors, shapes, and sizes, ranging from tiny grains to larger stones. They are commonly used for decorative purposes in landscaping, aquariums, and garden pathways, and they can also serve as natural building materials in construction projects. Additionally, pebbles may hold cultural or symbolic significance in certain traditions or spiritual practices."
   },
 
+
+  
+
+  {
+    images: [
+       require('../assets/Images/rift/rift1.jpeg'),
+       require('../assets/Images/rift/rift2.jpeg'),
+       require('../assets/Images/rift/rift3.jpeg'),
+       require('../assets/Images/rift/rift4.jpeg'),
+     ],
+    word: "RIFT",
+    category: "Geology",
+    definition: "A rift is a linear zone where the lithosphere is being pulled apart and is an example of extensional tectonics. Typical rift features are a central linear downfaulted depression, called a graben, or more commonly a half-graben with normal faulting and rift-flank uplifts mainly on one side. Where rifts remain above sea level they form a rift valley, which may be filled by water forming a rift lake. The axis of the rift area may contain volcanic rocks, and active volcanism is a part of many, but not all, active rift systems.Major rifts occur along the central axis of most mid-ocean ridges, where new oceanic crust and lithosphere is created along a divergent boundary between two tectonic plates. Failed rifts are the result of continental rifting that failed to continue to the point of break-up. Typically the transition from rifting to spreading develops at a triple junction where three converging rifts meet over a hotspot. Two of these evolve to the point of seafloor spreading, while the third ultimately fails, becoming an aulacogen."
+  },
+  {
+    images: [
+       require('../assets/Images/fossil/fossil1.jpg'),
+       require('../assets/Images/fossil/fossil2.jpg'),
+       require('../assets/Images/fossil/fossil3.jpg'),
+       require('../assets/Images/fossil/fossil4.jpg'),
+     ],
+    word: "FOSSIL",
+    category: "Geology",
+    definition: "A fossil is the preserved remains or traces of ancient organisms that lived in the distant past. Fossils can include the remains of plants, animals, fungi, bacteria, and other organisms, as well as imprints or traces of their activities, such as footprints, burrows, or fossilized dung. Fossilization occurs when the remains or traces of an organism are buried in sedimentary rock layers, where they undergo a process of mineralization over time. This process replaces the original organic material with minerals, preserving the structure of the organism or its traces."
+  },
+   
 
   {
     images: [
@@ -3106,6 +3600,18 @@ const levels = [
 
   {
     images: [
+       require('../assets/Images/trench/trench1.jpeg'),
+       require('../assets/Images/trench/trench2.jpeg'),
+       require('../assets/Images/trench/trench3.jpeg'),
+       require('../assets/Images/trench/trench4.jpeg'),
+     ],
+    word: "TRENCH",
+    category: "Geology",
+    definition: "A trench is a type of excavation or depression in the ground that is generally deeper than it is wide (as opposed to a wider gully, or ditch), and narrow compared with its length (as opposed to a simple hole or pit). In geology, trenches result from erosion by rivers or by geological movement of tectonic plates. In civil engineering, trenches are often created to install underground utilities such as gas, water, power and communication lines. In construction, trenches are dug for foundations of buildings, retaining walls and dams, and for cut-and-cover construction of tunnels. In archaeology, the trench method is used for searching and excavating ancient ruins or to dig into strata of sedimented material. In geotechnical engineering, trenches serve for locating faults and investigating deep soil properties. In trench warfare, soldiers occupy trenches to protect them against weapons fire and artillery. Trenches are dug by use of manual tools such as shovels and pickaxes, or by heavy equipment such as backhoes, trenchers and excavators. For deep trenches, the instability of steep earthen walls requires engineering and safety techniques such as shoring. Trenches are usually considered temporary structures to be backfilled with soil after construction, or abandoned after use. Some trenches are stabilized using durable materials such as concrete to create open passages such as canals and sunken roadways."
+  },
+
+  {
+    images: [
        require('../assets/Images/glacier/glacier1.jpg'),
        require('../assets/Images/glacier/glacier2.jpg'),
        require('../assets/Images/glacier/glacier3.jpg'),
@@ -3115,6 +3621,8 @@ const levels = [
     category: "Geology",
     definition: "A glacier is a large mass of ice that forms over many years from the accumulation and compaction of snow in areas where snowfall exceeds snowmelt. Glaciers are typically found in polar regions, mountainous areas, and high-altitude regions, although they can occur at lower latitudes in specific conditions. Glaciers move slowly under the force of gravity, flowing downhill in response to their own weight. This movement, known as glaciation or glacial flow, can cause erosion and the formation of distinct landforms such as valleys, fjords, and cirques. Glaciers also transport large amounts of sediment and rock debris, which they deposit as they melt or retreat."
   },
+
+  
 
   {
     images: [
@@ -3126,6 +3634,41 @@ const levels = [
     word: "SHALE",
     category: "Geology",
     definition: "Shale is a type of sedimentary rock that forms from the accumulation and compaction of clay, silt, and organic matter over long periods of time. It is characterized by its fine-grained texture and tends to split easily into thin layers, a property known as fissility."
+  },
+  {
+    images: [
+       require('../assets/Images/tsunami/tsunami1.jpeg'),
+       require('../assets/Images/tsunami/tsunami2.jpeg'),
+       require('../assets/Images/tsunami/tsunami3.jpeg'),
+       require('../assets/Images/tsunami/tsunami4.jpeg'),
+     ],
+    word: "TSUNAMI",
+    category: "Geology",
+    definition: "A tsunami is a series of waves in a water body caused by the displacement of a large volume of water, generally in an ocean or a large lake. Earthquakes, volcanic eruptions and other underwater explosions (including detonations, landslides, glacier calvings, meteorite impacts and other disturbances) above or below water all have the potential to generate a tsunami. Unlike normal ocean waves, which are generated by wind, or tides, which are in turn generated by the gravitational pull of the Moon and the Sun, a tsunami is generated by the displacement of water from a large event. Tsunami waves do not resemble normal undersea currents or sea waves because their wavelength is far longer. Rather than appearing as a breaking wave, a tsunami may instead initially resemble a rapidly rising tide. For this reason, it is often referred to as a tidal wave, although this usage is not favoured by the scientific community because it might give the false impression of a causal relationship between tides and tsunamis. Tsunamis generally consist of a series of waves, with periods ranging from minutes to hours, arriving in a so-called wave train. Wave heights of tens of metres can be generated by large events. Although the impact of tsunamis is limited to coastal areas, their destructive power can be enormous, and they can affect entire ocean basins. The 2004 Indian Ocean tsunami was among the deadliest natural disasters in human history, with at least 230,000 people killed or missing in 14 countries bordering the Indian Ocean."
+  },
+
+  {
+    images: [
+       require('../assets/Images/hercules/hercules1.jpeg'),
+       require('../assets/Images/hercules/hercules2.jpeg'),
+       require('../assets/Images/hercules/hercules3.jpeg'),
+       require('../assets/Images/hercules/hercules4.jpeg'),
+     ],
+    word: "HERCULES",
+    category: "Mythology",
+    definition: "Hercules is the Roman equivalent of the Greek divine hero Heracles, son of Jupiter and the mortal Alcmena. In classical mythology, Hercules is famous for his strength and for his numerous far-ranging adventures.The Romans adapted the Greek hero's iconography and myths for their literature and art under the name Hercules. In later Western art and literature and in popular culture, Hercules is more commonly used than Heracles as the name of the hero. Hercules is a multifaceted figure with contradictory characteristics, which enabled later artists and writers to pick and choose how to represent him. This article provides an introduction to representations of Hercules in the later tradition. In Roman mythology, although Hercules was seen as the champion of the weak and a great protector, his personal problems started at birth. Juno sent two witches to prevent the birth, but they were tricked by one of Alcmene's servants and sent to another room. Juno then sent serpents to kill him in his cradle, but Hercules strangled them both. In one version of the myth, Alcmene abandoned her baby in the woods in order to protect him from Juno's wrath, but he was found by the goddess Minerva who brought him to Juno, claiming he was an orphan child left in the woods who needed nourishment. Juno suckled Hercules at her own breast until the infant bit her nipple, at which point she pushed him away, spilling her milk across the night sky and so forming the Milky Way. She then gave the infant back to Minerva and told her to take care of the baby herself. In feeding the child from her own breast, the goddess inadvertently imbued him with further strength and power."
+  },
+
+  {
+    images: [
+       require('../assets/Images/medusa/medusa1.jpg'),
+       require('../assets/Images/medusa/medusa2.jpg'),
+       require('../assets/Images/medusa/medusa3.jpg'),
+       require('../assets/Images/medusa/medusa4.jpg'),
+     ],
+    word: "MEDUSA",
+    category: "Mythology",
+    definition: "Medusa is a legendary figure from Greek mythology, known for her horrifying appearance of snakes for hair and the ability to turn anyone who gazes upon her into stone. She was one of the Gorgon sisters, cursed by the goddess Athena after Medusa's affair with Poseidon. Her fearsome visage has been a subject of fascination and terror throughout history, depicted in numerous works of art, literature, and popular culture."
   },
 
   {
@@ -3140,29 +3683,42 @@ const levels = [
     definition: "Poseidon is a figure from Greek mythology, known as the god of the sea, earthquakes, and horses. He is one of the twelve Olympian gods and is often depicted as a powerful and bearded figure holding a trident, a three-pronged spear associated with his domain over the seas.In Greek mythology, Poseidon is the brother of Zeus, the king of the gods, and Hades, the ruler of the underworld. He is the son of Cronus and Rhea. Poseidon is often associated with his role as the ruler of the oceans and is credited with creating earthquakes and storms at sea. He is also considered the protector of sailors and ships, although he can be both benevolent and wrathful, depending on how humans treat him. Poseidon is frequently featured in ancient Greek literature, art, and mythology, where he plays a significant role in various myths and legends. His exploits include contests with other gods, conflicts with mortals, and his involvement in the Trojan War."
   },
 
+
   {
     images: [
-       require('../assets/Images/oshun/oshun1.jpg'),
-       require('../assets/Images/oshun/oshun2.jpg'),
-       require('../assets/Images/oshun/oshun3.jpg'),
-       require('../assets/Images/oshun/oshun4.jpg'),
+       require('../assets/Images/cratos/cratos1.jpeg'),
+       require('../assets/Images/cratos/cratos2.jpeg'),
+       require('../assets/Images/cratos/cratos3.jpeg'),
+       require('../assets/Images/cratos/cratos4.jpeg'),
      ],
-    word: "OSHUN",
+    word: "CRATOS",
     category: "Mythology",
-    definition: "Oshun is a deity in the Yoruba religion, which originated in West Africa and is practiced primarily in Nigeria, Benin, and Togo. In Yoruba mythology, Oshun is a powerful goddess associated with rivers, love, fertility, beauty, wealth, and feminine energy. Oshun is revered in various Afro-Caribbean religions, including Santería, Candomblé, and Vodou, where she is often syncretized with other deities or saints. She is celebrated in festivals, rituals, and ceremonies throughout the year, where worshippers pay homage to her and seek her guidance."
+    definition: "Cratos is the divine personification of strength. He is the son of Pallas and Styx. Kratos and his siblings Nike ('Victory'), Bia ('Force'), and Zelus ('Glory') are all the personification of a specific trait. Kratos is first mentioned alongside his siblings in Hesiod's Theogony. According to Hesiod, Kratos and his siblings dwell with Zeus because their mother Styx came to him first to request a position in his regime, so he honored her and her children with exalted positions. Kratos and his sister Bia are best known for their appearance in the opening scene of Aeschylus' Prometheus Bound. Acting as agents of Zeus, they lead the captive Titan Prometheus on stage. Kratos compels the mild-mannered blacksmith god Hephaestus to chain Prometheus to a rock as punishment for his theft of fire.Kratos is characterized as brutal and merciless, repeatedly mocking both Hephaestus and Prometheus and advocating for the use of unnecessary violence. He defends Zeus' oppressive rule and predicts that Prometheus will never escape his bonds. In Aeschylus' Libation Bearers, Electra calls upon Kratos, Dike, and Zeus to aid her brother Orestes in avenging the murder of their father Agamemnon. Kratos and Bia appear in a late fifth-century BC red-figure Attic skyphos of the punishment of Ixion, possibly based on a scene from a lost tragedy by Euripides. They also appear in late eighteenth and nineteenth-century Romantic depictions and adaptations of the binding of Prometheus."
+  },
+
+  {
+    images: [
+       require('../assets/Images/anubis/anubis1.jpeg'),
+       require('../assets/Images/anubis/anubis2.jpeg'),
+       require('../assets/Images/anubis/anubis3.jpeg'),
+       require('../assets/Images/anubis/anubis4.jpeg'),
+     ],
+    word: "ANUBIS",
+    category: "Mythology",
+    definition: "Anubis, ancient Egyptian god of funerary practices and care of the dead, represented by a jackal or the figure of a man with the head of a jackal. In the Early Dynastic period and the Old Kingdom, he enjoyed a preeminent (though not exclusive) position as lord of the dead, but he was later overshadowed by Osiris. His role is reflected in such epithets as “He Who Is upon His Mountain” (i.e., the necropolis), “Lord of the Sacred Land,” “Foremost of the Westerners,” and “He Who Is in the Place of Embalming.” His particular concern was with the funerary cult and the care of the dead; hence, he was reputed to be the inventor of embalming, an art he first employed on the corpse of Osiris. In his later role as the “conductor of souls,” he was sometimes identified by the Greco-Roman world with the Greek Hermes in the composite deity Hermanubis."
   },
   
 
   {
     images: [
-       require('../assets/Images/medusa/medusa1.jpg'),
-       require('../assets/Images/medusa/medusa2.jpg'),
-       require('../assets/Images/medusa/medusa3.jpg'),
-       require('../assets/Images/medusa/medusa4.jpg'),
+       require('../assets/Images/hela/hela1.jpg'),
+       require('../assets/Images/hela/hela2.jpg'),
+       require('../assets/Images/hela/hela3.jpg'),
+       require('../assets/Images/hela/hela4.jpg'),
      ],
-    word: "MEDUSA",
+    word: "HELA",
     category: "Mythology",
-    definition: "Medusa is a legendary figure from Greek mythology, known for her horrifying appearance of snakes for hair and the ability to turn anyone who gazes upon her into stone. She was one of the Gorgon sisters, cursed by the goddess Athena after Medusa's affair with Poseidon. Her fearsome visage has been a subject of fascination and terror throughout history, depicted in numerous works of art, literature, and popular culture."
+    definition: "Hela is a character from Norse mythology, known as the ruler of Helheim, the realm of the dead in Norse cosmology. In Norse mythology, Hela is described as the daughter of Loki, the trickster god, and the giantess Angrboða. She is depicted as a powerful and formidable figure, often associated with death, decay, and the afterlife. Hela is said to dwell in a realm called Helheim, where she governs over those who have died of natural causes or illness. Her realm is described as a cold and desolate place, reserved for those who did not die in battle and therefore did not ascend to Valhalla, the hall of the slain in Norse mythology. In some accounts, Hela is depicted as having a half-living, half-dead appearance, with one side of her body appearing healthy and vibrant while the other side is decayed and skeletal. She is often portrayed as wielding power over the souls of the dead and is sometimes depicted as a fearsome and relentless figure."
   },
 
   {
@@ -3189,17 +3745,7 @@ const levels = [
     definition: "Athena is a prominent figure in Greek mythology, revered as the goddess of wisdom, courage, and strategic warfare. Among the twelve Olympian gods, she holds a significant position, often depicted as a powerful and wise deity, clad in armor and wielding a shield and spear. According to Greek myth, Athena was born fully grown and armored from the forehead of her father, Zeus, the king of the gods. She is associated with various aspects of civilization, including arts, crafts, and justice. The city of Athens, in particular, honored Athena as its patron goddess, erecting temples and holding festivals in her honor."
   },
 
-  {
-    images: [
-       require('../assets/Images/hela/hela1.jpg'),
-       require('../assets/Images/hela/hela2.jpg'),
-       require('../assets/Images/hela/hela3.jpg'),
-       require('../assets/Images/hela/hela4.jpg'),
-     ],
-    word: "HELA",
-    category: "Mythology",
-    definition: "Hela is a character from Norse mythology, known as the ruler of Helheim, the realm of the dead in Norse cosmology. In Norse mythology, Hela is described as the daughter of Loki, the trickster god, and the giantess Angrboða. She is depicted as a powerful and formidable figure, often associated with death, decay, and the afterlife. Hela is said to dwell in a realm called Helheim, where she governs over those who have died of natural causes or illness. Her realm is described as a cold and desolate place, reserved for those who did not die in battle and therefore did not ascend to Valhalla, the hall of the slain in Norse mythology. In some accounts, Hela is depicted as having a half-living, half-dead appearance, with one side of her body appearing healthy and vibrant while the other side is decayed and skeletal. She is often portrayed as wielding power over the souls of the dead and is sometimes depicted as a fearsome and relentless figure."
-  },
+  
 
   {
     images: [
@@ -3215,6 +3761,18 @@ const levels = [
 
 
   
+  {
+    images: [
+       require('../assets/Images/oshun/oshun1.jpg'),
+       require('../assets/Images/oshun/oshun2.jpg'),
+       require('../assets/Images/oshun/oshun3.jpg'),
+       require('../assets/Images/oshun/oshun4.jpg'),
+     ],
+    word: "OSHUN",
+    category: "Mythology",
+    definition: "Oshun is a deity in the Yoruba religion, which originated in West Africa and is practiced primarily in Nigeria, Benin, and Togo. In Yoruba mythology, Oshun is a powerful goddess associated with rivers, love, fertility, beauty, wealth, and feminine energy. Oshun is revered in various Afro-Caribbean religions, including Santería, Candomblé, and Vodou, where she is often syncretized with other deities or saints. She is celebrated in festivals, rituals, and ceremonies throughout the year, where worshippers pay homage to her and seek her guidance."
+  },
+
 
   
    

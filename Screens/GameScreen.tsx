@@ -203,7 +203,7 @@ useEffect(() => {
   useEffect(() => {
     Animated.timing(translateX, {
       toValue: 0,
-      duration: 1000, // Adjust duration as needed
+      duration: 700, // Adjust duration as needed
       useNativeDriver: true,
     }).start();
   }, [currentLevel]);
@@ -214,7 +214,7 @@ useEffect(() => {
   useEffect(() => {
     const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
       // Navigate to MainMenuScreen and pass score and current level
-      navigation.push('MainMenu', { score: score, currentLevel: currentLevel });
+      navigation.push('MainMenu', { score: score });
 
       return true; // Prevent default behavior (closing the app)
     });
@@ -222,7 +222,7 @@ useEffect(() => {
     return () => {
       backHandler.remove(); // Remove the event listener when component unmounts
     };
-  }, [navigation, score, currentLevel]);
+  }, [navigation, score]);
   
    
   const playSound = (soundObject: Sound | null) => {
@@ -349,20 +349,20 @@ useEffect(() => {
     useEffect(() => {
     // Save game progress whenever score or current level changes
     saveGameProgress();
-  }, [score, currentLevel]);
+  }, [score]);
 
   
 
   const loadGameProgress = async () => {
     try {
-      const savedLevel = await AsyncStorage.getItem('currentLevel');
+      
       const savedScore = await AsyncStorage.getItem('score');
       const savedProgress = await AsyncStorage.getItem('progress');
       
 
 
-      if (savedLevel !== null && savedScore !== null) {
-        setCurrentLevel(parseInt(savedLevel));
+      if (savedScore !== null) {
+      
         setScore(parseInt(savedScore));
       }
       if (savedProgress !== null) {
@@ -376,7 +376,7 @@ useEffect(() => {
 
   const saveGameProgress = async () => {
     try {
-      await AsyncStorage.setItem('currentLevel', currentLevel.toString());
+      
       await AsyncStorage.setItem('score', score.toString());
       
     } catch (error) {
@@ -520,7 +520,7 @@ const handleNav = () => {
       setTimeout(() => {
       
       increaseDifficulty();
-        setCurrentLevel(currentLevel + 1);
+        increaseLevel();
         AsyncStorage.setItem('progress', JSON.stringify(newProgress))
         .then(() => console.log('Progress saved successfully'))
         .catch(error => console.error('Error saving progress:', error));
@@ -606,6 +606,39 @@ const handleNav = () => {
         console.error('Error saving difficulty to AsyncStorage:', error);
       });
   }, [difficulty]);
+
+  
+  useEffect(() => {
+    // Load difficulty from AsyncStorage when component mounts
+    AsyncStorage.getItem('currentLevel')
+      .then((storedCurrentLevel) => {
+        if (storedCurrentLevel) {
+          setCurrentLevel(parseInt(storedCurrentLevel));
+        } else {
+          setCurrentLevel(1); // Default starting difficulty
+        }
+      })
+      .catch((error) => {
+        console.error('Error loading level from AsyncStorage:', error);
+      });
+  }, []);
+
+  const increaseLevel = () => {
+    setCurrentLevel((prevCurrentLevel) => {
+      const newCurrentLevel = prevCurrentLevel + 1;
+      return newCurrentLevel; 
+    });
+  };
+  useEffect(() => {
+    // Store the current difficulty in AsyncStorage whenever it changes
+    AsyncStorage.setItem('currentLevel', currentLevel.toString())
+      .catch((error) => {
+        console.error('Error saving currentLevel to AsyncStorage:', error);
+      });
+  }, [currentLevel]);
+
+
+  
 
 
 return(
