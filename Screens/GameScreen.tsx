@@ -11,6 +11,7 @@ import levels from '../Components/Level';
 import { StatusBar } from 'expo-status-bar'
 import CorrectImage from '../Components/CorrectImage';
 import WrongImage from '../Components/WrongImage';
+import CategoryImage from '../Components/CategoryImage';
 import * as MediaLibrary from 'expo-media-library';
 import { captureRef } from 'react-native-view-shot';
 import { useInterstitialAd } from '../Components/useInterstitialAd';
@@ -26,10 +27,12 @@ import ProgressBar from '../Components/ProgressBar';
   const [letterBox, setLetterBox] = useState<string[]>([]);
   const [showImage, setShowImage] = useState(false);
 const [showWrongImage, setShowWrongImage] = useState(false);
+const [showCategoryImage, setShowCategoryImage] = useState(false);
  const [progress, setProgress] = useState(0);
 const fillAnimation = useRef(new Animated.Value(0)).current;
 const [coinVisible, setCoinVisible] = useState(false);
 const [iqVisible, setIqVisible] = useState(false);
+const [extraVisible, setExtraVisible] = useState(false);
 const [correctSound, setCorrectSound] = useState<Sound | null>(null);
 const [buttonSound, setButtonSound] = useState<Sound | null>(null);
 const [helpSound, setHelpSound] = useState<Sound | null>(null);
@@ -40,6 +43,7 @@ const [iqSound, setIqSound] = useState<Sound | null>(null);
 
   const [coinAnimation] = useState(new Animated.ValueXY({ x: 0, y: 0 }));
   const [iqAnimation] = useState(new Animated.ValueXY({ x: 0, y: 0 }));
+  const [extraAnimation] = useState(new Animated.ValueXY({ x: 0, y: 0 }));
   const [pendingScore, setPendingScore] = useState<number | null>(null);
   const [showPartyPopper, setShowPartyPopper] = useState(false); 
   const translateX = useRef(new Animated.Value(500)).current;
@@ -331,7 +335,7 @@ useEffect(() => {
 
   const moveIq = () => {
     Animated.timing(iqAnimation, {
-      toValue: { x: 0, y: -750 }, // Adjust the value to move the coin to the score area
+      toValue: { x: 0, y: -800 }, // Adjust the value to move the coin to the score area
       duration: 1300, // Adjust the duration as needed
       easing: Easing.linear,
       useNativeDriver: false,
@@ -340,6 +344,8 @@ useEffect(() => {
       iqAnimation.setValue({ x: 0, y: 0 }); // Reset animation value
     });
   };
+
+ 
 
 
   useEffect(() => {
@@ -515,11 +521,15 @@ const handleNav = () => {
       }, 1500);
       const newProgress = progress + 0.1;
     setProgress(newProgress); 
+    setTimeout(() => {
+      
+      increaseDifficulty();
+   }, 3900);
     
       // Move to the next level
       setTimeout(() => {
       
-      increaseDifficulty();
+    
         increaseLevel();
         AsyncStorage.setItem('progress', JSON.stringify(newProgress))
         .then(() => console.log('Progress saved successfully'))
@@ -596,9 +606,21 @@ const handleNav = () => {
   const increaseDifficulty = () => {
     setDifficulty((prevDifficulty) => {
       const newDifficulty = prevDifficulty + 1;
-      return newDifficulty >= 11 ? 1 : newDifficulty; // Reset difficulty after it gets full
+      if (newDifficulty >= 11) {
+         // Set showWrongImage to true if newDifficulty is 11 or greater
+        setTimeout(() => {
+          setShowCategoryImage(true);
+        }, 500);
+        setTimeout(() => {
+          setShowCategoryImage(false); // Reset showWrongImage after 4 seconds
+        }, 5000);
+        return 1; // Reset difficulty after it reaches 11
+      } else {
+        return newDifficulty;
+      }
     });
   };
+
   useEffect(() => {
     // Store the current difficulty in AsyncStorage whenever it changes
     AsyncStorage.setItem('difficulty', difficulty.toString())
@@ -754,10 +776,7 @@ return(
     </Animated.View>
 
 
-    {showImage && <CorrectImage />}
-
-    {showWrongImage && <WrongImage />}
-
+    
           
     {coinVisible && (
         <Animated.View
@@ -792,6 +811,9 @@ return(
         </Animated.View>
       )}
        
+        {showPartyPopper && (
+        <PartyPopperAnimation onAnimationComplete={() => setShowPartyPopper(false)} />
+      )}
     
        
 
@@ -853,8 +875,17 @@ return(
           </TouchableOpacity>
           </View>
       
+          {showImage && <CorrectImage />}
 
-      
+{showWrongImage && <WrongImage />}
+
+{showCategoryImage && <CategoryImage />}
+
+
+
+
+
+
       
       {showTutorial && (
         <TouchableOpacity style={styles.tutorialOverlay} onPress={hideTutorial}>
@@ -931,6 +962,7 @@ const styles = StyleSheet.create({
       position: 'absolute',
       top: 0,
       left: '-10%',
+      fontFamily:'Poppins-Regular'
     },
 
     iqContainer: {
@@ -939,6 +971,22 @@ const styles = StyleSheet.create({
       left: '21%', 
       marginLeft: '-10%', 
       zIndex: 1000, 
+    },
+
+    extraContainer: {
+      position: 'absolute',
+      top: '83%', 
+      left: '90%', 
+      marginLeft: -11.5, 
+      zIndex: 1000, 
+    },
+    extraText: {
+      color: 'white',
+      fontSize: 17,
+      position: 'absolute',
+      top: 0,
+      left: '-10%',
+      fontFamily:'Poppins-Regular'
     },
 
     imageStyle: {
