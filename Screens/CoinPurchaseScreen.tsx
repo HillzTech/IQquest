@@ -164,36 +164,34 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
     <Background>
       <SafeAreaView style={{flex:1}}>
         <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-        <ImageBackground source={require('../assets/Images/newcoin.png')} style={{ width: 120, height: 120, top: '33%' }} />
+        <ImageBackground source={require('../assets/Images/newcoin.png')} style={{ width: 120, height: 120, top: '10%' }} />
       
       
-      <Text style={{ color: 'white', textAlign: 'center', fontSize: 21, fontFamily:'Poppins-Bold', bottom:'45%' }}>{score}</Text>
+      <Text style={{ color: 'white', textAlign: 'center', fontSize: 21, fontFamily:'Poppins-Bold', bottom:'35%' }}>{score}</Text>
       </View>
       
 
-      <View style={{ flex: 1, justifyContent: 'center', alignContent: 'center', left: '13%', marginTop: '12%', marginBottom:'3%' }}>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <TouchableOpacity onPress={handleShowAd}>
-          <ImageBackground source={require('../assets/Images/watchnow.png')} style={{ width: '90%', height: '130%', padding: '4%' }} />
+          <ImageBackground source={require('../assets/Images/watchnow.png')} style={{ width: 250, height: 250, padding: '4%',  }} />
         </TouchableOpacity>
       </View>
 
-      <View style={{ top: '1%' }}>
+      <View style={{ top: '-5%' }}>
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 4 }}>
           <TouchableOpacity onPress={handlePurchaseProduct1}>
-            <ImageBackground source={require('../assets/Images/1000.png')} style={{ width: 176, height: 159, top:'-3%' }} />
+            <ImageBackground source={require('../assets/Images/1000.png')} style={{ width: 176, height: 156, top:'-3%' }} />
           </TouchableOpacity>
           <TouchableOpacity onPress={handlePurchaseProduct2}>
-            <ImageBackground source={require('../assets/Images/5000.png')} style={{ width: 160, height: 200 }} />
+            <ImageBackground source={require('../assets/Images/5000.png')} style={{ width: 160, height: 195 }} />
           </TouchableOpacity>
           <TouchableOpacity onPress={handlePurchaseProduct3}>
-            <ImageBackground source={require('../assets/Images/10000.png')} style={{ width: 170, height: 200, bottom:'20%' }} />
+            <ImageBackground source={require('../assets/Images/10000.png')} style={{ width: 180, height: 200, bottom:'20%' }} />
           </TouchableOpacity>
         </View>
       </View>
 
-      <View style={{flex:1, justifyContent:'center', alignItems:'center', left:"10%"}}>
-      <ImageBackground source={require('../assets/Images/coinchest.png')} style={{ width: '62%', height: '104%', bottom:'10%' }} />
-      </View>
+      
 
       </SafeAreaView>
     </Background>

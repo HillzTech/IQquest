@@ -40,7 +40,7 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 
   return (
     <Background>
-      
+      <SafeAreaView style={{flex:1}}>
       <ScrollView
         contentContainerStyle={{ flexGrow: 1 }}
         keyboardShouldPersistTaps="handled"
@@ -51,11 +51,11 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           <Text style={{ textAlign: 'center', color: 'white', marginTop: '9%', fontFamily: 'Poppins-BoldItalic', fontSize: 18, top:'1%' }}>
             Welcome to the Glossary!
           </Text>
-          <Text style={{ fontFamily: 'Regular', textAlign: 'center', color: 'white', marginBottom: '7%', paddingHorizontal: '13%' }}>
+          <Text style={{ fontFamily: 'Poppins-Regular', textAlign: 'center', color: 'white', marginBottom: '7%', paddingHorizontal: '13%' }}>
             Search and get more information of words used in the game.
           </Text>
 
-          <View style={{ backgroundColor: '#00006B', width: '97%', height: '80%', borderRadius: 20, left: '1.6%', top: -14, borderWidth: 2, borderColor: 'blue' }}>
+          <View style={{ backgroundColor: '#00006B', width: '97%', height: '82%', borderRadius: 20, left: '1.6%', top: -14, borderWidth: 2, borderColor: 'blue' }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', top: '4%' }}>
               <TextInput
                 placeholderTextColor={'white'}
@@ -67,25 +67,25 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
               <Ionicons name="search" size={21} color="white" style={{ right: 30 }} onPress={searchDictionary} />
             </View>
 
-            <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: 3, top: '3%', width: '90%', borderRadius: 20 }}>
+            <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: 3, top: '1%', width: '90%', borderRadius: 20 }}>
               {images.length > 0 && (
-                <View style={{flex:1, justifyContent:'center', alignItems:'center', left:'15%'}}> 
+                <View style={{flex:1, justifyContent:'center', alignItems:'center', left:'19%'}}> 
                 <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginTop: '3%' }}>
                   {images.map((image, index) => (
-                    <Image key={index} source={image} style={{ width: 110, height: 110, margin: 5 }} />
+                    <Image key={index} source={image} style={{ width: 95, height: 90, margin: 5 }} />
                   ))}
                   </View>
                 </View>
               )}
 
-              <ScrollView style={{ marginTop: '3%', maxHeight: '47%', left:'5.5%' }}>
+              <ScrollView style={{top:'1%', maxHeight: '60%', left:'5.5%' }}>
                 {definition ? (
-                  <Text style={{ fontSize: 15, color: 'white', textAlign: 'justify', fontFamily: 'Regular' }}>
+                  <Text style={{ fontSize: 13, color: 'white', textAlign: 'justify', fontFamily: 'Poppins-Regular' }}>
                     {definition}
                   </Text>
                 ) : null}
                 {error ? (
-                  <Text style={{ marginTop: 19, fontSize: 20, color: 'red', fontFamily: 'Regular', textAlign:'center' }}>
+                  <Text style={{ marginTop: 19, fontSize: 13, color: 'red', fontFamily: 'Poppins-Regular', textAlign:'center' }}>
                     {error}
                   </Text>
                 ) : null}
@@ -94,7 +94,7 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           </View>
         </View>
       </ScrollView>
-      
+      </SafeAreaView>
     </Background>
   );
 };

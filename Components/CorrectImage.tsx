@@ -33,7 +33,7 @@ const CorrectImage = () => {
           source={require('../assets/rightImg.png')}
           style={styles.imageStyle}
         />
-        <Text style={{color:'white', fontSize:35, textAlign:'center', fontWeight:'900', fontFamily:'serif', top:"20%"}}>Great!</Text>
+        <Text style={{color:'white', fontSize:35, textAlign:'center', fontFamily:'Poppins-Bold', top:"15%"}}>Great!</Text>
       </Animated.View>
     );
   };
@@ -42,7 +42,7 @@ const CorrectImage = () => {
 const styles = StyleSheet.create({
     imageContainer: {
         position: 'absolute',
-        top: '3%',
+        top: '-4%',
         left: '4%',
         right: 0,
         bottom: '2%',

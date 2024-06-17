@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BackHandler, ImageBackground, Text, TouchableOpacity, View } from 'react-native';
+import { BackHandler, ImageBackground, SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
 import { GoogleSignin, GoogleSigninButton, User } from "@react-native-google-signin/google-signin";
 import Background from '../Components/Background';
 import StrokedText from '../Components/StrokedText';
@@ -187,6 +187,7 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 
   return (
     <Background>
+      <SafeAreaView style={{flex:1}}>
       <View>
         <Text style={{textAlign:'center', color:'white', fontFamily:'Poppins-Regular', fontSize:10, top:'94%'}}>{error}</Text>
         {userInfo && (
@@ -240,6 +241,7 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           </View>
         )}
       </View>
+      </SafeAreaView>
     </Background>
   )
 }

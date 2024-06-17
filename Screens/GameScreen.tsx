@@ -519,7 +519,7 @@ const handleNav = () => {
         playSound(iqSound);
         
       }, 1500);
-      const newProgress = progress + 0.1;
+      const newProgress = progress + 0.25;
     setProgress(newProgress); 
     setTimeout(() => {
       
@@ -845,7 +845,7 @@ return(
           </View>
 
           </View>
-         <View style={{position:'absolute', left:"78%", top:'74.7%'}}>
+         <View style={{position:'absolute', left:"78%", top:'74.5%'}}>
       
       <TouchableOpacity onPress={openDrawer} style={{position:'absolute'}}>
       <BackgroundBtn>
@@ -859,7 +859,7 @@ return(
 
 
 
-          <View style={{position:'absolute', left:"78%", top:'83.9%'}}>
+          <View style={{position:'absolute', left:"78%", top:'83.6%'}}>
       
       <TouchableOpacity onPress={takeScreenshot} style={{position:'absolute' }}>
       <ImageBackground source={require('../assets/share.png')} style={{width:65, height:64}} />

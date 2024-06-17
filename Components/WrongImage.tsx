@@ -34,7 +34,7 @@ const WrongImage = () => {
           source={require('../assets/wrongImg.png')}
           style={styles.imageStyle}
         />
-        <Text style={{color:'white', fontSize:27, textAlign:'center', fontWeight:'900', fontFamily:'serif', top:"18.5%"}}>Try Again!</Text>
+        <Text style={{color:'white', fontSize:27, textAlign:'center', fontFamily:'Poppins-Bold', top:"15%"}}>Try Again!</Text>
       </Animated.View>
     );
   };
@@ -43,7 +43,7 @@ const WrongImage = () => {
 const styles = StyleSheet.create({
     imageContainer: {
         position: 'absolute',
-        top: '2%',
+        top: '-2%',
         left: '4%',
         right: 0,
         bottom: '3%',
