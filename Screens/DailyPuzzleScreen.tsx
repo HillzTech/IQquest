@@ -196,15 +196,15 @@ import {  useSound } from '../SoundContext';
     useEffect(() => {
     // Save game progress whenever score or current level changes
     saveGameProgress();
-  }, [score, currentPuzzle]);
+  }, [score]);
 
   const loadGameProgress = async () => {
     try {
-      const savedLevel = await AsyncStorage.getItem('currentPuzzle');
+      
       const savedScore = await AsyncStorage.getItem('score');
       
-      if (savedLevel !== null && savedScore !== null) {
-        setCurrentPuzzle(parseInt(savedLevel));
+      if (savedScore !== null) {
+        
         setScore(parseInt(savedScore));
         const lastCompletionTime = await AsyncStorage.getItem(completionTimeKey);
         if (lastCompletionTime) {
@@ -235,7 +235,7 @@ import {  useSound } from '../SoundContext';
 
   const saveGameProgress = async () => {
     try {
-      await AsyncStorage.setItem('currentPuzzle', currentPuzzle.toString());
+      
       await AsyncStorage.setItem('score', score.toString());
     } catch (error) {
       console.error('Error saving game progress:', error);
@@ -364,7 +364,7 @@ const handleNav = () => {
       
       setTimeout(() => {
         setLoading(true);
-        setCurrentPuzzle(currentPuzzle + 1);
+        increasePuzzle();
         playSound(comicSound);
       }, 4500)
       saveCompletionTime();
@@ -399,7 +399,40 @@ const handleNav = () => {
 };
 
  
-    
+useEffect(() => {
+  // Load currentPuzzle from AsyncStorage when component mounts
+  AsyncStorage.getItem('currentPuzzle')
+    .then((storedCurrentPuzzle) => {
+      if (storedCurrentPuzzle) {
+        setCurrentPuzzle(parseInt(storedCurrentPuzzle));
+      } else {
+        setCurrentPuzzle(1); // Default starting difficulty
+      }
+    })
+    .catch((error) => {
+      console.error('Error loading Puzzle from AsyncStorage:', error);
+    });
+}, []);
+
+const increasePuzzle = () => {
+  setCurrentPuzzle((prevCurrentPuzzle) => {
+    const newCurrentPuzzle = prevCurrentPuzzle + 1;
+    return newCurrentPuzzle; 
+  });
+};
+useEffect(() => {
+  // Store the current difficulty in AsyncStorage whenever it changes
+  AsyncStorage.setItem('currentPuzzle', currentPuzzle.toString())
+    .catch((error) => {
+      console.error('Error saving currentPuzzle to AsyncStorage:', error);
+    });
+}, [currentPuzzle]);
+
+
+
+
+
+
 return(
 
 <Background>

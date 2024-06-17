@@ -743,15 +743,7 @@ return(
          <Text style={{color:'white', fontSize: 18, fontFamily:'Poppins-BoldItalic',borderColor:'black', borderWidth: 2, paddingHorizontal:9,borderTopRightRadius:8, borderBottomRightRadius:8, backgroundColor:'grey'}}>{levels[currentLevel].category}</Text>
    
       </View>
-      <View style={{position:'absolute', top:'9%', left:'26%'}}>
-      <View style={{position:'relative' }}>
-      <Text style={{color:'white', textAlign:'center', top:'50%',fontFamily:'Poppins-Regular', fontSize:9,}}>Difficulty</Text>
-      <View style={{left:'76%'}}>
-        
-      <ProgressBar difficulty={difficulty} />
-      </View>
-      </View>
-      </View>
+      
       
       <Animated.View style={{
       flexDirection: 'row',
@@ -817,7 +809,7 @@ return(
     
        
 
-    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', marginTop:'0.2%'}}>
+    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center'}}>
       {/* Guess boxes */}
       {currentGuess.map((letter, index) => (
         <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index) }>
@@ -831,6 +823,7 @@ return(
     
 
       {/* Render letter box */}
+      
       <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"90%", top:'1%'}}>
       <View style={styles.container}>
         {letterBox.map((letter, index) => (
@@ -845,7 +838,7 @@ return(
 
         
       </View>
-
+      
       
 
       
@@ -874,6 +867,17 @@ return(
   
           </TouchableOpacity>
           </View>
+
+
+          <View style={{position:'absolute', top:'17.5%', left:'25%'}}>
+      <View style={{position:'absolute' }}>
+      <Text style={{color:'white', textAlign:'center', top:'50%',fontFamily:'Poppins-Regular', fontSize:9,}}>Difficulty</Text>
+      <View style={{left:'76%'}}>
+        
+      <ProgressBar difficulty={difficulty} />
+      </View>
+      </View>
+      </View>
       
           {showImage && <CorrectImage />}
 
