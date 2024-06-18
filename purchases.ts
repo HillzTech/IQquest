@@ -11,6 +11,7 @@ export const PRODUCTS = [
 
 export const initializePurchases = () => {
   Purchases.configure({ apiKey: 'goog_xPhhFyZWbrmRZoMWRJqXyZHZzqi' });
+
 };
 
 export const purchaseProduct = async (productId: string) => {
