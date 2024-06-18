@@ -1,7 +1,7 @@
 // src/purchases.ts
 import Purchases, { CustomerInfo } from 'react-native-purchases';
 
-const REVENUECAT_API_KEY = 'your_revenuecat_api_key';
+const REVENUECAT_API_KEY = 'goog_xPhhFyZWbrmRZoMWRJqXyZHZzqi';
 
 export const PRODUCTS = [
   { id: 'iqquest_score_1000', title: '1000 Coins', price: '$1.49', coins: 1000 },
@@ -10,7 +10,7 @@ export const PRODUCTS = [
 ];
 
 export const initializePurchases = () => {
-  Purchases.configure({ apiKey: REVENUECAT_API_KEY });
+  Purchases.configure({ apiKey: 'goog_xPhhFyZWbrmRZoMWRJqXyZHZzqi' });
 };
 
 export const purchaseProduct = async (productId: string) => {
