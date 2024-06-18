@@ -58,6 +58,7 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           <View style={{ backgroundColor: '#00006B', width: '97%', height: '82%', borderRadius: 20, left: '1.6%', top: -14, borderWidth: 2, borderColor: 'blue' }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', top: '4%' }}>
               <TextInput
+                 placeholder="Enter word"
                 placeholderTextColor={'white'}
                 value={word}
                 onChangeText={setWord}
@@ -78,7 +79,7 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                 </View>
               )}
 
-              <ScrollView style={{top:'1%', maxHeight: '60%', left:'5.5%' }}>
+              <ScrollView style={{top:'1%', maxHeight: '57%', left:'5.5%' }}>
                 {definition ? (
                   <Text style={{ fontSize: 13, color: 'white', textAlign: 'justify', fontFamily: 'Poppins-Regular' }}>
                     {definition}
