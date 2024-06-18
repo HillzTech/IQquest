@@ -12,6 +12,7 @@ import Purchases from 'react-native-purchases';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { View, StyleSheet } from 'react-native';
+import * as Updates from 'expo-updates';
 
 const Stack = createStackNavigator();
 
@@ -44,6 +45,25 @@ const App: React.FC = () => {
   if (!fontsLoaded && !fontError) {
     return null; // Return null to avoid rendering anything until fonts are loaded
   }
+
+
+    useEffect(() => {
+      const checkForUpdates = async () => {
+        try {
+          const update = await Updates.checkForUpdateAsync();
+          if (update.isAvailable) {
+            await Updates.fetchUpdateAsync();
+            // Apply the update silently
+            await Updates.reloadAsync();
+          }
+        } catch (e) {
+          // Handle errors appropriately
+          console.error(e);
+        }
+      };
+  
+      checkForUpdates();
+    }, []);
 
   return (
     <NavigationContainer>

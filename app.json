@@ -41,10 +41,14 @@
     "extra": {
       "eas": {
         "projectId": "9878a4fa-d15a-4b1a-a762-6c3b3943f691"
+        
+  
       }
     },
     "updates": {
-      "url": "https://u.expo.dev/9878a4fa-d15a-4b1a-a762-6c3b3943f691"
+      "url": "https://u.expo.dev/9878a4fa-d15a-4b1a-a762-6c3b3943f691",
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD"
     }
   },
   "react-native-google-mobile-ads": {
