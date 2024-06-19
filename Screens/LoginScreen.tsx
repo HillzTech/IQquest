@@ -102,9 +102,7 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   };
   
   
-  const handleLeave = () => {
-    navigation.push('MainMenu'); 
-  };
+  
 
   useEffect(() => {
     const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
@@ -221,7 +219,7 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           <Text style={{ fontSize:16, color:'white', fontFamily:'Poppins-Bold', textAlign:'center', top:'1%'}}>{currentLevel}</Text>
 
 
-          <View style={{ flexDirection:'row',justifyContent:'space-around', alignItems:'center', marginTop:'50%'}}>
+          <View style={{ flexDirection:'row',justifyContent:'center', alignItems:'center', marginTop:'50%'}}>
           <View style={{bottom:'13%'}}>
           <Text style={{color:"white",textAlign:'center', fontFamily:'Poppins-Regular', fontSize:11}}>Save retrieved data</Text>
           <TouchableOpacity onPress={handleNext} style={{backgroundColor:'green', width:130, height:43, borderRadius:10, borderBottomColor:'yellow', borderWidth:1}}>
@@ -229,12 +227,7 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           </TouchableOpacity>
           </View>
 
-          <View style={{bottom:'13%'}}>
-          <Text style={{color:"white",textAlign:'center', fontFamily:'Poppins-Regular', fontSize:11}}>Discard retrieved data</Text>
-          <TouchableOpacity onPress={handleLeave} style={{backgroundColor:'green', width:130, height:43, borderRadius:10, borderBottomColor:'yellow', borderWidth:1}}>
-          <StrokedText text="Continue" strokeColor="black" strokeWidth={2} fontSize={23} />
-          </TouchableOpacity>
-          </View>
+          
           </View>
           </View>
 
