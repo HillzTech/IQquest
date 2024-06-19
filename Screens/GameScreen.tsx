@@ -715,7 +715,7 @@ return(
      
       </View>
 
-   <View style={{ flexDirection:"row",justifyContent:'space-around', alignContent:'flex-start', top:'60%', right:10, borderColor:'#859410', borderWidth:1, borderRadius:10, marginBottom:57, paddingHorizontal:5, gap:1}}>
+   <View style={{ flexDirection:"row",justifyContent:'space-around', alignContent:'flex-start', top:'64%', right:10, borderColor:'#859410', borderWidth:1, borderRadius:10, marginBottom:57, paddingHorizontal:5, gap:1}}>
    <ImageBackground
             source={require('../assets/Images/coin.png')} 
             style={{width: 15, height: 17, top:'6%'}}

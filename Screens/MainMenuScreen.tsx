@@ -133,7 +133,7 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
        <View style={{flexDirection: 'row', justifyContent:"flex-end", marginVertical:14,right:'1%'}}>
       
 
-       <View style={{flexDirection:'row',justifyContent:'space-around', alignItems:'flex-start', top:22, borderWidth:1, borderColor:'#859410', borderRadius:10, paddingHorizontal:5, gap:1, backgroundColor:'black', right:3 }}>
+       <View style={{flexDirection:'row',justifyContent:'space-around', alignItems:'flex-start', top:'92%', borderWidth:1, borderColor:'#859410', borderRadius:10, paddingHorizontal:5, gap:1, backgroundColor:'black', right:3 }}>
        <ImageBackground
           source={require('../assets/Images/coin.png')} 
           style={{width: 15, height: 17, top:'6%'}}
