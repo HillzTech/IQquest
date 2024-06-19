@@ -223,7 +223,7 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           <View style={{bottom:'13%'}}>
           <Text style={{color:"white",textAlign:'center', fontFamily:'Poppins-Regular', fontSize:11}}>Save retrieved data</Text>
           <TouchableOpacity onPress={handleNext} style={{backgroundColor:'green', width:130, height:43, borderRadius:10, borderBottomColor:'yellow', borderWidth:1}}>
-          <StrokedText text="Save" strokeColor="black" strokeWidth={2} fontSize={23} /><Ionicons name='cloud-upload' size={23} color={'white'} style={{left:'75%', bottom:'77%'}}/>
+          <StrokedText text="Save" strokeColor="black" strokeWidth={2} fontSize={22} /><Ionicons name='cloud-upload' size={23} color={'white'} style={{left:'75%', bottom:'77%'}}/>
           </TouchableOpacity>
           </View>
 
