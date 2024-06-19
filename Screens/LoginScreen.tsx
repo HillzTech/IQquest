@@ -102,12 +102,14 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   };
   
   
-  
+  const handleLeave = () => {
+    navigation.push('MainMenu'); 
+  };
 
   useEffect(() => {
     const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
       // Navigate to MainMenuScreen and pass score and current level
-      navigation.push('MainMenu', { score, currentLevel });
+      navigation.navigate('MainMenu');
       return true; // Prevent default behavior (closing the app)
     });
 
@@ -191,7 +193,7 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       <View>
         <Text style={{textAlign:'center', color:'white', fontFamily:'Poppins-Regular', fontSize:10, top:'94%'}}>{error}</Text>
         {userInfo && (
-          <View style={{top:'34%', backgroundColor:'#00007B', width:'95%', left:'2.5%', borderColor:"blue", borderWidth:2, borderRadius:20 }}>
+          <View style={{top:'29%', backgroundColor:'#00007B', width:'95%', left:'2.5%', borderColor:"blue", borderWidth:2, borderRadius:20 }}>
           <ImageBackground
           source={require('../assets/comeback.png') } style={{width:200, height:200, left:'20%', bottom:'20%'}}
         
@@ -217,10 +219,23 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           
           </View>
           <Text style={{ fontSize:16, color:'white', fontFamily:'Poppins-Bold', textAlign:'center', top:'1%'}}>{currentLevel}</Text>
-          <Text style={{color:"white",textAlign:'center', top:'18%', fontFamily:'Poppins-Regular', fontSize:11}}>Click save to continue</Text>
-          <TouchableOpacity onPress={handleNext} style={{backgroundColor:'green', width:130, height:43, left:'30.7%', top:"19%", borderRadius:10, borderBottomColor:'yellow', borderWidth:1,marginBottom:"47%", paddingRight:20}}>
-          <StrokedText text="Save" strokeColor="black" strokeWidth={2} fontSize={25} /><Ionicons name='cloud-upload' size={23} color={'white'} style={{left:'80%', bottom:'60%'}}/>
+
+
+          <View style={{ flexDirection:'row',justifyContent:'space-around', alignItems:'center', marginTop:'50%'}}>
+          <View style={{bottom:'13%'}}>
+          <Text style={{color:"white",textAlign:'center', fontFamily:'Poppins-Regular', fontSize:11}}>Save retrieved data</Text>
+          <TouchableOpacity onPress={handleNext} style={{backgroundColor:'green', width:130, height:43, borderRadius:10, borderBottomColor:'yellow', borderWidth:1}}>
+          <StrokedText text="Save" strokeColor="black" strokeWidth={2} fontSize={23} /><Ionicons name='cloud-upload' size={23} color={'white'} style={{left:'75%', bottom:'77%'}}/>
           </TouchableOpacity>
+          </View>
+
+          <View style={{bottom:'13%'}}>
+          <Text style={{color:"white",textAlign:'center', fontFamily:'Poppins-Regular', fontSize:11}}>Discard retrieved data</Text>
+          <TouchableOpacity onPress={handleLeave} style={{backgroundColor:'green', width:130, height:43, borderRadius:10, borderBottomColor:'yellow', borderWidth:1}}>
+          <StrokedText text="Continue" strokeColor="black" strokeWidth={2} fontSize={23} />
+          </TouchableOpacity>
+          </View>
+          </View>
           </View>
 
           

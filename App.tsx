@@ -22,9 +22,31 @@ const App: React.FC = () => {
     'Poppins-ExtraBold': require('./assets/fonts/Poppins-ExtraBold.otf'),
     'Poppins-Regular': require('./assets/fonts/Poppins-Regular.otf'),
     'Poppins-BoldItalic': require('./assets/fonts/Poppins-BoldItalic.otf'),
+    'OpenSans-Bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+    'OpenSans-ExtraBold': require('./assets/fonts/OpenSans-ExtraBold.ttf'),
   });
 
   const [splashVisible, setSplashVisible] = useState(true);
+
+  useEffect(() => {
+    const checkForUpdates = async () => {
+      try {
+        const update = await Updates.checkForUpdateAsync();
+        if (update.isAvailable) {
+          await Updates.fetchUpdateAsync();
+          await Updates.reloadAsync();
+        }
+      } catch (e) {
+        console.error(e);
+        // Handle errors appropriately, e.g., show an error message
+        ;
+      }
+    };
+
+    checkForUpdates();
+  }, []); // Empty dependency array means this effect runs only once on mount
+
+
 
   useEffect(() => {
     SplashScreen.preventAutoHideAsync();
@@ -45,25 +67,9 @@ const App: React.FC = () => {
   if (!fontsLoaded && !fontError) {
     return null; // Return null to avoid rendering anything until fonts are loaded
   }
-
-
-    useEffect(() => {
-      const checkForUpdates = async () => {
-        try {
-          const update = await Updates.checkForUpdateAsync();
-          if (update.isAvailable) {
-            await Updates.fetchUpdateAsync();
-            // Apply the update silently
-            await Updates.reloadAsync();
-          }
-        } catch (e) {
-          // Handle errors appropriately
-          console.error(e);
-        }
-      };
+   
   
-      checkForUpdates();
-    }, []);
+    
 
   return (
     <NavigationContainer>

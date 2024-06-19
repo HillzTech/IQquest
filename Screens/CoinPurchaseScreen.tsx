@@ -115,6 +115,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
   const handlePurchaseProduct1 = async () => {
     try {
       const result = await purchaseProduct('iqquest_score_1000');
+      
       Alert.alert('Purchase successful', `Product: ${result.productIdentifier}`);
       AsyncStorage.setItem('score', score.toString());
       setPendingScore(score + 1000);

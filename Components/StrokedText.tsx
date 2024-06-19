@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    fontWeight: 'bold',
+    fontFamily:'Poppins-Bold',
     color: 'white',
   },
 });

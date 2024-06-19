@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { BackHandler, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View, Platform, SafeAreaView } from 'react-native';
+import { BackHandler, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View, Platform, SafeAreaView, Dimensions } from 'react-native';
 import Background from '../Components/Background';
 import Sound from 'react-native-sound';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -39,7 +39,7 @@ const [helpSound, setHelpSound] = useState<Sound | null>(null);
 const [removeSound, setRemoveSound] = useState<Sound | null>(null);
 const [incorrectSound, setIncorrectSound] = useState<Sound | null>(null);
 const [iqSound, setIqSound] = useState<Sound | null>(null);
-
+const {width, height} = Dimensions.get('window');
 
   const [coinAnimation] = useState(new Animated.ValueXY({ x: 0, y: 0 }));
   const [iqAnimation] = useState(new Animated.ValueXY({ x: 0, y: 0 }));
@@ -813,8 +813,8 @@ return(
       {/* Guess boxes */}
       {currentGuess.map((letter, index) => (
         <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index) }>
-          <View style={{ padding:5, margin: 2,paddingHorizontal:'3.5%', backgroundColor:'black', borderRadius:5, borderWidth:1, borderColor:'white'}}>
-            <Text style={{fontSize:21, fontFamily: 'Poppins-ExtraBold', color:'white', textAlign:'center'}}>{letter}</Text>
+          <View style={{ padding:6, margin: 2,paddingHorizontal:'3.5%', backgroundColor:'black', borderRadius:5, borderWidth:1, borderColor:'white'}}>
+            <Text style={{fontSize:21, color:'white', textAlign:'center', fontFamily:'OpenSans-Bold'}}>{letter}</Text>
           </View>
         </TouchableOpacity>
       ))}
@@ -824,7 +824,7 @@ return(
 
       {/* Render letter box */}
       
-      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"90%", top:'1%'}}>
+      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"90%", top:'2%'}}>
       <View style={styles.container}>
         {letterBox.map((letter, index) => (
           <TouchableOpacity
@@ -832,44 +832,42 @@ return(
             onPress={() => handleLetterBoxPress(index)}
             style={styles.box}
           >
-            <Text style={{fontSize:28,fontFamily: 'Poppins-ExtraBold',textAlign:'center'}}>{letter}</Text>
+            <Text style={{fontSize:30,fontFamily:'OpenSans-ExtraBold',textAlign:'center'}}>{letter}</Text>
           </TouchableOpacity>
         ))}
 
         
       </View>
       
-      
-
-      
+    
           </View>
 
+          
+          
           </View>
-         <View style={{position:'absolute', left:"78%", top:'74.5%'}}>
-      
-      <TouchableOpacity onPress={openDrawer} style={{position:'absolute'}}>
-      <BackgroundBtn>
-        <Text></Text>
+
+          <View style={{position:'absolute', left:"78%", top:height * 0.79}}>
+          <View style={{position:'absolute'}}>
+      <TouchableOpacity onPress={openDrawer} >
+      <BackgroundBtn children={undefined}>
+        
       </BackgroundBtn>
   
           </TouchableOpacity>
           </View>
-
-
-
-
-
-          <View style={{position:'absolute', left:"78%", top:'83.6%'}}>
-      
-      <TouchableOpacity onPress={takeScreenshot} style={{position:'absolute' }}>
-      <ImageBackground source={require('../assets/share.png')} style={{width:65, height:64}} />
-      
-  
+          </View>
+           
+          <View style={{position:'absolute', left:"78%", top:height * 0.88}}>
+          <View style={{position:'absolute' }}>
+      <TouchableOpacity onPress={takeScreenshot}>
+      <ImageBackground source={require('../assets/share.png')} style={{width:60, height:60}} />
           </TouchableOpacity>
           </View>
+     </View>
 
 
-          <View style={{position:'absolute', top:'17.5%', left:'25%'}}>
+
+          <View style={{position:'absolute', top:'17.5%', left:width * 0.25}}>
       <View style={{position:'absolute' }}>
       <Text style={{color:'white', textAlign:'center', top:'50%',fontFamily:'Poppins-Regular', fontSize:9,}}>Difficulty</Text>
       <View style={{left:'76%'}}>
@@ -948,15 +946,15 @@ const styles = StyleSheet.create({
       backgroundColor: 'white',
       minWidth: '17%',
       maxWidth: '17%',
-      padding: 2
+      padding: 2,
 
       
       
     },
     coinContainer: {
       position: 'absolute',
-      top: '83%', 
-      left: '90%', 
+      top: '87.3%', 
+      left: '87.7%', 
       marginLeft: -11.5, 
       zIndex: 1000, 
     },
@@ -965,7 +963,7 @@ const styles = StyleSheet.create({
       fontSize: 17,
       position: 'absolute',
       top: 0,
-      left: '-10%',
+      left: '88%',
       fontFamily:'Poppins-Regular'
     },
 
