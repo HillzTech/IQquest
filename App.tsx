@@ -8,11 +8,11 @@ import DictionaryScreen from './Screens/DictionaryScreen';
 import LoginScreen from './Screens/LoginScreen';
 import DailyPuzzleScreen from './Screens/DailyPuzzleScreen';
 import { SoundProvider } from './SoundContext';
-import Purchases from 'react-native-purchases';
+import Purchases, { LOG_LEVEL } from 'react-native-purchases';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { View, StyleSheet } from 'react-native';
-import * as Updates from 'expo-updates';
+import { initializePurchases, restorePurchases } from './purchases';
 
 const Stack = createStackNavigator();
 
@@ -41,8 +41,11 @@ const App: React.FC = () => {
   }, [fontsLoaded, fontError]);
 
   useEffect(() => {
-    Purchases.setLogLevel(Purchases.LOG_LEVEL.DEBUG);
+    Purchases.setLogLevel(LOG_LEVEL.VERBOSE);
     Purchases.configure({ apiKey: 'goog_xPhhFyZWbrmRZoMWRJqXyZHZzqi' });
+  }, []);
+  useEffect(() => {
+    initializePurchases();
   }, []);
 
   if (!fontsLoaded && !fontError) {

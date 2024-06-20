@@ -18,7 +18,7 @@ const BackgroundBtn: React.FC<BackgroundProps> = ({ children }) => {
 
 const styles = StyleSheet.create({
   background: {
-    width: 59,
+    width: 58,
     height: 50.7,
     top: '29%',
   

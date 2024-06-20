@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { View, TouchableOpacity, ImageBackground, BackHandler, Text, Alert } from 'react-native';
+import { View, TouchableOpacity, ImageBackground, BackHandler, Text, Alert, StyleSheet, ActivityIndicator, Dimensions } from 'react-native';
 import { RewardedAd, RewardedAdEventType } from 'react-native-google-mobile-ads';
 import Background from '../Components/Background';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { initializePurchases, purchaseProduct, restorePurchases } from '../purchases';
+import { initializePurchases, restorePurchases } from '../purchases';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Purchases, { PurchasesPackage } from 'react-native-purchases';
 
 export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [showAd, setShowAd] = useState<boolean>(false);
   const [score, setScore] = useState<number>(0);
-  const [pendingScore, setPendingScore] = useState<number | null>(null);
   const adUnitId = 'ca-app-pub-1458204118033702/4208576771';
   const rewarded = RewardedAd.createForAdRequest(adUnitId, {
     keywords: ['food', 'cooking', 'fruit'],
     requestNonPersonalizedAdsOnly: true,
   });
-
+  const [packages, setPackages] = useState<PurchasesPackage[]>([]);
+  const [isPurchasing, setIsPurchasing] = useState(false);
+  const [pendingScore, setPendingScore] = useState<number | null>(null);
+  const {width, height} = Dimensions.get('window');
   useEffect(() => {
     if (pendingScore !== null) {
       setTimeout(() => {
@@ -97,6 +100,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
     setShowAd(true);
   };
 
+
   useEffect(() => {
     const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
       navigation.push('Game', { score: score });
@@ -108,93 +112,134 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
     };
   }, [navigation, score]);
 
+  
+
   useEffect(() => {
-    initializePurchases();
+    const getPackages = async () => {
+      try {
+        const offerings = await Purchases.getOfferings();
+        if (offerings.current !== null && offerings.current.availablePackages.length !== 0) {
+          setPackages(offerings.current.availablePackages);
+        }
+      } catch (e) {
+        console.error("Error fetching offerings: ", e);
+      }
+    };
+
+    getPackages();
   }, []);
 
-  const handlePurchaseProduct1 = async () => {
+  const onSelection = async (productPackage: PurchasesPackage) => {
+    setIsPurchasing(true);
     try {
-      const result = await purchaseProduct('iqquest_score_1000');
-      
-      Alert.alert('Purchase successful', `Product: ${result.productIdentifier}`);
-      AsyncStorage.setItem('score', score.toString());
-      setPendingScore(score + 1000);
+      const { customerInfo } = await Purchases.purchasePackage(productPackage);
+      if (customerInfo.entitlements.active["score"] !== undefined) {
+        console.log("Purchase successful, coins purchased");
+      }
+      // If purchase is successful, update score accordingly
+      switch (productPackage.identifier) {
+        case '1000 coins':
+          await updateScoreAndSave(1000); // Await here to ensure score is updated before proceeding
+          console.log('Package 1000 purchased successfully.');
+          break;
+        case '5000 coins':
+          await updateScoreAndSave(5000);
+          console.log('Package 5000 purchased successfully.');
+          break;
+        case '10000 coins':
+          await updateScoreAndSave(10000);
+          console.log('Package 10000 purchased successfully.');
+          break;
+        default:
+          break;
+      }
     } catch (e: any) {
       if (!e.userCancelled) {
-        Alert.alert('Purchase failed', e.message);
+        showError(e);
+      } else {
+        console.log("User cancelled the purchase");
       }
+    } finally {
+      setIsPurchasing(false);
     }
   };
-
-  const handlePurchaseProduct2 = async () => {
+  
+  const updateScoreAndSave = async (increment: number) => {
     try {
-      const result = await purchaseProduct('iqquest_score_5000');
-      Alert.alert('Purchase successful', `Product: ${result.productIdentifier}`);
-      AsyncStorage.setItem('score', score.toString());
-      setPendingScore(score + 5000);
-    } catch (e: any) {
-      if (!e.userCancelled) {
-        Alert.alert('Purchase failed', e.message);
-      }
+      const newScore = score + increment;
+      setPendingScore(newScore); // Update pending score immediately
+  
+      // Save the updated score to AsyncStorage
+      await AsyncStorage.setItem('score', newScore.toString());
+    } catch (error) {
+      console.error('Error updating score:', error);
     }
   };
+  
 
-  const handlePurchaseProduct3 = async () => {
-    try {
-      const result = await purchaseProduct('iqquest_score_10000');
-      Alert.alert('Purchase successful', `Product: ${result.productIdentifier}`);
-      AsyncStorage.setItem('score', score.toString());
-      setPendingScore(score + 10000);
-    } catch (e: any) {
-      if (!e.userCancelled) {
-        Alert.alert('Purchase failed', e.message);
-      }
-    }
-  };
-
-  const handleRestore = async () => {
-    try {
-      const customerInfo = await restorePurchases();
-      Alert.alert('Restore successful', `Restored: ${JSON.stringify(customerInfo)}`);
-    } catch (e: any) {
-      Alert.alert('Restore failed', e.message);
-    }
-  };
+  
 
   return (
     <Background>
-      <SafeAreaView style={{flex:1}}>
-        <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-        <ImageBackground source={require('../assets/Images/newcoin.png')} style={{ width: 120, height: 120, top: '10%' }} />
-      
-      
-      <Text style={{ color: 'white', textAlign: 'center', fontSize: 21, fontFamily:'Poppins-Bold', bottom:'36%' }}>{score}</Text>
-      </View>
-      
+      <SafeAreaView style={{ flex: 1 }}>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <ImageBackground source={require('../assets/Images/newcoin.png')} style={{ width: 120, height: 120 }} />
+          <Text style={{ color: 'white', textAlign: 'center', fontSize: 21, fontFamily: 'Poppins-Bold', bottom: '36%' }}>{score}</Text>
+        </View>
 
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <TouchableOpacity onPress={handleShowAd}>
-          <ImageBackground source={require('../assets/Images/watchnow.png')} style={{ width: 250, height: 250, padding: '4%',  }} />
-        </TouchableOpacity>
-      </View>
-
-      <View style={{ top: '-5%' }}>
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 4 }}>
-          <TouchableOpacity onPress={handlePurchaseProduct1}>
-            <ImageBackground source={require('../assets/Images/1000.png')} style={{ width: 176, height: 156, top:'-3%' }} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={handlePurchaseProduct2}>
-            <ImageBackground source={require('../assets/Images/5000.png')} style={{ width: 160, height: 195 }} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={handlePurchaseProduct3}>
-            <ImageBackground source={require('../assets/Images/10000.png')} style={{ width: 180, height: 200, bottom:'20%' }} />
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', top:height * -0.118 }}>
+          <TouchableOpacity onPress={handleShowAd}>
+            <ImageBackground source={require('../assets/Images/watchnow.png')} style={{ width: 260, height: 200}} />
           </TouchableOpacity>
         </View>
-      </View>
 
-      
+       
+
+        <View style={{top: height * -0.21, flex: 1, padding: 30,}}>
+          {isPurchasing && <ActivityIndicator size="large" color="#0000ff" />}
+          {!isPurchasing &&
+            packages.map((pkg) => (
+              <TouchableOpacity
+                key={pkg.identifier}
+                style={styles.package}
+                onPress={() => onSelection(pkg)}
+              >
+                <ImageBackground source={require('../assets/Images/coin.png')} style={{ width: 17, height: 17, left:width * 0.3, top:height * 0.018}} />
+                <ImageBackground source={require('../assets/Images/coin.png')} style={{ width: 17, height: 17, left:width * 0.3, top:height * 0.008}} />
+                <ImageBackground source={require('../assets/Images/coinchest.png')} style={{ width: 50, height: 45, left:width * 0.31, top:height * -0.04}} />
+                <Text style={{color:'white', textAlign:'center', fontFamily:'Poppins-ExtraBold', fontSize:16, top:height * -0.035}}>{pkg.product.description}</Text>
+                
+              </TouchableOpacity>
+            ))}
+        </View>
+           
+        
 
       </SafeAreaView>
     </Background>
   );
 };
+
+const styles = StyleSheet.create({
+ 
+  package: {
+    height:104,
+    marginBottom: 16,
+    padding: 10,
+    backgroundColor: '#00008B',
+    borderRadius: 18,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 2,
+    borderBottomColor:'#FFD700',
+    borderTopColor:'#FFD700',
+    borderRightColor:'black',
+    borderWidth:1
+  },
+});
+function showError(e: any) {
+  throw new Error('Function not implemented.');
+}
+
