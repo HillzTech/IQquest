@@ -28,26 +28,7 @@ const App: React.FC = () => {
 
   const [splashVisible, setSplashVisible] = useState(true);
 
-  useEffect(() => {
-    const checkForUpdates = async () => {
-      try {
-        const update = await Updates.checkForUpdateAsync();
-        if (update.isAvailable) {
-          await Updates.fetchUpdateAsync();
-          await Updates.reloadAsync();
-        }
-      } catch (e) {
-        console.error(e);
-        // Handle errors appropriately, e.g., show an error message
-        ;
-      }
-    };
-
-    checkForUpdates();
-  }, []); // Empty dependency array means this effect runs only once on mount
-
-
-
+  
   useEffect(() => {
     SplashScreen.preventAutoHideAsync();
   }, []);

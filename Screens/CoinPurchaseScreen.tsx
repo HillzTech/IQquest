@@ -168,7 +168,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
         <ImageBackground source={require('../assets/Images/newcoin.png')} style={{ width: 120, height: 120, top: '10%' }} />
       
       
-      <Text style={{ color: 'white', textAlign: 'center', fontSize: 21, fontFamily:'Poppins-Bold', bottom:'35%' }}>{score}</Text>
+      <Text style={{ color: 'white', textAlign: 'center', fontSize: 21, fontFamily:'Poppins-Bold', bottom:'36%' }}>{score}</Text>
       </View>
       
 

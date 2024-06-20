@@ -715,7 +715,7 @@ return(
      
       </View>
 
-   <View style={{ flexDirection:"row",justifyContent:'space-around', alignContent:'flex-start', top:'64%', right:10, borderColor:'#859410', borderWidth:1, borderRadius:10, marginBottom:57, paddingHorizontal:5, gap:1}}>
+   <View style={{ flexDirection:"row",justifyContent:'space-around', alignContent:'flex-start', top:height * 0.07, right:10, borderColor:'#859410', borderWidth:1, borderRadius:10, marginBottom:57, paddingHorizontal:5, gap:1}}>
    <ImageBackground
             source={require('../assets/Images/coin.png')} 
             style={{width: 15, height: 17, top:'6%'}}
@@ -750,9 +750,8 @@ return(
       justifyContent: 'center',
       alignContent: 'center',
       flexWrap: 'wrap',
-      marginTop: '20.9%',
-      marginBottom: '84%',
-      top:'36.8%',
+      
+      top:height * 0.29,
       transform: [{ translateX }]
     }}>
       {levels[currentLevel].images.map((imageSource, index) => (
@@ -809,7 +808,7 @@ return(
     
        
 
-    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center'}}>
+    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', top:height * 0.53}}>
       {/* Guess boxes */}
       {currentGuess.map((letter, index) => (
         <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index) }>
@@ -824,7 +823,7 @@ return(
 
       {/* Render letter box */}
       
-      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"90%", top:'2%'}}>
+      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"90%",  top:height * 0.53}}>
       <View style={styles.container}>
         {letterBox.map((letter, index) => (
           <TouchableOpacity
@@ -846,7 +845,7 @@ return(
           
           </View>
 
-          <View style={{position:'absolute', left:"78%", top:height * 0.79}}>
+          <View style={{position:'absolute', left:"78%", top:height * 0.82}}>
           <View style={{position:'absolute'}}>
       <TouchableOpacity onPress={openDrawer} >
       <BackgroundBtn children={undefined}>
@@ -857,17 +856,17 @@ return(
           </View>
           </View>
            
-          <View style={{position:'absolute', left:"78%", top:height * 0.88}}>
+          <View style={{position:'absolute', left:"78%", top:height * 0.907}}>
           <View style={{position:'absolute' }}>
       <TouchableOpacity onPress={takeScreenshot}>
-      <ImageBackground source={require('../assets/share.png')} style={{width:60, height:60}} />
+      <ImageBackground source={require('../assets/share.png')} style={{width:60, height:59}} />
           </TouchableOpacity>
           </View>
      </View>
 
 
 
-          <View style={{position:'absolute', top:'17.5%', left:width * 0.25}}>
+          <View style={{position:'absolute', top:height * 0.185, left:width * 0.255}}>
       <View style={{position:'absolute' }}>
       <Text style={{color:'white', textAlign:'center', top:'50%',fontFamily:'Poppins-Regular', fontSize:9,}}>Difficulty</Text>
       <View style={{left:'76%'}}>
