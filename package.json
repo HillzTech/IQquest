@@ -34,6 +34,7 @@
     "expo-task-manager": "~11.7.3",
     "expo-updates": "~0.24.13",
     "firebase": "^10.8.1",
+    "lodash.throttle": "^4.1.1",
     "native-notify": "^4.0.4",
     "react": "^18.2.0",
     "react-native": "^0.73.6",
@@ -56,6 +57,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@types/lodash.throttle": "^4.1.9",
     "@types/react": "~18.2.45",
     "typescript": "^5.1.3"
   },

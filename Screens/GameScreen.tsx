@@ -666,15 +666,15 @@ const handleNav = () => {
 return(
 
 <Background>
-<SafeAreaView style={{ flex: 1 }}>
+<SafeAreaView style={styles.safe}>
 <StatusBar />
-   <View style={{backgroundColor:'black', height:'10%', flexDirection: 'row', justifyContent:'space-between', alignContent:'space-between'}}>
+   <View style={styles.header}>
       <View>
-         <View style={{top:'58%'}}>
+         <View style={styles.back}>
             <TouchableOpacity onPress={handleNavigation} >
             <ImageBackground 
             source={require('../assets/Images/backIcon.png')}
-            style={{width:30, height: 30, marginBottom:-81, left:9}}
+            style={styles.backImg}
             
             />
                
@@ -683,11 +683,11 @@ return(
          </View>
          
 
-         <View style={{top:'59%'}}>
-            <Image source={require('../assets/Images/brain.png')} style={{width:20, height:30, left:45}}/>
+         <View style={styles.brain}>
+            <Image source={require('../assets/Images/brain.png')} style={styles.brainImg}/>
             
          </View>
-         <View style={{ flexDirection: 'row', alignItems: 'center',top:'59%', left: 66,backgroundColor:'white', width:28, height:8, borderRadius: 10  }}>
+         <View style={styles.animatedcontainer}>
           <Animated.View
             style={{
               height: 6,
@@ -699,19 +699,19 @@ return(
               
             }}
   />
-            <Text style={{fontSize:6, left:3, fontWeight:'600'}}>IQ</Text>
+            <Text style={styles.iq}>IQ</Text>
           </View>
                 
       </View>
       
-      <View style={{left:14, marginRight:-20, top:'12%'}}>
+      <View style={styles.levelcontainer}>
         <ImageBackground
             source={require('../assets/Images/LevelImg.png')} 
-            style={{width: 100, height: 79}}
+            style={styles.levelimg}
                
          />
 
-         <Text style={{fontFamily: 'Poppins-Bold', position:'relative', textAlign: 'center', color: '#fff', fontSize: 17, top:'-70%', right:'3%'}}>{currentLevel}</Text>
+         <Text style={styles.currentlevel}>{currentLevel}</Text>
      
       </View>
 
@@ -923,7 +923,73 @@ return(
 }
 const styles = StyleSheet.create({
    
-  
+  header: {
+    backgroundColor:'black', 
+    height:'10%', 
+    flexDirection: 'row', 
+    justifyContent:'space-between', 
+    alignContent:'space-between'
+  },
+  back: {
+    top:'58%'
+  },
+  backImg: {
+    width:30, 
+    height: 30, 
+    marginBottom:-81, 
+    left:9
+  },
+  brain: {
+    top:'59%'
+  },
+  brainImg: {
+    width:20, 
+    height:30, 
+    left:45
+  },
+   animatedcontainer: {
+    flexDirection: 'row', 
+    alignItems: 'center',
+    top:'59%',
+     left: 66,
+     backgroundColor:'white', 
+     width:28, 
+     height:8, 
+     borderRadius: 10
+   },
+   
+  iq: {
+    fontSize:6, 
+    left:3, 
+    fontWeight:'600'
+  },
+  levelcontainer: {
+    left:14, 
+    marginRight:-20, 
+    top:'12%'
+  },
+  levelimg: {
+    width: 100, 
+    height: 79
+  },
+ currentlevel:{
+  fontFamily: 'Poppins-Bold', 
+  position:'relative', 
+  textAlign: 'center', 
+  color: '#fff', 
+  fontSize: 17, 
+  top:'-70%', 
+  right:'3%'
+ },
+
+
+
+
+
+
+
+
+
 
     container: {
       flexDirection: 'row',
@@ -952,7 +1018,7 @@ const styles = StyleSheet.create({
     },
     coinContainer: {
       position: 'absolute',
-      top: '87.3%', 
+      top: '239%', 
       left: '87.7%', 
       marginLeft: -11.5, 
       zIndex: 1000, 
@@ -968,7 +1034,7 @@ const styles = StyleSheet.create({
 
     iqContainer: {
       position: 'absolute',
-      top: '123%', 
+      top: '330%', 
       left: '21%', 
       marginLeft: '-10%', 
       zIndex: 1000, 
@@ -1058,7 +1124,25 @@ const styles = StyleSheet.create({
     hint: {
       top: "17.4%",
       left:"38%"
+    },
+    safe: {
+       flex: 1 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   });
   
   
