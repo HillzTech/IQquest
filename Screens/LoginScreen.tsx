@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, memo } from 'react';
 import { BackHandler, ImageBackground, SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
 import { GoogleSignin, GoogleSigninButton, User } from "@react-native-google-signin/google-signin";
 import Background from '../Components/Background';
@@ -254,4 +254,4 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   )
 }
 
-export default LoginScreen;
+export default memo (LoginScreen);

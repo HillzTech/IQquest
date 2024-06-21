@@ -33,10 +33,11 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
+    
   },
   text: {
-    fontFamily:'Poppins-Bold',
-    color: 'white',
+    fontFamily:'OpenSans-ExtraBold',
+    color: '#FFD700',
   },
 });
 

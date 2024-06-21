@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { BackHandler, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { BackHandler, Dimensions, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Background from '../Components/Background';
 import Sound from 'react-native-sound';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -25,7 +25,7 @@ import {  useSound } from '../SoundContext';
   const [incorrectSound, setIncorrectSound] = useState<Sound | null>(null);
   const [fanfareSound, setFanfareSound] = useState<Sound | null>(null);
   const [comicSound, setComicSound] = useState<Sound | null>(null);
- 
+  const {width, height} = Dimensions.get('window');
   const [coinAnimation] = useState(new Animated.ValueXY({ x: 0, y: 0 }));
   const { soundEnabled } = useSound();
   const [pendingScore, setPendingScore] = useState<number | null>(null);
@@ -376,7 +376,7 @@ const handleNav = () => {
       setTimeout(() => {
         moveCoin(); // Move the coin to the score area
         AsyncStorage.setItem('score', score.toString())
-        setPendingScore(score + 60); // Increment score after animation
+        setPendingScore(score + 100); // Increment score after animation
       }, 2000);
         
     } else {
@@ -454,8 +454,8 @@ return(
 
    <View style={{ flexDirection:"row",justifyContent:'space-around', alignContent:'flex-start', top:43, right:10, borderColor:'#859410', borderWidth:1, borderRadius:10, marginBottom:50, paddingHorizontal:7, gap:1}}>
    <ImageBackground
-            source={require('../assets/Images/coins.png')} 
-            style={{width: 15, height: 22}}
+            source={require('../assets/Images/coin.png')} 
+            style={{width: 15, height: 17, top:3}}
                
          /> 
         <TouchableOpacity onPress={handleNav} >
@@ -503,7 +503,7 @@ return(
  <View>
    <View style={{paddingHorizontal:'5%'}}>
 
-    <ImageBackground source={require('../assets/board.png')} style={{width:'100%', height:60, top:'23%'}} />
+    <ImageBackground source={require('../assets/board.png')} style={{width:'100%', height:60, top:height * 0.026}} />
    
   <Text style={{fontFamily:'Poppins-BoldItalic',color:'white', textAlign:'center', fontSize:17, bottom:'20%'}}>{Puzzle[currentPuzzle].question}</Text>
  </View>
@@ -515,8 +515,7 @@ return(
       justifyContent: 'center',
       alignContent: 'center',
       flexWrap: 'wrap',
-      marginBottom:'40%',
-      marginTop:'50%',
+      top: height * 0.21,
       transform: [{ translateX }]
     }}>
       {Puzzle[currentPuzzle].images.map((imageSource, index) => (
@@ -555,7 +554,7 @@ return(
 
 
 
-    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', marginTop:'10%'}}>
+    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', top:height * 0.45}}>
       {/* Guess boxes */}
       {currentGuess.map((letter, index) => (
         <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index) }>
@@ -569,7 +568,7 @@ return(
     
 
       {/* Render letter box */}
-      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"94%"}}>
+      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"94%",top:height * 0.446}}>
       <View style={styles.container}>
         {letterBox.map((letter, index) => (
           <TouchableOpacity
@@ -648,7 +647,7 @@ const styles = StyleSheet.create({
       fontStyle: 'italic',
       position: 'absolute',
       top: 0,
-      left: '-10%',
+      left: '-8%',
       fontFamily:'Poppins-Bold',
     },
 

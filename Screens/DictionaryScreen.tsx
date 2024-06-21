@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, memo } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ImageBackground, Image, ImageSourcePropType, Keyboard, BackHandler, ScrollView, SafeAreaView } from 'react-native';
 import levels from '../Components/Level';
 import Background from '../Components/Background';
@@ -100,4 +100,4 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   );
 };
 
-export default DictionaryScreen;
+export default memo (DictionaryScreen);

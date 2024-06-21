@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ImageBackground, BackHandler } from 'react-native';
+import React, { useEffect, useState, useCallback,memo } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ImageBackground, BackHandler, Button, Pressable } from 'react-native';
 import Background from '../Components/Background';
 import { Ionicons } from '@expo/vector-icons';
 import { Animation } from '../Components/Animation';
@@ -113,14 +113,14 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
     <Background>
       <StatusBar />
       <SafeAreaView>
-        <View style={{ flexDirection: 'row', justifyContent: "flex-end", marginVertical: 14, right: '1%' }}>
-          <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-start', top: '92%', borderWidth: 1, borderColor: '#859410', borderRadius: 10, paddingHorizontal: 5, gap: 1, backgroundColor: 'black', right: 3 }}>
+        <View style={{ flexDirection: 'row', justifyContent: "flex-end", marginVertical: 16, right: '1%' }}>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-start', top: '87%', borderWidth: 1, borderColor: '#859410', borderRadius: 10, paddingHorizontal: 8, gap: 1, backgroundColor: 'black', right: 3 }}>
             <ImageBackground
               source={require('../assets/Images/coin.png')}
-              style={{ width: 15, height: 17, top: '6%' }}
+              style={{ width: 15, height: 17, top: '8%' }}
             />
             <TouchableOpacity onPress={handleNav}>
-              <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 14, top: '4%' }}>{score}<Ionicons name="add-circle" size={13} color="green" /></Text>
+              <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 16, top: '4%' }}>{score}<Ionicons name="add-circle" size={13} color="green" /></Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -148,9 +148,9 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
           {showLevelRequirement && (
             <Text style={styles.levelRequirementText}>You need to reach level 20 to access this feature.</Text>
           )}
-          <TouchableOpacity onPress={handleDailyPuzzlePress}>
+          <Pressable onPress={handleDailyPuzzlePress}>
             <ImageBackground source={require('../assets/dailyimge.png')} style={{ width: 188, height: 70 }} />
-          </TouchableOpacity>
+          </Pressable>
         </View>
 
         <View style={{ top: '90%', marginTop: '8%' }}>
@@ -158,12 +158,12 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
         </View>
 
         <View style={{ flex: 1, justifyContent: 'center', alignItems: "center", top: '120%' }}>
-          <TouchableOpacity onPress={handlePlay}>
+          <Pressable onPress={handlePlay}>
             <ImageBackground
               source={require('../assets/playimge.png')}
               style={{ width: 265, height: 120, flexDirection: 'row', justifyContent: 'center', alignContent: "center" }}
             />
-          </TouchableOpacity>
+          </Pressable>
         </View>
       </SafeAreaView>
     </Background>
@@ -178,12 +178,12 @@ const styles = StyleSheet.create({
     marginBottom: 13,
     textAlign: 'center',
     position: 'absolute',
-    top: -75,
+    top: -69,
     width: 170,
     backgroundColor: 'black',
     borderRadius: 20,
-    padding: 8
+    padding: 4
   }
 });
 
-export default MainMenuScreen;
+export default memo(MainMenuScreen);

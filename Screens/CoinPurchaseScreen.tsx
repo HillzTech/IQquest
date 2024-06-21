@@ -6,6 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { initializePurchases, restorePurchases } from '../purchases';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Purchases, { PurchasesPackage } from 'react-native-purchases';
+import StrokedText from '../Components/StrokedText';
 
 export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [showAd, setShowAd] = useState<boolean>(false);
@@ -187,15 +188,15 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
           <Text style={{ color: 'white', textAlign: 'center', fontSize: 21, fontFamily: 'Poppins-Bold', bottom: '36%' }}>{score}</Text>
         </View>
 
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', top:height * -0.118 }}>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', top:height * -0.14 }}>
           <TouchableOpacity onPress={handleShowAd}>
-            <ImageBackground source={require('../assets/Images/watchnow.png')} style={{ width: 260, height: 200}} />
+            <ImageBackground source={require('../assets/watchad.png')} style={{ width: 270, height: 130}} />
           </TouchableOpacity>
         </View>
 
        
 
-        <View style={{top: height * -0.21, flex: 1, padding: 30,}}>
+        <View style={{top: height * -0.245, flex: 1, padding: 42,}}>
           {isPurchasing && <ActivityIndicator size="large" color="#0000ff" />}
           {!isPurchasing &&
             packages.map((pkg) => (
@@ -204,11 +205,15 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
                 style={styles.package}
                 onPress={() => onSelection(pkg)}
               >
-                <ImageBackground source={require('../assets/Images/coin.png')} style={{ width: 17, height: 17, left:width * 0.3, top:height * 0.018}} />
-                <ImageBackground source={require('../assets/Images/coin.png')} style={{ width: 17, height: 17, left:width * 0.3, top:height * 0.008}} />
-                <ImageBackground source={require('../assets/Images/coinchest.png')} style={{ width: 50, height: 45, left:width * 0.31, top:height * -0.04}} />
-                <Text style={{color:'white', textAlign:'center', fontFamily:'Poppins-ExtraBold', fontSize:16, top:height * -0.035}}>{pkg.product.description}</Text>
+                <ImageBackground source={require('../assets/1000coins.png')} style={{ width: 70, height: 39, left:width * 0.27, top:height * 0.018}} />
                 
+                <View style={{top:'-1%'}}>
+                <StrokedText text={pkg.product.description} strokeColor="black" strokeWidth={8} fontSize={27} />
+                </View>
+                
+                <View style={{backgroundColor:'#000435',marginLeft:'76%', borderRadius:20, top:'-16%', borderWidth:1, borderColor:'black'}}>
+                <Text style={{textAlign:'right', color:'#FFD700', paddingHorizontal:4, right:2, fontFamily:'OpenSans-Bold'}}>¤{pkg.product.price}</Text>
+                </View>
               </TouchableOpacity>
             ))}
         </View>
@@ -226,15 +231,14 @@ const styles = StyleSheet.create({
     height:104,
     marginBottom: 16,
     padding: 10,
-    backgroundColor: '#00008B',
-    borderRadius: 18,
+    backgroundColor: '#001260',
+    borderRadius: 23,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 8,
     elevation: 2,
-    borderBottomColor:'#FFD700',
-    borderTopColor:'#FFD700',
+    borderColor:'#FFD991',
     borderRightColor:'black',
     borderWidth:1
   },

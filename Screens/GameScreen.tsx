@@ -715,15 +715,15 @@ return(
      
       </View>
 
-   <View style={{ flexDirection:"row",justifyContent:'space-around', alignContent:'flex-start', top:height * 0.07, right:10, borderColor:'#859410', borderWidth:1, borderRadius:10, marginBottom:57, paddingHorizontal:5, gap:1}}>
+   <View style={{ flexDirection:"row",justifyContent:'space-around', alignContent:'flex-start', top:height * 0.07, right:4, borderColor:'#859410', borderWidth:1, borderRadius:10, marginBottom:57, paddingHorizontal:5, gap:1}}>
    <ImageBackground
             source={require('../assets/Images/coin.png')} 
-            style={{width: 15, height: 17, top:'6%'}}
+            style={{width: 15, height: 17, top:'5%'}}
                
          /> 
         <TouchableOpacity onPress={handleNav} >
         
-         <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 14, top:'7%'}}>{score}<Ionicons name="add-circle" size={10} color="green" /></Text>
+         <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 16, top:'1%'}}>{score}<Ionicons name="add-circle" size={13} color="green" /></Text>
 
 
         </TouchableOpacity>
