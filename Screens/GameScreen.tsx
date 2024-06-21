@@ -37,6 +37,7 @@ const [correctSound, setCorrectSound] = useState<Sound | null>(null);
 const [buttonSound, setButtonSound] = useState<Sound | null>(null);
 const [helpSound, setHelpSound] = useState<Sound | null>(null);
 const [removeSound, setRemoveSound] = useState<Sound | null>(null);
+const [levelSound, setLevelSound] = useState<Sound | null>(null);
 const [incorrectSound, setIncorrectSound] = useState<Sound | null>(null);
 const [iqSound, setIqSound] = useState<Sound | null>(null);
 const {width, height} = Dimensions.get('window');
@@ -288,9 +289,18 @@ useEffect(() => {
             setIqSound(iqSoundObject);
           }
         });
-      } catch (error) {
-        console.error('Error loading sounds:', error);
-      }
+      
+
+      const levelSoundObject = new Sound(require('../assets/sounds/levelpassed.mp3'), (error) => {
+        if (error) {
+          console.error('Failed to load levelsound sound', error);
+        } else {
+          setLevelSound(levelSoundObject);
+        }
+      });
+    } catch (error) {
+      console.error('Error loading sounds:', error);
+    }
     };
 
     loadSounds();
@@ -303,6 +313,7 @@ useEffect(() => {
       correctSound && correctSound.release();
       incorrectSound && incorrectSound.release();
       iqSound && iqSound.release();
+      levelSound && levelSound.release();
     };
   }, []);
 
@@ -434,19 +445,24 @@ useEffect(() => {
   }, [currentLevel]);
 
   const handleGuessInputPress = async (index: number) => {
-   const letterToMove = currentGuess[index];
-   if (letterToMove !== '') {
-     // Remove the letter from the guess box
-     const updatedGuess = [...currentGuess];
-     updatedGuess[index] = ''; // Clear the guess box
-     setCurrentGuess(updatedGuess);
-    playSound(removeSound);
-     // Add the letter back to the letter box
-     setLetterBox([...letterBox, letterToMove]);
-     
-     
-   }
- };
+    const letterToMove = currentGuess[index];
+    if (letterToMove !== '') {
+      // Remove the letter from the guess box
+      const updatedGuess = [...currentGuess];
+      updatedGuess[index] = ''; // Clear the guess box
+      setCurrentGuess(updatedGuess);
+      playSound(removeSound);
+  
+      // Add the letter back to the letter box at the original position
+      const updatedLetterBox = [...letterBox];
+      const originalIndex = letterBox.indexOf('');
+      if (originalIndex !== -1) {
+        updatedLetterBox[originalIndex] = letterToMove;
+      }
+      setLetterBox(updatedLetterBox);
+    }
+  };
+  
  
 
 const handleNav = () => {
@@ -461,15 +477,19 @@ const handleNav = () => {
    
     // Move the letter to the first empty guess input box
     const emptyIndex = currentGuess.findIndex((letter) => letter === '');
-    if (emptyIndex !== -1) {
-      const updatedGuess = [...currentGuess];
-      updatedGuess[emptyIndex] = letterBox[index];
-      setCurrentGuess(updatedGuess);
-      setLetterBox(letterBox.filter((_, idx) => idx !== index));
-    } 
-    } catch (error) {
-      console.error('Error handling letterbox press:', error);
-    }
+  if (emptyIndex !== -1) {
+    const updatedGuess = [...currentGuess];
+    updatedGuess[emptyIndex] = letterBox[index];
+    setCurrentGuess(updatedGuess);
+    
+    // Create a copy of letterBox and remove the letter at the specified index
+    const updatedLetterBox = [...letterBox];
+    updatedLetterBox[index] = '';  // or use null or any placeholder that represents an empty slot
+    setLetterBox(updatedLetterBox);
+  } 
+} catch (error) {
+  console.error('Error handling letterbox press:', error);
+}
   };
 
   const shuffle = (array: string[]) => {
@@ -557,6 +577,7 @@ const handleNav = () => {
   const handleNavigation = () => {
    navigation.push('MainMenu', { score, currentLevel }); 
  };
+
  const openDrawer = async () => {
   playSound(helpSound);
   
@@ -573,18 +594,24 @@ const handleNav = () => {
     const nextIndex = currentGuess.findIndex((letter) => letter === '');
     const randomLetter = currentWord[nextIndex];
 
+
     if (emptyIndex !== -1 && randomLetter) {
       // Update the guess box with the random letter
       const updatedGuess = [...currentGuess];
       updatedGuess[emptyIndex] = randomLetter.toUpperCase();
       setCurrentGuess(updatedGuess);
-      setLetterBox(letterBox.filter((letter) => letter !== randomLetter));
       
+      // Create a copy of letterBox and remove the random letter
+      const updatedLetterBox = [...letterBox];
+      updatedLetterBox[nextIndex] = ''; // or use null or any placeholder that represents an empty slot
+      setLetterBox(updatedLetterBox);
     }
   } else {
-    navigation.push('CoinPurchase')
+    navigation.push('CoinPurchase');
   }
 };
+
+
 
  const [difficulty, setDifficulty] = useState(1);
 
@@ -610,6 +637,7 @@ const handleNav = () => {
          // Set showWrongImage to true if newDifficulty is 11 or greater
         setTimeout(() => {
           setShowCategoryImage(true);
+          playSound(levelSound);
         }, 500);
         setTimeout(() => {
           setShowCategoryImage(false); // Reset showWrongImage after 4 seconds
@@ -718,12 +746,12 @@ return(
    <View style={{ flexDirection:"row",justifyContent:'space-around', alignContent:'flex-start', top:height * 0.07, right:10, borderColor:'#859410', borderWidth:1, borderRadius:10, marginBottom:57, paddingHorizontal:5, gap:1}}>
    <ImageBackground
             source={require('../assets/Images/coin.png')} 
-            style={{width: 15, height: 14, top:'7%'}}
+            style={{width: 15, height: 17, top:'6%'}}
                
          /> 
         <TouchableOpacity onPress={handleNav} >
         
-         <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 16, top:'-2%'}}>{score}<Ionicons name="add-circle" size={10} color="green" /></Text>
+         <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 14, top:'7%'}}>{score}<Ionicons name="add-circle" size={10} color="green" /></Text>
 
 
         </TouchableOpacity>

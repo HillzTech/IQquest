@@ -83,7 +83,7 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
   const handlePlay = useCallback(throttle(() => {
     navigation.push('Game');
     playSound(helpSound);
-  }, 3000), [navigation, playSound, helpSound]);
+  }, 5000), [navigation, playSound, helpSound]);
 
   const handleNav = useCallback(() => {
     navigation.navigate('CoinPurchase', { score, currentLevel });

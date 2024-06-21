@@ -190,7 +190,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
 
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', top:height * -0.14 }}>
           <TouchableOpacity onPress={handleShowAd}>
-            <ImageBackground source={require('../assets/watchad.png')} style={{ width: 270, height: 130}} />
+            <ImageBackground source={require('../assets/watchad.png')} style={{ width: 280, height: 130}} />
           </TouchableOpacity>
         </View>
 
