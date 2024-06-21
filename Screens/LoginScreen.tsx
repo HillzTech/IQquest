@@ -116,22 +116,25 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
     };
   }, [navigation]);
 
-  const handleNext =async () => {
-    
+  const handleNext = async () => {
     try {
       if (userInfo) {
-        // Save progress to Firebase before navigating
+        // Save progress to Firebase
         await saveProgressToFirebase(userInfo.user?.id, score, currentLevel);
         console.log('Progress saved to Firebase');
       }
+  
+      // Save retrieved progress locally
+      await AsyncStorage.setItem('score', String(score));
+      await AsyncStorage.setItem('currentLevel', String(currentLevel));
+      console.log('Progress saved locally');
+  
       // Navigate to MainMenuScreen and pass score and current level
       navigation.push('MainMenu', { score, currentLevel });
     } catch (error) {
       console.error('Error handling next:', error);
     }
-  
-   };
-
+  };
    const firebaseConfig = {
     apiKey: "AIzaSyBZVlV5C3h6RA0cgl6FCT0tan-oW-6LX-0",
   authDomain: "fir-518d2-9dc09.firebaseapp.com",
@@ -171,9 +174,6 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
         const { score: savedScore, currentLevel: savedCurrentLevel } = progressDoc.data() as { score: number, currentLevel: number };
         setScore(savedScore);
         setCurrentLevel(savedCurrentLevel);
-        // Save retrieved progress locally
-        await AsyncStorage.setItem('score', String(savedScore));
-        await AsyncStorage.setItem('currentLevel', String(savedCurrentLevel));
         console.log('Progress retrieved successfully');
       } else {
         console.log('No progress found for the user');
@@ -219,14 +219,27 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           <Text style={{ fontSize:16, color:'white', fontFamily:'Poppins-Bold', textAlign:'center', top:'1%'}}>{currentLevel}</Text>
 
 
-          <View style={{ flexDirection:'row',justifyContent:'center', alignItems:'center', marginTop:'50%'}}>
+          <View style={{ flexDirection:'row',justifyContent:'space-around', alignItems:'center', marginTop:'50%'}}>
+
           <View style={{bottom:'13%'}}>
-          <Text style={{color:"white",textAlign:'center', fontFamily:'Poppins-Regular', fontSize:11}}>Save retrieved data</Text>
-          <TouchableOpacity onPress={handleNext} style={{backgroundColor:'green', width:130, height:43, borderRadius:10, borderBottomColor:'yellow', borderWidth:1}}>
-          <StrokedText text="Save" strokeColor="black" strokeWidth={2} fontSize={22} /><Ionicons name='cloud-upload' size={23} color={'white'} style={{left:'75%', bottom:'77%'}}/>
+          <Text style={{color:"white",textAlign:'center', fontFamily:'Poppins-Regular', fontSize:11}}>Discard retrieved data</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('MainMenu')} style={{backgroundColor:'green', width:130, height:43, borderRadius:10, borderBottomColor:'yellow', borderWidth:1}}>
+          <StrokedText text="Continue" strokeColor="black" strokeWidth={2} fontSize={22} />
           </TouchableOpacity>
           </View>
 
+
+
+
+
+          <View style={{bottom:'13%'}}>
+          <Text style={{color:"white",textAlign:'center', fontFamily:'Poppins-Regular', fontSize:11}}>Save retrieved data</Text>
+          <TouchableOpacity onPress={handleNext} style={{backgroundColor:'green', width:130, height:43, borderRadius:10, borderBottomColor:'yellow', borderWidth:1}}>
+          <StrokedText text="Save" strokeColor="black" strokeWidth={2} fontSize={22} /><Ionicons name='cloud-upload' size={23} color={'white'} style={{left:'75%', bottom:'63%'}}/>
+          </TouchableOpacity>
+          </View>
+
+          
           
           </View>
           </View>
