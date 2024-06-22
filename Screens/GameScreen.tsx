@@ -335,7 +335,7 @@ useEffect(() => {
   
   const moveCoin = () => {
     Animated.timing(coinAnimation, {
-      toValue: { x: 0, y: -640 }, // Adjust the value to move the coin to the score area
+      toValue: { x: 0, y: -740 }, // Adjust the value to move the coin to the score area
       duration: 1300, // Adjust the duration as needed
       easing: Easing.linear,
       useNativeDriver: false,
@@ -347,7 +347,7 @@ useEffect(() => {
 
   const moveIq = () => {
     Animated.timing(iqAnimation, {
-      toValue: { x: 0, y: -800 }, // Adjust the value to move the coin to the score area
+      toValue: { x: 0, y: -900 }, // Adjust the value to move the coin to the score area
       duration: 1300, // Adjust the duration as needed
       easing: Easing.linear,
       useNativeDriver: false,
@@ -666,7 +666,7 @@ const handleNav = () => {
 
   
   useEffect(() => {
-    // Load difficulty from AsyncStorage when component mounts
+    // Load currentLevel from AsyncStorage when component mounts
     AsyncStorage.getItem('currentLevel')
       .then((storedCurrentLevel) => {
         if (storedCurrentLevel) {

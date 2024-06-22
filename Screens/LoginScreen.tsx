@@ -14,6 +14,7 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [userInfo, setUserInfo] = useState<User | false>(false);
   const [score, setScore] = useState<number>(0);
   const [currentLevel, setCurrentLevel] = useState<number>(1);
+  const [difficulty, setDifficulty] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
@@ -21,10 +22,13 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       try {
         const savedLevel = await AsyncStorage.getItem('currentLevel');
         const savedScore = await AsyncStorage.getItem('score');
+        const savedDifficulty = await AsyncStorage.getItem('difficulty');
 
-        if (savedLevel !== null && savedScore !== null) {
+        if (savedLevel !== null && savedScore !== null  && savedDifficulty !== null) {
           setCurrentLevel(parseInt(savedLevel));
           setScore(parseInt(savedScore));
+          setDifficulty(parseInt(savedDifficulty));
+          
         }
       } catch (error) {
         console.error('Error loading game progress:', error);
@@ -64,7 +68,7 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
         console.log("User signed in. userId:", user);
         const progressExists = await checkProgressInFirebase(user.user?.id);
         if (!progressExists) {
-          await saveProgressToFirebase(user.user?.id, score, currentLevel);
+          await saveProgressToFirebase(user.user?.id, score, currentLevel, difficulty);
         }
         await retrieveProgressFromFirebase(user.user?.id);
         setUserInfo(user);
@@ -105,15 +109,16 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
     try {
       setLoading(true);
       if (userInfo) {
-        await saveProgressToFirebase(userInfo.user?.id, score, currentLevel);
+        await saveProgressToFirebase(userInfo.user?.id, score, currentLevel, difficulty);
         console.log('Progress saved to Firebase');
       }
 
       await AsyncStorage.setItem('score', String(score));
       await AsyncStorage.setItem('currentLevel', String(currentLevel));
+      await AsyncStorage.setItem('difficulty', String(difficulty));
       console.log('Progress saved locally');
 
-      navigation.push('MainMenu', { score, currentLevel });
+      navigation.push('MainMenu', { score, currentLevel, difficulty });
     } catch (error) {
       console.error('Error handling next:', error);
     } finally {
@@ -137,12 +142,13 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 
   const firestore = firebase.firestore();
 
-  const saveProgressToFirebase = async (userId: string, score: number, currentLevel: number) => {
+  const saveProgressToFirebase = async (userId: string, score: number, currentLevel: number, difficulty: number) => {
     try {
       const progressRef = firestore.collection('progress').doc(userId);
       await progressRef.set({
         score,
-        currentLevel
+        currentLevel,
+        difficulty
       });
       console.log('score and currentLevel saved successfully');
     } catch (error) {
@@ -155,9 +161,10 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       const progressRef = firestore.collection('progress').doc(userId);
       const progressDoc = await progressRef.get();
       if (progressDoc.exists) {
-        const { score: savedScore, currentLevel: savedCurrentLevel } = progressDoc.data() as { score: number, currentLevel: number };
+        const { score: savedScore, currentLevel: savedCurrentLevel , difficulty: savedDifficulty } = progressDoc.data() as { score: number, currentLevel: number, progress: number, difficulty: number };
         setScore(savedScore);
         setCurrentLevel(savedCurrentLevel);
+        setDifficulty(savedDifficulty);
         console.log('Progress retrieved successfully');
       } else {
         console.log('No progress found for the user');
@@ -225,7 +232,7 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
             </View>
           )}
           {loading && (
-            <View style={{ position: 'absolute', top: '50%', left: '50%', transform: [{ translateX: -50 }, { translateY: -50 }] }}>
+            <View style={{ position: 'absolute', top: '70%', left: '60%', transform: [{ translateX: -50 }, { translateY: -50 }] }}>
               <ActivityIndicator size="large" color="#0000ff" />
             </View>
           )}
