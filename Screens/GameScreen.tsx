@@ -19,6 +19,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import Share from 'react-native-share';
 import { useSound } from '../SoundContext';
 import ProgressBar from '../Components/ProgressBar'; 
+import BouncingImage from '../Components/BouncingImage';
 
   const GameScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [currentLevel, setCurrentLevel] = useState(1); 
@@ -470,6 +471,12 @@ const handleNav = () => {
   playSound(helpSound)
  }
 
+ const handleDrawer = () => {
+  navigation.push('Drawer', { score, currentLevel });
+  
+ }
+
+
 
   const handleLetterBoxPress = async (index: number) => {
    try{
@@ -566,7 +573,7 @@ const handleNav = () => {
       setShowWrongImage(true);
       setTimeout(() => {
         setShowWrongImage(false); // Hide the wrong image after 2 seconds
-      }, 1300);
+      }, 1000);
       
     }
   };
@@ -772,6 +779,9 @@ return(
    
       </View>
       
+      <TouchableOpacity onPress={handleDrawer}>
+        <BouncingImage source={require("../assets/box.png")} style={{width:37, height: 35, left: width * 0.875, bottom: height * 0.03}}/>
+      </TouchableOpacity>
       
       <Animated.View style={{
       flexDirection: 'row',
@@ -779,7 +789,7 @@ return(
       alignContent: 'center',
       flexWrap: 'wrap',
       
-      top:height * 0.29,
+      top:height * 0.236,
       transform: [{ translateX }]
     }}>
       {levels[currentLevel].images.map((imageSource, index) => (
@@ -836,7 +846,7 @@ return(
     
        
 
-    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', top:height * 0.53}}>
+    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', top:height * 0.47}}>
       {/* Guess boxes */}
       {currentGuess.map((letter, index) => (
         <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index) }>
@@ -851,7 +861,7 @@ return(
 
       {/* Render letter box */}
       
-      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"90%",  top:height * 0.53}}>
+      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"90%",  top:height * 0.486}}>
       <View style={styles.container}>
         {letterBox.map((letter, index) => (
           <TouchableOpacity
@@ -1046,7 +1056,7 @@ const styles = StyleSheet.create({
     },
     coinContainer: {
       position: 'absolute',
-      top: '239%', 
+      top: '200%', 
       left: '87.7%', 
       marginLeft: -11.5, 
       zIndex: 1000, 
@@ -1062,7 +1072,7 @@ const styles = StyleSheet.create({
 
     iqContainer: {
       position: 'absolute',
-      top: '330%', 
+      top: '270%', 
       left: '21%', 
       marginLeft: '-10%', 
       zIndex: 1000, 

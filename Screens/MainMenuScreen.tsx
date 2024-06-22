@@ -109,6 +109,8 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
     return () => backHandler.remove();
   }, []);
 
+  
+
   return (
     <Background>
       <StatusBar />

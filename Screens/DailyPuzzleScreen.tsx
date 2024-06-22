@@ -93,7 +93,7 @@ import {  useSound } from '../SoundContext';
           }
         });
 
-        const fanfareSoundObject = new Sound(require('../assets/sounds/fanfair.mp3'), (error) => {
+        const fanfareSoundObject = new Sound(require('../assets/sounds/levelpassed.mp3'), (error) => {
           if (error) {
             console.error('Failed to load fanfare sound', error);
           } else {
@@ -270,7 +270,7 @@ import {  useSound } from '../SoundContext';
   }, [score]);
 
 
-  useEffect(() => {
+   useEffect(() => {
     // Initialize guess boxes based on the length of the word for the current level
     setCurrentGuess(Array(Puzzle[currentPuzzle].word.length).fill(''));
     // Initialize letter box with 10 random letters and letters from the current word
@@ -284,23 +284,29 @@ import {  useSound } from '../SoundContext';
   }, [currentPuzzle]);
 
   const handleGuessInputPress = async (index: number) => {
-   const letterToMove = currentGuess[index];
-   if (letterToMove !== '') {
-     // Remove the letter from the guess box
-     const updatedGuess = [...currentGuess];
-     updatedGuess[index] = ''; // Clear the guess box
-     setCurrentGuess(updatedGuess);
-    playSound(removeSound);
-     // Add the letter back to the letter box
-     setLetterBox([...letterBox, letterToMove]);
-     
-     
-   }
- };
+    const letterToMove = currentGuess[index];
+    if (letterToMove !== '') {
+      // Remove the letter from the guess box
+      const updatedGuess = [...currentGuess];
+      updatedGuess[index] = ''; // Clear the guess box
+      setCurrentGuess(updatedGuess);
+      playSound(removeSound);
+  
+      // Add the letter back to the letter box at the original position
+      const updatedLetterBox = [...letterBox];
+      const originalIndex = letterBox.indexOf('');
+      if (originalIndex !== -1) {
+        updatedLetterBox[originalIndex] = letterToMove;
+      }
+      setLetterBox(updatedLetterBox);
+    }
+  };
+  
  
 
 const handleNav = () => {
-  navigation.navigate('CoinPurchase', { score, currentPuzzle });
+  navigation.push('CoinPurchase', { score, currentPuzzle });
+
  }
 
 
@@ -310,15 +316,19 @@ const handleNav = () => {
    
     // Move the letter to the first empty guess input box
     const emptyIndex = currentGuess.findIndex((letter) => letter === '');
-    if (emptyIndex !== -1) {
-      const updatedGuess = [...currentGuess];
-      updatedGuess[emptyIndex] = letterBox[index];
-      setCurrentGuess(updatedGuess);
-      setLetterBox(letterBox.filter((_, idx) => idx !== index));
-    } 
-    } catch (error) {
-      console.error('Error handling letterbox press:', error);
-    }
+  if (emptyIndex !== -1) {
+    const updatedGuess = [...currentGuess];
+    updatedGuess[emptyIndex] = letterBox[index];
+    setCurrentGuess(updatedGuess);
+    
+    // Create a copy of letterBox and remove the letter at the specified index
+    const updatedLetterBox = [...letterBox];
+    updatedLetterBox[index] = '';  // or use null or any placeholder that represents an empty slot
+    setLetterBox(updatedLetterBox);
+  } 
+} catch (error) {
+  console.error('Error handling letterbox press:', error);
+}
   };
 
   const shuffle = (array: string[]) => {
@@ -349,7 +359,6 @@ const handleNav = () => {
 
 
 
-
   const checkGuess = () => {
     const currentWord = Puzzle[currentPuzzle].word;
     if (currentGuess.join('').toUpperCase() === currentWord) {
@@ -360,13 +369,19 @@ const handleNav = () => {
       setTimeout(() => {
         playSound(correctSound);
         
-      }, 2900)
+      }, 2200)
       
       setTimeout(() => {
         setLoading(true);
+        
+        
+      }, 4000)
+      setTimeout(() => {
+        
         increasePuzzle();
-        playSound(comicSound);
+        
       }, 4500)
+      
       saveCompletionTime();
       setTimeout(() => {
         setLoading(false);
@@ -559,7 +574,7 @@ return(
       {currentGuess.map((letter, index) => (
         <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index) }>
           <View style={{ padding: 5, margin: 2,paddingHorizontal:'3.5%', backgroundColor:'black', borderRadius:5, borderWidth:1, borderColor:'white'}}>
-            <Text style={{fontFamily:'Poppins-ExtraBold',fontSize:21,  color:'white', textAlign:'center'}}>{letter}</Text>
+            <Text style={{fontFamily:'OpenSans-Bold',fontSize:20,  color:'white', textAlign:'center'}}>{letter}</Text>
           </View>
         </TouchableOpacity>
       ))}

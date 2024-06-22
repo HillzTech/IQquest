@@ -86,7 +86,7 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                   </Text>
                 ) : null}
                 {error ? (
-                  <Text style={{ marginTop: 19, fontSize: 13, color: 'red', fontFamily: 'Poppins-Regular', textAlign:'center' }}>
+                  <Text style={{ marginTop:'13%', fontSize: 15, color: 'white', fontFamily: 'Poppins-Regular', textAlign:'center',  marginBottom:'12%' }}>
                     {error}
                   </Text>
                 ) : null}

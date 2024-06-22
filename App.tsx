@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { TransitionPresets, createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import MainMenuScreen from './Screens/MainMenuScreen';
 import GameScreen from './Screens/GameScreen';
-import { CoinPurchaseScreen} from './Screens/CoinPurchaseScreen'; // Corrected import
+import { CoinPurchaseScreen } from './Screens/CoinPurchaseScreen'; // Corrected import
 import DictionaryScreen from './Screens/DictionaryScreen';
 import LoginScreen from './Screens/LoginScreen';
 import DailyPuzzleScreen from './Screens/DailyPuzzleScreen';
@@ -11,8 +11,9 @@ import { SoundProvider } from './SoundContext';
 import Purchases, { LOG_LEVEL } from 'react-native-purchases';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { View, StyleSheet } from 'react-native';
-import { initializePurchases, restorePurchases } from './purchases';
+import { View, StyleSheet, Animated } from 'react-native';
+import { initializePurchases } from './purchases';
+import { DrawerScreen } from './Screens/Drawerscreen';
 
 const Stack = createStackNavigator();
 
@@ -28,7 +29,6 @@ const App: React.FC = () => {
 
   const [splashVisible, setSplashVisible] = useState(true);
 
-  
   useEffect(() => {
     SplashScreen.preventAutoHideAsync();
   }, []);
@@ -44,6 +44,7 @@ const App: React.FC = () => {
     Purchases.setLogLevel(LOG_LEVEL.VERBOSE);
     Purchases.configure({ apiKey: 'goog_xPhhFyZWbrmRZoMWRJqXyZHZzqi' });
   }, []);
+
   useEffect(() => {
     initializePurchases();
   }, []);
@@ -51,9 +52,6 @@ const App: React.FC = () => {
   if (!fontsLoaded && !fontError) {
     return null; // Return null to avoid rendering anything until fonts are loaded
   }
-   
-  
-    
 
   return (
     <NavigationContainer>
@@ -66,13 +64,22 @@ const App: React.FC = () => {
             screenOptions={{
               headerShown: false,
               gestureEnabled: true,
-              cardStyle: { backgroundColor: '#152238' },
+              cardStyle: { backgroundColor: '#152238' }, // Ensure consistent background color
               cardStyleInterpolator: ({ current: { progress } }) => ({
                 cardStyle: {
                   opacity: progress.interpolate({
                     inputRange: [0, 1],
                     outputRange: [0, 1],
+                    extrapolate: 'clamp',
                   }),
+                },
+                overlayStyle: {
+                  opacity: progress.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [0, 0.5],
+                    extrapolate: 'clamp',
+                  }),
+                  backgroundColor: '#152238', // Dark blue with 50% opacity
                 },
               }),
             }}
@@ -83,6 +90,42 @@ const App: React.FC = () => {
             <Stack.Screen name="Dictionary" component={DictionaryScreen} />
             <Stack.Screen name="Login" component={LoginScreen} />
             <Stack.Screen name="DailyPuzzle" component={DailyPuzzleScreen} />
+            <Stack.Screen
+              name="Drawer"
+              component={DrawerScreen}
+              options={{
+                cardStyle: {
+                  backgroundColor: 'black',
+                  width: '80%',
+                  alignSelf: 'flex-end',
+                },
+                gestureDirection: 'horizontal',
+                cardStyleInterpolator: ({ current: { progress } }) => ({
+                  cardStyle: {
+                    transform: [
+                      {
+                        translateX: Animated.multiply(
+                          progress.interpolate({
+                            inputRange: [0, 1],
+                            outputRange: [1000, 0],
+                            extrapolate: 'clamp',
+                          }),
+                          0.8
+                        ),
+                      },
+                    ],
+                  },
+                  overlayStyle: {
+                    opacity: progress.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [0, 0.5],
+                      extrapolate: 'clamp',
+                    }),
+                    backgroundColor: 'rgba(0, 290, 249, 80)', // Dark blue with 50% opacity
+                  },
+                }),
+              }}
+            />
           </Stack.Navigator>
         )}
       </SoundProvider>
