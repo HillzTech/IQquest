@@ -50,7 +50,7 @@ const App: React.FC = () => {
   }, []);
 
   if (!fontsLoaded && !fontError) {
-    return null; // Return null to avoid rendering anything until fonts are loaded
+    return <SplashScreenComponent />; // Return the splash screen component until fonts are loaded
   }
 
   return (

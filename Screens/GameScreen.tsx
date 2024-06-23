@@ -773,9 +773,9 @@ return(
    </View> 
      <View ref={viewShotRef} collapsable={false}>
       <View style={{flexDirection:'row', justifyContent:'center', alignContent:'center',top:'14%', marginBottom:13}}>
-         <Text style={{color:'#fffff1', fontSize: 16, fontFamily:'Poppins-Regular',borderColor:'black', borderWidth: 1, backgroundColor:'black', paddingHorizontal:2, borderTopLeftRadius:8, borderBottomLeftRadius:8, paddingLeft:8}}>Category</Text>
+         <Text style={{color:'#fffff1', fontSize: 16, fontFamily:'OpenSans-Bold',borderColor:'black', borderWidth: 1, backgroundColor:'black', paddingHorizontal:2, borderTopLeftRadius:8, borderBottomLeftRadius:8, paddingLeft:8}}>Category</Text>
       
-         <Text style={{color:'white', fontSize: 18, fontFamily:'Poppins-BoldItalic',borderColor:'black', borderWidth: 2, paddingHorizontal:9,borderTopRightRadius:8, borderBottomRightRadius:8, backgroundColor:'grey'}}>{levels[currentLevel].category}</Text>
+         <Text style={{color:'white', fontSize: 18, fontFamily:'OpenSans-Bold',borderColor:'black', borderWidth: 2, paddingHorizontal:9,borderTopRightRadius:8, borderBottomRightRadius:8, backgroundColor:'grey'}}>{levels[currentLevel].category}</Text>
    
       </View>
       
@@ -883,7 +883,7 @@ return(
           
           </View>
 
-          <View style={{position:'absolute', left:"78%", top:height * 0.82}}>
+          <View style={{position:'absolute', left:"78%", top:height * 0.815}}>
           <View style={{position:'absolute'}}>
       <TouchableOpacity onPress={openDrawer} >
       <BackgroundBtn children={undefined}>
@@ -894,7 +894,7 @@ return(
           </View>
           </View>
            
-          <View style={{position:'absolute', left:"78%", top:height * 0.907}}>
+          <View style={{position:'absolute', left:"78%", top:height * 0.900}}>
           <View style={{position:'absolute' }}>
       <TouchableOpacity onPress={takeScreenshot}>
       <ImageBackground source={require('../assets/share.png')} style={{width:60, height:59}} />
@@ -904,7 +904,7 @@ return(
 
 
 
-          <View style={{position:'absolute', top:height * 0.185, left:width * 0.255}}>
+          <View style={{position:'absolute', top:height * 0.181, left:width * 0.255}}>
       <View style={{position:'absolute' }}>
       <Text style={{color:'white', textAlign:'center', top:'50%',fontFamily:'Poppins-Regular', fontSize:9,}}>Difficulty</Text>
       <View style={{left:'76%'}}>

@@ -260,8 +260,8 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
                 <StrokedText text={pkg.product.description} strokeColor="black" strokeWidth={8} fontSize={27} />
                 </View>
                 
-                <View style={{backgroundColor:'#000435',marginLeft:'76%', borderRadius:20, top:'-16%', borderWidth:1, borderColor:'black'}}>
-                <Text style={{textAlign:'right', color:'#FFD700', paddingHorizontal:4, right:2, fontFamily:'OpenSans-Bold'}}>¤{pkg.product.price}</Text>
+                <View style={{ borderRadius:20, top:'-16%'}}>
+                <Text style={{textAlign:'right', color:'white', paddingHorizontal:4, right:2, fontFamily:'OpenSans-Bold'}}>¤{pkg.product.price}</Text>
                 </View>
               </TouchableOpacity>
             ))}
