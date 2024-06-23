@@ -234,7 +234,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
       <SafeAreaView style={{ flex: 1 }}>
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <ImageBackground source={require('../assets/Images/newcoin.png')} style={{ width: 120, height: 120 }} />
-          <Text style={{ color: 'white', textAlign: 'center', fontSize: 21, fontFamily: 'Poppins-Bold', bottom: '36%' }}>{score}</Text>
+          <Text style={{ color: 'white', textAlign: 'center', fontSize: 21, fontFamily: 'Poppins-Bold', bottom: '32.5%' }}>{score}</Text>
         </View>
 
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', top:height * -0.14 }}>
@@ -245,7 +245,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
 
        
 
-        <View style={{top: height * -0.245, flex: 1, padding: 42,}}>
+        <View style={{top: height * -0.21, flex: 1,  maxWidth:width * 0.75, left:width * 0.13}}>
           {isPurchasing && <ActivityIndicator size="large" color="#0000ff" />}
           {!isPurchasing &&
             packages.map((pkg) => (

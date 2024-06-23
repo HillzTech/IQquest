@@ -51,7 +51,7 @@ const CategoryImage = () => {
           },
         ]}
       >
-        <Text style={{color:'yellow', fontSize:30, textAlign:'center', fontFamily:'Poppins-ExtraBold', top:'-10%'}}>Category Completed!</Text>
+        <Text style={{color:'yellow', fontSize:29, textAlign:'center', fontFamily:'Poppins-ExtraBold', top:'-10%'}}>Category  Completed!</Text>
         <ImageBackground
           source={require('../assets/category.png')}
           style={styles.imageStyle}

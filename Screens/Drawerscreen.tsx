@@ -259,7 +259,7 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 
        
 
-        <View style={{top: height * -0.245, flex: 1, padding: 42,}}>
+        <View style={{top: height * -0.205, flex: 1, maxWidth:width * 0.55, left:width * 0.13}}>
           {isPurchasing && <ActivityIndicator size="large" color="#0000ff" />}
           {!isPurchasing &&
             packages.map((pkg) => (

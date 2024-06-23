@@ -32,7 +32,6 @@
     "expo-splash-screen": "~0.26.5",
     "expo-status-bar": "~1.11.1",
     "expo-task-manager": "~11.7.3",
-    "expo-updates": "~0.24.13",
     "firebase": "^10.8.1",
     "lodash.throttle": "^4.1.1",
     "native-notify": "^4.0.4",

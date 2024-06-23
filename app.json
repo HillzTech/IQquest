@@ -2,7 +2,7 @@
   "expo": {
     "name": "IQ Quest",
     "slug": "IQquest",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
@@ -20,7 +20,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "runtimeVersion": "1.0.3"
+      "runtimeVersion": "1.0.5"
     },
     "android": {
       "versionCode": 5,
@@ -29,7 +29,7 @@
         "backgroundColor": "#152238"
       },
       "package": "com.harrison.ugwu.IQquest",
-      "runtimeVersion": "1.0.2"
+      "runtimeVersion": "1.0.5"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -40,12 +40,8 @@
         
   
       }
-    },
-    "updates": {
-      "url": "https://u.expo.dev/9878a4fa-d15a-4b1a-a762-6c3b3943f691",
-      "enabled": true,
-      "checkAutomatically": "ON_LOAD"
     }
+    
   },
   "react-native-google-mobile-ads": {
     "android_app_id": "ca-app-pub-1458204118033702~9895205659"
