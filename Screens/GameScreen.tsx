@@ -904,7 +904,7 @@ return(
 
                 </View>
 
-                <View style={{ flexDirection:'column', justifyContent:'center', alignItems:'center',right:'12%'}}>
+                <View style={{ flexDirection:'column', justifyContent:'center', alignItems:'center',right:width * 0.03}}>
                 <View>
                 <View>
                   <TouchableOpacity onPress={openDrawer}>
