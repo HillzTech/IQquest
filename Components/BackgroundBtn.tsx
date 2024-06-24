@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   background: {
     width: 58,
     height: 50.7,
-    top: '29%',
+    
   
   },
 });

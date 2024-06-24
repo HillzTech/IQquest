@@ -120,7 +120,7 @@ const {width, height} = Dimensions.get('window');
       if (!tutorialShown) {
         setTimeout(() => {
           setShowTutorial(true);
-        }, 16000); // 16 seconds delay
+        }, 17000); // 17 seconds delay
       }
     } catch (error) {
       console.error('Error checking tutorial status:', error);
@@ -882,11 +882,11 @@ return(
                   ))}
                 </View>
 
-
-
+ 
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignContent: 'space-around', top: height * 0.52 }}>
                 {/* Render letter box */}
-
-                <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignContent: 'center', width: "90%", top: height * 0.486 }}>
+                    
+                <View style={{ flexDirection: 'row', justifyContent: 'center', alignContent: 'center', width: "85%"}}>
                   <View style={styles.container}>
                     {letterBox.map((letter, index) => (
                       <TouchableOpacity
@@ -904,10 +904,9 @@ return(
 
                 </View>
 
-
-
-              </View><View style={{ position: 'absolute', left: "78%", top: height * 0.815 }}>
-                <View style={{ position: 'absolute' }}>
+                <View style={{ flexDirection:'column', justifyContent:'center', alignItems:'center',right:'12%'}}>
+                <View>
+                <View>
                   <TouchableOpacity onPress={openDrawer}>
                     <BackgroundBtn children={undefined}>
 
@@ -915,12 +914,26 @@ return(
 
                   </TouchableOpacity>
                 </View>
-              </View><View style={{ position: 'absolute', left: "78%", top: height * 0.900 }}>
-                <View style={{ position: 'absolute' }}>
+              </View><View>
+                <View>
                   <TouchableOpacity onPress={takeScreenshot}>
                     <ImageBackground source={require('../assets/share.png')} style={{ width: 60, height: 59 }} />
                   </TouchableOpacity>
                 </View>
+              </View>
+
+
+              </View>
+
+
+
+
+
+
+              </View>
+
+
+
               </View><View style={{ position: 'absolute', top: height * 0.181, left: width * 0.255 }}>
                 <View style={{ position: 'absolute' }}>
                   <Text style={{ color: 'white', textAlign: 'center', top: '50%', fontFamily: 'Poppins-Regular', fontSize: 9, }}>Difficulty</Text>
@@ -942,7 +955,7 @@ return(
 
 {showVideo && (
   <Video
-    source={require('../assets/sounds/tutorialvideo.mp4')}
+    source={require('../assets/sounds/tutvideo.mp4')}
     style={styles.video}
     resizeMode="contain"
     onEnd={onVideoEnd}
@@ -1059,10 +1072,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       flexWrap: 'wrap',
       justifyContent: 'center',
-      marginVertical: '8%',
-      width: '90%',
-      marginLeft: '1%',
-      marginRight:1
+      
       
       
       
