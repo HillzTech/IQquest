@@ -179,6 +179,7 @@ const {width, height} = Dimensions.get('window');
       const uri = await captureRef(viewShotRef, { // using viewShotRef here
         format: 'png',
         quality: 1,
+        
       });
       setScreenshotUri(uri);
     } catch (error) {
@@ -737,7 +738,7 @@ return(
 <StatusBar />
 
 
-   <><View style={styles.header}>
+   <View style={styles.header}>
               <View>
                 <View style={styles.back}>
                   <TouchableOpacity onPress={handleNavigation}>
@@ -796,17 +797,33 @@ return(
 
               </View>
 
-            </View><View ref={viewShotRef} collapsable={false}>
-                <View style={{ flexDirection: 'row', justifyContent: 'center', alignContent: 'center', top: '14%', marginBottom: 13 }}>
+            </View>
+            <View ref={viewShotRef} collapsable={false} style={styles.viewshot}>
+                <View style={{ flexDirection: 'row', justifyContent: 'center', alignContent: 'center', marginBottom: 13, bottom: height * 0.23  }}>
                   <Text style={{ color: '#fffff1', fontSize: 16, fontFamily: 'OpenSans-Bold', borderColor: 'black', borderWidth: 1, backgroundColor: 'black', paddingHorizontal: 2, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, paddingLeft: 8 }}>Category</Text>
 
                   <Text style={{ color: 'white', fontSize: 18, fontFamily: 'OpenSans-Bold', borderColor: 'black', borderWidth: 2, paddingHorizontal: 9, borderTopRightRadius: 8, borderBottomRightRadius: 8, backgroundColor: 'grey' }}>{levels[currentLevel].category}</Text>
 
                 </View>
 
+                <View style={{ position: 'absolute', top: height * 0.08, left: width * 0.255 }}>
+                <View style={{ position: 'absolute' }}>
+                  <Text style={{ color: 'white', textAlign: 'center', top: '50%', fontFamily: 'Poppins-Regular', fontSize: 9, }}>Difficulty</Text>
+                  <View style={{ left: '76%' }}>
+
+                    <ProgressBar difficulty={difficulty} />
+                  </View>
+                </View>
+              </View>
+
+
+              <View style={{ left: width * 0.395, bottom:height * 0.32}}>
                 <TouchableOpacity onPress={handleDrawer}>
-                  <BouncingImage source={require("../assets/box.png")} style={{ width: 37, height: 35, left: width * 0.875, bottom: height * 0.03 }} />
+                  <BouncingImage source={require("../assets/box.png")} style={{ width: 37, height: 35}} />
                 </TouchableOpacity>
+                </View>
+
+
 
                 <Animated.View style={{
                   flexDirection: 'row',
@@ -814,7 +831,7 @@ return(
                   alignContent: 'center',
                   flexWrap: 'wrap',
 
-                  top: height * 0.236,
+                  top: height * -0.049,
                   transform: [{ translateX }]
                 }}>
                   {levels[currentLevel].images.map((imageSource, index) => (
@@ -871,7 +888,7 @@ return(
 
 
 
-                <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignContent: 'center', top: height * 0.47 }}>
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignContent: 'center', top: height * 0.178 }}>
                   {/* Guess boxes */}
                   {currentGuess.map((letter, index) => (
                     <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index)}>
@@ -883,7 +900,7 @@ return(
                 </View>
 
  
-                <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignContent: 'space-around', top: height * 0.52 }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignContent: 'space-around', top: height * 0.22}}>
                 {/* Render letter box */}
                     
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignContent: 'center', width: "85%"}}>
@@ -914,7 +931,8 @@ return(
 
                   </TouchableOpacity>
                 </View>
-              </View><View>
+              </View>
+              <View>
                 <View>
                   <TouchableOpacity onPress={takeScreenshot}>
                     <ImageBackground source={require('../assets/share.png')} style={{ width: 60, height: 59 }} />
@@ -934,15 +952,7 @@ return(
 
 
 
-              </View><View style={{ position: 'absolute', top: height * 0.181, left: width * 0.255 }}>
-                <View style={{ position: 'absolute' }}>
-                  <Text style={{ color: 'white', textAlign: 'center', top: '50%', fontFamily: 'Poppins-Regular', fontSize: 9, }}>Difficulty</Text>
-                  <View style={{ left: '76%' }}>
-
-                    <ProgressBar difficulty={difficulty} />
-                  </View>
-                </View>
-              </View></>
+              </View>
              
       
           {showImage && <CorrectImage />}
@@ -1092,7 +1102,7 @@ const styles = StyleSheet.create({
     },
     coinContainer: {
       position: 'absolute',
-      top: '200%', 
+      top: '80%', 
       left: '87.7%', 
       marginLeft: -11.5, 
       zIndex: 1000, 
@@ -1108,7 +1118,7 @@ const styles = StyleSheet.create({
 
     iqContainer: {
       position: 'absolute',
-      top: '270%', 
+      top: '100%', 
       left: '21%', 
       marginLeft: '-10%', 
       zIndex: 1000, 
@@ -1213,7 +1223,11 @@ const styles = StyleSheet.create({
 
 
 
-
+  viewshot: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 
 
 

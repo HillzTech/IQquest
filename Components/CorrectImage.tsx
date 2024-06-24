@@ -33,7 +33,7 @@ const CorrectImage = () => {
           source={require('../assets/rightImg.png')}
           style={styles.imageStyle}
         />
-        <Text style={{color:'white', fontSize:35, textAlign:'center', fontFamily:'Poppins-Bold', top:"15%"}}>Great!</Text>
+        <Text style={{color:'yellow', fontSize:35, textAlign:'center', fontFamily:'Poppins-Bold', top:"15%"}}>Great!</Text>
       </Animated.View>
     );
   };
