@@ -20,6 +20,7 @@ import Share from 'react-native-share';
 import { useSound } from '../SoundContext';
 import ProgressBar from '../Components/ProgressBar'; 
 import BouncingImage from '../Components/BouncingImage';
+import Video from 'react-native-video';
 
   const GameScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [currentLevel, setCurrentLevel] = useState(1); 
@@ -57,12 +58,13 @@ const {width, height} = Dimensions.get('window');
   const [permissionResponse, requestPermission] = MediaLibrary.usePermissions();
   const [showTutorial, setShowTutorial] = useState(false);
   const wobbleAnimation = useRef(new Animated.Value(0)).current;
-  
+  const [showVideo, setShowVideo] = useState(true);
 
 
 
   useEffect(() => {
     checkTutorialStatus();
+    checkVideoStatus();
   }, []);
 
   useEffect(() => {
@@ -116,7 +118,23 @@ const {width, height} = Dimensions.get('window');
     try {
       const tutorialShown = await AsyncStorage.getItem('tutorialShown');
       if (!tutorialShown) {
-        setShowTutorial(true);
+        setTimeout(() => {
+          setShowTutorial(true);
+        }, 16000); // 16 seconds delay
+      }
+    } catch (error) {
+      console.error('Error checking tutorial status:', error);
+    }
+  };
+
+  const checkVideoStatus = async () => {
+    try {
+      const videoShown = await AsyncStorage.getItem('videoShown');
+      if (!videoShown) {
+        
+        setShowVideo(true); 
+      } else {
+        setShowVideo(false);
       }
     } catch (error) {
       console.error('Error checking tutorial status:', error);
@@ -131,6 +149,20 @@ const {width, height} = Dimensions.get('window');
       console.error('Error setting tutorial status:', error);
     }
   };
+
+  
+
+
+  const onVideoEnd = async () => {
+    try {
+      await AsyncStorage.setItem('videoShown', 'true');
+      setShowVideo(false);
+    } catch (error) {
+      console.error('Error setting video status:', error);
+    }
+  };
+ 
+  
 
 
   useEffect(() => {
@@ -703,216 +735,202 @@ return(
 <Background>
 <SafeAreaView style={styles.safe}>
 <StatusBar />
-   <View style={styles.header}>
-      <View>
-         <View style={styles.back}>
-            <TouchableOpacity onPress={handleNavigation} >
-            <ImageBackground 
-            source={require('../assets/Images/backIcon.png')}
-            style={styles.backImg}
-            
-            />
-               
-            </TouchableOpacity>
-            
-         </View>
-         
-
-         <View style={styles.brain}>
-            <Image source={require('../assets/Images/brain.png')} style={styles.brainImg}/>
-            
-         </View>
-         <View style={styles.animatedcontainer}>
-          <Animated.View
-            style={{
-              height: 6,
-              width: fillAnimation.interpolate({
-                inputRange: [0, 100],
-                outputRange: ['0%', '100%']
-              }),
-              backgroundColor: 'green',
-              
-            }}
-  />
-            <Text style={styles.iq}>IQ</Text>
-          </View>
-                
-      </View>
-      
-      <View style={styles.levelcontainer}>
-        <ImageBackground
-            source={require('../assets/Images/LevelImg.png')} 
-            style={styles.levelimg}
-               
-         />
-
-         <Text style={styles.currentlevel}>{currentLevel}</Text>
-     
-      </View>
-
-   <View style={{ flexDirection:"row",justifyContent:'space-around', alignContent:'flex-start', top:height * 0.07, right:10, borderColor:'#859410', borderWidth:1, borderRadius:10, marginBottom:57, paddingHorizontal:5, gap:1}}>
-   <ImageBackground
-            source={require('../assets/Images/coin.png')} 
-            style={{width: 15, height: 17, top:'6%'}}
-               
-         /> 
-        <TouchableOpacity onPress={handleNav} >
-        
-         <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 14, top:'7%'}}>{score}<Ionicons name="add-circle" size={10} color="green" /></Text>
 
 
-        </TouchableOpacity>
-         
-         
-          
-        
+   <><View style={styles.header}>
+              <View>
+                <View style={styles.back}>
+                  <TouchableOpacity onPress={handleNavigation}>
+                    <ImageBackground
+                      source={require('../assets/Images/backIcon.png')}
+                      style={styles.backImg} />
 
-       
-      </View>
-     
-   </View> 
-     <View ref={viewShotRef} collapsable={false}>
-      <View style={{flexDirection:'row', justifyContent:'center', alignContent:'center',top:'14%', marginBottom:13}}>
-         <Text style={{color:'#fffff1', fontSize: 16, fontFamily:'OpenSans-Bold',borderColor:'black', borderWidth: 1, backgroundColor:'black', paddingHorizontal:2, borderTopLeftRadius:8, borderBottomLeftRadius:8, paddingLeft:8}}>Category</Text>
-      
-         <Text style={{color:'white', fontSize: 18, fontFamily:'OpenSans-Bold',borderColor:'black', borderWidth: 2, paddingHorizontal:9,borderTopRightRadius:8, borderBottomRightRadius:8, backgroundColor:'grey'}}>{levels[currentLevel].category}</Text>
-   
-      </View>
-      
-      <TouchableOpacity onPress={handleDrawer}>
-        <BouncingImage source={require("../assets/box.png")} style={{width:37, height: 35, left: width * 0.875, bottom: height * 0.03}}/>
-      </TouchableOpacity>
-      
-      <Animated.View style={{
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignContent: 'center',
-      flexWrap: 'wrap',
-      
-      top:height * 0.236,
-      transform: [{ translateX }]
-    }}>
-      {levels[currentLevel].images.map((imageSource, index) => (
-        <Image key={index} source={imageSource} style={{
-          width: '43%',
-          height: '475%',
-          margin: 5,
-          borderWidth: 3,
-          borderColor: 'grey',
-          borderRadius: 10
-        }} />
-      ))}
-    </Animated.View>
+                  </TouchableOpacity>
+
+                </View>
 
 
-    
-          
-    {coinVisible && (
-        <Animated.View
-          style={[
-            styles.coinContainer,
-            {
-              transform: [{ translateY: coinAnimation.y }],
-            },
-          ]}
-        >
-          <ImageBackground source={require('../assets/Images/coin.png')} style={{ width: 24, height: 24 }}>
-            <Text style={styles.coinText}>5</Text>
-          </ImageBackground>
-        </Animated.View>
-      )}
-        {showPartyPopper && (
-        <PartyPopperAnimation onAnimationComplete={() => setShowPartyPopper(false)} />
-      )}
+                <View style={styles.brain}>
+                  <Image source={require('../assets/Images/brain.png')} style={styles.brainImg} />
 
-{iqVisible && (
-        <Animated.View
-          style={[
-            styles.iqContainer,
-            {
-              transform: [{ translateY: iqAnimation.y }],
-            },
-          ]}
-        >
-          <ImageBackground source={require('../assets/Images/iq.png')} style={{ width: 15, height: 15 }}>
-            
-          </ImageBackground>
-        </Animated.View>
-      )}
-       
-        {showPartyPopper && (
-        <PartyPopperAnimation onAnimationComplete={() => setShowPartyPopper(false)} />
-      )}
-    
-       
+                </View>
+                <View style={styles.animatedcontainer}>
+                  <Animated.View
+                    style={{
+                      height: 6,
+                      width: fillAnimation.interpolate({
+                        inputRange: [0, 100],
+                        outputRange: ['0%', '100%']
+                      }),
+                      backgroundColor: 'green',
+                    }} />
+                  <Text style={styles.iq}>IQ</Text>
+                </View>
 
-    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', top:height * 0.47}}>
-      {/* Guess boxes */}
-      {currentGuess.map((letter, index) => (
-        <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index) }>
-          <View style={{ padding:6, margin: 2,paddingHorizontal:'3.5%', backgroundColor:'black', borderRadius:5, borderWidth:1, borderColor:'white'}}>
-            <Text style={{fontSize:21, color:'white', textAlign:'center', fontFamily:'OpenSans-Bold'}}>{letter}</Text>
-          </View>
-        </TouchableOpacity>
-      ))}
-    </View>
+              </View>
 
-    
+              <View style={styles.levelcontainer}>
+                <ImageBackground
+                  source={require('../assets/Images/LevelImg.png')}
+                  style={styles.levelimg} />
 
-      {/* Render letter box */}
-      
-      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"90%",  top:height * 0.486}}>
-      <View style={styles.container}>
-        {letterBox.map((letter, index) => (
-          <TouchableOpacity
-            key={index}
-            onPress={() => handleLetterBoxPress(index)}
-            style={styles.box}
-          >
-            <Text style={{fontSize:30,fontFamily:'OpenSans-ExtraBold',textAlign:'center'}}>{letter}</Text>
-          </TouchableOpacity>
-        ))}
+                <Text style={styles.currentlevel}>{currentLevel}</Text>
 
-        
-      </View>
-      
-    
-          </View>
+              </View>
 
-          
-          
-          </View>
+              <View style={{ flexDirection: "row", justifyContent: 'space-around', alignContent: 'flex-start', top: height * 0.07, right: 10, borderColor: '#859410', borderWidth: 1, borderRadius: 10, marginBottom: 57, paddingHorizontal: 5, gap: 1 }}>
+                <ImageBackground
+                  source={require('../assets/Images/coin.png')}
+                  style={{ width: 15, height: 17, top: '6%' }} />
+                <TouchableOpacity onPress={handleNav}>
 
-          <View style={{position:'absolute', left:"78%", top:height * 0.815}}>
-          <View style={{position:'absolute'}}>
-      <TouchableOpacity onPress={openDrawer} >
-      <BackgroundBtn children={undefined}>
-        
-      </BackgroundBtn>
-  
-          </TouchableOpacity>
-          </View>
-          </View>
-           
-          <View style={{position:'absolute', left:"78%", top:height * 0.900}}>
-          <View style={{position:'absolute' }}>
-      <TouchableOpacity onPress={takeScreenshot}>
-      <ImageBackground source={require('../assets/share.png')} style={{width:60, height:59}} />
-          </TouchableOpacity>
-          </View>
-     </View>
+                  <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 14, top: '7%' }}>{score}<Ionicons name="add-circle" size={10} color="green" /></Text>
+
+
+                </TouchableOpacity>
 
 
 
-          <View style={{position:'absolute', top:height * 0.181, left:width * 0.255}}>
-      <View style={{position:'absolute' }}>
-      <Text style={{color:'white', textAlign:'center', top:'50%',fontFamily:'Poppins-Regular', fontSize:9,}}>Difficulty</Text>
-      <View style={{left:'76%'}}>
-        
-      <ProgressBar difficulty={difficulty} />
-      </View>
-      </View>
-      </View>
+
+
+
+              </View>
+
+            </View><View ref={viewShotRef} collapsable={false}>
+                <View style={{ flexDirection: 'row', justifyContent: 'center', alignContent: 'center', top: '14%', marginBottom: 13 }}>
+                  <Text style={{ color: '#fffff1', fontSize: 16, fontFamily: 'OpenSans-Bold', borderColor: 'black', borderWidth: 1, backgroundColor: 'black', paddingHorizontal: 2, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, paddingLeft: 8 }}>Category</Text>
+
+                  <Text style={{ color: 'white', fontSize: 18, fontFamily: 'OpenSans-Bold', borderColor: 'black', borderWidth: 2, paddingHorizontal: 9, borderTopRightRadius: 8, borderBottomRightRadius: 8, backgroundColor: 'grey' }}>{levels[currentLevel].category}</Text>
+
+                </View>
+
+                <TouchableOpacity onPress={handleDrawer}>
+                  <BouncingImage source={require("../assets/box.png")} style={{ width: 37, height: 35, left: width * 0.875, bottom: height * 0.03 }} />
+                </TouchableOpacity>
+
+                <Animated.View style={{
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                  alignContent: 'center',
+                  flexWrap: 'wrap',
+
+                  top: height * 0.236,
+                  transform: [{ translateX }]
+                }}>
+                  {levels[currentLevel].images.map((imageSource, index) => (
+                    <Image key={index} source={imageSource} style={{
+                      width: '43%',
+                      height: '475%',
+                      margin: 5,
+                      borderWidth: 3,
+                      borderColor: 'grey',
+                      borderRadius: 10
+                    }} />
+                  ))}
+                </Animated.View>
+
+
+
+
+                {coinVisible && (
+                  <Animated.View
+                    style={[
+                      styles.coinContainer,
+                      {
+                        transform: [{ translateY: coinAnimation.y }],
+                      },
+                    ]}
+                  >
+                    <ImageBackground source={require('../assets/Images/coin.png')} style={{ width: 24, height: 24 }}>
+                      <Text style={styles.coinText}>5</Text>
+                    </ImageBackground>
+                  </Animated.View>
+                )}
+                {showPartyPopper && (
+                  <PartyPopperAnimation onAnimationComplete={() => setShowPartyPopper(false)} />
+                )}
+
+                {iqVisible && (
+                  <Animated.View
+                    style={[
+                      styles.iqContainer,
+                      {
+                        transform: [{ translateY: iqAnimation.y }],
+                      },
+                    ]}
+                  >
+                    <ImageBackground source={require('../assets/Images/iq.png')} style={{ width: 15, height: 15 }}>
+
+                    </ImageBackground>
+                  </Animated.View>
+                )}
+
+                {showPartyPopper && (
+                  <PartyPopperAnimation onAnimationComplete={() => setShowPartyPopper(false)} />
+                )}
+
+
+
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignContent: 'center', top: height * 0.47 }}>
+                  {/* Guess boxes */}
+                  {currentGuess.map((letter, index) => (
+                    <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index)}>
+                      <View style={{ padding: 6, margin: 2, paddingHorizontal: '3.5%', backgroundColor: 'black', borderRadius: 5, borderWidth: 1, borderColor: 'white' }}>
+                        <Text style={{ fontSize: 21, color: 'white', textAlign: 'center', fontFamily: 'OpenSans-Bold' }}>{letter}</Text>
+                      </View>
+                    </TouchableOpacity>
+                  ))}
+                </View>
+
+
+
+                {/* Render letter box */}
+
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignContent: 'center', width: "90%", top: height * 0.486 }}>
+                  <View style={styles.container}>
+                    {letterBox.map((letter, index) => (
+                      <TouchableOpacity
+                        key={index}
+                        onPress={() => handleLetterBoxPress(index)}
+                        style={styles.box}
+                      >
+                        <Text style={{ fontSize: 30, fontFamily: 'OpenSans-ExtraBold', textAlign: 'center' }}>{letter}</Text>
+                      </TouchableOpacity>
+                    ))}
+
+
+                  </View>
+
+
+                </View>
+
+
+
+              </View><View style={{ position: 'absolute', left: "78%", top: height * 0.815 }}>
+                <View style={{ position: 'absolute' }}>
+                  <TouchableOpacity onPress={openDrawer}>
+                    <BackgroundBtn children={undefined}>
+
+                    </BackgroundBtn>
+
+                  </TouchableOpacity>
+                </View>
+              </View><View style={{ position: 'absolute', left: "78%", top: height * 0.900 }}>
+                <View style={{ position: 'absolute' }}>
+                  <TouchableOpacity onPress={takeScreenshot}>
+                    <ImageBackground source={require('../assets/share.png')} style={{ width: 60, height: 59 }} />
+                  </TouchableOpacity>
+                </View>
+              </View><View style={{ position: 'absolute', top: height * 0.181, left: width * 0.255 }}>
+                <View style={{ position: 'absolute' }}>
+                  <Text style={{ color: 'white', textAlign: 'center', top: '50%', fontFamily: 'Poppins-Regular', fontSize: 9, }}>Difficulty</Text>
+                  <View style={{ left: '76%' }}>
+
+                    <ProgressBar difficulty={difficulty} />
+                  </View>
+                </View>
+              </View></>
+             
       
           {showImage && <CorrectImage />}
 
@@ -922,7 +940,15 @@ return(
 
 
 
-
+{showVideo && (
+  <Video
+    source={require('../assets/sounds/tutorialvideo.mp4')}
+    style={styles.video}
+    resizeMode="contain"
+    onEnd={onVideoEnd}
+    controls={false}
+  />
+)}
 
 
       
@@ -1165,9 +1191,15 @@ const styles = StyleSheet.create({
     },
     safe: {
        flex: 1 
-    }
+    },
 
-
+    video: {
+      position: 'absolute',
+      top: '2%',
+      left: 0,
+      width: '100%',
+      height: '100%',
+    },
 
 
 

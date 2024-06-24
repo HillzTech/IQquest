@@ -31,15 +31,16 @@ const App: React.FC = () => {
 
   useEffect(() => {
     SplashScreen.preventAutoHideAsync();
+    setSplashVisible(false);
+    const timer = setTimeout(() => {
+      SplashScreen.hideAsync();
+    }, 5000); // 4 seconds delay
+
+    return () => clearTimeout(timer);
+  
   }, []);
 
-  useEffect(() => {
-    if (fontsLoaded || fontError) {
-      setSplashVisible(false);
-      SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded, fontError]);
-
+  
   useEffect(() => {
     Purchases.setLogLevel(LOG_LEVEL.VERBOSE);
     Purchases.configure({ apiKey: 'goog_xPhhFyZWbrmRZoMWRJqXyZHZzqi' });
@@ -49,9 +50,7 @@ const App: React.FC = () => {
     initializePurchases();
   }, []);
 
-  if (!fontsLoaded && !fontError) {
-    return <SplashScreenComponent />; // Return the splash screen component until fonts are loaded
-  }
+  
 
   return (
     <NavigationContainer>
