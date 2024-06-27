@@ -3,7 +3,6 @@ import { View, TouchableOpacity, ImageBackground, BackHandler, Text, Alert, Styl
 import { RewardedAd, RewardedAdEventType } from 'react-native-google-mobile-ads';
 import Background from '../Components/Background';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { initializePurchases, restorePurchases } from '../purchases';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Purchases, { PurchasesPackage } from 'react-native-purchases';
 import StrokedText from '../Components/StrokedText';
@@ -145,7 +144,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
     setIsPurchasing(true);
     try {
       const { customerInfo } = await Purchases.purchasePackage(productPackage);
-      if (customerInfo.entitlements.active["score"] !== undefined) {
+      if (customerInfo.entitlements.active["coins"] !== undefined) {
         console.log("Purchase successful, coins purchased");
       }
       // If purchase is successful, update score accordingly

@@ -799,17 +799,20 @@ return(
 
             </View>
             <View ref={viewShotRef} collapsable={false} style={styles.viewshot}>
-                <View style={{ flexDirection: 'row', justifyContent: 'center', alignContent: 'center', marginBottom: 13, bottom: height * 0.23  }}>
+              <View style={{flexDirection:'column', justifyContent:'center', alignItems:'center', bottom: height * 0.21}}>
+                <View style={{ flexDirection: 'row', justifyContent: 'center', alignContent: 'center'}}>
                   <Text style={{ color: '#fffff1', fontSize: 16, fontFamily: 'OpenSans-Bold', borderColor: 'black', borderWidth: 1, backgroundColor: 'black', paddingHorizontal: 2, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, paddingLeft: 8 }}>Category</Text>
 
                   <Text style={{ color: 'white', fontSize: 18, fontFamily: 'OpenSans-Bold', borderColor: 'black', borderWidth: 2, paddingHorizontal: 9, borderTopRightRadius: 8, borderBottomRightRadius: 8, backgroundColor: 'grey' }}>{levels[currentLevel].category}</Text>
 
                 </View>
 
-                <View style={{ position: 'absolute', top: height * 0.08, left: width * 0.255 }}>
-                <View style={{ position: 'absolute' }}>
-                  <Text style={{ color: 'white', textAlign: 'center', top: '50%', fontFamily: 'Poppins-Regular', fontSize: 9, }}>Difficulty</Text>
-                  <View style={{ left: '76%' }}>
+                
+                <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center', gap:3, bottom:height * 0.005 }}>
+                  <View>
+                  <Text style={{ color: 'white', textAlign: 'center', fontFamily: 'Poppins-Regular', fontSize: 9, }}>Difficulty</Text>
+                  </View>
+                  <View>
 
                     <ProgressBar difficulty={difficulty} />
                   </View>
@@ -831,12 +834,12 @@ return(
                   alignContent: 'center',
                   flexWrap: 'wrap',
 
-                  top: height * -0.049,
+                  top: height * -0.071,
                   transform: [{ translateX }]
                 }}>
                   {levels[currentLevel].images.map((imageSource, index) => (
                     <Image key={index} source={imageSource} style={{
-                      width: '43%',
+                      width: '45%',
                       height: '475%',
                       margin: 5,
                       borderWidth: 3,
@@ -888,7 +891,7 @@ return(
 
 
 
-                <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignContent: 'center', top: height * 0.178 }}>
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignContent: 'center', top: height * 0.165 }}>
                   {/* Guess boxes */}
                   {currentGuess.map((letter, index) => (
                     <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index)}>
@@ -900,7 +903,7 @@ return(
                 </View>
 
  
-                <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignContent: 'space-around', top: height * 0.22}}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignContent: 'space-around', top: height * 0.21}}>
                 {/* Render letter box */}
                     
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignContent: 'center', width: "85%"}}>
@@ -967,7 +970,7 @@ return(
   <Video
     source={require('../assets/sounds/tutvideo.mp4')}
     style={styles.video}
-    resizeMode="contain"
+    resizeMode="cover"
     onEnd={onVideoEnd}
     controls={false}
   />
