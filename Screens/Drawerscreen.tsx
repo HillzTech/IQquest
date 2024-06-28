@@ -10,10 +10,11 @@ import StrokedText from '../Components/StrokedText';
 import Sound from 'react-native-sound';
 import {  useSound } from '../SoundContext'
 import { Ionicons } from '@expo/vector-icons';
+import { useGame } from '../Components/GameContext';
 
 export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [showAd, setShowAd] = useState<boolean>(false);
-  const [score, setScore] = useState<number>(0);
+  const { score, setScore } = useGame();
   const adUnitId = 'ca-app-pub-3940256099942544/5224354917';
   const rewarded = RewardedAd.createForAdRequest(adUnitId, {
     keywords: ['food', 'cooking', 'fruit'],
@@ -35,19 +36,20 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
         setPendingScore(null);
       }, 1000); // Delay updating the score for 1 second
     }
-  }, [pendingScore]);
+  }, [pendingScore, setScore]);
 
   useEffect(() => {
+    const saveGameProgress = async () => {
+      try {
+        await AsyncStorage.setItem('score', score.toString());
+      } catch (error) {
+        console.error('Error saving game progress:', error);
+      }
+    };
+
     saveGameProgress();
   }, [score]);
 
-  const saveGameProgress = async () => {
-    try {
-      await AsyncStorage.setItem('score', score.toString());
-    } catch (error) {
-      console.error('Error saving game progress:', error);
-    }
-  };
 
   useEffect(() => {
     const loadCombinedScore = async () => {
@@ -91,12 +93,7 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
     const rewardEventListener = rewarded.addAdEventListener(RewardedAdEventType.EARNED_REWARD, () => {
       console.log('user earned reward');
     
-      setScore(prevScore => {
-        const updatedScore = prevScore + 50;
-        AsyncStorage.setItem('score', updatedScore.toString()); // Save updated score to storage
-        return updatedScore;
-  
-      });
+      
       rewarded.load(); // Load a new ad after receiving the reward
     });
 
@@ -106,7 +103,7 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       adEventListener();
       rewardEventListener();
     };
-  }, [showAd, score]);
+  }, [showAd, score , setScore]);
 
   const handleShowAd = () => {
     console.log('Button clicked');
@@ -116,7 +113,7 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 
   useEffect(() => {
     const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-      navigation.push('Game', { score: score });
+      navigation.navigate('Game', { score: score });
       return true; // Prevent default behavior (closing the app)
     });
 
@@ -229,8 +226,8 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   }, []);
 
   const handleExit = useCallback(() => {
-    navigation.push('Game', { score });
-  }, [navigation, score]);
+    navigation.navigate('Game');
+  }, [navigation]);
   
 
   return (
@@ -240,18 +237,18 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           <ImageBackground source={require('../assets/Images/newcoin.png')} style={{ width: 80, height: 80 }} />
           <Text style={{ color: 'white', textAlign: 'center', fontSize: 15, fontFamily: 'Poppins-Bold', bottom: height * 0.07 }}>{score}</Text>
         </View>
-      <View style={{justifyContent:'center', alignItems:'flex-end', right:height * 0.018, top:height * -0.2}}>
+      <View style={{justifyContent:'center', alignItems:'flex-end', right:height * 0.018, top:height * -0.22}}>
       <TouchableOpacity onPress={handleExit}>
         <Ionicons name='close' size={37} color={'white'}/>
          </TouchableOpacity>
         <View>
-            <ImageBackground source={require('../assets/box.png')} style={{width:100, height:100, top:height * 0.08, right: width * 0.2}}/>
+            <ImageBackground source={require('../assets/box.png')} style={{width:100, height:100, top:height * 0.07, right: width * 0.2}}/>
         </View>
       </View>
 
         
 
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', top:height * -0.14 }}>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', top:height * -0.19 }}>
           <TouchableOpacity onPress={handleShowAd}>
             <ImageBackground source={require('../assets/watchad.png')} style={{ width: 205, height: 90}} />
           </TouchableOpacity>
@@ -259,7 +256,7 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 
        
 
-        <View style={{top: height * -0.205, flex: 1, maxWidth:width * 0.55, left:width * 0.13}}>
+        <View style={{top: height * -0.258, flex: 1, maxWidth:width * 0.55, left:width * 0.13}}>
           {isPurchasing && <ActivityIndicator size="large" color="#0000ff" />}
           {!isPurchasing &&
             packages.map((pkg) => (

@@ -7,11 +7,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Purchases, { PurchasesPackage } from 'react-native-purchases';
 import StrokedText from '../Components/StrokedText';
 import Sound from 'react-native-sound';
-import {  useSound } from '../SoundContext'
+import {  useSound } from '../SoundContext';
+import { useGame } from '../Components/GameContext';
 
 export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [showAd, setShowAd] = useState<boolean>(false);
-  const [score, setScore] = useState<number>(0);
+  const { score, setScore } = useGame();
   const adUnitId = 'ca-app-pub-3940256099942544/5224354917';
   const rewarded = RewardedAd.createForAdRequest(adUnitId, {
     keywords: ['food', 'cooking', 'fruit'],
@@ -33,19 +34,21 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
         setPendingScore(null);
       }, 1000); // Delay updating the score for 1 second
     }
-  }, [pendingScore]);
+  }, [pendingScore, setScore]);
+
 
   useEffect(() => {
+    const saveGameProgress = async () => {
+      try {
+        await AsyncStorage.setItem('score', score.toString());
+      } catch (error) {
+        console.error('Error saving game progress:', error);
+      }
+    };
+
     saveGameProgress();
   }, [score]);
 
-  const saveGameProgress = async () => {
-    try {
-      await AsyncStorage.setItem('score', score.toString());
-    } catch (error) {
-      console.error('Error saving game progress:', error);
-    }
-  };
 
   useEffect(() => {
     const loadCombinedScore = async () => {
@@ -89,12 +92,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
     const rewardEventListener = rewarded.addAdEventListener(RewardedAdEventType.EARNED_REWARD, () => {
       console.log('user earned reward');
     
-      setScore(prevScore => {
-        const updatedScore = prevScore + 50;
-        AsyncStorage.setItem('score', updatedScore.toString()); // Save updated score to storage
-        return updatedScore;
-  
-      });
+      
       rewarded.load(); // Load a new ad after receiving the reward
     });
 
@@ -104,7 +102,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
       adEventListener();
       rewardEventListener();
     };
-  }, [showAd, score]);
+  }, [showAd, score, setScore]);
 
   const handleShowAd = () => {
     console.log('Button clicked');
@@ -114,7 +112,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
 
   useEffect(() => {
     const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-      navigation.push('Game', { score: score });
+      navigation.navigate('Game', { score: score });
       return true; // Prevent default behavior (closing the app)
     });
 

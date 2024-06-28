@@ -16,6 +16,7 @@ import { initializePurchases } from './purchases';
 import { DrawerScreen } from './Screens/Drawerscreen';
 import SettingScreen from './Screens/settingScreen'; // Corrected import
 import { useInterstitialAd } from './Components/useInterstitialAd'; 
+import { GameProvider } from './Components/GameContext';
 const Stack = createStackNavigator();
 
 const App: React.FC = () => {
@@ -52,6 +53,7 @@ const App: React.FC = () => {
 
 
   return (
+    <GameProvider>
     <NavigationContainer>
       <SoundProvider>
         {splashVisible ? (
@@ -119,6 +121,7 @@ const App: React.FC = () => {
         )}
       </SoundProvider>
     </NavigationContainer>
+    </GameProvider>
   );
 };
 

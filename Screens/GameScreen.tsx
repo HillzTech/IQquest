@@ -21,10 +21,10 @@ import { useSound } from '../SoundContext';
 import ProgressBar from '../Components/ProgressBar'; 
 import BouncingImage from '../Components/BouncingImage';
 import Video from 'react-native-video';
+import { useGame } from '../Components/GameContext';
 
   const GameScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
-  const [currentLevel, setCurrentLevel] = useState(1); 
-  const [score, setScore] = useState(0);
+    const { currentLevel, setCurrentLevel, score, setScore } = useGame();
   const [currentGuess, setCurrentGuess] = useState<string[]>(['', '', '', '']);
   const [letterBox, setLetterBox] = useState<string[]>([]);
   const [showImage, setShowImage] = useState(false);
@@ -575,13 +575,13 @@ const handleNav = () => {
       }, 3900);
       setTimeout(() => {
         moveCoin(); // Move the coin to the score area
-        setPendingScore(score + 5); // Increment score after animation
+        
       }, 500);
       setTimeout(() => {
          // Move the iq to the iq area
         moveIq();
         playSound(iqSound);
-        
+        setScore(score + 5); // Increment score after animation
       }, 1500);
       const newProgress = progress + 0.25;
     setProgress(newProgress); 
@@ -594,7 +594,7 @@ const handleNav = () => {
       setTimeout(() => {
       
     
-        increaseLevel();
+        setCurrentLevel(currentLevel + 1);
         AsyncStorage.setItem('progress', JSON.stringify(newProgress))
         .then(() => console.log('Progress saved successfully'))
         .catch(error => console.error('Error saving progress:', error));
@@ -619,7 +619,7 @@ const handleNav = () => {
   
 
   const handleNavigation = () => {
-   navigation.push('MainMenu', { score, currentLevel }); 
+   navigation.navigate('MainMenu'); 
  };
 
  const openDrawer = async () => {
@@ -717,20 +717,7 @@ const handleNav = () => {
       });
   }, []);
 
-  const increaseLevel = () => {
-    setCurrentLevel((prevCurrentLevel) => {
-      const newCurrentLevel = prevCurrentLevel + 1;
-      return newCurrentLevel; 
-    });
-  };
-  useEffect(() => {
-    // Store the current difficulty in AsyncStorage whenever it changes
-    AsyncStorage.setItem('currentLevel', currentLevel.toString())
-      .catch((error) => {
-        console.error('Error saving currentLevel to AsyncStorage:', error);
-      });
-  }, [currentLevel]);
-
+  
 
   
 

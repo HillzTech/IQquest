@@ -8,36 +8,16 @@ import 'firebase/compat/firestore';
 import firebase from 'firebase/compat/app';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
+import { useGame } from '../Components/GameContext';
 
 const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [error, setError] = useState<string | undefined>();
   const [userInfo, setUserInfo] = useState<User | false>(false);
-  const [score, setScore] = useState<number>(0);
-  const [currentLevel, setCurrentLevel] = useState<number>(1);
+  const { currentLevel, score, setCurrentLevel, setScore } = useGame();
   const [difficulty, setDifficulty] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
 
-  useEffect(() => {
-    const loadGameProgress = async () => {
-      try {
-        const savedLevel = await AsyncStorage.getItem('currentLevel');
-        const savedScore = await AsyncStorage.getItem('score');
-        const savedDifficulty = await AsyncStorage.getItem('difficulty');
-
-        if (savedLevel !== null && savedScore !== null  && savedDifficulty !== null) {
-          setCurrentLevel(parseInt(savedLevel));
-          setScore(parseInt(savedScore));
-          setDifficulty(parseInt(savedDifficulty));
-          
-        }
-      } catch (error) {
-        console.error('Error loading game progress:', error);
-      }
-    };
-
-    loadGameProgress();
-  }, []);
-
+ 
   useEffect(() => {
     GoogleSignin.configure({
       webClientId: "643584292899-rdfrr3hkc7huj76l2ue3edprvdg88qbl.apps.googleusercontent.com"
@@ -113,8 +93,9 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
         console.log('Progress saved to Firebase');
       }
 
-      await AsyncStorage.setItem('score', String(score));
-      await AsyncStorage.setItem('currentLevel', String(currentLevel));
+      setCurrentLevel(currentLevel);
+      setScore(score);
+  
       await AsyncStorage.setItem('difficulty', String(difficulty));
       console.log('Progress saved locally');
 
@@ -202,13 +183,13 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 
               <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', marginTop: '50%' }}>
                 <View style={{ bottom: '13%' }}>
-                  <Text style={{ color: "white", textAlign: 'center', fontFamily: 'Poppins-Regular', fontSize: 11 }}>Discard retrieved data</Text>
+                  <Text style={{ color: "white", textAlign: 'center', fontFamily: 'Poppins-Regular', fontSize: 11 }}>Discard Retrieved Data</Text>
                   <TouchableOpacity onPress={() => navigation.navigate('MainMenu')} style={{ backgroundColor: 'green', width: 130, height: 43, borderRadius: 10, borderBottomColor: 'yellow', borderWidth: 1 }}>
                     <StrokedText text="Continue" strokeColor="black" strokeWidth={2} fontSize={22} />
                   </TouchableOpacity>
                 </View>
                 <View style={{ bottom: '13%' }}>
-                  <Text style={{ color: "white", textAlign: 'center', fontFamily: 'Poppins-Regular', fontSize: 11 }}>Save retrieved data</Text>
+                  <Text style={{ color: "white", textAlign: 'center', fontFamily: 'Poppins-Regular', fontSize: 11 }}>Save Data</Text>
                   <TouchableOpacity onPress={handleNext} style={{ backgroundColor: 'green', width: 130, height: 43, borderRadius: 10, borderBottomColor: 'yellow', borderWidth: 1 }}>
                     <StrokedText text="Save" strokeColor="black" strokeWidth={2} fontSize={22} /><Ionicons name='cloud-upload' size={23} color={'white'} style={{ left: '75%', bottom: '63%' }} />
                   </TouchableOpacity>

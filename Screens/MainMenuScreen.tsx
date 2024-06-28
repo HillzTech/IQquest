@@ -8,11 +8,12 @@ import { StatusBar } from 'expo-status-bar';
 import Sound from 'react-native-sound';
 import { useSound } from '../SoundContext';
 import throttle from 'lodash.throttle';
+import { useGame } from '../Components/GameContext'; // Import useGame hook
+
 
 
 const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navigation }) => {
-  const [score, setScore] = useState<string>('0');
-  const [currentLevel, setCurrentLevel] = useState<string>('1');
+  const { score, currentLevel, setScore, setCurrentLevel } = useGame(); 
   const [helpSound, setHelpSound] = useState<Sound | null>(null);
   const { soundEnabled } = useSound();
   const [showLevelRequirement, setShowLevelRequirement] = useState<boolean>(false);
@@ -67,56 +68,28 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
 
 
   const handleDailyPuzzlePress = useCallback(throttle(() => {
-    if (parseInt(currentLevel, 10) >= 20) {
+    if (currentLevel >= 20) {
       navigation.push('DailyPuzzle');
-      playSound(helpSound);
     } else {
       setShowLevelRequirement(true);
       setTimeout(() => setShowLevelRequirement(false), 3000);
     }
-  }, 2000), [currentLevel, navigation, playSound, helpSound]);
+  }, 2000), [currentLevel, navigation]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        if (route.params && route.params.score && route.params.currentLevel) {
-          setScore(route.params.score);
-          setCurrentLevel(route.params.currentLevel);
-        } else {
-          const savedScore = await AsyncStorage.getItem('score');
-          const savedCurrentLevel = await AsyncStorage.getItem('currentLevel');
 
-          if (savedScore !== null) {
-            setScore(savedScore);
-          }
-
-          if (savedCurrentLevel !== null) {
-            setCurrentLevel(savedCurrentLevel);
-          }
-        }
-      } catch (error) {
-        console.error('Error fetching data from local storage:', error);
-      }
-    };
-
-    fetchData();
-  }, [route.params]);
+  
 
   const handlePlay = useCallback(throttle(() => {
-    navigation.push('Game');
+    navigation.navigate('Game');
     setIsLoading(true);
-    playSound(helpSound);
+    
     setIsLoading(false);
-  }, 3000), [navigation, playSound, helpSound]);
+  }, 3000), [navigation]);
 
-  const handleNav = useCallback(() => {
-    navigation.navigate('CoinPurchase', { score, currentLevel });
-    playSound(helpSound);
-  }, [navigation, score, currentLevel, playSound, helpSound]);
-
+ 
   const handleWord = useCallback(() => {
     navigation.navigate('Dictionary');
-    playSound(helpSound);
+    
   }, [navigation, playSound, helpSound]);
 
   const handleSetting = useCallback(() => {
@@ -126,8 +99,8 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
 
 
   const handleLogin = useCallback(() => {
-    navigation.push('Login', { score, currentLevel });
-    playSound(helpSound);
+    navigation.navigate('Login', { score, currentLevel });
+
   }, [navigation, score, currentLevel, playSound, helpSound]);
 
   useEffect(() => {
@@ -157,9 +130,9 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
               source={require('../assets/Images/coin.png')}
               style={{ width: 15, height: 17, top: height * 0.001 }}
             />
-            <TouchableOpacity onPress={handleNav}>
-              <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 16, bottom:1.5 }}>{score}<Ionicons name="add-circle" size={13} color="green" /></Text>
-            </TouchableOpacity>
+            <View>
+              <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 16, bottom:1.5 }}>{score}</Text>
+            </View>
           </View>
         </View>
 

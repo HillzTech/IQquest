@@ -9,13 +9,14 @@ import PartyPopperAnimation from '../Components/PartyPopperAnimation';
 import Puzzle from '../Components/Puzzle';
 import { StatusBar } from 'expo-status-bar';
 import {  useSound } from '../SoundContext';
+import { useGame } from '../Components/GameContext'; // Import the useGame hook
 
 
 
   const DailyPuzzleScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   
     const [currentPuzzle, setCurrentPuzzle] = useState(1); 
-  const [score, setScore] = useState(0);
+    const { score, setScore } = useGame();
   const [currentGuess, setCurrentGuess] = useState<string[]>(['', '', '', '']);
   const [letterBox, setLetterBox] = useState<string[]>([]);
   const [correctSound, setCorrectSound] = useState<Sound | null>(null);
@@ -53,7 +54,7 @@ import {  useSound } from '../SoundContext';
   useEffect(() => {
     const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
       // Navigate to MainMenuScreen and pass score and current level
-      navigation.push('MainMenu', { score: score, current: currentPuzzle });
+      navigation.navigate('MainMenu');
 
       return true; // Prevent default behavior (closing the app)
     });
@@ -304,11 +305,6 @@ import {  useSound } from '../SoundContext';
   
  
 
-const handleNav = () => {
-  navigation.push('CoinPurchase', { score, currentPuzzle });
-
- }
-
 
   const handleLetterBoxPress = async (index: number) => {
    try{
@@ -372,8 +368,9 @@ const handleNav = () => {
       }, 2200)
       
       setTimeout(() => {
-        setLoading(true);
         
+        setLoading(true);
+         
         
       }, 4000)
       setTimeout(() => {
@@ -402,7 +399,7 @@ const handleNav = () => {
   
 
   const handleMovement = () => {
-   navigation.push('MainMenu', { score, currentPuzzle }); 
+   navigation.navigate('MainMenu'); 
  };
 
  const formatTime = (milliseconds: number) => {
@@ -473,12 +470,12 @@ return(
             style={{width: 15, height: 17, top:3}}
                
          /> 
-        <TouchableOpacity onPress={handleNav} >
+        <View >
         
-         <Text style={{ fontFamily:'Poppins-Regular', color: "white", fontSize: 16}}>{score}<Ionicons name="add-circle" size={11} color="green" /></Text>
+         <Text style={{ fontFamily:'Poppins-Regular', color: "white", fontSize: 16}}>{score}</Text>
 
 
-        </TouchableOpacity>
+        </View>
          
          
           
