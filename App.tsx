@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import MainMenuScreen from './Screens/MainMenuScreen';
 import GameScreen from './Screens/GameScreen';
 import { CoinPurchaseScreen } from './Screens/CoinPurchaseScreen'; // Corrected import
@@ -11,10 +11,11 @@ import { SoundProvider } from './SoundContext';
 import Purchases, { LOG_LEVEL } from 'react-native-purchases';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { View, StyleSheet, Animated } from 'react-native';
+import { View, StyleSheet, Animated, Easing } from 'react-native';
 import { initializePurchases } from './purchases';
 import { DrawerScreen } from './Screens/Drawerscreen';
-
+import SettingScreen from './Screens/settingScreen'; // Corrected import
+import { useInterstitialAd } from './Components/useInterstitialAd'; 
 const Stack = createStackNavigator();
 
 const App: React.FC = () => {
@@ -34,13 +35,11 @@ const App: React.FC = () => {
     setSplashVisible(false);
     const timer = setTimeout(() => {
       SplashScreen.hideAsync();
-    }, 5000); // 4 seconds delay
+    }, 5000); // 5 seconds delay
 
     return () => clearTimeout(timer);
-  
   }, []);
 
-  
   useEffect(() => {
     Purchases.setLogLevel(LOG_LEVEL.VERBOSE);
     Purchases.configure({ apiKey: 'goog_xPhhFyZWbrmRZoMWRJqXyZHZzqi' });
@@ -49,8 +48,8 @@ const App: React.FC = () => {
   useEffect(() => {
     initializePurchases();
   }, []);
-
   
+
 
   return (
     <NavigationContainer>
@@ -64,23 +63,7 @@ const App: React.FC = () => {
               headerShown: false,
               gestureEnabled: true,
               cardStyle: { backgroundColor: '#152238' }, // Ensure consistent background color
-              cardStyleInterpolator: ({ current: { progress } }) => ({
-                cardStyle: {
-                  opacity: progress.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [0, 1],
-                    extrapolate: 'clamp',
-                  }),
-                },
-                overlayStyle: {
-                  opacity: progress.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [0, 0.5],
-                    extrapolate: 'clamp',
-                  }),
-                  backgroundColor: '#152238', // Dark blue with 50% opacity
-                },
-              }),
+              animationEnabled: false, // Disable default animation to prevent flash
             }}
           >
             <Stack.Screen name="MainMenu" component={MainMenuScreen} />
@@ -89,6 +72,13 @@ const App: React.FC = () => {
             <Stack.Screen name="Dictionary" component={DictionaryScreen} />
             <Stack.Screen name="Login" component={LoginScreen} />
             <Stack.Screen name="DailyPuzzle" component={DailyPuzzleScreen} />
+            <Stack.Screen 
+              name="Settings" 
+              component={SettingScreen} 
+              options={{
+                ...TransitionPresets.ModalSlideFromBottomIOS, // Use the slide-up transition preset
+              }} 
+            />
             <Stack.Screen
               name="Drawer"
               component={DrawerScreen}

@@ -3,7 +3,7 @@ import { View, TouchableOpacity, ImageBackground, BackHandler, Text, Alert, Styl
 import { RewardedAd, RewardedAdEventType } from 'react-native-google-mobile-ads';
 import Background from '../Components/Background';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { initializePurchases, restorePurchases } from '../purchases';
+import { initializePurchases} from '../purchases';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Purchases, { PurchasesPackage } from 'react-native-purchases';
 import StrokedText from '../Components/StrokedText';

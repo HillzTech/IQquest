@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback,memo } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ImageBackground, BackHandler, Button, Pressable } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ImageBackground, BackHandler, Button, Pressable, ActivityIndicator, Dimensions } from 'react-native';
 import Background from '../Components/Background';
 import { Ionicons } from '@expo/vector-icons';
 import { Animation } from '../Components/Animation';
@@ -9,40 +9,62 @@ import Sound from 'react-native-sound';
 import { useSound } from '../SoundContext';
 import throttle from 'lodash.throttle';
 
+
 const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navigation }) => {
   const [score, setScore] = useState<string>('0');
   const [currentLevel, setCurrentLevel] = useState<string>('1');
   const [helpSound, setHelpSound] = useState<Sound | null>(null);
   const { soundEnabled } = useSound();
   const [showLevelRequirement, setShowLevelRequirement] = useState<boolean>(false);
-
+  const [isLoading, setIsLoading] = useState(false);
+  const {width, height} = Dimensions.get('window');
   
   
-  
-  
-  const playSound = useCallback((soundObject: Sound | null) => {
-    if (soundObject && soundEnabled) {
-      soundObject.play((success) => {
-        if (!success) {
-          console.error('Failed to play the sound');
-        }
-      });
+  const playSound = (soundObject: Sound | null) => {
+    try {
+      if (soundObject && soundEnabled) { // Check if sound is enabled
+        soundObject.play();
+      }
+    } catch (error) {
+      console.error('Error playing sound:', error);
     }
-  }, [soundEnabled]);
+  };
+  
 
   useEffect(() => {
-    const helpSoundObject = new Sound(require('../assets/sounds/sharpButton.mp3'), (error) => {
-      if (error) {
-        console.error('Failed to load the sound', error);
-        return;
+    const loadSounds = async () => {
+      try {
+      
+
+        const helpSoundObject = new Sound(require('../assets/sounds/sharpButton.mp3'), (error) => {
+          if (error) {
+            console.error('Failed to load help sound', error);
+          } else {
+            setHelpSound(helpSoundObject);
+          }
+        });
+
+        
+       
+
+      } catch (error) {
+        console.error('Error loading sounds:', error);
       }
-      setHelpSound(helpSoundObject);
-    });
+      };
+
+    loadSounds();
+
 
     return () => {
-      helpSoundObject.release();
+      // Cleanup function to unload sounds when component unmounts
+     
+      helpSound && helpSound.release();
+      
     };
   }, []);
+
+
+
 
   const handleDailyPuzzlePress = useCallback(throttle(() => {
     if (parseInt(currentLevel, 10) >= 20) {
@@ -82,8 +104,10 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
 
   const handlePlay = useCallback(throttle(() => {
     navigation.push('Game');
+    setIsLoading(true);
     playSound(helpSound);
-  }, 5000), [navigation, playSound, helpSound]);
+    setIsLoading(false);
+  }, 3000), [navigation, playSound, helpSound]);
 
   const handleNav = useCallback(() => {
     navigation.navigate('CoinPurchase', { score, currentLevel });
@@ -94,6 +118,12 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
     navigation.navigate('Dictionary');
     playSound(helpSound);
   }, [navigation, playSound, helpSound]);
+
+  const handleSetting = useCallback(() => {
+    navigation.navigate('Settings');
+    
+  }, [navigation, playSound, helpSound]);
+
 
   const handleLogin = useCallback(() => {
     navigation.push('Login', { score, currentLevel });
@@ -115,14 +145,20 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
     <Background>
       <StatusBar />
       <SafeAreaView>
-        <View style={{ flexDirection: 'row', justifyContent: "flex-end", marginVertical: 16, right: '1%' }}>
-          <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-start', top: '87%', borderWidth: 1, borderColor: '#859410', borderRadius: 10, paddingHorizontal: 8, gap: 1, backgroundColor: 'black', right: 3 }}>
+     
+        <View style={{ flexDirection: 'row', justifyContent: "flex-end", marginVertical: 16, right: width * 0.01, top:height * 0.03 }}>
+          <View style={{right:width * 0.03, top:height * 0.0038  }}>
+            <TouchableOpacity onPress={handleSetting} >
+        <Ionicons name='settings' size={25} color={'white'} />
+        </TouchableOpacity></View>
+          
+          <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-start', borderWidth: 1, borderColor: '#859410', borderRadius: 10, paddingHorizontal: 8, gap: 1, backgroundColor: 'black', right: 3 , height:22, top: height * 0.008}}>
             <ImageBackground
               source={require('../assets/Images/coin.png')}
-              style={{ width: 15, height: 17, top: '8%' }}
+              style={{ width: 15, height: 17, top: height * 0.001 }}
             />
             <TouchableOpacity onPress={handleNav}>
-              <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 16, top: '4%' }}>{score}<Ionicons name="add-circle" size={13} color="green" /></Text>
+              <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 16, bottom:1.5 }}>{score}<Ionicons name="add-circle" size={13} color="green" /></Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -160,13 +196,19 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
         </View>
 
         <View style={{ flex: 1, justifyContent: 'center', alignItems: "center", top: '120%' }}>
+        {isLoading ? (
+        <ActivityIndicator size="large" color="#0000ff" />
+      ) : (
           <Pressable onPress={handlePlay}>
             <ImageBackground
               source={require('../assets/playimge.png')}
               style={{ width: 265, height: 120, flexDirection: 'row', justifyContent: 'center', alignContent: "center" }}
             />
           </Pressable>
+           )}
         </View>
+
+    
       </SafeAreaView>
     </Background>
   );
@@ -185,7 +227,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     borderRadius: 20,
     padding: 4
-  }
+  },
+
 });
 
 export default memo(MainMenuScreen);

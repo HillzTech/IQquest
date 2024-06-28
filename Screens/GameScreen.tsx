@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { BackHandler, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View, Platform, SafeAreaView, Dimensions } from 'react-native';
+import { BackHandler, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View, Platform, SafeAreaView, Dimensions, ActivityIndicator } from 'react-native';
 import Background from '../Components/Background';
 import Sound from 'react-native-sound';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -59,7 +59,7 @@ const {width, height} = Dimensions.get('window');
   const [showTutorial, setShowTutorial] = useState(false);
   const wobbleAnimation = useRef(new Animated.Value(0)).current;
   const [showVideo, setShowVideo] = useState(true);
-
+  const [isLoading, setIsLoading] = useState(false);
 
 
   useEffect(() => {
@@ -120,7 +120,7 @@ const {width, height} = Dimensions.get('window');
       if (!tutorialShown) {
         setTimeout(() => {
           setShowTutorial(true);
-        }, 17000); // 17 seconds delay
+        }, 18000); // 18 seconds delay
       }
     } catch (error) {
       console.error('Error checking tutorial status:', error);
@@ -174,6 +174,8 @@ const {width, height} = Dimensions.get('window');
 
   // Function to capture screenshot
   const takeScreenshot = async () => {
+    setIsLoading(true);
+
     try {
       // Capture the current screen
       const uri = await captureRef(viewShotRef, { // using viewShotRef here
@@ -184,6 +186,8 @@ const {width, height} = Dimensions.get('window');
       setScreenshotUri(uri);
     } catch (error) {
       console.error('Error capturing screenshot:', error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -937,9 +941,13 @@ return(
               </View>
               <View>
                 <View>
+                {isLoading ? (
+            <ActivityIndicator size="large" color="#0000ff" />
+          ) : (
                   <TouchableOpacity onPress={takeScreenshot}>
                     <ImageBackground source={require('../assets/share.png')} style={{ width: 60, height: 59 }} />
                   </TouchableOpacity>
+                   )}
                 </View>
               </View>
 
