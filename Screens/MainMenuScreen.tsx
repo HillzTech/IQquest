@@ -84,7 +84,7 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
     setIsLoading(true);
     
     setIsLoading(false);
-  }, 3000), [navigation]);
+  }, 1000), [navigation]);
 
  
   const handleWord = useCallback(() => {
@@ -112,6 +112,11 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
     return () => backHandler.remove();
   }, []);
 
+  const handleCoin = () => {
+    navigation.navigate('CoinPurchase'); 
+  };
+ 
+
   
 
   return (
@@ -125,15 +130,15 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
         <Ionicons name='settings' size={25} color={'white'} />
         </TouchableOpacity></View>
           
-          <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-start', borderWidth: 1, borderColor: '#859410', borderRadius: 10, paddingHorizontal: 8, gap: 1, backgroundColor: 'black', right: 3 , height:22, top: height * 0.008}}>
+          <Pressable onPress={handleCoin} style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-start', borderWidth: 1, borderColor: '#859410', borderRadius: 10, paddingHorizontal: 8, gap: 1, backgroundColor: 'black', right: 3 , height:22, top: height * 0.008}}>
             <ImageBackground
               source={require('../assets/Images/coin.png')}
               style={{ width: 15, height: 17, top: height * 0.001 }}
             />
             <View>
-              <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 16, bottom:1.5 }}>{score}</Text>
+              <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 16, bottom:1.5 }}>{score}<Ionicons name="add-circle" size={10} color="green" /></Text>
             </View>
-          </View>
+          </Pressable>
         </View>
 
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', borderRadius: 9, borderColor: '#B59410', borderWidth: 2.5, padding: 4, marginTop: 12 }}>

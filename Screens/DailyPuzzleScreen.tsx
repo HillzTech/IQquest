@@ -46,7 +46,7 @@ import { useGame } from '../Components/GameContext'; // Import the useGame hook
   useEffect(() => {
     Animated.timing(translateX, {
       toValue: 0,
-      duration: 600, // Adjust duration as needed
+      duration: 1500, // Adjust duration as needed
       useNativeDriver: true,
     }).start();
   }, [currentPuzzle]);

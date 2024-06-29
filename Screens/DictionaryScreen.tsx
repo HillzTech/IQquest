@@ -63,9 +63,9 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                 value={word}
                 onChangeText={setWord}
                 onSubmitEditing={searchDictionary}
-                style={{ borderWidth: 1, borderColor: 'white', borderRadius: 10, padding: 1, width: '80%', color: 'white', left: '58%', textAlign: 'center', height: 40, fontSize: 17, fontFamily: 'Poppins-Bold' }}
+                style={{ borderWidth: 1, borderColor: 'white', borderRadius: 10, padding: 1, width: '80%', color: 'white', left: '58%', textAlign: 'center', height: 40, fontSize: 17, fontFamily: 'Poppins-Regular' }}
               />
-              <Ionicons name="search" size={21} color="white" style={{ right: 30 }} onPress={searchDictionary} />
+              <Ionicons name="search" size={25} color="white" style={{ right: 30 }} onPress={searchDictionary} />
             </View>
 
             <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: 3, top: '1%', width: '90%', borderRadius: 20 }}>

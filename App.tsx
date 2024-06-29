@@ -17,6 +17,7 @@ import { DrawerScreen } from './Screens/Drawerscreen';
 import SettingScreen from './Screens/settingScreen'; // Corrected import
 import { useInterstitialAd } from './Components/useInterstitialAd'; 
 import { GameProvider } from './Components/GameContext';
+
 const Stack = createStackNavigator();
 
 const App: React.FC = () => {
@@ -49,78 +50,71 @@ const App: React.FC = () => {
   useEffect(() => {
     initializePurchases();
   }, []);
-  
-
 
   return (
     <GameProvider>
-    <NavigationContainer>
-      <SoundProvider>
-        {splashVisible ? (
-          <SplashScreenComponent />
-        ) : (
-          <Stack.Navigator
-            initialRouteName="MainMenu"
-            screenOptions={{
-              headerShown: false,
-              gestureEnabled: true,
-              cardStyle: { backgroundColor: '#152238' }, // Ensure consistent background color
-              animationEnabled: false, // Disable default animation to prevent flash
-            }}
-          >
-            <Stack.Screen name="MainMenu" component={MainMenuScreen} />
-            <Stack.Screen name="Game" component={GameScreen} />
-            <Stack.Screen name="CoinPurchase" component={CoinPurchaseScreen} />
-            <Stack.Screen name="Dictionary" component={DictionaryScreen} />
-            <Stack.Screen name="Login" component={LoginScreen} />
-            <Stack.Screen name="DailyPuzzle" component={DailyPuzzleScreen} />
-            <Stack.Screen 
-              name="Settings" 
-              component={SettingScreen} 
-              options={{
-                ...TransitionPresets.ModalSlideFromBottomIOS, // Use the slide-up transition preset
-              }} 
-            />
-            <Stack.Screen
-              name="Drawer"
-              component={DrawerScreen}
-              options={{
-                cardStyle: {
-                  backgroundColor: 'black',
-                  width: '80%',
-                  alignSelf: 'flex-end',
-                },
-                gestureDirection: 'horizontal',
-                cardStyleInterpolator: ({ current: { progress } }) => ({
-                  cardStyle: {
-                    transform: [
-                      {
-                        translateX: Animated.multiply(
-                          progress.interpolate({
-                            inputRange: [0, 1],
-                            outputRange: [1000, 0],
-                            extrapolate: 'clamp',
-                          }),
-                          0.8
-                        ),
-                      },
-                    ],
-                  },
-                  overlayStyle: {
-                    opacity: progress.interpolate({
-                      inputRange: [0, 1],
-                      outputRange: [0, 0.5],
-                      extrapolate: 'clamp',
-                    }),
-                    backgroundColor: 'rgba(0, 290, 249, 80)', // Dark blue with 50% opacity
-                  },
-                }),
+      <NavigationContainer>
+        <SoundProvider>
+          {splashVisible ? (
+            <SplashScreenComponent />
+          ) : (
+            <Stack.Navigator
+              initialRouteName="MainMenu"
+              screenOptions={{
+                headerShown: false,
+                gestureEnabled: true,
+                cardStyle: { backgroundColor: '#152238' },
+                animationEnabled: true, // Enable animation
+                ...TransitionPresets.ModalSlideFromBottomIOS, // Slide-up transition
               }}
-            />
-          </Stack.Navigator>
-        )}
-      </SoundProvider>
-    </NavigationContainer>
+            >
+              <Stack.Screen name="MainMenu" component={MainMenuScreen} />
+              <Stack.Screen name="Game" component={GameScreen} />
+              <Stack.Screen name="CoinPurchase" component={CoinPurchaseScreen} />
+              <Stack.Screen name="Dictionary" component={DictionaryScreen} />
+              <Stack.Screen name="Login" component={LoginScreen} />
+              <Stack.Screen name="DailyPuzzle" component={DailyPuzzleScreen} />
+              <Stack.Screen name="Settings" component={SettingScreen} />
+              <Stack.Screen
+                name="Drawer"
+                component={DrawerScreen}
+                options={{
+                  cardStyle: {
+                    backgroundColor: 'black',
+                    width: '80%',
+                    alignSelf: 'flex-end',
+                  },
+                  gestureDirection: 'horizontal',
+                  cardStyleInterpolator: ({ current: { progress } }) => ({
+                    cardStyle: {
+                      transform: [
+                        {
+                          translateX: Animated.multiply(
+                            progress.interpolate({
+                              inputRange: [0, 1],
+                              outputRange: [1000, 0],
+                              extrapolate: 'clamp',
+                            }),
+                            0.8
+                          ),
+                        },
+                      ],
+                    },
+                    overlayStyle: {
+                      opacity: progress.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [0, 0.5],
+                        extrapolate: 'clamp',
+                      }),
+                      backgroundColor: 'rgba(0, 290, 249, 80)', // Dark blue with 50% opacity
+                    },
+                  }),
+                }}
+              />
+            </Stack.Navigator>
+          )}
+        </SoundProvider>
+      </NavigationContainer>
     </GameProvider>
   );
 };

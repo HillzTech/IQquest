@@ -112,7 +112,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
 
   useEffect(() => {
     const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-      navigation.navigate('Game', { score: score });
+      navigation.goBack();
       return true; // Prevent default behavior (closing the app)
     });
 
@@ -234,15 +234,15 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
           <Text style={{ color: 'white', textAlign: 'center', fontSize: 21, fontFamily: 'Poppins-Bold', bottom: '32.5%' }}>{score}</Text>
         </View>
 
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', top:height * -0.14 }}>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', top:height * -0.18 }}>
           <TouchableOpacity onPress={handleShowAd}>
-            <ImageBackground source={require('../assets/watchad.png')} style={{ width: 280, height: 110}} />
+            <ImageBackground source={require('../assets/watchad.png')} style={{ width: 275, height: 110}} />
           </TouchableOpacity>
         </View>
 
        
 
-        <View style={{top: height * -0.21, flex: 1,  maxWidth:width * 0.75, left:width * 0.13}}>
+        <View style={{top: height * -0.25, flex: 1,  maxWidth:width * 0.75, left:width * 0.13}}>
           {isPurchasing && <ActivityIndicator size="large" color="#0000ff" />}
           {!isPurchasing &&
             packages.map((pkg) => (

@@ -246,7 +246,7 @@ useEffect(() => {
   useEffect(() => {
     Animated.timing(translateX, {
       toValue: 0,
-      duration: 700, // Adjust duration as needed
+      duration: 1400, // Adjust duration as needed
       useNativeDriver: true,
     }).start();
   }, [currentLevel]);
@@ -504,12 +504,12 @@ useEffect(() => {
  
 
 const handleNav = () => {
-  navigation.push('CoinPurchase', { score, currentLevel });
+  navigation.navigate('CoinPurchase');
   playSound(helpSound)
  }
 
  const handleDrawer = () => {
-  navigation.push('Drawer', { score, currentLevel });
+  navigation.navigate('Drawer');
   
  }
 
@@ -592,8 +592,6 @@ const handleNav = () => {
     
       // Move to the next level
       setTimeout(() => {
-      
-    
         setCurrentLevel(currentLevel + 1);
         AsyncStorage.setItem('progress', JSON.stringify(newProgress))
         .then(() => console.log('Progress saved successfully'))
@@ -619,7 +617,7 @@ const handleNav = () => {
   
 
   const handleNavigation = () => {
-   navigation.navigate('MainMenu'); 
+   navigation.push('MainMenu'); 
  };
 
  const openDrawer = async () => {
@@ -770,23 +768,23 @@ return(
 
               </View>
 
-              <View style={{ flexDirection: "row", justifyContent: 'space-around', alignContent: 'flex-start', top: height * 0.07, right: 10, borderColor: '#859410', borderWidth: 1, borderRadius: 10, marginBottom: 57, paddingHorizontal: 5, gap: 1 }}>
+              <TouchableOpacity onPress={handleNav} style={{ flexDirection: "row", justifyContent: 'space-around', alignContent: 'flex-start', top: height * 0.07, right: 10, borderColor: '#859410', borderWidth: 1, borderRadius: 10, marginBottom: 57, paddingHorizontal: 5, gap: 1 }}>
                 <ImageBackground
                   source={require('../assets/Images/coin.png')}
                   style={{ width: 15, height: 17, top: '6%' }} />
-                <TouchableOpacity onPress={handleNav}>
+                <View >
 
                   <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 14, top: '7%' }}>{score}<Ionicons name="add-circle" size={10} color="green" /></Text>
 
 
-                </TouchableOpacity>
+                </View>
 
 
 
 
 
 
-              </View>
+              </TouchableOpacity>
 
             </View>
             <View ref={viewShotRef} collapsable={false} style={styles.viewshot}>
