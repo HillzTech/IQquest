@@ -1032,7 +1032,7 @@ const levels = [
   
   {
     images: [
-       require('../assets/Images/europe/europe1.png'),
+       require('../assets/Images/europe/europe1.jpg'),
        require('../assets/Images/europe/europe2.jpg'),
        require('../assets/Images/europe/europe3.jpg'),
        require('../assets/Images/europe/europe4.jpg'),

@@ -708,7 +708,7 @@ return(
 
             </View>
             <View ref={viewShotRef} collapsable={false} style={styles.viewshot}>
-              <View style={{flexDirection:'column', justifyContent:'center', alignItems:'center', bottom: height * 0.18}}>
+              <View style={{flexDirection:'column', justifyContent:'center', alignItems:'center', bottom: height * 0.193}}>
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignContent: 'center'}}>
                   <Text style={{ color: '#fffff1', fontSize: 16, fontFamily: 'OpenSans-Bold', borderColor: 'black', borderWidth: 1, backgroundColor: 'black', paddingHorizontal: 2, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, paddingLeft: 8 }}>Category</Text>
 
@@ -729,7 +729,7 @@ return(
               </View>
 
 
-              <View style={{ left: width * 0.395, bottom:height * 0.3}}>
+              <View style={{ left: width * 0.395, bottom:height * 0.315}}>
                 <TouchableOpacity onPress={handleDrawer}>
                   <BouncingImage source={require("../assets/box.png")} style={{ width: 37, height: 35}} />
                 </TouchableOpacity>
@@ -743,7 +743,7 @@ return(
                   alignContent: 'center',
                   flexWrap: 'wrap',
 
-                  top: height * -0.054,
+                  top: height * -0.077,
                   transform: [{ translateX }]
                 }}>
                   {levels[currentLevel].images.map((imageSource, index) => (
@@ -800,7 +800,7 @@ return(
 
 
 
-                <Animated.View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignContent: 'center', top: height * 0.17 }}>
+                <Animated.View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignContent: 'center', top: height * 0.155 }}>
                   {/* Guess boxes */}
                   {currentGuess.map((letter, index) => (
                     <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index)}>
@@ -812,7 +812,7 @@ return(
                 </Animated.View>
 
  
-                <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignContent: 'space-around', top: height * 0.210}}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignContent: 'space-around', top: height * 0.201}}>
                 {/* Render letter box */}
 
                 
@@ -851,24 +851,16 @@ return(
 
               </View>
 
-
-
-
-
-
               </View>
               <View>
 
 
-              <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:"center", top:height * 0.208}}>
+              <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:"center", top:height * 0.20}}>
               <View >
                 <TouchableOpacity onPress={shuffleLetterBox} >
                <ImageBackground source={require('../assets/shuffle.png')} style={{width:305, height:43}} />
               </TouchableOpacity>
-
-
-                
-                
+  
             </View>
 
                 <View style={{right:width * 0.05}}>
@@ -882,10 +874,7 @@ return(
                 </View>
               </View>
               </View>
-             
-
-             
-
+            
               </View>
              
       
