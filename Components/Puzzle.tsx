@@ -1,10 +1,10 @@
 const Puzzle = [
     {
         images: [
-            require('../assets/Images/fruits/Images1.jpeg'),
-            require('../assets/Images/fruits/Image2.jpg'),
-            require('../assets/Images/fruits/Images3.jpeg'),
-            require('../assets/Images/fruits/Images4.jpg'),
+            require('../assets/Images/fruits/fruit1.jpg'),
+            require('../assets/Images/fruits/fruit2.jpg'),
+            require('../assets/Images/fruits/fruit3.jpg'),
+            require('../assets/Images/fruits/fruit4.jpg'),
           ],
          word: "FRUIT",
          question: "What is the common word?"

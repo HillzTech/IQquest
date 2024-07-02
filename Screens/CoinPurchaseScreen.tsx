@@ -24,7 +24,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
   const {width, height} = Dimensions.get('window');
   const [correctSound, setCorrectSound] = useState<Sound | null>(null);
   const { soundEnabled } = useSound();
-  
+  const { playSound } = useSound();
 
 
   useEffect(() => {
@@ -177,7 +177,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
     try {
       const newScore = score + increment;
       setPendingScore(newScore); // Update pending score immediately
-      playSound(correctSound);
+      playSound('correct');
   
       // Save the updated score to AsyncStorage
       await AsyncStorage.setItem('score', newScore.toString());
@@ -188,41 +188,6 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
   
 
 
-  const playSound = (soundObject: Sound | null) => {
-    try {
-      if (soundObject && soundEnabled) { // Check if sound is enabled
-        soundObject.play();
-      }
-    } catch (error) {
-      console.error('Error playing sound:', error);
-    }
-  };
-
-  useEffect(() => {
-    const loadSounds = async () => {
-      try {
-        
-        const correctSoundObject = new Sound(require('../assets/sounds/dailycorrect.mp3'), (error) => {
-          if (error) {
-            console.error('Failed to load correct sound', error);
-          } else {
-            setCorrectSound(correctSoundObject);
-          }
-        });
-      } catch (error) {
-        console.error('Error loading sounds:', error);
-      }
-    };
-
-    loadSounds();
-
-    return () => {
-      // Cleanup function to unload sounds when component unmounts
-      
-      correctSound && correctSound.release();
-      
-    };
-  }, []);
 
   
 

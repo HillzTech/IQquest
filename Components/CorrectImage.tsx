@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         zIndex: 999,
       },
   imageStyle: {
-    width: 300,
+    width: 280,
     height: 240,
     position: 'absolute',
     

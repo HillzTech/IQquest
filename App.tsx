@@ -53,8 +53,9 @@ const App: React.FC = () => {
 
   return (
     <GameProvider>
+      <SoundProvider>
       <NavigationContainer>
-        <SoundProvider>
+        
           {splashVisible ? (
             <SplashScreenComponent />
           ) : (
@@ -113,8 +114,9 @@ const App: React.FC = () => {
               />
             </Stack.Navigator>
           )}
-        </SoundProvider>
+        
       </NavigationContainer>
+      </SoundProvider>
     </GameProvider>
   );
 };

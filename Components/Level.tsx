@@ -1,10 +1,10 @@
 const levels = [
   {
      images: [
-        require('../assets/Images/fruits/Images1.jpeg'),
-        require('../assets/Images/fruits/Image2.jpg'),
-        require('../assets/Images/fruits/Images3.jpeg'),
-        require('../assets/Images/fruits/Images4.jpg'),
+        require('../assets/Images/fruits/fruit1.jpg'),
+        require('../assets/Images/fruits/fruit2.jpg'),
+        require('../assets/Images/fruits/fruit3.jpg'),
+        require('../assets/Images/fruits/fruit4.jpg'),
       ],
      word: "FRUIT",
      category: "food",
@@ -15,7 +15,7 @@ const levels = [
     images: [
        require('../assets/Images/fire/fire1.jpg'),
        require('../assets/Images/fire/fire2.jpg'),
-       require('../assets/Images/fire/fire3.png'),
+       require('../assets/Images/fire/fire3.jpg'),
        require('../assets/Images/fire/fire4.jpg'),
      ],
     word: "FIRE",
@@ -31,9 +31,9 @@ const levels = [
        require('../assets/Images/wind/wind3.jpg'),
        require('../assets/Images/wind/wind4.jpg'),
      ],
-    word: "AIR",
+    word: "WIND",
     category: "Nature",
-    definition: "Air is the Earth's atmosphere. Air is a mixture of many gases and tiny dust particles. It is the clear gas in which living things live and breathe. It has an indefinite shape and volume. It has mass and weight, because it is matter. The weight of air creates atmospheric pressure. There is no air in outer space.Earth's atmosphere is composed of about 78 percent nitrogen, 21 percent oxygen, 0.9 percent argon, and 0.1 percent other gases.",
+    definition: "Wind, in climatology, the movement of air relative to the surface of the Earth. Winds play a significant role in determining and controlling climate and weather.Wind occurs because of horizontal and vertical differences (gradients) in atmospheric pressure. Accordingly, the distribution of winds is closely related to that of pressure. Near the Earth’s surface, winds generally flow around regions of relatively low and high pressure—cyclones and anticyclones, respectively. They rotate counterclockwise around lows in the Northern Hemisphere and clockwise around those in the Southern Hemisphere. Similarly, wind systems rotate around the centres of highs in the opposite direction.",
     difficulty: "Easy"
   },
 
@@ -158,26 +158,26 @@ const levels = [
   },
   {
     images: [
-       require('../assets/Images/bed/bed1.jpg'),
-       require('../assets/Images/bed/bed2.jpg'),
-       require('../assets/Images/bed/bed3.jpg'),
-       require('../assets/Images/bed/bed4.jpg'),
+       require('../assets/Images/crib/crib1.jpg'),
+       require('../assets/Images/crib/crib2.jpg'),
+       require('../assets/Images/crib/crib3.jpg'),
+       require('../assets/Images/crib/crib4.jpg'),
      ],
-    word: "BED",
+    word: "CRIB",
     category: "Furniture",
-    definition: " Bed, a piece of furniture upon which or within which a person sleeps, rests, or stays when not well. the mattress and bedclothes together with the bedstead of a bed."
+    definition: "A crib is a small bed designed specifically for infants and young children. It typically has high sides or slats to prevent the child from falling out. Cribs are usually made of wood or metal and have a firm mattress that fits snugly to ensure the baby's safety. Cribs often feature adjustable mattress heights, allowing the mattress to be lowered as the baby grows and becomes more mobile. This type of bed provides a secure and comfortable sleeping environment for babies."
   },
 
   {
     images: [
-       require('../assets/Images/table/table1.jpg'),
-       require('../assets/Images/table/table2.jpg'),
-       require('../assets/Images/table/table3.jpg'),
-       require('../assets/Images/table/table4.jpg'),
+       require('../assets/Images/desk/desk1.jpg'),
+       require('../assets/Images/desk/desk2.jpg'),
+       require('../assets/Images/desk/desk3.jpg'),
+       require('../assets/Images/desk/desk4.jpg'),
      ],
-    word: "TABLE",
+    word: "DESK",
     category: "Furniture",
-    definition: "Table, a piece of furniture with a flat top and one or more legs, providing a level surface for eating, writing, or working at."
+    definition: "A desk is a piece of furniture designed for writing, reading, or working, typically used in an office, home, or school setting. It usually consists of a flat surface supported by legs or a framework and often includes drawers or compartments for storing office supplies, documents, and other items. Desks come in various styles and sizes to accommodate different needs and preferences, such as standing desks, executive desks, computer desks, and writing desks. They are essential for providing an organized workspace conducive to productivity and efficiency."
   },
 
   {
@@ -275,10 +275,10 @@ const levels = [
 
    {
     images: [
-       require('../assets/Images/fruits/Images1.jpeg'),
-       require('../assets/Images/fruits/Image2.jpg'),
-       require('../assets/Images/fruits/Images3.jpeg'),
-       require('../assets/Images/fruits/Images4.jpg'),
+       require('../assets/Images/fruits/fruit1.jpg'),
+       require('../assets/Images/fruits/fruit2.jpg'),
+       require('../assets/Images/fruits/fruit3.jpg'),
+       require('../assets/Images/fruits/fruit4.jpg'),
      ],
     word: "FRUIT",
     category: "Food",
@@ -352,10 +352,10 @@ const levels = [
  
   {
     images: [
-       require('../assets/Images/diary/milk.jpg'),
-       require('../assets/Images/diary/cheese.jpg'),
-       require('../assets/Images/diary/custard.jpg'),
-       require('../assets/Images/diary/youghurt.jpg'),
+       require('../assets/Images/diary/diary1.jpg'),
+       require('../assets/Images/diary/diary2.jpg'),
+       require('../assets/Images/diary/diary3.jpg'),
+       require('../assets/Images/diary/diary4.jpg'),
      ],
     word: "DIARY",
     category: "Food",
@@ -364,10 +364,10 @@ const levels = [
 
    {
      images: [
-        require('../assets/Images/grain/corn.jpg'),
-        require('../assets/Images/grain/oats.jpg'),
-        require('../assets/Images/grain/rice.jpg'),
-        require('../assets/Images/grain/wheat.jpg'),
+        require('../assets/Images/grain/grain1.jpg'),
+        require('../assets/Images/grain/grain2.jpg'),
+        require('../assets/Images/grain/grain3.jpg'),
+        require('../assets/Images/grain/grain4.jpg'),
       ],
      word: "GRAIN",
      category: "Food",
@@ -376,10 +376,10 @@ const levels = [
 
    {
     images: [
-       require('../assets/Images/seafood/shrimp.jpg'),
-       require('../assets/Images/seafood/crab.jpg'),
-       require('../assets/Images/seafood/fish.jpg'),
-       require('../assets/Images/seafood/lobster.jpg'),
+       require('../assets/Images/seafood/seafood1.jpg'),
+       require('../assets/Images/seafood/seafood2.jpg'),
+       require('../assets/Images/seafood/seafood3.jpg'),
+       require('../assets/Images/seafood/seafood4.jpg'),
      ],
     word: "SEAFOOD",
     category: "Food",
@@ -387,10 +387,10 @@ const levels = [
   },
    {
     images: [
-       require('../assets/Images/beverage/smoothie.jpg'),
-       require('../assets/Images/beverage/tea.jpg'),
-       require('../assets/Images/beverage/soda.jpg'),
-       require('../assets/Images/beverage/cocktaail.jpg'),
+       require('../assets/Images/beverage/beverage1.jpg'),
+       require('../assets/Images/beverage/beverage2.jpg'),
+       require('../assets/Images/beverage/beverage3.jpg'),
+       require('../assets/Images/beverage/beverage4.jpg'),
      ],
     word: "BEVERAGE",
     category: "Food",

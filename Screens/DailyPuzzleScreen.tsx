@@ -36,7 +36,7 @@ import { useGame } from '../Components/GameContext'; // Import the useGame hook
   const LoadingImage = require('../assets/loadingImg.gif');
   const completionTimeKey = 'lastCompletionTime';
   const [remainingTime, setRemainingTime] = useState<number | null>(null);
-
+  const { playSound } = useSound();
 
   useEffect(() => {
     loadGameProgress();
@@ -46,7 +46,7 @@ import { useGame } from '../Components/GameContext'; // Import the useGame hook
   useEffect(() => {
     Animated.timing(translateX, {
       toValue: 0,
-      duration: 1500, // Adjust duration as needed
+      duration: 1800, // Adjust duration as needed
       useNativeDriver: true,
     }).start();
   }, [currentPuzzle]);
@@ -65,76 +65,7 @@ import { useGame } from '../Components/GameContext'; // Import the useGame hook
   }, [navigation, score, currentPuzzle]);
 
   
-  const playSound = (soundObject: Sound | null) => {
-    try {
-      if (soundObject && soundEnabled) { // Check if sound is enabled
-        soundObject.play();
-      }
-    } catch (error) {
-      console.error('Error playing sound:', error);
-    }
-  };
-
-  useEffect(() => {
-    const loadSounds = async () => {
-      try {
-        const buttonSoundObject = new Sound(require('../assets/sounds/button.mp3'), (error) => {
-          if (error) {
-            console.error('Failed to load button sound', error);
-          } else {
-            setButtonSound(buttonSoundObject);
-          }
-        });
-        
-        const removeSoundObject = new Sound(require('../assets/sounds/remove.mp3'), (error) => {
-          if (error) {
-            console.error('Failed to load remove sound', error);
-          } else {
-            setRemoveSound(removeSoundObject);
-          }
-        });
-
-        const fanfareSoundObject = new Sound(require('../assets/sounds/levelpassed.mp3'), (error) => {
-          if (error) {
-            console.error('Failed to load fanfare sound', error);
-          } else {
-            setFanfareSound(fanfareSoundObject);
-          }
-        });
-
-        const incorrectSoundObject = new Sound(require('../assets/sounds/incorrect.mp3'), (error) => {
-          if (error) {
-            console.error('Failed to load incorrect sound', error);
-          } else {
-            setIncorrectSound(incorrectSoundObject);
-          }
-        });
-
-        const correctSoundObject = new Sound(require('../assets/sounds/dailycorrect.mp3'), (error) => {
-          if (error) {
-            console.error('Failed to load correct sound', error);
-          } else {
-            setCorrectSound(correctSoundObject);
-          }
-        });
-      } catch (error) {
-        console.error('Error loading sounds:', error);
-      }
-    };
-
-    loadSounds();
-
-    return () => {
-      // Cleanup function to unload sounds when component unmounts
-      buttonSound && buttonSound.release();
-      removeSound && removeSound.release();
-      correctSound && correctSound.release();
-      incorrectSound && incorrectSound.release();
-    };
-  }, []);
-
-
-
+ 
 
 
 
@@ -291,7 +222,7 @@ import { useGame } from '../Components/GameContext'; // Import the useGame hook
       const updatedGuess = [...currentGuess];
       updatedGuess[index] = ''; // Clear the guess box
       setCurrentGuess(updatedGuess);
-      playSound(removeSound);
+      playSound('remove');
   
       // Add the letter back to the letter box at the original position
       const updatedLetterBox = [...letterBox];
@@ -308,7 +239,7 @@ import { useGame } from '../Components/GameContext'; // Import the useGame hook
 
   const handleLetterBoxPress = async (index: number) => {
    try{
-    playSound(buttonSound);
+    playSound('button');
    
     // Move the letter to the first empty guess input box
     const emptyIndex = currentGuess.findIndex((letter) => letter === '');
@@ -360,10 +291,10 @@ import { useGame } from '../Components/GameContext'; // Import the useGame hook
     if (currentGuess.join('').toUpperCase() === currentWord) {
       setShowPartyPopper(true);
      
-      playSound(fanfareSound);
+      playSound('level');
       setCoinVisible(true); // Show the coin
       setTimeout(() => {
-        playSound(correctSound);
+        playSound('daily');
         
       }, 2200)
       
@@ -392,7 +323,7 @@ import { useGame } from '../Components/GameContext'; // Import the useGame hook
       }, 2000);
         
     } else {
-      playSound(incorrectSound);
+      playSound('incorrect');
     }
   };
   

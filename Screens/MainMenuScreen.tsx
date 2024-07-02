@@ -14,67 +14,25 @@ import { useGame } from '../Components/GameContext'; // Import useGame hook
 
 const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navigation }) => {
   const { score, currentLevel, setScore, setCurrentLevel } = useGame(); 
-  const [helpSound, setHelpSound] = useState<Sound | null>(null);
-  const { soundEnabled } = useSound();
+ const { playSound } = useSound();
   const [showLevelRequirement, setShowLevelRequirement] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState(false);
   const {width, height} = Dimensions.get('window');
   
   
-  const playSound = (soundObject: Sound | null) => {
-    try {
-      if (soundObject && soundEnabled) { // Check if sound is enabled
-        soundObject.play();
-      }
-    } catch (error) {
-      console.error('Error playing sound:', error);
-    }
-  };
-  
-
-  useEffect(() => {
-    const loadSounds = async () => {
-      try {
-      
-
-        const helpSoundObject = new Sound(require('../assets/sounds/sharpButton.mp3'), (error) => {
-          if (error) {
-            console.error('Failed to load help sound', error);
-          } else {
-            setHelpSound(helpSoundObject);
-          }
-        });
-
-        
-       
-
-      } catch (error) {
-        console.error('Error loading sounds:', error);
-      }
-      };
-
-    loadSounds();
-
-
-    return () => {
-      // Cleanup function to unload sounds when component unmounts
-     
-      helpSound && helpSound.release();
-      
-    };
-  }, []);
-
+ 
 
 
 
   const handleDailyPuzzlePress = useCallback(throttle(() => {
     if (currentLevel >= 20) {
+      playSound('remove')
       navigation.push('DailyPuzzle');
     } else {
       setShowLevelRequirement(true);
       setTimeout(() => setShowLevelRequirement(false), 3000);
     }
-  }, 2000), [currentLevel, navigation]);
+  }, 1000), [currentLevel, navigation]);
 
 
   
@@ -82,26 +40,26 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
   const handlePlay = useCallback(throttle(() => {
     navigation.navigate('Game');
     setIsLoading(true);
-    
+    playSound('remove')
     setIsLoading(false);
-  }, 1000), [navigation]);
+  }, 300), [navigation]);
 
  
   const handleWord = useCallback(() => {
     navigation.navigate('Dictionary');
-    
-  }, [navigation, playSound, helpSound]);
+    playSound('remove')
+  }, [navigation]);
 
   const handleSetting = useCallback(() => {
     navigation.navigate('Settings');
-    
-  }, [navigation, playSound, helpSound]);
+    playSound('remove')
+  }, [navigation]);
 
 
   const handleLogin = useCallback(() => {
     navigation.navigate('Login', { score, currentLevel });
-
-  }, [navigation, score, currentLevel, playSound, helpSound]);
+    playSound('remove')
+  }, [navigation, score, currentLevel]);
 
   useEffect(() => {
     const backAction = () => {
@@ -114,6 +72,7 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
 
   const handleCoin = () => {
     navigation.navigate('CoinPurchase'); 
+    playSound('remove');
   };
  
 
@@ -154,10 +113,10 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <ImageBackground
               source={require('../assets/Images/LevelImg.png')}
-              style={{ width: 100, height: 79, top: '-35%' }}
+              style={{ width:80, height: 81, top: '-35%' }}
             />
           </View>
-          <Text style={{ position: 'relative', top: '-50%', textAlign: 'center', color: '#fff', fontFamily: 'Poppins-Bold', fontSize: 16 }}>{currentLevel}</Text>
+          <Text style={{ position: 'relative', top: '-40%', textAlign: 'center', color: '#fff', fontFamily: 'Poppins-Bold', fontSize: 16 }}>{currentLevel}</Text>
         </View>
 
         <View style={{ flex: 1, justifyContent: "center", alignItems: 'center', marginTop: '20%', top: '14%' }}>

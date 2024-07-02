@@ -34,16 +34,9 @@ const [showCategoryImage, setShowCategoryImage] = useState(false);
 const fillAnimation = useRef(new Animated.Value(0)).current;
 const [coinVisible, setCoinVisible] = useState(false);
 const [iqVisible, setIqVisible] = useState(false);
-const [extraVisible, setExtraVisible] = useState(false);
-const [correctSound, setCorrectSound] = useState<Sound | null>(null);
-const [buttonSound, setButtonSound] = useState<Sound | null>(null);
-const [helpSound, setHelpSound] = useState<Sound | null>(null);
-const [removeSound, setRemoveSound] = useState<Sound | null>(null);
-const [levelSound, setLevelSound] = useState<Sound | null>(null);
-const [incorrectSound, setIncorrectSound] = useState<Sound | null>(null);
-const [iqSound, setIqSound] = useState<Sound | null>(null);
-const {width, height} = Dimensions.get('window');
 
+const {width, height} = Dimensions.get('window');
+const { playSound } = useSound();
   const [coinAnimation] = useState(new Animated.ValueXY({ x: 0, y: 0 }));
   const [iqAnimation] = useState(new Animated.ValueXY({ x: 0, y: 0 }));
   const [extraAnimation] = useState(new Animated.ValueXY({ x: 0, y: 0 }));
@@ -52,7 +45,6 @@ const {width, height} = Dimensions.get('window');
   const translateX = useRef(new Animated.Value(500)).current;
   const { handleManualRefresh } = useInterstitialAd();
   const [screenshotUri, setScreenshotUri] = useState<string>('');
-  const { soundEnabled } = useSound();
   // Reference for capturing screenshot
   const viewShotRef = useRef<View>(null);
   const [permissionResponse, requestPermission] = MediaLibrary.usePermissions();
@@ -60,6 +52,7 @@ const {width, height} = Dimensions.get('window');
   const wobbleAnimation = useRef(new Animated.Value(0)).current;
   const [showVideo, setShowVideo] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+
 
 
   useEffect(() => {
@@ -246,7 +239,7 @@ useEffect(() => {
   useEffect(() => {
     Animated.timing(translateX, {
       toValue: 0,
-      duration: 1400, // Adjust duration as needed
+      duration: 1800, // Adjust duration as needed
       useNativeDriver: true,
     }).start();
   }, [currentLevel]);
@@ -267,95 +260,6 @@ useEffect(() => {
     };
   }, [navigation, score]);
   
-   
-  const playSound = (soundObject: Sound | null) => {
-    try {
-      if (soundObject && soundEnabled) { // Check if sound is enabled
-        soundObject.play();
-      }
-    } catch (error) {
-      console.error('Error playing sound:', error);
-    }
-  };
-  useEffect(() => {
-    const loadSounds = async () => {
-      try {
-        const buttonSoundObject = new Sound(require('../assets/sounds/button.mp3'), (error) => {
-          if (error) {
-            console.error('Failed to load button sound', error);
-          } else {
-            setButtonSound(buttonSoundObject);
-          }
-        });
-        
-        const removeSoundObject = new Sound(require('../assets/sounds/remove.mp3'), (error) => {
-          if (error) {
-            console.error('Failed to load remove sound', error);
-          } else {
-            setRemoveSound(removeSoundObject);
-          }
-        });
-
-        const helpSoundObject = new Sound(require('../assets/sounds/sharpButton.mp3'), (error) => {
-          if (error) {
-            console.error('Failed to load help sound', error);
-          } else {
-            setHelpSound(helpSoundObject);
-          }
-        });
-
-        const correctSoundObject = new Sound(require('../assets/sounds/correct.mp3'), (error) => {
-          if (error) {
-            console.error('Failed to load correct sound', error);
-          } else {
-            setCorrectSound(correctSoundObject);
-          }
-        });
-
-        const incorrectSoundObject = new Sound(require('../assets/sounds/incorrect.mp3'), (error) => {
-          if (error) {
-            console.error('Failed to load incorrect sound', error);
-          } else {
-            setIncorrectSound(incorrectSoundObject);
-          }
-        });
-
-        const iqSoundObject = new Sound(require('../assets/sounds/iq.mp3'), (error) => {
-          if (error) {
-            console.error('Failed to load iq sound', error);
-          } else {
-            setIqSound(iqSoundObject);
-          }
-        });
-      
-
-      const levelSoundObject = new Sound(require('../assets/sounds/levelpassed.mp3'), (error) => {
-        if (error) {
-          console.error('Failed to load levelsound sound', error);
-        } else {
-          setLevelSound(levelSoundObject);
-        }
-      });
-    } catch (error) {
-      console.error('Error loading sounds:', error);
-    }
-    };
-
-    loadSounds();
-
-    return () => {
-      // Cleanup function to unload sounds when component unmounts
-      buttonSound && buttonSound.release();
-      removeSound && removeSound.release();
-      helpSound && helpSound.release();
-      correctSound && correctSound.release();
-      incorrectSound && incorrectSound.release();
-      iqSound && iqSound.release();
-      levelSound && levelSound.release();
-    };
-  }, []);
-
-
 
 
 
@@ -489,7 +393,7 @@ useEffect(() => {
       const updatedGuess = [...currentGuess];
       updatedGuess[index] = ''; // Clear the guess box
       setCurrentGuess(updatedGuess);
-      playSound(removeSound);
+      playSound('remove'); 
   
       // Add the letter back to the letter box at the original position
       const updatedLetterBox = [...letterBox];
@@ -505,7 +409,7 @@ useEffect(() => {
 
 const handleNav = () => {
   navigation.navigate('CoinPurchase');
-  playSound(helpSound)
+  playSound('help')
  }
 
  const handleDrawer = () => {
@@ -517,7 +421,7 @@ const handleNav = () => {
 
   const handleLetterBoxPress = async (index: number) => {
    try{
-    playSound(buttonSound);
+    playSound('button');
    
     // Move the letter to the first empty guess input box
     const emptyIndex = currentGuess.findIndex((letter) => letter === '');
@@ -566,7 +470,7 @@ const handleNav = () => {
     const currentWord = levels[currentLevel].word;
     if (currentGuess.join('').toUpperCase() === currentWord) {
       setShowPartyPopper(true);
-      playSound(correctSound);
+      playSound('correct');
       setCoinVisible(true); // Show the coin
       setIqVisible(true); // Show the coin
       setShowImage(true); 
@@ -580,7 +484,7 @@ const handleNav = () => {
       setTimeout(() => {
          // Move the iq to the iq area
         moveIq();
-        playSound(iqSound);
+        playSound('iq');
         setScore(score + 5); // Increment score after animation
       }, 1500);
       const newProgress = progress + 0.25;
@@ -604,7 +508,7 @@ const handleNav = () => {
         }).start();
       }, 4000);
     } else {
-      playSound(incorrectSound);
+      playSound('incorrect');
       setShowWrongImage(true);
       setTimeout(() => {
         setShowWrongImage(false); // Hide the wrong image after 2 seconds
@@ -621,7 +525,7 @@ const handleNav = () => {
  };
 
  const openDrawer = async () => {
-  playSound(helpSound);
+  playSound('help');
   
   if (score >= 50) {
     setScore(score - 50);
@@ -679,10 +583,10 @@ const handleNav = () => {
          // Set showWrongImage to true if newDifficulty is 11 or greater
         setTimeout(() => {
           setShowCategoryImage(true);
-          playSound(levelSound);
-        }, 500);
+          playSound('level');
+        }, 100);
         setTimeout(() => {
-          setShowCategoryImage(false); // Reset showWrongImage after 4 seconds
+         setShowCategoryImage(false); // Reset showWrongImage after 4 seconds
         }, 5000);
         return 1; // Reset difficulty after it reaches 11
       } else {
@@ -715,7 +619,23 @@ const handleNav = () => {
       });
   }, []);
 
-  
+  const reshuffle = (array: any) => {
+    let shuffledArray = [...array];
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    }
+    return shuffledArray;
+  };
+  const shuffleLetterBox = () => {
+    if (score >= 2) {
+      const shuffledLetters = reshuffle(letterBox);
+    setLetterBox(shuffledLetters);
+      setScore(score - 2);
+    } else {
+      navigation.navigate('CoinPurchase');
+    }
+  };
 
   
 
@@ -788,7 +708,7 @@ return(
 
             </View>
             <View ref={viewShotRef} collapsable={false} style={styles.viewshot}>
-              <View style={{flexDirection:'column', justifyContent:'center', alignItems:'center', bottom: height * 0.21}}>
+              <View style={{flexDirection:'column', justifyContent:'center', alignItems:'center', bottom: height * 0.18}}>
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignContent: 'center'}}>
                   <Text style={{ color: '#fffff1', fontSize: 16, fontFamily: 'OpenSans-Bold', borderColor: 'black', borderWidth: 1, backgroundColor: 'black', paddingHorizontal: 2, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, paddingLeft: 8 }}>Category</Text>
 
@@ -797,7 +717,7 @@ return(
                 </View>
 
                 
-                <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center', gap:3, bottom:height * 0.005 }}>
+                <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center', gap:3, bottom:height * 0.013 }}>
                   <View>
                   <Text style={{ color: 'white', textAlign: 'center', fontFamily: 'Poppins-Regular', fontSize: 9, }}>Difficulty</Text>
                   </View>
@@ -809,7 +729,7 @@ return(
               </View>
 
 
-              <View style={{ left: width * 0.395, bottom:height * 0.32}}>
+              <View style={{ left: width * 0.395, bottom:height * 0.3}}>
                 <TouchableOpacity onPress={handleDrawer}>
                   <BouncingImage source={require("../assets/box.png")} style={{ width: 37, height: 35}} />
                 </TouchableOpacity>
@@ -823,13 +743,13 @@ return(
                   alignContent: 'center',
                   flexWrap: 'wrap',
 
-                  top: height * -0.071,
+                  top: height * -0.054,
                   transform: [{ translateX }]
                 }}>
                   {levels[currentLevel].images.map((imageSource, index) => (
                     <Image key={index} source={imageSource} style={{
                       width: '45%',
-                      height: '475%',
+                      height: '470%',
                       margin: 5,
                       borderWidth: 3,
                       borderColor: 'grey',
@@ -880,7 +800,7 @@ return(
 
 
 
-                <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignContent: 'center', top: height * 0.165 }}>
+                <Animated.View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignContent: 'center', top: height * 0.17 }}>
                   {/* Guess boxes */}
                   {currentGuess.map((letter, index) => (
                     <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index)}>
@@ -889,11 +809,13 @@ return(
                       </View>
                     </TouchableOpacity>
                   ))}
-                </View>
+                </Animated.View>
 
  
-                <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignContent: 'space-around', top: height * 0.21}}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignContent: 'space-around', top: height * 0.210}}>
                 {/* Render letter box */}
+
+                
                     
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignContent: 'center', width: "85%"}}>
                   <View style={styles.container}>
@@ -913,7 +835,7 @@ return(
 
                 </View>
 
-                <View style={{ flexDirection:'column', justifyContent:'center', alignItems:'center',right:width * 0.03}}>
+                <View style={{ justifyContent:'center', alignItems:'center', right: height * 0.024}}>
                 <View>
                 <View>
                   <TouchableOpacity onPress={openDrawer}>
@@ -924,29 +846,45 @@ return(
                   </TouchableOpacity>
                 </View>
               </View>
+              
+
+
+              </View>
+
+
+
+
+
+
+              </View>
               <View>
-                <View>
+
+
+              <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:"center", top:height * 0.208}}>
+              <View >
+                <TouchableOpacity onPress={shuffleLetterBox} >
+               <ImageBackground source={require('../assets/shuffle.png')} style={{width:305, height:43}} />
+              </TouchableOpacity>
+
+
+                
+                
+            </View>
+
+                <View style={{right:width * 0.05}}>
                 {isLoading ? (
             <ActivityIndicator size="large" color="#0000ff" />
           ) : (
                   <TouchableOpacity onPress={takeScreenshot}>
-                    <ImageBackground source={require('../assets/share.png')} style={{ width: 60, height: 59 }} />
+                    <ImageBackground source={require('../assets/share.png')} style={{ width: 55, height: 45 }} />
                   </TouchableOpacity>
                    )}
                 </View>
               </View>
-
-
               </View>
+             
 
-
-
-
-
-
-              </View>
-
-
+             
 
               </View>
              
@@ -1052,8 +990,8 @@ const styles = StyleSheet.create({
     top:'12%'
   },
   levelimg: {
-    width: 100, 
-    height: 79
+    width: 85, 
+    height: 72
   },
  currentlevel:{
   fontFamily: 'Poppins-Bold', 
@@ -1061,8 +999,8 @@ const styles = StyleSheet.create({
   textAlign: 'center', 
   color: '#fff', 
   fontSize: 17, 
-  top:'-70%', 
-  right:'3%'
+  top:'-60%', 
+  right:'2%'
  },
 
 

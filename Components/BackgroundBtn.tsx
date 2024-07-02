@@ -8,7 +8,7 @@ interface BackgroundProps {
 const BackgroundBtn: React.FC<BackgroundProps> = ({ children }) => {
   return (
     <ImageBackground
-      source={require('../assets/Images/help.png')}
+      source={require('../assets/hint.png')}
       style={styles.background}
     >
       {children}
@@ -18,8 +18,8 @@ const BackgroundBtn: React.FC<BackgroundProps> = ({ children }) => {
 
 const styles = StyleSheet.create({
   background: {
-    width: 58,
-    height: 50.7,
+    width: 53,
+    height: 98,
     
   
   },

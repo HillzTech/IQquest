@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useContext, useEffect, useRef } from 'react';
 import Sound from 'react-native-sound';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -7,7 +7,7 @@ interface SoundContextType {
   vibrationEnabled: boolean;
   toggleSound: () => void;
   toggleVibration: () => void;
-  playSound: (soundObject: Sound | null) => void;
+  playSound: (soundName: string) => void;
   vibrate: () => void;
 }
 
@@ -24,6 +24,8 @@ export const useSound = () => {
 export const SoundProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [vibrationEnabled, setVibrationEnabled] = useState(true);
+
+  const soundObjectsRef = useRef<{ [key: string]: Sound | null }>({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,6 +45,46 @@ export const SoundProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     };
 
     fetchData();
+
+    const loadSounds = async () => {
+      try {
+        soundObjectsRef.current['button'] = new Sound(require('./assets/sounds/button.mp3'), (error) => {
+          if (error) console.error('Failed to load button sound', error);
+        });
+        soundObjectsRef.current['remove'] = new Sound(require('./assets/sounds/remove.mp3'), (error) => {
+          if (error) console.error('Failed to load remove sound', error);
+        });
+        soundObjectsRef.current['help'] = new Sound(require('./assets/sounds/sharpButton.mp3'), (error) => {
+          if (error) console.error('Failed to load help sound', error);
+        });
+        soundObjectsRef.current['correct'] = new Sound(require('./assets/sounds/correct.mp3'), (error) => {
+          if (error) console.error('Failed to load correct sound', error);
+        });
+        soundObjectsRef.current['incorrect'] = new Sound(require('./assets/sounds/incorrect.mp3'), (error) => {
+          if (error) console.error('Failed to load incorrect sound', error);
+        });
+        soundObjectsRef.current['iq'] = new Sound(require('./assets/sounds/iq.mp3'), (error) => {
+          if (error) console.error('Failed to load iq sound', error);
+        });
+        soundObjectsRef.current['level'] = new Sound(require('./assets/sounds/levelpassed.mp3'), (error) => {
+          if (error) console.error('Failed to load level sound', error);
+        });
+         soundObjectsRef.current['daily'] = new Sound(require('./assets/sounds/dailycorrect.mp3'), (error) => {
+          if (error) console.error('Failed to load daily sound', error);
+        });
+      } catch (error) {
+        console.error('Error loading sounds:', error);
+      }
+    };
+
+    loadSounds();
+
+    return () => {
+      // Cleanup function to release sounds when component unmounts
+      Object.values(soundObjectsRef.current).forEach((soundObject) => {
+        soundObject?.release();
+      });
+    };
   }, []);
 
   const toggleSound = () => {
@@ -57,8 +99,15 @@ export const SoundProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     AsyncStorage.setItem('vibrationEnabled', newValue.toString());
   };
 
-  const playSound = (soundObject: Sound | null) => {
-    // Implement playSound function as per your existing logic
+  const playSound = (soundName: string) => {
+    const soundObject = soundObjectsRef.current[soundName];
+    if (soundEnabled && soundObject) {
+      soundObject.play((success) => {
+        if (!success) {
+          console.error(`Failed to play ${soundName} sound`);
+        }
+      });
+    }
   };
 
   const vibrate = () => {

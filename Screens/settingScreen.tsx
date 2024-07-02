@@ -17,19 +17,6 @@ const settingScreen: React.FC<{ route: any, navigation: any }> = ({ route, navig
   const { soundEnabled, vibrationEnabled, toggleSound, toggleVibration, playSound, vibrate } = useSound();
   const {width, height} = Dimensions.get('window');
   
-  useEffect(() => {
-    const helpSoundObject = new Sound(require('../assets/sounds/sharpButton.mp3'), (error) => {
-      if (error) {
-        console.error('Failed to load the sound', error);
-        return;
-      }
-      setHelpSound(helpSoundObject);
-    });
-
-    return () => {
-      helpSoundObject.release();
-    };
-  }, []);
 
   
   useEffect(() => {
@@ -46,7 +33,7 @@ const settingScreen: React.FC<{ route: any, navigation: any }> = ({ route, navig
   }, [navigation]);
 
   const handleBack = useCallback(() => {
-    navigation.navigate('MainMenu');
+    navigation.push('MainMenu');
   }, [navigation]);
 
  
