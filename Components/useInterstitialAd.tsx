@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { AppState, AppStateStatus } from 'react-native';
-import { InterstitialAd, AdEventType } from 'react-native-google-mobile-ads';
+import { InterstitialAd, AdEventType, RequestConfiguration } from 'react-native-google-mobile-ads';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const adUnitId = 'ca-app-pub-3940256099942544/8691691433';
+const adUnitId = 'ca-app-pub-1458204118033702/6875450130';
 const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
   keywords: ['food', 'cooking', 'fruit'],
   requestNonPersonalizedAdsOnly: true,
+  
 });
 
 export const useInterstitialAd = () => {
@@ -15,7 +16,13 @@ export const useInterstitialAd = () => {
   const [refreshed, setRefreshed] = useState<boolean>(false);
   const [appState, setAppState] = useState<AppStateStatus>(AppState.currentState);
 
+
+
+
+  
   useEffect(() => {
+
+    
     // Check if the user is pro from AsyncStorage
     const checkProUser = async () => {
       try {

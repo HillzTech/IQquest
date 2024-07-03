@@ -15,7 +15,7 @@ import { useGame } from '../Components/GameContext';
 export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [showAd, setShowAd] = useState<boolean>(false);
   const { score, setScore } = useGame();
-  const adUnitId = 'ca-app-pub-3940256099942544/5224354917';
+  const adUnitId = 'ca-app-pub-1458204118033702/2153606496';
   const rewarded = RewardedAd.createForAdRequest(adUnitId, {
     keywords: ['food', 'cooking', 'fruit'],
     requestNonPersonalizedAdsOnly: true,
