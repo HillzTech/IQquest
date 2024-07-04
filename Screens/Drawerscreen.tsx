@@ -205,7 +205,7 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           <ImageBackground source={require('../assets/Images/newcoin.png')} style={{ width: wp('19%'), height: hp('12%') }} />
           <Text style={{ color: 'white', textAlign: 'center', fontSize: RFValue(17), fontFamily: 'Poppins-Bold', bottom: hp('8%')}}>{score}</Text>
         </View>
-      <View style={{justifyContent:'center', alignItems:'flex-end', right:wp('4%'), bottom:hp('22%')}}>
+      <View style={{justifyContent:'center', alignItems:'flex-end', right:wp('4%'), bottom:hp('27%')}}>
       <TouchableOpacity onPress={handleExit}>
         <Ionicons name='close' size={iconSize} color={'white'}/>
          </TouchableOpacity>
@@ -214,7 +214,7 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
         </View>
       </View>
 
-        
+        {/* 
 
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', bottom:hp('19%') }}>
           <TouchableOpacity onPress={handleShowAd}>
@@ -222,9 +222,9 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
-       
+        */}
 
-        <View style={{bottom: hp('25%'), flex: 1, maxWidth:wp('60%'), left:wp('11%')}}>
+        <View style={{bottom: hp('20%'), flex: 1, maxWidth:wp('60%'), left:wp('11%')}}>
           {isPurchasing && <ActivityIndicator size="large" color="#0000ff" />}
           {!isPurchasing &&
             packages.map((pkg) => (
@@ -239,7 +239,7 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                 <StrokedText text={pkg.product.description} strokeColor="black" strokeWidth={8} fontSize={RFValue(22)} />
                 </View>
                 
-                <View style={{marginLeft:wp('8%'), borderRadius:20, top:wp('-6.5%')}}>
+                <View style={{marginLeft:wp('8%'), borderRadius:20, top:hp('-3%')}}>
                 <Text style={{textAlign:'right', color:'white', paddingHorizontal:4, right:1, fontFamily:'OpenSans-Bold', fontSize: RFValue(12)}}>¤{pkg.product.price}</Text>
                 </View>
               </TouchableOpacity>
@@ -256,9 +256,9 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 const styles = StyleSheet.create({
  
   package: {
-    height:80,
-    marginBottom: 10,
-    padding: 10,
+    height:hp('11.7%'),
+    marginBottom: wp('2%'),
+    padding: hp('2%'),
     backgroundColor: '#001260',
     borderRadius: 23,
     shadowColor: '#000',

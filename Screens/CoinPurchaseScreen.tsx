@@ -180,7 +180,7 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
     try {
       const newScore = score + increment;
       setPendingScore(newScore); // Update pending score immediately
-      playSound('correct');
+      playSound('daily');
   
       // Save the updated score to AsyncStorage
       await AsyncStorage.setItem('score', newScore.toString());
@@ -202,15 +202,18 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
           <Text style={{ color: 'white', textAlign: 'center', fontSize: RFValue(21), fontFamily: 'Poppins-Bold', bottom:  hp('10.5%')}}>{score}</Text>
         </View>
 
+{/* 
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', top: hp('-18%')}}>
           <TouchableOpacity onPress={handleShowAd}>
             <ImageBackground source={require('../assets/watchad.png')} style={{ width: wp('70%'), height: hp('14%')}} />
           </TouchableOpacity>
         </View>
 
+        */}
+
        
 
-        <View style={{top: hp('-25%'), flex: 1,  maxWidth:wp('70%'), left:wp('16%')}}>
+        <View style={{top: hp('-20%'), flex: 1,  maxWidth:wp('70%'), left:wp('16%')}}>
           {isPurchasing && <ActivityIndicator size="large" color="#0000ff" />}
           {!isPurchasing &&
             packages.map((pkg) => (
@@ -219,13 +222,13 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
                 style={styles.package}
                 onPress={() => onSelection(pkg)}
               >
-                <ImageBackground source={require('../assets/1000coins.png')} style={{ width: wp('17%'), height: hp('5%'), left:wp('23%'), top:hp('2%')}} />
+                <ImageBackground source={require('../assets/1000coins.png')} style={{ width: wp('17%'), height: hp('5%'), left:wp('23%'), top:hp('1.8%')}} />
                 
-                <View style={{top:hp('0.1%')}}>
+                <View style={{top:hp('0.01%')}}>
                 <StrokedText text={pkg.product.description} strokeColor="black" strokeWidth={8} fontSize={RFValue(25)} />
                 </View>
                 
-                <View style={{ borderRadius:20, top:hp('-1%')}}>
+                <View style={{ borderRadius:20, top:hp('-1.4%')}}>
                 <Text style={{textAlign:'right', color:'white', right:hp('1%'), fontFamily:'OpenSans-Bold'}}>¤{pkg.product.price}</Text>
                 </View>
               </TouchableOpacity>
@@ -242,9 +245,9 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
 const styles = StyleSheet.create({
  
   package: {
-    height:104,
-    marginBottom: 16,
-    padding: 10,
+    height:hp('13.5%'),
+    marginBottom: hp('2%'),
+    padding: hp('1%'),
     backgroundColor: '#001260',
     borderRadius: 23,
     shadowColor: '#000',
