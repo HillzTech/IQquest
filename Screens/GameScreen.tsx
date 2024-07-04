@@ -703,15 +703,11 @@ return(
                 </View>
 
 
-
-
-
-
               </TouchableOpacity>
 
             </View>
             <View ref={viewShotRef} collapsable={false} style={styles.viewshot}>
-              <View style={{flexDirection:'column', justifyContent:'center', alignItems:'center', bottom: hp('0.4%')}}>
+              <View style={{flexDirection:'column', justifyContent:'center', alignItems:'center', bottom: hp('0.2%')}}>
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignContent: 'center'}}>
                   <Text style={{ color: '#fffff1', fontSize:RFValue(16), fontFamily: 'OpenSans-Bold', borderColor: 'black', borderWidth: 1, backgroundColor: 'black', paddingHorizontal: wp('2%'), borderTopLeftRadius: 8, borderBottomLeftRadius: 8, paddingLeft:wp('4%') }}>Category</Text>
 
@@ -815,7 +811,7 @@ return(
                 </Animated.View>
 
  
-                <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignContent: 'space-around', top: hp('3%')}}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignContent: 'space-around', top: hp('3.5%')}}>
                 {/* Render letter box */}
 
                 
@@ -858,7 +854,7 @@ return(
               <View>
 
 
-              <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:"center", top:hp('2.7%')}}>
+              <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:"center", top:hp('3%')}}>
               <View >
                 <TouchableOpacity onPress={shuffleLetterBox} >
                <ImageBackground source={require('../assets/shuffle.png')} style={{width:wp('86%'), height:hp('7%')}} />
