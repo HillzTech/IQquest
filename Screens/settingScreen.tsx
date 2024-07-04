@@ -84,7 +84,7 @@ const settingScreen: React.FC<{ route: any, navigation: any }> = ({ route, navig
 
 
         <View style={{marginTop:hp('70%'), backgroundColor:'#1c2e5a', height:wp('37%')}}>
-           <Text style={{textAlign:'center', color:'#1c2e9a', fontFamily:'Poppins-Bold', fontSize:RFValue(17), top:hp('5%')}}>Version 1.0.7</Text>
+           <Text style={{textAlign:'center', color:'#1c2e9a', fontFamily:'Poppins-Bold', fontSize:RFValue(17), top:hp('5%')}}>Version 1.1.0</Text>
            <Text style={{textAlign:'center', color:'#1c2e9a', fontFamily:'Poppins-Bold', fontSize:RFValue(17), top: hp('4%')}}>HillzTech Studio</Text>
         </View>
       </SafeAreaView>
