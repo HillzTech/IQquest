@@ -11,6 +11,8 @@ import Sound from 'react-native-sound';
 import {  useSound } from '../SoundContext'
 import { Ionicons } from '@expo/vector-icons';
 import { useGame } from '../Components/GameContext';
+import { RFValue } from 'react-native-responsive-fontsize';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [showAd, setShowAd] = useState<boolean>(false);
@@ -27,7 +29,7 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [correctSound, setCorrectSound] = useState<Sound | null>(null);
   const { soundEnabled } = useSound();
   const { playSound } = useSound();
-
+  const iconSize = width < 395 ? 37 : 40
 
   useEffect(() => {
     if (pendingScore !== null) {
@@ -199,30 +201,30 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   return (
     
       <SafeAreaView style={{ flex: 1 }}>
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', bottom: height * 0.04 }}>
-          <ImageBackground source={require('../assets/Images/newcoin.png')} style={{ width: 80, height: 80 }} />
-          <Text style={{ color: 'white', textAlign: 'center', fontSize: 15, fontFamily: 'Poppins-Bold', bottom: height * 0.07 }}>{score}</Text>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', bottom: hp('3%') }}>
+          <ImageBackground source={require('../assets/Images/newcoin.png')} style={{ width: wp('19%'), height: hp('12%') }} />
+          <Text style={{ color: 'white', textAlign: 'center', fontSize: RFValue(17), fontFamily: 'Poppins-Bold', bottom: hp('8%')}}>{score}</Text>
         </View>
-      <View style={{justifyContent:'center', alignItems:'flex-end', right:height * 0.018, top:height * -0.22}}>
+      <View style={{justifyContent:'center', alignItems:'flex-end', right:wp('4%'), bottom:hp('22%')}}>
       <TouchableOpacity onPress={handleExit}>
-        <Ionicons name='close' size={37} color={'white'}/>
+        <Ionicons name='close' size={iconSize} color={'white'}/>
          </TouchableOpacity>
         <View>
-            <ImageBackground source={require('../assets/box.png')} style={{width:100, height:100, top:height * 0.07, right: width * 0.2}}/>
+            <ImageBackground source={require('../assets/box.png')} style={{width:wp('30%'), height:hp('18%'), top:hp('6%'), right: wp('19%')}}/>
         </View>
       </View>
 
         
 
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', top:height * -0.19 }}>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', bottom:hp('19%') }}>
           <TouchableOpacity onPress={handleShowAd}>
-            <ImageBackground source={require('../assets/watchad.png')} style={{ width: 205, height: 90}} />
+            <ImageBackground source={require('../assets/watchad.png')} style={{ width: wp('60%'), height: wp('25%')}} />
           </TouchableOpacity>
         </View>
 
        
 
-        <View style={{top: height * -0.258, flex: 1, maxWidth:width * 0.55, left:width * 0.13}}>
+        <View style={{bottom: hp('25%'), flex: 1, maxWidth:wp('60%'), left:wp('11%')}}>
           {isPurchasing && <ActivityIndicator size="large" color="#0000ff" />}
           {!isPurchasing &&
             packages.map((pkg) => (
@@ -231,14 +233,14 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
                 style={styles.package}
                 onPress={() => onSelection(pkg)}
               >
-                <ImageBackground source={require('../assets/1000coins.png')} style={{ width: 50, height: 35, left:width * 0.20}} />
+                <ImageBackground source={require('../assets/1000coins.png')} style={{ width: wp('14%'), height: hp('5%'), left:wp('20%')}} />
                 
-                <View style={{top:'-20%'}}>
-                <StrokedText text={pkg.product.description} strokeColor="black" strokeWidth={8} fontSize={22} />
+                <View style={{top:hp('-2%')}}>
+                <StrokedText text={pkg.product.description} strokeColor="black" strokeWidth={8} fontSize={RFValue(22)} />
                 </View>
                 
-                <View style={{marginLeft:'71%', borderRadius:20, top:'-38%'}}>
-                <Text style={{textAlign:'right', color:'white', paddingHorizontal:4, right:1, fontFamily:'OpenSans-Bold', fontSize:12}}>¤{pkg.product.price}</Text>
+                <View style={{marginLeft:wp('8%'), borderRadius:20, top:wp('-6.5%')}}>
+                <Text style={{textAlign:'right', color:'white', paddingHorizontal:4, right:1, fontFamily:'OpenSans-Bold', fontSize: RFValue(12)}}>¤{pkg.product.price}</Text>
                 </View>
               </TouchableOpacity>
             ))}

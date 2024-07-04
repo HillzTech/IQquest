@@ -9,6 +9,8 @@ import Sound from 'react-native-sound';
 import { useSound } from '../SoundContext';
 import throttle from 'lodash.throttle';
 import { useGame } from '../Components/GameContext'; // Import useGame hook
+import { RFValue } from 'react-native-responsive-fontsize';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 
 
@@ -18,7 +20,8 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
   const [showLevelRequirement, setShowLevelRequirement] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState(false);
   const {width, height} = Dimensions.get('window');
-  
+  const iconSize = width < 395 ? 25 : 35
+  const addSize = width < 395 ? 13 : 15
   
  
 
@@ -83,63 +86,64 @@ const MainMenuScreen: React.FC<{ route: any, navigation: any }> = ({ route, navi
       <StatusBar />
       <SafeAreaView>
      
-        <View style={{ flexDirection: 'row', justifyContent: "flex-end", marginVertical: 16, right: width * 0.01, top:height * 0.03 }}>
-          <View style={{right:width * 0.03, top:height * 0.0038  }}>
+        <View style={{ flexDirection: 'row', justifyContent: "flex-end", marginVertical: hp('2%'), right: wp('1%'), top:hp('3%') }}>
+          <View style={{right: wp('3%'), top:hp('0.4%') }}>
             <TouchableOpacity onPress={handleSetting} >
-        <Ionicons name='settings' size={25} color={'white'} />
+        <Ionicons name='settings' size={iconSize} color={'white'} />
         </TouchableOpacity></View>
           
-          <Pressable onPress={handleCoin} style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-start', borderWidth: 1, borderColor: '#859410', borderRadius: 10, paddingHorizontal: 8, gap: 1, backgroundColor: 'black', right: 3 , height:22, top: height * 0.008}}>
+          <Pressable onPress={handleCoin} style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-start', borderWidth: 1, borderColor: '#859410', borderRadius: 10, paddingHorizontal: wp('2.5%'), gap: 1, backgroundColor: 'black', right: wp('1.%') , height:hp('3%'), top: hp('0.5%')}}>
             <ImageBackground
               source={require('../assets/Images/coin.png')}
-              style={{ width: 15, height: 17, top: height * 0.001 }}
+              style={{ width: wp('4%'), height: hp('2%'), top: hp('0.4%')
+               }}
             />
             <View>
-              <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 16, bottom:1.5 }}>{score}<Ionicons name="add-circle" size={10} color="green" /></Text>
+              <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize:  RFValue(16), bottom:hp('0.2%') }}>{score}<Ionicons name="add-circle" size={addSize} color="green" /></Text>
             </View>
           </Pressable>
         </View>
 
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', borderRadius: 9, borderColor: '#B59410', borderWidth: 2.5, padding: 4, marginTop: 12 }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', borderRadius: 9, borderColor: '#B59410', borderWidth: 2.5, padding: hp('0.4%'), marginTop: hp('2%') }}>
           <TouchableOpacity onPress={handleLogin} activeOpacity={0.8}>
-            <ImageBackground source={require('../assets/Images/cloud.png')} style={{ width: 65, height: 60, top: 5, left: '6%' }} />
+            <ImageBackground source={require('../assets/Images/cloud.png')} style={{ width: wp('15%'), height: hp('8%'), top: hp('0.4%'), left:wp('2%') }} />
           </TouchableOpacity>
           <TouchableOpacity onPress={handleWord}>
-            <ImageBackground source={require('../assets/glossary.png')} style={{ width: 90, height: 50, right: '6%' }} />
+            <ImageBackground source={require('../assets/glossary.png')} style={{ width: wp('22%'), height: hp('8%'), right: wp('1.4%') }} />
           </TouchableOpacity>
         </View>
 
-        <View style={{ marginTop: -5 }}>
+        <View style={{ marginBottom:hp('1%') }}>
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <ImageBackground
               source={require('../assets/Images/LevelImg.png')}
-              style={{ width:80, height: 81, top: '-35%' }}
+              style={{ width:wp('18%'), height:hp('10%'), top: hp('0.01%') }}
             />
           </View>
-          <Text style={{ position: 'relative', top: '-40%', textAlign: 'center', color: '#fff', fontFamily: 'Poppins-Bold', fontSize: 16 }}>{currentLevel}</Text>
+          <Text style={{ position: 'relative', bottom:hp('1%'), textAlign: 'center', color: '#fff', fontFamily: 'Poppins-Bold', fontSize: RFValue(14) }}>{currentLevel}</Text>
         </View>
 
-        <View style={{ flex: 1, justifyContent: "center", alignItems: 'center', marginTop: '20%', top: '14%' }}>
+        <View style={{ flex: 1, justifyContent: "center", alignItems: 'center', marginTop: hp('9%'), top: hp('4%') }}>
           {showLevelRequirement && (
             <Text style={styles.levelRequirementText}>You need to reach level 20 to access this feature.</Text>
           )}
           <Pressable onPress={handleDailyPuzzlePress}>
-            <ImageBackground source={require('../assets/dailyimge.png')} style={{ width: 188, height: 70 }} />
+            <ImageBackground source={require('../assets/dailyimge.png')} style={{ width:  wp('50%'), height:  hp('10%') }} />
           </Pressable>
         </View>
 
-        <View style={{ top: '90%', marginTop: '8%' }}>
+        <View style={{ top: hp('34%'), marginTop:  hp('3%') }}>
           <Animation />
         </View>
 
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: "center", top: '120%' }}>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: "center", top: hp('41%') }}>
         {isLoading ? (
         <ActivityIndicator size="large" color="#0000ff" />
       ) : (
           <Pressable onPress={handlePlay}>
             <ImageBackground
               source={require('../assets/playimge.png')}
-              style={{ width: 265, height: 120, flexDirection: 'row', justifyContent: 'center', alignContent: "center" }}
+              style={{ width: wp('75%'), height: hp('20%'), flexDirection: 'row', justifyContent: 'center', alignContent: "center" }}
             />
           </Pressable>
            )}
@@ -155,15 +159,15 @@ const styles = StyleSheet.create({
   levelRequirementText: {
     fontFamily: 'Poppins-Regular',
     color: 'white',
-    fontSize: 13,
-    marginBottom: 13,
+    fontSize: RFValue(12),
+    marginBottom: hp('0.3%'),
     textAlign: 'center',
     position: 'absolute',
-    top: -69,
-    width: 170,
+    bottom: hp('0.1%'),
+    width: wp('47%'),
     backgroundColor: 'black',
     borderRadius: 20,
-    padding: 4
+    padding: wp('2.7%')
   },
 
 });

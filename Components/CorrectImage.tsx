@@ -1,6 +1,7 @@
 import React, { useEffect,  useRef } from 'react';
 import { Animated, ImageBackground, StyleSheet, Text } from 'react-native';
-
+import { RFValue } from 'react-native-responsive-fontsize';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 const CorrectImage = () => {
     const popOutAnimation = useRef(new Animated.Value(0)).current;
@@ -33,7 +34,7 @@ const CorrectImage = () => {
           source={require('../assets/rightImg.png')}
           style={styles.imageStyle}
         />
-        <Text style={{color:'yellow', fontSize:35, textAlign:'center', fontFamily:'Poppins-Bold', top:"15%"}}>Great!</Text>
+        <Text style={{color:'yellow', fontSize:RFValue(35), textAlign:'center', fontFamily:'Poppins-Bold', top:hp('17%')}}>Great!</Text>
       </Animated.View>
     );
   };
@@ -42,17 +43,17 @@ const CorrectImage = () => {
 const styles = StyleSheet.create({
     imageContainer: {
         position: 'absolute',
-        top: '-4%',
-        left: '4%',
+        top: hp('-4%'),
+        left: wp('4%'),
         right: 0,
-        bottom: '2%',
+        bottom: hp('2%'),
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 999,
       },
   imageStyle: {
-    width: 280,
-    height: 240,
+    width: wp('80%'),
+    height: hp('30%'),
     position: 'absolute',
     
   },

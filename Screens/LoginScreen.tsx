@@ -1,5 +1,5 @@
 import React, { useEffect, useState, memo } from 'react';
-import { BackHandler, ImageBackground, SafeAreaView, Text, TouchableOpacity, View, ActivityIndicator } from 'react-native';
+import { BackHandler, ImageBackground, SafeAreaView, Text, TouchableOpacity, View, ActivityIndicator, Dimensions } from 'react-native';
 import { GoogleSignin, GoogleSigninButton, User } from "@react-native-google-signin/google-signin";
 import Background from '../Components/Background';
 import StrokedText from '../Components/StrokedText';
@@ -9,6 +9,9 @@ import firebase from 'firebase/compat/app';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
 import { useGame } from '../Components/GameContext';
+import { RFValue } from 'react-native-responsive-fontsize';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 
 const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [error, setError] = useState<string | undefined>();
@@ -16,7 +19,8 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const { currentLevel, score, setCurrentLevel, setScore } = useGame();
   const [difficulty, setDifficulty] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
-
+  const {width, height} = Dimensions.get('window');
+  const iconSize = width < 395 ? 23 : 25
  
   useEffect(() => {
     GoogleSignin.configure({
@@ -159,61 +163,61 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
     <Background>
       <SafeAreaView style={{ flex: 1 }}>
         <View>
-          <Text style={{ textAlign: 'center', color: 'white', fontFamily: 'Poppins-Regular', fontSize: 10, top: '94%' }}>{error}</Text>
+          <Text style={{ textAlign: 'center', color: 'white', fontFamily: 'Poppins-Regular', fontSize: RFValue(10), top: hp('10%') }}>{error}</Text>
           {userInfo && (
-            <View style={{ top: '29%', backgroundColor: '#00007B', width: '95%', left: '2.5%', borderColor: "blue", borderWidth: 2, borderRadius: 20 }}>
+            <View style={{ top: hp('20%'), backgroundColor: '#00007B', width: wp('97%'), left: wp('1.5%'), borderColor: "blue", borderWidth: 2, borderRadius: 20 }}>
               <ImageBackground
-                source={require('../assets/comeback.png')} style={{ width: 200, height: 200, left: '20%', bottom: '20%' }}
+                source={require('../assets/cloudVector.png')} style={{ width: wp('60%'), height: hp('24%'), left: wp('18%'), bottom: hp('15%') }}
               />
-              <Text style={{ color: 'white', textAlign: 'center', fontSize: 23, marginTop: "-25%", fontFamily: 'Poppins-ExtraBold' }}>Done, Progress saved!</Text>
-              <Text style={{ color: 'yellow', textAlign: 'center', fontSize: 17, fontFamily: 'Poppins-BoldItalic' }}>Synchronized via Google</Text>
+              <Text style={{ color: 'white', textAlign: 'center', fontSize:  RFValue(23), marginTop:hp('-11%') , fontFamily: 'Poppins-ExtraBold' }}>Done, Progress saved!</Text>
+              <Text style={{ color: 'yellow', textAlign: 'center', fontSize: RFValue(17), fontFamily: 'Poppins-BoldItalic' }}>Synchronized via Google</Text>
               <>
-                <View style={{ flexDirection: "row", justifyContent: 'center', alignContent: 'center', top: '19%', borderColor: '#859410', gap: 1 }}>
+                <View style={{ flexDirection: "row", justifyContent: 'center', alignContent: 'center', top:  hp('10%'), borderColor: '#859410', gap:  wp('1%') }}>
                   <ImageBackground
                     source={require('../assets/Images/coin.png')}
-                    style={{ width: 15, height: 17, top: '8%' }}
+                    style={{ width:  wp('5%'), height:  hp('2%'), top: '8%' }}
                   />
-                  <Text style={{ fontFamily: 'Poppins-Bold', color: "white", fontSize: 17, top: '7%' }}>{score}</Text>
+                  <Text style={{ fontFamily: 'Poppins-Bold', color: "white", fontSize: RFValue(17), top:  hp('3%') }}>{score}</Text>
                 </View>
               </>
-              <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', top: '4%' }}>
-                <ImageBackground source={require('../assets/Images/LevelImg.png')} style={{ width: 90, height: 72 }} />
+              <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', top: hp('3%') }}>
+                <ImageBackground source={require('../assets/Images/LevelImg.png')} style={{ width: wp('15%'), height: hp('10%') }} />
               </View>
-              <Text style={{ fontSize: 16, color: 'white', fontFamily: 'Poppins-Bold', textAlign: 'center', top: '1%' }}>{currentLevel}</Text>
+              <Text style={{ fontSize: RFValue(14), color: 'white', fontFamily: 'Poppins-Bold', textAlign: 'center', top: hp('2%'), }}>{currentLevel}</Text>
 
-              <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', marginTop: '50%' }}>
-                <View style={{ bottom: '13%' }}>
-                  <Text style={{ color: "white", textAlign: 'center', fontFamily: 'Poppins-Regular', fontSize: 11 }}>Discard Retrieved Data</Text>
-                  <TouchableOpacity onPress={() => navigation.navigate('MainMenu')} style={{ backgroundColor: 'green', width: 130, height: 43, borderRadius: 10, borderBottomColor: 'yellow', borderWidth: 1 }}>
-                    <StrokedText text="Continue" strokeColor="black" strokeWidth={2} fontSize={22} />
+              <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', marginTop: hp('23%') }}>
+                <View style={{ bottom: hp('6%') }}>
+                  <Text style={{ color: "white", textAlign: 'center', fontFamily: 'Poppins-Regular', fontSize: RFValue(11) }}>Discard Retrieved Data</Text>
+                  <TouchableOpacity onPress={() => navigation.navigate('MainMenu')} style={{ backgroundColor: 'green', width: wp('38%'), height: hp('5.8%'), borderRadius: 10, borderBottomColor: 'yellow', borderWidth: 1 }}>
+                    <StrokedText text="Continue" strokeColor="black" strokeWidth={2} fontSize={RFValue(22)} />
                   </TouchableOpacity>
                 </View>
-                <View style={{ bottom: '13%' }}>
-                  <Text style={{ color: "white", textAlign: 'center', fontFamily: 'Poppins-Regular', fontSize: 11 }}>Save Data</Text>
-                  <TouchableOpacity onPress={handleNext} style={{ backgroundColor: 'green', width: 130, height: 43, borderRadius: 10, borderBottomColor: 'yellow', borderWidth: 1 }}>
-                    <StrokedText text="Save" strokeColor="black" strokeWidth={2} fontSize={22} /><Ionicons name='cloud-upload' size={23} color={'white'} style={{ left: '75%', bottom: '63%' }} />
+                <View style={{ bottom: hp('6%') }}>
+                  <Text style={{ color: "white", textAlign: 'center', fontFamily: 'Poppins-Regular', fontSize: RFValue(11) }}>Save Data</Text>
+                  <TouchableOpacity onPress={handleNext} style={{ backgroundColor: 'green',  width: wp('38%'), height: hp('5.8%'), borderRadius: 10, borderBottomColor: 'yellow', borderWidth: 1 }}>
+                    <StrokedText text="Save" strokeColor="black" strokeWidth={2} fontSize={RFValue(22)} /><Ionicons name='cloud-upload' size={iconSize} color={'white'} style={{ left: wp('28%'), bottom: hp('3.5%') }} />
                   </TouchableOpacity>
                 </View>
               </View>
             </View>
           )}
           {!userInfo && (
-            <View style={{ marginTop: '36%', backgroundColor: '#00007B', width: '97%', left: '1%', borderColor: "blue", borderWidth: 2, borderRadius: 20, height: '73%' }}>
+            <View style={{ marginTop: hp('20%'), backgroundColor: '#00007B', width: wp('98%'), left: '1%', borderColor: "blue", borderWidth: 2, borderRadius: 20, height: hp('72%') }}>
               <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <ImageBackground source={require('../assets/cloudVector.png')} style={{ width: 180, height: 170, bottom: '19%' }} />
-                <Text style={{ color: "white", fontSize: 15, textAlign: "center", bottom: '18%', paddingHorizontal: '6%', fontFamily: 'Poppins-Bold' }}>Sign in and save your game progress!{'\n'} You can then access your score on other devices</Text>
-                <ImageBackground source={require('../assets/adaptive-icon.png')} style={{ width: 250, height: 259, bottom: '20%' }} />
+                <ImageBackground source={require('../assets/cloudVector.png')} style={{ width: wp('55%'), height: hp('20%'), bottom: hp('14%') }} />
+                <Text style={{ color: "white", fontSize: RFValue(15), textAlign: "center", bottom: hp('12%'), paddingHorizontal: hp('3%'), fontFamily: 'Poppins-Bold' }}>Sign in and save your game progress!{'\n'} You can then access your score on other devices</Text>
+                <ImageBackground source={require('../assets/adaptive-icon.png')} style={{ width: wp('70%'), height: hp('30%'), bottom: hp('13%') }} />
                 <GoogleSigninButton
                   size={GoogleSigninButton.Size.Wide}
                   color={GoogleSigninButton.Color.Dark}
                   onPress={signin}
-                  style={{ bottom: '19%', height: 56 }}
+                  style={{ bottom: hp('12%'), height: hp('7.5%') }}
                 />
               </View>
             </View>
           )}
           {loading && (
-            <View style={{ position: 'absolute', top: '70%', left: '60%', transform: [{ translateX: -50 }, { translateY: -50 }] }}>
+            <View style={{ position: 'absolute', top: hp('60%'), left: hp('50%'), transform: [{ translateX: -50 }, { translateY: -50 }] }}>
               <ActivityIndicator size="large" color="#0000ff" />
             </View>
           )}

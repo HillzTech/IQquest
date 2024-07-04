@@ -1,14 +1,19 @@
 import React, { useEffect, useState, memo } from 'react';
-import { View, Text, TextInput, TouchableOpacity, ImageBackground, Image, ImageSourcePropType, Keyboard, BackHandler, ScrollView, SafeAreaView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, ImageBackground, Image, ImageSourcePropType, Keyboard, BackHandler, ScrollView, SafeAreaView, Dimensions } from 'react-native';
 import levels from '../Components/Level';
 import Background from '../Components/Background';
 import { Ionicons } from '@expo/vector-icons';
+import { RFValue } from 'react-native-responsive-fontsize';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 
 const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [word, setWord] = useState('');
   const [definition, setDefinition] = useState('');
   const [error, setError] = useState('');
   const [images, setImages] = useState<ImageSourcePropType[]>([]);
+  const {width, height} = Dimensions.get('window');
+  const iconSize = width < 395 ? 27 : 30
 
   const searchDictionary = () => {
     Keyboard.dismiss();
@@ -48,45 +53,45 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       >
        
         <View>
-          <Text style={{ textAlign: 'center', color: 'white', marginTop: '9%', fontFamily: 'Poppins-BoldItalic', fontSize: 18, top:'1%' }}>
+          <Text style={{ textAlign: 'center', color: 'white', marginTop: hp('4%'), fontFamily: 'Poppins-BoldItalic', fontSize:  RFValue(18), top:hp('1%') }}>
             Welcome to the Glossary!
           </Text>
-          <Text style={{ fontFamily: 'Poppins-Regular', textAlign: 'center', color: 'white', marginBottom: '7%', paddingHorizontal: '13%' }}>
+          <Text style={{ fontFamily: 'Poppins-Regular', textAlign: 'center', color: 'white', marginBottom: hp('3%'), paddingHorizontal: wp('7%') }}>
             Search and get more information of words used in the game.
           </Text>
 
-          <View style={{ backgroundColor: '#00006B', width: '97%', height: '82%', borderRadius: 20, left: '1.6%', top: -14, borderWidth: 2, borderColor: 'blue' }}>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', top: '4%' }}>
+          <View style={{ backgroundColor: '#00006B', width: wp('97%'), height: hp('85%'), borderRadius: 20, left: '1.6%', top: hp('-1%'), borderWidth: 2, borderColor: 'blue' }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', top: hp('3%') }}>
               <TextInput
                  placeholder="Enter word"
                 placeholderTextColor={'white'}
                 value={word}
                 onChangeText={setWord}
                 onSubmitEditing={searchDictionary}
-                style={{ borderWidth: 1, borderColor: 'white', borderRadius: 10, padding: 1, width: '80%', color: 'white', left: '58%', textAlign: 'center', height: 40, fontSize: 17, fontFamily: 'Poppins-Regular' }}
+                style={{ borderWidth: 1, borderColor: 'white', borderRadius: 10, padding: 1, width:wp('80%'), color: 'white', left: wp('6%'), textAlign: 'center', height: hp('5%'), fontSize: RFValue(17), fontFamily: 'Poppins-Regular' }}
               />
-              <Ionicons name="search" size={25} color="white" style={{ right: 30 }} onPress={searchDictionary} />
+              <Ionicons name="search" size={iconSize} color="white" style={{ right: 30 }} onPress={searchDictionary} />
             </View>
 
-            <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: 3, top: '1%', width: '90%', borderRadius: 20 }}>
+            <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: wp('1%'), top: hp('4%'), width: wp('87%'), borderRadius: 20 }}>
               {images.length > 0 && (
-                <View style={{flex:1, justifyContent:'center', alignItems:'center', left:'19%'}}> 
-                <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginTop: '3%' }}>
+                <View style={{flex:1, justifyContent:'center', alignItems:'center', left:wp('16%')}}> 
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginTop: hp('2%') }}>
                   {images.map((image, index) => (
-                    <Image key={index} source={image} style={{ width: 95, height: 90, margin: 5 }} />
+                    <Image key={index} source={image} style={{ width: wp('29%'), height: hp('10%'), margin: 5 }} />
                   ))}
                   </View>
                 </View>
               )}
 
-              <ScrollView style={{top:'1%', maxHeight: '57%', left:'5.5%' }}>
+              <ScrollView style={{top:hp('25%'), maxHeight: hp('45%'), left:wp('4%') }}>
                 {definition ? (
-                  <Text style={{ fontSize: 13, color: 'white', textAlign: 'justify', fontFamily: 'Poppins-Regular' }}>
+                  <Text style={{ fontSize: RFValue(14), color: 'white', textAlign: 'justify', fontFamily: 'Poppins-Regular' }}>
                     {definition}
                   </Text>
                 ) : null}
                 {error ? (
-                  <Text style={{ marginTop:'13%', fontSize: 15, color: 'white', fontFamily: 'Poppins-Regular', textAlign:'center',  marginBottom:'12%' }}>
+                  <Text style={{ marginTop:hp('1%'), fontSize: RFValue(13), color: 'white', fontFamily: 'Poppins-Regular', textAlign:'center',  marginBottom:hp('3%') }}>
                     {error}
                   </Text>
                 ) : null}

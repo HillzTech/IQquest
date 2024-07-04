@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { BackHandler, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View, Platform, SafeAreaView, Dimensions, ActivityIndicator } from 'react-native';
 import Background from '../Components/Background';
-import Sound from 'react-native-sound';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
 import BackgroundBtn from '../Components/BackgroundBtn';
@@ -22,6 +21,8 @@ import ProgressBar from '../Components/ProgressBar';
 import BouncingImage from '../Components/BouncingImage';
 import Video from 'react-native-video';
 import { useGame } from '../Components/GameContext';
+import { RFValue } from 'react-native-responsive-fontsize';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
   const GameScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
     const { currentLevel, setCurrentLevel, score, setScore } = useGame();
@@ -52,6 +53,8 @@ const { playSound } = useSound();
   const wobbleAnimation = useRef(new Animated.Value(0)).current;
   const [showVideo, setShowVideo] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const iconSize = width < 395 ? 13 : 15
+  const addSize = width < 395 ? 35 : 40
 
 
 
@@ -145,7 +148,7 @@ const { playSound } = useSound();
 
   
 
-
+/*
   const onVideoEnd = async () => {
     try {
       await AsyncStorage.setItem('videoShown', 'true');
@@ -154,7 +157,7 @@ const { playSound } = useSound();
       console.error('Error setting video status:', error);
     }
   };
- 
+ */
   
 
 
@@ -688,13 +691,13 @@ return(
 
               </View>
 
-              <TouchableOpacity onPress={handleNav} style={{ flexDirection: "row", justifyContent: 'space-around', alignContent: 'flex-start', top: height * 0.07, right: 10, borderColor: '#859410', borderWidth: 1, borderRadius: 10, marginBottom: 57, paddingHorizontal: 5, gap: 1 }}>
+              <TouchableOpacity onPress={handleNav} style={{ flexDirection: "row", justifyContent: 'space-around', alignContent: 'flex-start', top: hp('7%'), right: wp('2%'), borderColor: '#859410', borderWidth: 1, borderRadius: 10, marginBottom: hp('7%'), paddingHorizontal: wp('2%'), gap: wp('0.4%') }}>
                 <ImageBackground
                   source={require('../assets/Images/coin.png')}
-                  style={{ width: 15, height: 17, top: '6%' }} />
+                  style={{ width: wp('4%'), height: hp('2%'), top: hp('0.3%') }} />
                 <View >
 
-                  <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: 14, top: '7%' }}>{score}<Ionicons name="add-circle" size={10} color="green" /></Text>
+                  <Text style={{ fontFamily: 'Poppins-Regular', color: "white", fontSize: RFValue(14), top: hp('0.0.8%') }}>{score}<Ionicons name="add-circle" size={iconSize} color="green" /></Text>
 
 
                 </View>
@@ -708,18 +711,18 @@ return(
 
             </View>
             <View ref={viewShotRef} collapsable={false} style={styles.viewshot}>
-              <View style={{flexDirection:'column', justifyContent:'center', alignItems:'center', bottom: height * 0.193}}>
+              <View style={{flexDirection:'column', justifyContent:'center', alignItems:'center', bottom: hp('0.4%')}}>
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignContent: 'center'}}>
-                  <Text style={{ color: '#fffff1', fontSize: 16, fontFamily: 'OpenSans-Bold', borderColor: 'black', borderWidth: 1, backgroundColor: 'black', paddingHorizontal: 2, borderTopLeftRadius: 8, borderBottomLeftRadius: 8, paddingLeft: 8 }}>Category</Text>
+                  <Text style={{ color: '#fffff1', fontSize:RFValue(16), fontFamily: 'OpenSans-Bold', borderColor: 'black', borderWidth: 1, backgroundColor: 'black', paddingHorizontal: wp('2%'), borderTopLeftRadius: 8, borderBottomLeftRadius: 8, paddingLeft:wp('4%') }}>Category</Text>
 
-                  <Text style={{ color: 'white', fontSize: 18, fontFamily: 'OpenSans-Bold', borderColor: 'black', borderWidth: 2, paddingHorizontal: 9, borderTopRightRadius: 8, borderBottomRightRadius: 8, backgroundColor: 'grey' }}>{levels[currentLevel].category}</Text>
+                  <Text style={{ color: 'white', fontSize: RFValue(16), fontFamily: 'OpenSans-Bold', borderColor: 'black', borderWidth: 2, paddingHorizontal: wp('2%'), borderTopRightRadius: 8, borderBottomRightRadius: 8, backgroundColor: 'grey' }}>{levels[currentLevel].category}</Text>
 
                 </View>
 
                 
-                <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center', gap:3, bottom:height * 0.013 }}>
+                <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center', gap:wp('1%'), bottom:hp('1.5%'), left: wp('1%') }}>
                   <View>
-                  <Text style={{ color: 'white', textAlign: 'center', fontFamily: 'Poppins-Regular', fontSize: 9, }}>Difficulty</Text>
+                  <Text style={{ color: 'white', textAlign: 'center', fontFamily: 'OpenSans-Bold', fontSize:  RFValue(9), }}>Difficulty</Text>
                   </View>
                   <View>
 
@@ -729,9 +732,9 @@ return(
               </View>
 
 
-              <View style={{ left: width * 0.395, bottom:height * 0.315}}>
+              <View style={{ left: wp('40%'), top:hp('-12%')}}>
                 <TouchableOpacity onPress={handleDrawer}>
-                  <BouncingImage source={require("../assets/box.png")} style={{ width: 37, height: 35}} />
+                  <BouncingImage source={require("../assets/box.png")} style={{ width: wp('10%'), height: hp('4%'),}} />
                 </TouchableOpacity>
                 </View>
 
@@ -743,14 +746,14 @@ return(
                   alignContent: 'center',
                   flexWrap: 'wrap',
 
-                  top: height * -0.077,
+                  top: hp('-7%'),
                   transform: [{ translateX }]
                 }}>
                   {levels[currentLevel].images.map((imageSource, index) => (
                     <Image key={index} source={imageSource} style={{
-                      width: '45%',
-                      height: '470%',
-                      margin: 5,
+                      width: wp('45%'),
+                      height: hp('21%'),
+                      margin: wp('1.1%'),
                       borderWidth: 3,
                       borderColor: 'grey',
                       borderRadius: 10
@@ -770,7 +773,7 @@ return(
                       },
                     ]}
                   >
-                    <ImageBackground source={require('../assets/Images/coin.png')} style={{ width: 24, height: 24 }}>
+                    <ImageBackground source={require('../assets/Images/coin.png')} style={{ width: wp('7%'), height: hp('2%') }}>
                       <Text style={styles.coinText}>5</Text>
                     </ImageBackground>
                   </Animated.View>
@@ -788,7 +791,7 @@ return(
                       },
                     ]}
                   >
-                    <ImageBackground source={require('../assets/Images/iq.png')} style={{ width: 15, height: 15 }}>
+                    <ImageBackground source={require('../assets/Images/iq.png')} style={{ width: wp('3%'), height: hp('3%') }}>
 
                     </ImageBackground>
                   </Animated.View>
@@ -800,24 +803,24 @@ return(
 
 
 
-                <Animated.View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignContent: 'center', top: height * 0.155 }}>
+                <Animated.View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignContent: 'center', bottom: hp('1.9%') }}>
                   {/* Guess boxes */}
                   {currentGuess.map((letter, index) => (
                     <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index)}>
-                      <View style={{ padding: 6, margin: 2, paddingHorizontal: '3.5%', backgroundColor: 'black', borderRadius: 5, borderWidth: 1, borderColor: 'white' }}>
-                        <Text style={{ fontSize: 21, color: 'white', textAlign: 'center', fontFamily: 'OpenSans-Bold' }}>{letter}</Text>
+                      <View style={{ padding: hp('0.6%'), margin: wp('0.5%'), paddingHorizontal: wp('3.5%'), backgroundColor: 'black', borderRadius: 5, borderWidth: 1, borderColor: 'white' }}>
+                        <Text style={{ fontSize: RFValue(21), color: 'white', textAlign: 'center', fontFamily: 'OpenSans-Bold' }}>{letter}</Text>
                       </View>
                     </TouchableOpacity>
                   ))}
                 </Animated.View>
 
  
-                <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignContent: 'space-around', top: height * 0.201}}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignContent: 'space-around', top: hp('3%')}}>
                 {/* Render letter box */}
 
                 
                     
-                <View style={{ flexDirection: 'row', justifyContent: 'center', alignContent: 'center', width: "85%"}}>
+                <View style={{ flexDirection: 'row', justifyContent: 'center', alignContent: 'center', width: wp('85%')}}>
                   <View style={styles.container}>
                     {letterBox.map((letter, index) => (
                       <TouchableOpacity
@@ -825,7 +828,7 @@ return(
                         onPress={() => handleLetterBoxPress(index)}
                         style={styles.box}
                       >
-                        <Text style={{ fontSize: 30, fontFamily: 'OpenSans-ExtraBold', textAlign: 'center' }}>{letter}</Text>
+                        <Text style={{ fontSize: RFValue(30), fontFamily: 'OpenSans-ExtraBold', textAlign: 'center' }}>{letter}</Text>
                       </TouchableOpacity>
                     ))}
 
@@ -835,7 +838,7 @@ return(
 
                 </View>
 
-                <View style={{ justifyContent:'center', alignItems:'center', right: height * 0.024}}>
+                <View style={{ justifyContent:'center', alignItems:'center', right: wp('4.5%')}}>
                 <View>
                 <View>
                   <TouchableOpacity onPress={openDrawer}>
@@ -855,20 +858,20 @@ return(
               <View>
 
 
-              <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:"center", top:height * 0.20}}>
+              <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:"center", top:hp('2.7%')}}>
               <View >
                 <TouchableOpacity onPress={shuffleLetterBox} >
-               <ImageBackground source={require('../assets/shuffle.png')} style={{width:305, height:43}} />
+               <ImageBackground source={require('../assets/shuffle.png')} style={{width:wp('86%'), height:hp('7%')}} />
               </TouchableOpacity>
   
             </View>
 
-                <View style={{right:width * 0.05}}>
+                <View style={{right:wp('4%')}}>
                 {isLoading ? (
             <ActivityIndicator size="large" color="#0000ff" />
           ) : (
                   <TouchableOpacity onPress={takeScreenshot}>
-                    <ImageBackground source={require('../assets/share.png')} style={{ width: 55, height: 45 }} />
+                    <ImageBackground source={require('../assets/share.png')} style={{ width: wp('17%'), height: hp('6.5%') }} />
                   </TouchableOpacity>
                    )}
                 </View>
@@ -885,8 +888,9 @@ return(
 {showCategoryImage && <CategoryImage />}
 
 
-
+ {/*
 {showVideo && (
+ 
   <Video
     source={require('../assets/sounds/tutvideo.mp4')}
     style={styles.video}
@@ -894,25 +898,28 @@ return(
     onEnd={onVideoEnd}
     controls={false}
   />
+
+  
 )}
+  */}
 
 
       
       {showTutorial && (
         <TouchableOpacity style={styles.tutorialOverlay} onPress={hideTutorial}>
           <Animated.View style={[styles.tutorialContent, wobbleStyle]}>
-           <Ionicons name="arrow-up" size={35} color={"white"}/>
+           <Ionicons name="arrow-up" size={addSize} color={"white"}/>
             <Text style={styles.tutorialText}>Get coins</Text>
         
           </Animated.View>
 
           <Animated.View style={[styles.guess, wobbleStyle]}>
-            <Text style={{color:'white', fontSize:15, fontFamily: 'Poppins-Bold' }}>Guess The Word</Text>
+            <Text style={{color:'white', fontSize:RFValue(15), fontFamily: 'Poppins-Bold' }}>Guess The Word</Text>
           </Animated.View>
          
           <Animated.View style={[styles.hint, wobbleStyle]}>
           <Text style={styles.tutorialTexts}>Get Hint</Text>
-           <Ionicons name="arrow-down" size={36} color={"white"}/>
+           <Ionicons name="arrow-down" size={addSize} color={"white"}/>
             
         
           </Animated.View>
@@ -935,61 +942,61 @@ const styles = StyleSheet.create({
    
   header: {
     backgroundColor:'black', 
-    height:'10%', 
+    height:hp('10%'), 
     flexDirection: 'row', 
     justifyContent:'space-between', 
     alignContent:'space-between'
   },
   back: {
-    top:'58%'
+    top:hp('6%')
   },
   backImg: {
-    width:30, 
-    height: 30, 
-    marginBottom:-81, 
-    left:9
+    width:wp('10%'), 
+    height: hp('4%'), 
+    marginBottom:hp('-6%'), 
+    left:wp('2%')
   },
   brain: {
-    top:'59%'
+    top:hp('6%')
   },
   brainImg: {
-    width:20, 
-    height:30, 
+    width:wp('5%'), 
+    height:hp('3.9%'), 
     left:45
   },
    animatedcontainer: {
     flexDirection: 'row', 
     alignItems: 'center',
-    top:'59%',
-     left: 66,
+    top:hp('2.5%'),
+     left: wp('18%'),
      backgroundColor:'white', 
-     width:28, 
-     height:8, 
+     width:wp('8%'), 
+     height:hp('1%'), 
      borderRadius: 10
    },
    
   iq: {
-    fontSize:6, 
-    left:3, 
-    fontWeight:'600'
+    fontSize:RFValue(6), 
+    left:wp('2%'), 
+    fontFamily:'OpenSans-Bold'
   },
   levelcontainer: {
-    left:14, 
-    marginRight:-20, 
-    top:'12%'
+    left:wp('2%'), 
+    marginRight:wp('-4%'), 
+    top:hp('5.5%')
   },
   levelimg: {
-    width: 85, 
-    height: 72
+    width: wp('17%'), 
+    height: hp('9%')
   },
  currentlevel:{
   fontFamily: 'Poppins-Bold', 
   position:'relative', 
   textAlign: 'center', 
   color: '#fff', 
-  fontSize: 17, 
-  top:'-60%', 
-  right:'2%'
+  fontSize: RFValue(14), 
+  top:hp('-6%'), 
+  
  },
 
 
@@ -1013,62 +1020,48 @@ const styles = StyleSheet.create({
     box: {
       borderWidth: 2,
       borderColor: 'black',
-      margin: 1,
+      margin: wp('0.27%'),
       borderRadius: 6,
       backgroundColor: 'white',
-      minWidth: '17%',
-      maxWidth: '17%',
-      padding: 2,
+      minWidth: wp('14.7%'),
+      maxWidth: wp('14.7%'),
+      padding: wp('0.5%'),
 
       
       
     },
     coinContainer: {
       position: 'absolute',
-      top: '80%', 
-      left: '87.7%', 
-      marginLeft: -11.5, 
+      top: hp('80%'), 
+      left: wp('99.9%'), 
+      marginLeft: wp('-17.5%'), 
       zIndex: 1000, 
     },
     coinText: {
       color: 'white',
-      fontSize: 17,
+      fontSize: RFValue(17),
       position: 'absolute',
       top: 0,
-      left: '88%',
+      left: wp('88%'),
       fontFamily:'Poppins-Regular'
     },
 
     iqContainer: {
       position: 'absolute',
-      top: '100%', 
-      left: '21%', 
-      marginLeft: '-10%', 
+      top: hp('100%'), 
+      left: wp('21%'), 
+      marginLeft: wp('-10%'), 
       zIndex: 1000, 
     },
 
-    extraContainer: {
-      position: 'absolute',
-      top: '83%', 
-      left: '90%', 
-      marginLeft: -11.5, 
-      zIndex: 1000, 
-    },
-    extraText: {
-      color: 'white',
-      fontSize: 17,
-      position: 'absolute',
-      top: 0,
-      left: '-10%',
-      fontFamily:'Poppins-Regular'
-    },
+   
 
     imageStyle: {
-      width: '80%',
-      height: '75%',
+      width: wp('80%'),
+      height: hp('30%'),
       position: 'absolute',
-      top: '20%', 
-      left: '6%',
+      top: hp('50%'), 
+      left: wp('5%'),
       right: 0,
       bottom: 0,
       alignItems: 'center',
@@ -1077,11 +1070,11 @@ const styles = StyleSheet.create({
     },
 
     wrongImageStyle: {
-      width: '80%',
-      height: '75%',
+      width: wp('60%'),
+      height: hp('30%'),
       position: 'absolute',
-      top: '27%', 
-      left: '14%',
+      top: hp('10%'), 
+      left: wp('14%'),
       right: 0,
       bottom: 0,
       alignItems: 'center',
@@ -1091,34 +1084,35 @@ const styles = StyleSheet.create({
 
     startButton: {
       backgroundColor: '#009688',
-      padding: 15,
+      padding: wp('3%'),
       borderRadius: 8,
     },
     startButtonText: {
       color: '#ffffff',
-      fontSize: 18,
+      fontSize: RFValue(18),
     },
     tutorialOverlay: {
       ...StyleSheet.absoluteFillObject,
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
+
       justifyContent: 'center',
       alignItems: 'center',
     },
     tutorialContent: {
-      left: "39%",
-      bottom: "33%",
+      left: wp('39%'),
+      bottom: hp('33%'),
       alignItems: 'center',
     },
     
     tutorialText: {
-      fontSize: 13,
+      fontSize: RFValue(13),
       textAlign: 'center',
       color:'white',
       fontFamily:'Poppins-Regular'
     },
 
     tutorialTexts: {
-      fontSize: 13,
+      fontSize: RFValue(13),
       textAlign: 'center',
       color:'white',
       fontFamily:'Poppins-Regular',
@@ -1126,11 +1120,11 @@ const styles = StyleSheet.create({
     },
 
     guess: {
-    top: "24%"
+    top:hp('27%')
     },
     hint: {
-      top: "17.4%",
-      left:"38%"
+      top: hp('17.4%'),
+      left:wp('38%')
     },
     safe: {
        flex: 1 

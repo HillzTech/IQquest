@@ -7,7 +7,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StatusBar } from 'expo-status-bar';
 import Sound from 'react-native-sound';
 import { useSound } from '../SoundContext';
-import throttle from 'lodash.throttle';
+import { RFValue } from 'react-native-responsive-fontsize';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 
 const settingScreen: React.FC<{ route: any, navigation: any }> = ({ route, navigation }) => {
@@ -16,7 +17,7 @@ const settingScreen: React.FC<{ route: any, navigation: any }> = ({ route, navig
   const [helpSound, setHelpSound] = useState<Sound | null>(null);
   const { soundEnabled, vibrationEnabled, toggleSound, toggleVibration, playSound, vibrate } = useSound();
   const {width, height} = Dimensions.get('window');
-  
+  const iconSize = width < 395 ? 32 : 36
 
   
   useEffect(() => {
@@ -41,10 +42,10 @@ const settingScreen: React.FC<{ route: any, navigation: any }> = ({ route, navig
     <Background>
       <StatusBar />
       <SafeAreaView style={{flex:1}}>
-        <View style={{flexDirection:'row', justifyContent:'center', top:'13%', backgroundColor:'#1c2e5a'}}>
-            <Text style={{textAlign:'center', color:'white', fontFamily:'Poppins-Regular', top:7, left:10}}>Settings</Text>
-            <TouchableOpacity onPress={handleBack} style={{left:width * 0.34}}>
-            <Ionicons name='close' color={'white'} size={32} />
+        <View style={{flexDirection:'row', justifyContent:'center', top:hp('6.5%'), backgroundColor:'#1c2e5a'}}>
+            <Text style={{textAlign:'center', color:'white', fontFamily:'Poppins-Regular', top:hp('1%'), left:10}}>Settings</Text>
+            <TouchableOpacity onPress={handleBack} style={{left:wp('34%')}}>
+            <Ionicons name='close' color={'white'} size={iconSize} />
             </TouchableOpacity>
         </View>
         
@@ -82,9 +83,9 @@ const settingScreen: React.FC<{ route: any, navigation: any }> = ({ route, navig
         </View>
 
 
-        <View style={{marginTop:height * 0.72, backgroundColor:'#1c2e5a', height:120}}>
-           <Text style={{textAlign:'center', color:'#1c2e9a', fontFamily:'Poppins-Bold', fontSize:17, top:20}}>Version 1.0.7</Text>
-           <Text style={{textAlign:'center', color:'#1c2e9a', fontFamily:'Poppins-Bold', fontSize:17, top:20}}>HillzTech Studio</Text>
+        <View style={{marginTop:hp('70%'), backgroundColor:'#1c2e5a', height:wp('37%')}}>
+           <Text style={{textAlign:'center', color:'#1c2e9a', fontFamily:'Poppins-Bold', fontSize:RFValue(17), top:hp('5%')}}>Version 1.0.7</Text>
+           <Text style={{textAlign:'center', color:'#1c2e9a', fontFamily:'Poppins-Bold', fontSize:RFValue(17), top: hp('4%')}}>HillzTech Studio</Text>
         </View>
       </SafeAreaView>
     </Background>
@@ -95,40 +96,40 @@ const styles = StyleSheet.create({
   toggleContainer: {
     flexDirection: 'column',
     justifyContent: 'space-around',
-    gap:10,
-    padding:20,
-    marginTop:'10%'
+    gap:wp('8%'),
+    padding:hp('8%'),
+    marginTop:hp('10%')
   },
   toggleButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 10,
+    padding: wp('8%'),
     borderRadius: 5,
   },
   toggleText: {
-    marginLeft: 10,
+    marginLeft: wp('8%'),
     fontFamily:'Poppins-Regular'
   },
   levelRequirementText: {
     color: 'red',
-    fontSize: 16,
-    marginBottom: 10,
+    fontSize: RFValue(16),
+    marginBottom: hp('2%'),
   },
   settingRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: 10,
+    marginBottom: hp('1.6%'),
     padding:10,
     backgroundColor:'#1c2e5a',
   },
   settingText: {
     color: 'white',
-    fontSize: 18,
-    marginLeft: 10,
+    fontSize: RFValue(18),
+    marginLeft: wp('3%'),
   },
   menu: {
-    top: 60,
+    top: hp('8%'),
      
    },
 });

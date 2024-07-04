@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Animated, Image, View, StyleSheet } from 'react-native'
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 
 export const Animation = () => {
     const [spinAnimation] = useState(new Animated.Value(0));
@@ -25,9 +27,9 @@ export const Animation = () => {
   return (
     <View style={styles.container}>
       <View style={styles.proton}>
-        <Image source={require('../assets/Images/brain.png')} style={{ width: 160, height: 240 }} />
+        <Image source={require('../assets/Images/brain.png')} style={{ width:  wp('46%'), height: hp('31%') }} />
         <Animated.View style={[styles.electron, { transform: [{ rotate: spin }] }]}>
-          <Image source={require('../assets/Images/earth.png')} style={{ height: 70, width: 70 }} />
+          <Image source={require('../assets/Images/earth.png')} style={{ height: hp('10%'), width: wp('15%') }} />
         </Animated.View>
       </View>
     </View>

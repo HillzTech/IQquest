@@ -1,6 +1,8 @@
 
 import React, { useEffect,  useRef } from 'react';
 import { Animated, ImageBackground, StyleSheet, Text } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 
 const WrongImage = () => {
@@ -43,17 +45,17 @@ const WrongImage = () => {
 const styles = StyleSheet.create({
     imageContainer: {
         position: 'absolute',
-        top: '-2%',
-        left: '4%',
+        top: hp('-4%'),
+        left: wp('3%'),
         right: 0,
-        bottom: '3%',
+        bottom: hp('3%'),
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 999,
       },
   imageStyle: {
-    width: 190,
-    height: 230,
+    width: wp('60%'),
+    height: hp('30%'),
     position: 'absolute',
     
   },

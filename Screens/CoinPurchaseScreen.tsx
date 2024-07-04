@@ -9,6 +9,8 @@ import StrokedText from '../Components/StrokedText';
 import Sound from 'react-native-sound';
 import {  useSound } from '../SoundContext';
 import { useGame } from '../Components/GameContext';
+import { RFValue } from 'react-native-responsive-fontsize';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [showAd, setShowAd] = useState<boolean>(false);
@@ -196,19 +198,19 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
     <Background>
       <SafeAreaView style={{ flex: 1 }}>
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <ImageBackground source={require('../assets/Images/newcoin.png')} style={{ width: 120, height: 120 }} />
-          <Text style={{ color: 'white', textAlign: 'center', fontSize: 21, fontFamily: 'Poppins-Bold', bottom: '32.5%' }}>{score}</Text>
+          <ImageBackground source={require('../assets/Images/newcoin.png')} style={{ width: wp('25%'), height: hp('15%') }} />
+          <Text style={{ color: 'white', textAlign: 'center', fontSize: RFValue(21), fontFamily: 'Poppins-Bold', bottom:  hp('10.5%')}}>{score}</Text>
         </View>
 
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', top:height * -0.18 }}>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', top: hp('-18%')}}>
           <TouchableOpacity onPress={handleShowAd}>
-            <ImageBackground source={require('../assets/watchad.png')} style={{ width: 275, height: 110}} />
+            <ImageBackground source={require('../assets/watchad.png')} style={{ width: wp('70%'), height: hp('14%')}} />
           </TouchableOpacity>
         </View>
 
        
 
-        <View style={{top: height * -0.25, flex: 1,  maxWidth:width * 0.75, left:width * 0.13}}>
+        <View style={{top: hp('-25%'), flex: 1,  maxWidth:wp('70%'), left:wp('16%')}}>
           {isPurchasing && <ActivityIndicator size="large" color="#0000ff" />}
           {!isPurchasing &&
             packages.map((pkg) => (
@@ -217,14 +219,14 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
                 style={styles.package}
                 onPress={() => onSelection(pkg)}
               >
-                <ImageBackground source={require('../assets/1000coins.png')} style={{ width: 70, height: 39, left:width * 0.27, top:height * 0.018}} />
+                <ImageBackground source={require('../assets/1000coins.png')} style={{ width: wp('17%'), height: hp('5%'), left:wp('23%'), top:hp('2%')}} />
                 
-                <View style={{top:'-1%'}}>
-                <StrokedText text={pkg.product.description} strokeColor="black" strokeWidth={8} fontSize={27} />
+                <View style={{top:hp('0.1%')}}>
+                <StrokedText text={pkg.product.description} strokeColor="black" strokeWidth={8} fontSize={RFValue(25)} />
                 </View>
                 
-                <View style={{ borderRadius:20, top:'-16%'}}>
-                <Text style={{textAlign:'right', color:'white', paddingHorizontal:4, right:2, fontFamily:'OpenSans-Bold'}}>¤{pkg.product.price}</Text>
+                <View style={{ borderRadius:20, top:hp('-1%')}}>
+                <Text style={{textAlign:'right', color:'white', right:hp('1%'), fontFamily:'OpenSans-Bold'}}>¤{pkg.product.price}</Text>
                 </View>
               </TouchableOpacity>
             ))}

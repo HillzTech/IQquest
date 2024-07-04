@@ -10,6 +10,9 @@ import Puzzle from '../Components/Puzzle';
 import { StatusBar } from 'expo-status-bar';
 import {  useSound } from '../SoundContext';
 import { useGame } from '../Components/GameContext'; // Import the useGame hook
+import { RFValue } from 'react-native-responsive-fontsize';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 
 
 
@@ -380,13 +383,13 @@ return(
 
 <Background>
 <StatusBar />
-   <View style={{backgroundColor:'black', height:'9%', flexDirection: 'row', justifyContent:'space-between', alignContent:'space-around'}}>
+   <View style={{backgroundColor:'black', height: hp('10%'), flexDirection: 'row', justifyContent:'space-between', alignContent:'space-around'}}>
     
          <View>
             <TouchableOpacity onPress={handleMovement} >
             <ImageBackground 
             source={require('../assets/Images/backIcon.png')}
-            style={{width:30, height: 30, marginTop: 43, marginBottom:-81, left:9}}
+            style={{width:wp('10%'), height: hp('4%'), marginTop: hp('6%'), left: wp('3%')}}
             
             />
                
@@ -395,15 +398,15 @@ return(
          </View>
          
 
-   <View style={{ flexDirection:"row",justifyContent:'space-around', alignContent:'flex-start', top:43, right:10, borderColor:'#859410', borderWidth:1, borderRadius:10, marginBottom:50, paddingHorizontal:7, gap:1}}>
+   <View style={{ flexDirection:"row",justifyContent:'space-around', alignContent:'flex-start', top:hp('6%'), right:wp('3%'), borderColor:'#859410', borderWidth:1, borderRadius:10, marginBottom:hp('6.5%'), paddingHorizontal:wp('3%'), gap:wp('0.6%')}}>
    <ImageBackground
             source={require('../assets/Images/coin.png')} 
-            style={{width: 15, height: 17, top:3}}
+            style={{width: wp('5%'), height: hp('2%'), top:hp('0.6%')}}
                
          /> 
         <View >
         
-         <Text style={{ fontFamily:'Poppins-Regular', color: "white", fontSize: 16}}>{score}</Text>
+         <Text style={{ fontFamily:'Poppins-Regular', color: "white", fontSize: RFValue(15)}}>{score}</Text>
 
 
         </View>
@@ -419,18 +422,18 @@ return(
    <View style={{ }}>
     
       {loading ? (
-        <View style={{ marginTop: '21%', backgroundColor:'#00007B', width:'97%', borderColor:"blue", borderWidth:2, borderRadius:20 , height:'79%', left:'1%'}}>
+        <View style={{ marginTop: hp('8%'), backgroundColor:'#00007B', width:wp('98%'), borderColor:"blue", borderWidth:2, borderRadius:20 , height:hp('70%'), left:wp('1%')}}>
             <View style={{flex:1, justifyContent:'center', alignItems:'center'}}> 
           
-          <Image source={LoadingImage} style={{width:180, height: 180}}/>
           
-          <ImageBackground source={require('../assets/adaptive-icon.png')} style={{width:280, height:280, bottom:30}}/>
+          
+          <ImageBackground source={require('../assets/adaptive-icon.png')} style={{width:wp('60%'), height:hp('34%'), bottom:hp('2%')}}/>
 
           
-          <Text style={{fontFamily:'Poppins-Bold',color:'white', padding:'7%', textAlign:'center', fontSize:16, marginTop:-70}}>You have played your puzzle for the day!</Text>
+          <Text style={{fontFamily:'Poppins-Bold',color:'white', padding:wp('4%'), textAlign:'center', fontSize:RFValue(16), marginTop:hp('2%')}}>You have played your puzzle for the day!</Text>
         {remainingTime !== null && (
           <View style={{backgroundColor:'#152238', borderRadius:12}}>
-          <Text style={{fontFamily:'Poppins-Regular',color:'white', padding:'2%', textAlign:'center', fontSize:13, marginTop:10}}>
+          <Text style={{fontFamily:'Poppins-Regular',color:'white', padding: wp('2%'), textAlign:'center', fontSize:RFValue(13), marginTop:hp('1%')}}>
             Remaining time: {formatTime(remainingTime)}
           </Text>
           </View>
@@ -444,28 +447,28 @@ return(
 
         
  <View>
-   <View style={{paddingHorizontal:'5%'}}>
+   <View style={{paddingHorizontal:wp('4%')}}>
 
-    <ImageBackground source={require('../assets/board.png')} style={{width:'100%', height:60, top:height * 0.026}} />
+    <ImageBackground source={require('../assets/board.png')} style={{width:wp('92%'), height:hp('7%'), top:hp('2.5%')}} />
    
-  <Text style={{fontFamily:'Poppins-BoldItalic',color:'white', textAlign:'center', fontSize:17, bottom:'20%'}}>{Puzzle[currentPuzzle].question}</Text>
+  <Text style={{fontFamily:'Poppins-BoldItalic',color:'white', textAlign:'center', fontSize:RFValue(16), bottom:hp('2%')}}>{Puzzle[currentPuzzle].question}</Text>
  </View>
       
      
  
-      <Animated.View style={{
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignContent: 'center',
-      flexWrap: 'wrap',
-      top: height * 0.21,
-      transform: [{ translateX }]
-    }}>
+ <Animated.View style={{
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                  alignContent: 'center',
+                  flexWrap: 'wrap',
+                  top: hp('2%'),
+                  transform: [{ translateX }]
+                }}>
       {Puzzle[currentPuzzle].images.map((imageSource, index) => (
         <Image key={index} source={imageSource} style={{
-          width: '43%',
-          height: '480%',
-          margin: 5,
+          width:  wp('45%'),
+          height: hp('21%'),
+          margin: wp('1.1%'),
           borderWidth: 3,
           borderColor: 'grey',
           borderRadius: 10
@@ -485,7 +488,7 @@ return(
             },
           ]}
         >
-          <ImageBackground source={require('../assets/Images/coin.png')} style={{ width: 24, height: 24 }}>
+          <ImageBackground source={require('../assets/Images/coin.png')} style={{ width: wp('9%'), height: hp('3%') }}>
             <Text style={styles.coinText}>60</Text>
           </ImageBackground>
           
@@ -497,12 +500,12 @@ return(
 
 
 
-    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', top:height * 0.45}}>
+    <View style={{flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignContent:'center', top:hp('7%')}}>
       {/* Guess boxes */}
       {currentGuess.map((letter, index) => (
         <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index) }>
-          <View style={{ padding: 5, margin: 2,paddingHorizontal:'3.5%', backgroundColor:'black', borderRadius:5, borderWidth:1, borderColor:'white'}}>
-            <Text style={{fontFamily:'OpenSans-Bold',fontSize:20,  color:'white', textAlign:'center'}}>{letter}</Text>
+          <View style={{ padding: hp('0.6%'), margin: wp('0.5%'),paddingHorizontal:'3.5%', backgroundColor:'black', borderRadius:5, borderWidth:1, borderColor:'white'}}>
+            <Text style={{fontFamily:'OpenSans-Bold',fontSize:RFValue(21),  color:'white', textAlign:'center'}}>{letter}</Text>
           </View>
         </TouchableOpacity>
       ))}
@@ -511,7 +514,7 @@ return(
     
 
       {/* Render letter box */}
-      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:"94%",top:height * 0.446}}>
+      <View style={{flexDirection:'row', justifyContent:'space-around',alignContent:'center', width:wp('95%'),top:hp('6.5%')}}>
       <View style={styles.container}>
         {letterBox.map((letter, index) => (
           <TouchableOpacity
@@ -519,7 +522,7 @@ return(
             onPress={() => handleLetterBoxPress(index)}
             style={styles.box}
           >
-            <Text style={{fontFamily:'Poppins-ExtraBold',fontSize:28,textAlign:'center'}}>{letter}</Text>
+            <Text style={{fontFamily:'Poppins-ExtraBold',fontSize:RFValue(30),textAlign:'center'}}>{letter}</Text>
           </TouchableOpacity>
         ))}
 
@@ -554,10 +557,10 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       flexWrap: 'wrap',
       justifyContent: 'center',
-      marginVertical: '12%',
-      width: '90%',
-      marginLeft: '15%',
-      marginRight:1
+      marginVertical: hp('6%'),
+      width: wp('85%'),
+      marginLeft: wp('7%'),
+      
       
       
       
@@ -565,12 +568,13 @@ const styles = StyleSheet.create({
     box: {
       borderWidth: 2,
       borderColor: 'black',
-      padding: 2,
-      margin: 1,
+      padding: wp('0.02%'),
+      margin: wp('0.4%'),
       borderRadius: 6,
       backgroundColor: 'white',
-      minWidth: '17%',
-      maxWidth: '17%',
+      minWidth: wp('14.5%'),
+      maxWidth: wp('14.5%'),
+      
       
 
       
@@ -586,22 +590,22 @@ const styles = StyleSheet.create({
     coinText: {
       fontWeight: '600',
       color: 'white',
-      fontSize: 17,
+      fontSize: RFValue(16),
       fontStyle: 'italic',
       position: 'absolute',
       top: 0,
-      left: '-8%',
+      left: '-3%',
       fontFamily:'Poppins-Bold',
     },
 
     
 
     imageStyle: {
-      width: 80,
-      height: 75,
+      width: wp('80%'),
+      height: hp('30%'),
       position: 'absolute',
-      top: '35%', // Adjust this as needed
-      left: '6%',
+      top: hp('50%'), 
+      left: wp('5%'),
       right: 0,
       bottom: 0,
       alignItems: 'center',
@@ -610,18 +614,17 @@ const styles = StyleSheet.create({
     },
 
     wrongImageStyle: {
-      width: 80,
-      height: 75,
+      width: wp('60%'),
+      height: hp('30%'),
       position: 'absolute',
-      top: '35%', // Adjust this as needed
-      left: '14%',
+      top: hp('10%'), 
+      left: wp('14%'),
       right: 0,
       bottom: 0,
       alignItems: 'center',
       justifyContent: 'center',
       zIndex: 999, // Ensure the image appears above other content
     },
-
     
   });
   
