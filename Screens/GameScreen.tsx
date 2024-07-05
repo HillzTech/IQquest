@@ -60,7 +60,7 @@ const { playSound } = useSound();
 
   useEffect(() => {
     checkTutorialStatus();
-    checkVideoStatus();
+   /* checkVideoStatus(); */
   }, []);
 
   useEffect(() => {
@@ -116,14 +116,14 @@ const { playSound } = useSound();
       if (!tutorialShown) {
         setTimeout(() => {
           setShowTutorial(true);
-        }, 18000); // 18 seconds delay
+        }, 300); // 18 seconds delay
       }
     } catch (error) {
       console.error('Error checking tutorial status:', error);
     }
   };
 
-  const checkVideoStatus = async () => {
+  /*const checkVideoStatus = async () => {
     try {
       const videoShown = await AsyncStorage.getItem('videoShown');
       if (!videoShown) {
@@ -135,7 +135,7 @@ const { playSound } = useSound();
     } catch (error) {
       console.error('Error checking tutorial status:', error);
     }
-  };
+  }; */
 
   const hideTutorial = async () => {
     try {
@@ -396,7 +396,7 @@ useEffect(() => {
       const updatedGuess = [...currentGuess];
       updatedGuess[index] = ''; // Clear the guess box
       setCurrentGuess(updatedGuess);
-      playSound('remove'); 
+      playSound('button'); 
   
       // Add the letter back to the letter box at the original position
       const updatedLetterBox = [...letterBox];
@@ -424,7 +424,7 @@ const handleNav = () => {
 
   const handleLetterBoxPress = async (index: number) => {
    try{
-    playSound('button');
+    playSound('remove');
    
     // Move the letter to the first empty guess input box
     const emptyIndex = currentGuess.findIndex((letter) => letter === '');
@@ -584,10 +584,10 @@ const handleNav = () => {
       const newDifficulty = prevDifficulty + 1;
       if (newDifficulty >= 11) {
          // Set showWrongImage to true if newDifficulty is 11 or greater
-        setTimeout(() => {
+    
           setShowCategoryImage(true);
           playSound('level');
-        }, 100);
+        
         setTimeout(() => {
          setShowCategoryImage(false); // Reset showWrongImage after 4 seconds
         }, 5000);
@@ -691,7 +691,7 @@ return(
 
               </View>
 
-              <TouchableOpacity onPress={handleNav} style={{ flexDirection: "row", justifyContent: 'space-around', alignContent: 'flex-start', top: hp('7%'), right: wp('2%'), borderColor: '#859410', borderWidth: 1, borderRadius: 10, marginBottom: hp('7%'), paddingHorizontal: wp('2%'), gap: wp('0.4%') }}>
+              <TouchableOpacity onPress={handleNav} style={{ flexDirection: "row", justifyContent: 'space-around', alignContent: 'flex-start', top: hp('6.5%'), right: wp('2%'), borderColor: '#859410', borderWidth: 1, borderRadius: 10, marginBottom: hp('7%'), paddingHorizontal: wp('2%'), gap: wp('0.4%') }}>
                 <ImageBackground
                   source={require('../assets/Images/coin.png')}
                   style={{ width: wp('4%'), height: hp('2%'), top: hp('0.3%') }} />
@@ -803,7 +803,7 @@ return(
                   {/* Guess boxes */}
                   {currentGuess.map((letter, index) => (
                     <TouchableOpacity key={index} onPress={() => handleGuessInputPress(index)}>
-                      <View style={{ padding: hp('0.6%'), margin: wp('0.5%'), paddingHorizontal: wp('3.5%'), backgroundColor: 'black', borderRadius: 5, borderWidth: 1, borderColor: 'white' }}>
+                      <View style={{ padding: hp('0.6%'), margin: wp('0.25%'), paddingHorizontal: wp('3.5%'), backgroundColor: 'black', borderRadius: 5, borderWidth: 1, borderColor: 'white' }}>
                         <Text style={{ fontSize: RFValue(21), color: 'white', textAlign: 'center', fontFamily: 'OpenSans-Bold' }}>{letter}</Text>
                       </View>
                     </TouchableOpacity>
@@ -854,10 +854,10 @@ return(
               <View>
 
 
-              <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:"center", top:hp('3%')}}>
+              <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:"center", top:hp('3.3%')}}>
               <View >
                 <TouchableOpacity onPress={shuffleLetterBox} >
-               <ImageBackground source={require('../assets/shuffle.png')} style={{width:wp('86%'), height:hp('7%')}} />
+               <ImageBackground source={require('../assets/shuffle.png')} style={{width:wp('84%'), height:hp('6.8%'), left:wp('0.7%')}} />
               </TouchableOpacity>
   
             </View>
@@ -1016,7 +1016,7 @@ const styles = StyleSheet.create({
     box: {
       borderWidth: 2,
       borderColor: 'black',
-      margin: wp('0.27%'),
+      margin: wp('0.20%'),
       borderRadius: 6,
       backgroundColor: 'white',
       minWidth: wp('14.7%'),

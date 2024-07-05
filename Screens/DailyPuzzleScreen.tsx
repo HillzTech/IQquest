@@ -225,7 +225,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
       const updatedGuess = [...currentGuess];
       updatedGuess[index] = ''; // Clear the guess box
       setCurrentGuess(updatedGuess);
-      playSound('remove');
+      playSound('button');
   
       // Add the letter back to the letter box at the original position
       const updatedLetterBox = [...letterBox];
@@ -242,7 +242,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 
   const handleLetterBoxPress = async (index: number) => {
    try{
-    playSound('button');
+    playSound('remove');
    
     // Move the letter to the first empty guess input box
     const emptyIndex = currentGuess.findIndex((letter) => letter === '');
@@ -293,7 +293,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
     const currentWord = Puzzle[currentPuzzle].word;
     if (currentGuess.join('').toUpperCase() === currentWord) {
       setShowPartyPopper(true);
-     
+      playSound('correct');
       playSound('level');
       setCoinVisible(true); // Show the coin
       setTimeout(() => {
@@ -488,7 +488,7 @@ return(
             },
           ]}
         >
-          <ImageBackground source={require('../assets/Images/coin.png')} style={{ width: wp('9%'), height: hp('3%') }}>
+          <ImageBackground source={require('../assets/Images/coin.png')} style={{ width: wp('5%'), height: hp('3%') }}>
             <Text style={styles.coinText}>60</Text>
           </ImageBackground>
           
@@ -559,7 +559,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       marginVertical: hp('6%'),
       width: wp('85%'),
-      marginLeft: wp('7%'),
+      marginLeft: wp('5%'),
       
       
       
@@ -582,19 +582,19 @@ const styles = StyleSheet.create({
     },
     coinContainer: {
       position: 'absolute',
-      top: '-8%', 
-      left: '90%', 
-      marginLeft: -11.5, 
+      top: hp('-3%'), 
+      left:  wp('90%'), 
+      marginLeft: wp('-11%'), 
       zIndex: 1000, 
+      width:'100%'
     },
     coinText: {
-      fontWeight: '600',
+
       color: 'white',
-      fontSize: RFValue(16),
-      fontStyle: 'italic',
+      fontSize: RFValue(13),
       position: 'absolute',
       top: 0,
-      left: '-3%',
+      right: wp('2%'),
       fontFamily:'Poppins-Bold',
     },
 

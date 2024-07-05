@@ -22,6 +22,19 @@ const Puzzle = [
          question: "What's the common word?" 
         
     },
+
+    {
+      images: [
+          require('../assets/Images/fruits/fruit1.jpg'),
+          require('../assets/Images/fruits/fruit2.jpg'),
+          require('../assets/Images/fruits/fruit3.jpg'),
+          require('../assets/Images/fruits/fruit4.jpg'),
+        ],
+       word: "FRUIT",
+       question: "What is the common word?"
+      
+      
+  },
     
 
     {
@@ -38,14 +51,40 @@ const Puzzle = [
 
   {
     images: [
+        require('../assets/Images/fruits/fruit1.jpg'),
+        require('../assets/Images/fruits/fruit2.jpg'),
+        require('../assets/Images/fruits/fruit3.jpg'),
+        require('../assets/Images/fruits/fruit4.jpg'),
+      ],
+     word: "FRUIT",
+     question: "What is the common word?"
+    
+    
+},
+
+  {
+    images: [
         require('../assets/puzzle/box/box1.jpg'),
         require('../assets/puzzle/box/box2.jpg'),
-        require('../assets/puzzle/box/box3.png'),
+        require('../assets/puzzle/box/box3.jpg'),
         require('../assets/puzzle/box/box4.jpg'),
       ],
      word: "BOX",
      question: "What is the common word?" 
     
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
 },
 
 {
@@ -57,6 +96,19 @@ const Puzzle = [
     ],
    word: "PAD",
    question: "What is the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -74,6 +126,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/paris/paris1.jpg'),
       require('../assets/puzzle/paris/paris2.jpg'),
       require('../assets/puzzle/paris/paris3.jpg'),
@@ -81,6 +146,19 @@ const Puzzle = [
     ],
    word: "PARIS",
    question: "What city is this?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -98,6 +176,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/berlin/berlin1.jpg'),
       require('../assets/puzzle/berlin/berlin2.jpg'),
       require('../assets/puzzle/berlin/berlin3.jpg'),
@@ -105,6 +196,19 @@ const Puzzle = [
     ],
    word: "BERLIN",
    question: "What city is this?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -124,6 +228,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/skate/skate1.jpg'),
       require('../assets/puzzle/skate/skate2.jpg'),
       require('../assets/puzzle/skate/skate3.jpg'),
@@ -131,6 +248,19 @@ const Puzzle = [
     ],
    word: "SKATE",
    question: "What is the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -148,6 +278,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/beat/beat1.jpg'),
       require('../assets/puzzle/beat/beat2.jpg'),
       require('../assets/puzzle/beat/beat3.jpg'),
@@ -160,13 +303,38 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/lead/lead1.png'),
       require('../assets/puzzle/lead/lead2.jpg'),
       require('../assets/puzzle/lead/lead3.jpg'),
       require('../assets/puzzle/lead/lead4.jpg'),
     ],
-   word: "lead",
+   word: "LEAD",
    question: "What is the common word?" 
+  
+},
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -184,6 +352,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/shell/shell1.jpg'),
       require('../assets/puzzle/shell/shell2.jpg'),
       require('../assets/puzzle/shell/shell3.jpg'),
@@ -191,6 +372,19 @@ const Puzzle = [
     ],
    word: "SHELL",
    question: "What is the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -208,6 +402,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/date/date1.jpg'),
       require('../assets/puzzle/date/date2.jpg'),
       require('../assets/puzzle/date/date3.jpg'),
@@ -215,6 +422,19 @@ const Puzzle = [
     ],
    word: "DATE",
    question: "What is the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -232,6 +452,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/match/match1.jpg'),
       require('../assets/puzzle/match/match2.jpg'),
       require('../assets/puzzle/match/match3.jpg'),
@@ -239,6 +472,19 @@ const Puzzle = [
     ],
    word: "MATCH",
    question: "What is the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -256,6 +502,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/crop/crop1.jpg'),
       require('../assets/puzzle/crop/crop2.jpg'),
       require('../assets/puzzle/crop/crop3.jpg'),
@@ -263,6 +522,19 @@ const Puzzle = [
     ],
    word: "CROP",
    question: "What is the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -280,6 +552,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/jamaican/jamaican1.jpg'),
       require('../assets/puzzle/jamaican/jamaican2.jpg'),
       require('../assets/puzzle/jamaican/jamaican3.jpg'),
@@ -287,6 +572,19 @@ const Puzzle = [
     ],
    word: "JAMAICAN",
    question: "What culture is this?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -304,6 +602,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/yoruba/yoruba1.jpg'),
       require('../assets/puzzle/yoruba/yoruba2.jpg'),
       require('../assets/puzzle/yoruba/yoruba3.jpg'),
@@ -311,6 +622,19 @@ const Puzzle = [
     ],
    word: "YORUBA",
    question: "What culture is this?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -328,6 +652,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/tahitian/tahitian1.jpg'),
       require('../assets/puzzle/tahitian/tahitian2.jpg'),
       require('../assets/puzzle/tahitian/tahitian3.jpg'),
@@ -335,6 +672,19 @@ const Puzzle = [
     ],
    word: "TAHITIAN",
    question: "What culture is this?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -352,6 +702,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/greek/greek1.jpg'),
       require('../assets/puzzle/greek/greek2.jpg'),
       require('../assets/puzzle/greek/greek3.jpg'),
@@ -359,6 +722,19 @@ const Puzzle = [
     ],
    word: "GREEK",
    question: "What culture is this?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -376,6 +752,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/bank/bank1.png'),
       require('../assets/puzzle/bank/bank2.jpg'),
       require('../assets/puzzle/bank/bank3.jpg'),
@@ -383,6 +772,18 @@ const Puzzle = [
     ],
    word: "BANK",
    question: "What's the common word?" 
+  
+},
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -400,6 +801,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/stave/stave1.png'),
       require('../assets/puzzle/stave/stave2.jpg'),
       require('../assets/puzzle/stave/stave3.jpg'),
@@ -407,6 +821,19 @@ const Puzzle = [
     ],
    word: "STAVE",
    question: "What's the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -424,6 +851,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/pump/pump1.jpg'),
       require('../assets/puzzle/pump/pump2.jpg'),
       require('../assets/puzzle/pump/pump3.jpg'),
@@ -431,6 +871,19 @@ const Puzzle = [
     ],
    word: "PUMP",
    question: "What's the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -446,6 +899,19 @@ const Puzzle = [
   
 },
 
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
 {
   images: [
       require('../assets/puzzle/band/band1.jpg'),
@@ -455,6 +921,19 @@ const Puzzle = [
     ],
    word: "BAND",
    question: "What's the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -472,6 +951,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/blue/blue1.jpg'),
       require('../assets/puzzle/blue/blue2.jpg'),
       require('../assets/puzzle/blue/blue3.jpg'),
@@ -479,6 +971,19 @@ const Puzzle = [
     ],
    word: "BLUE",
    question: "What's the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -496,6 +1001,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/pound/pound1.jpg'),
       require('../assets/puzzle/pound/pound2.jpg'),
       require('../assets/puzzle/pound/pound3.jpg'),
@@ -503,6 +1021,19 @@ const Puzzle = [
     ],
    word: "POUND",
    question: "What's the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -520,6 +1051,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/bar/bar1.jpg'),
       require('../assets/puzzle/bar/bar2.jpg'),
       require('../assets/puzzle/bar/bar3.png'),
@@ -527,6 +1071,19 @@ const Puzzle = [
     ],
    word: "BAR",
    question: "What's the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -544,6 +1101,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/round/round1.jpg'),
       require('../assets/puzzle/round/round2.jpg'),
       require('../assets/puzzle/round/round3.jpg'),
@@ -551,6 +1121,19 @@ const Puzzle = [
     ],
    word: "ROUND",
    question: "What's the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -568,6 +1151,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/file/file1.jpg'),
       require('../assets/puzzle/file/file2.jpg'),
       require('../assets/puzzle/file/file3.png'),
@@ -575,6 +1171,19 @@ const Puzzle = [
     ],
    word: "FILE",
    question: "What's the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -592,6 +1201,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/hold/hold1.jpg'),
       require('../assets/puzzle/hold/hold2.jpg'),
       require('../assets/puzzle/hold/hold3.jpg'),
@@ -599,6 +1221,19 @@ const Puzzle = [
     ],
    word: "HOLD",
    question: "What's the common word??" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -616,6 +1251,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/crack/crack1.jpg'),
       require('../assets/puzzle/crack/crack2.jpg'),
       require('../assets/puzzle/crack/crack3.jpg'),
@@ -623,6 +1271,19 @@ const Puzzle = [
     ],
    word: "CRACK",
    question: "What's the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -640,6 +1301,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/spot/spot1.jpg'),
       require('../assets/puzzle/spot/spot2.jpg'),
       require('../assets/puzzle/spot/spot3.jpg'),
@@ -647,6 +1321,19 @@ const Puzzle = [
     ],
    word: "SPOT",
    question: "What's the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -664,6 +1351,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/seal/seal1.jpg'),
       require('../assets/puzzle/seal/seal2.jpg'),
       require('../assets/puzzle/seal/seal3.jpg'),
@@ -671,6 +1371,19 @@ const Puzzle = [
     ],
    word: "SEAL",
    question: "What's the common word??" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -688,6 +1401,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/park/park1.jpg'),
       require('../assets/puzzle/park/park2.jpg'),
       require('../assets/puzzle/park/park3.jpg'),
@@ -695,6 +1421,19 @@ const Puzzle = [
     ],
    word: "PARK",
    question: "What's the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -709,7 +1448,18 @@ const Puzzle = [
    question: "What's the common word?" 
   
 },
-
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
 
 
 {
@@ -723,7 +1473,18 @@ const Puzzle = [
    question: "What's the common word?" 
   
 },
-
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
 {
   images: [
       require('../assets/puzzle/charge/charge1.jpg'),
@@ -733,6 +1494,19 @@ const Puzzle = [
     ],
    word: "CHARGE",
    question: "What's the common word?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -750,6 +1524,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/shooter/shooter1.jpg'),
       require('../assets/puzzle/shooter/shooter2.jpg'),
       require('../assets/puzzle/shooter/shooter3.jpg'),
@@ -757,6 +1544,19 @@ const Puzzle = [
     ],
    word: "SHOOTER",
    question: "What type of game is this?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -774,6 +1574,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/cards/cards1.jpg'),
       require('../assets/puzzle/cards/cards2.jpg'),
       require('../assets/puzzle/cards/cards3.jpg'),
@@ -781,6 +1594,18 @@ const Puzzle = [
     ],
    word: "CARDS",
    question: "What type of game is this?" 
+  
+},
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -793,6 +1618,19 @@ const Puzzle = [
     ],
    word: "RACING",
    question: "What type of game is this?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -810,6 +1648,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/avatar/avatar1.jpg'),
       require('../assets/puzzle/avatar/avatar2.jpg'),
       require('../assets/puzzle/avatar/avatar3.jpg'),
@@ -817,6 +1668,19 @@ const Puzzle = [
     ],
    word: "AVATAR",
    question: "What movie is this?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -834,6 +1698,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/madea/madea1.jpg'),
       require('../assets/puzzle/madea/madea2.jpg'),
       require('../assets/puzzle/madea/madea3.jpg'),
@@ -846,6 +1723,19 @@ const Puzzle = [
 
 {
   images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},
+
+{
+  images: [
       require('../assets/puzzle/shazam/shazam1.jpg'),
       require('../assets/puzzle/shazam/shazam2.jpg'),
       require('../assets/puzzle/shazam/shazam3.jpg'),
@@ -853,6 +1743,19 @@ const Puzzle = [
     ],
    word: "SHAZAM",
    question: "What movie is this?" 
+  
+},
+
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
   
 },
 
@@ -869,7 +1772,18 @@ const Puzzle = [
 },
 
 
-    
+{
+  images: [
+      require('../assets/Images/fruits/fruit1.jpg'),
+      require('../assets/Images/fruits/fruit2.jpg'),
+      require('../assets/Images/fruits/fruit3.jpg'),
+      require('../assets/Images/fruits/fruit4.jpg'),
+    ],
+   word: "FRUIT",
+   question: "What is the common word?"
+  
+  
+},  
   
   
   ]

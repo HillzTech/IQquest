@@ -777,6 +777,264 @@ const levels = [
     definition: "Maroon is a deep, dark red color with a hint of brown or purple. It's a rich and warm shade, often associated with sophistication and elegance. The name maroon comes from the French word marron, which originally referred to chestnut, but later evolved to describe this deep reddish-brown color."
   },
 
+  
+ {
+  images: [
+     require('../assets/Images/record/record1.jpg'),
+     require('../assets/Images/record/record2.jpg'),
+     require('../assets/Images/record/record3.jpg'),
+     require('../assets/Images/record/record4.jpg'),
+   ],
+  word: "RECORD",
+  category: "Music",
+  definition: "To record music means to capture sound or musical performances in a digital or analog format for playback, distribution, or archival purposes."
+},
+ 
+ 
+ {
+    images: [
+       require('../assets/Images/jazz/jazz1.jpg'),
+       require('../assets/Images/jazz/jazz2.jpg'),
+       require('../assets/Images/jazz/jazz3.jpg'),
+       require('../assets/Images/jazz/jazz4.jpg'),
+     ],
+    word: "JAZZ",
+    category: "Music",
+    definition: "Jazz, musical form, often improvisational, developed by African Americans and influenced by both European harmonic structure and African rhythms. It was developed partially from ragtime and blues and is often characterized by syncopated rhythms, polyphonic ensemble playing, varying degrees of improvisation, often deliberate deviations of pitch, and the use of original timbres."
+  },
+
+
+  {
+    images: [
+       require('../assets/Images/staff/staff1.jpg'),
+       require('../assets/Images/staff/staff2.jpg'),
+       require('../assets/Images/staff/staff3.jpg'),
+       require('../assets/Images/staff/staff4.jpg'),
+     ],
+    word: "STAFF",
+    category: "Music",
+    definition: "Staff notation, also known as standard notation, is the system of musical notation used by most Western classical and popular music. It consists of a set of five horizontal lines called a staff (plural: staves) on which musical symbols such as notes, rests, and other symbols are placed to represent pitch and rhythm. The pitch of a note is determined by its vertical position on the staff, and the duration of a note is indicated by the shape of the note head and any accompanying flags or stems."
+  },
+
+  
+  {
+    images: [
+       require('../assets/Images/country/country1.jpeg'),
+       require('../assets/Images/country/country2.jpg'),
+       require('../assets/Images/country/country3.jpg'),
+       require('../assets/Images/country/country4.jpg'),
+     ],
+    word: "COUNTRY",
+    category: "Music",
+    definition:"Country music, style of American popular music that originated in rural areas of the South and West in the early 20th century. The term country and western music (later shortened to country music) was adopted by the recording industry in 1949 to replace the derogatory label hillbilly music. Ultimately, country music's roots lie in the ballads, folk songs, and popular songs of the English, Scots, and Irish settlers of the Appalachians and other parts of the South. In the early 1920s the traditional string-band music of the Southern mountain regions began to be commercially recorded, with Fiddlin' John Carson garnering the genre's first hit record in 1923."
+  },
+
+  {
+    images: [
+       require('../assets/Images/duet/duet1.jpg'),
+       require('../assets/Images/duet/duet2.jpg'),
+       require('../assets/Images/duet/duet3.jpg'),
+       require('../assets/Images/duet/duet4.jpg'),
+     ],
+    word: "DUET",
+    category: "Music",
+    definition: "A duet is a musical composition or performance featuring two performers, typically singers or instrumentalists, who perform together as a pair. The term duet is derived from the Italian word duetto meaning two together. Duets can be found in various genres of music, including classical, pop, jazz, country, and more.In a vocal duet, two singers may perform either in unison, harmony, or with alternating lead and backing vocal parts. They may sing together throughout the entire piece or take turns singing different sections."
+  },
+  
+  {
+    images: [
+       require('../assets/Images/opera/opera1.jpg'),
+       require('../assets/Images/opera/opera2.jpg'),
+       require('../assets/Images/opera/opera3.jpg'),
+       require('../assets/Images/opera/opera4.jpg'),
+     ],
+    word: "OPERA",
+    category: "Music",
+    definition:"Opera, a staged drama set to music in its entirety, made up of vocal pieces with instrumental accompaniment and usually with orchestral overtures and interludes. In some operas the music is continuous throughout an act; in others it is broken up into discrete pieces, or “numbers,” separated either by recitative (a dramatic type of singing that approaches speech) or by spoken dialogue. This article focuses on opera in the Western tradition. For an overview of opera and operalike traditions in Asia (particularly in China), see the appropriate sections of Chinese music, Japanese music, South Asian arts, and Southeast Asian arts; see also short entries on specific forms of Chinese opera, such as chuanqi, jingxi, kunqu, and nanxi."
+  },
+  {
+    images: [
+       require('../assets/Images/hiphop/hiphop1.jpg'),
+       require('../assets/Images/hiphop/hiphop2.jpg'),
+       require('../assets/Images/hiphop/hiphop3.jpg'),
+       require('../assets/Images/hiphop/hiphop4.jpg'),
+     ],
+    word: "HIPHOP",
+    category: "Music",
+    definition:"Hip-hop, cultural movement that attained widespread popularity in the 1980s and 90s and also the backing music for rap, the musical style incorporating rhythmic and/or rhyming speech that became the movement's most lasting and influential art form."
+  },
+
+  {
+    images: [
+       require('../assets/Images/banjo/banjo1.jpg'),
+       require('../assets/Images/banjo/banjo2.jpg'),
+       require('../assets/Images/banjo/banjo3.jpg'),
+       require('../assets/Images/banjo/banjo4.jpg'),
+     ],
+    word: "BANJO",
+    category: "Music",
+    definition: "A banjo is a stringed musical instrument that originated in West Africa and was later adopted in the Americas, particularly in the United States. It typically consists of a circular body, often made of wood or a synthetic material, with a drum-like membrane stretched over the top. The banjo has a distinctive sound produced by plucking or strumming the strings, which are stretched over a bridge and fretboard. It is commonly used in folk, bluegrass, country, and traditional African music, and it has a unique twangy tone that sets it apart from other stringed instruments."
+  },
+   
+
+  {
+    images: [
+       require('../assets/Images/chorale/chorale1.jpg'),
+       require('../assets/Images/chorale/chorale2.jpg'),
+       require('../assets/Images/chorale/chorale3.jpg'),
+       require('../assets/Images/chorale/chorale4.jpg'),
+     ],
+    word: "CHORALE",
+    category: "Music",
+    definition:"A chorale can also refer to a group of singers who specialize in performing choral music, often in a choir setting. Chorales typically consist of multiple vocal parts, such as soprano, alto, tenor, and bass, and they may perform a wide range of repertoire, including classical, sacred, secular, and contemporary music. Chorales play an important role in both amateur and professional music communities, contributing to the cultural and artistic landscape through their vocal performances."
+  },
+
+
+  {
+    images: [
+       require('../assets/Images/afrobeat/afrobeat1.jpg'),
+       require('../assets/Images/afrobeat/afrobeat2.jpg'),
+       require('../assets/Images/afrobeat/afrobeat3.jpg'),
+       require('../assets/Images/afrobeat/afrobeat4.jpg'),
+     ],
+    word: "AFROBEAT",
+    category: "Music",
+    definition:"Afrobeat (also known as Afrofunk) is a Nigerian music genre that involves the combination of West African musical styles from mainly Nigeria such as the traditional Yoruba and Igbo music and highlife with American funk, jazz, and soul influences."
+  },
+
+  {
+    images: [
+       require('../assets/Images/horror/horror1.jpg'),
+       require('../assets/Images/horror/horror2.jpg'),
+       require('../assets/Images/horror/horror3.jpg'),
+       require('../assets/Images/horror/horror4.jpg'),
+     ],
+    word: "HORROR",
+    category: "Film",
+    definition:"Horror is a film genre that seeks to elicit fear or disgust in its audience for entertainment purposes. Horror films often explore dark subject matter and may deal with transgressive topics or themes. Broad elements include monsters, apocalyptic events, and religious or folk beliefs."
+  },
+
+  {
+    images: [
+       require('../assets/Images/action/action1.jpg'),
+       require('../assets/Images/action/action2.jpg'),
+       require('../assets/Images/action/action3.jpg'),
+       require('../assets/Images/action/action4.jpg'),
+     ],
+    word: "ACTION",
+    category: "Film",
+    definition: "Action film is a film genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, and frantic chases."
+  },
+
+  {
+    images: [
+       require('../assets/Images/lighting/lighting1.jpg'),
+       require('../assets/Images/lighting/lighting2.jpg'),
+       require('../assets/Images/lighting/lighting3.jpg'),
+       require('../assets/Images/lighting/lighting4.jpg'),
+     ],
+    word: "LIGHTING",
+    category: "Film",
+    definition:"Lighting in movies plays a crucial role in setting the mood, atmosphere, and visual tone of a scene. It serves both practical and artistic purposes, enhancing the storytelling and conveying emotions to the audience. "
+  },
+  {
+   images: [
+      require('../assets/Images/fantasy/fantasy1.jpg'),
+      require('../assets/Images/fantasy/fantasy2.jpg'),
+      require('../assets/Images/fantasy/fantasy3.jpg'),
+      require('../assets/Images/fantasy/fantasy4.jpg'),
+    ],
+   word: "FANTASY",
+   category: "Film",
+   definition:"Fantasy, imaginative fiction dependent for effect on strangeness of setting (such as other worlds or times) and of characters (such as supernatural or unnatural beings). Examples include William Shakespeare's A Midsummer Night's Dream, Jonathan Swift's Gulliver's Travels, J.R.R. Tolkien's The Lord of the Rings, and T.H. White's The Once and Future King. Fantasy is set in an imaginary world and features the magic of mythical beings."
+ },
+ 
+ 
+
+ 
+
+
+
+{
+  images: [
+     require('../assets/Images/crew/crew1.jpg'),
+     require('../assets/Images/crew/crew2.jpg'),
+     require('../assets/Images/crew/crew3.jpg'),
+     require('../assets/Images/crew/crew4.jpg'),
+   ],
+  word: "CREW",
+  category: "Film",
+  definition:"A crew is a group of individuals who work together on a movie or television production. They fulfill various roles, including director, producer, cinematographer, and sound technician, among others. Each member contributes their expertise to bring the production to life, from managing the creative vision to handling technical aspects like lighting and sound. Together, the crew collaborates to create a cohesive and engaging final product for audiences to enjoy."
+},
+
+
+
+  
+  
+
+  {
+    images: [
+       require('../assets/Images/costume/costume1.jpg'),
+       require('../assets/Images/costume/costume2.jpg'),
+       require('../assets/Images/costume/costume3.jpg'),
+       require('../assets/Images/costume/costume4.jpg'),
+     ],
+    word: "COSTUME",
+    category: "Film",
+    definition:"Costume refers to the clothing and accessories worn by actors or performers in a theatrical production, film, television show, or other forms of entertainment. Costumes play a significant role in bringing characters to life, establishing setting and time period, and enhancing storytelling."
+  },
+  
+ 
+  {
+    images: [
+       require('../assets/Images/musical/musical1.jpg'),
+       require('../assets/Images/musical/musical2.jpg'),
+       require('../assets/Images/musical/musical3.jpg'),
+       require('../assets/Images/musical/musical4.jpg'),
+     ],
+    word: "MUSICAL",
+    category: "Film",
+    definition:"Musical film is a film genre in which songs by the characters are interwoven into the narrative, sometimes accompanied by dancing. The songs usually advance the plot or develop the film's characters, but in some cases, they serve merely as breaks in the storyline, often as elaborate production numbers"
+  },
+
+  {
+    images: [
+       require('../assets/Images/scifi/scifi1.jpg'),
+       require('../assets/Images/scifi/scifi2.jpg'),
+       require('../assets/Images/scifi/scifi3.jpg'),
+       require('../assets/Images/scifi/scifi4.jpg'),
+     ],
+    word: "SCIFI",
+    category: "Film",
+    definition:"Science fiction, popularly shortened as sci-fi, is a genre of fiction that creatively depicts real or imaginary science and technology as part of its plot, setting, or theme. The fiction part of science fiction means, of course, that it's a fictional story—not a real-life account."
+  },
+
+  {
+    images: [
+       require('../assets/Images/subtitle/subtitle1.jpg'),
+       require('../assets/Images/subtitle/subtitle2.jpg'),
+       require('../assets/Images/subtitle/subtitle3.jpg'),
+       require('../assets/Images/subtitle/subtitle4.jpg'),
+     ],
+    word: "SUBTITLE",
+    category: "Film",
+    definition:"Subtitles are texts representing the contents of the audio in a film, television show, opera or other audiovisual media. Subtitles might provide a transcription or translation of spoken dialogue. Although naming conventions can vary, captions are subtitles that include written descriptions of other elements of the audio, like music or sound effects. Captions are thus especially helpful to people who are deaf or hard-of-hearing. Subtitles may also add information that is not present in the audio. Localizing subtitles provide cultural context to viewers. For example, a subtitle could be used to explain to an audience unfamiliar with sake that it is a type of Japanese wine. Lastly, subtitles are sometimes used for humor, as in Annie Hall, where subtitles show the characters' inner thoughts, which contradict what they were saying in the audio."
+  },
+
+
+  {
+    images: [
+       require('../assets/Images/rental/rental1.jpg'),
+       require('../assets/Images/rental/rental2.jpg'),
+       require('../assets/Images/rental/rental3.jpg'),
+       require('../assets/Images/rental/rental4.jpg'),
+     ],
+    word: "RENTAL",
+    category: "Film",
+    definition:"Rental refers to the act of temporarily obtaining or leasing something, such as a movie, for a specified period of time in exchange for payment. In the context of movies, rental typically refers to the process of renting or borrowing a film for a short-term viewing period, usually from a rental store, online streaming service, or digital platform. Renting a movie allows individuals to watch it at their convenience without needing to purchase a permanent copy."
+  },
+  
+
   {
     images: [
        require('../assets/Images/stadium/stadium1.jpg'),
@@ -1282,262 +1540,6 @@ const levels = [
 
 
 
- {
-  images: [
-     require('../assets/Images/record/record1.jpg'),
-     require('../assets/Images/record/record2.jpg'),
-     require('../assets/Images/record/record3.jpg'),
-     require('../assets/Images/record/record4.jpg'),
-   ],
-  word: "RECORD",
-  category: "Music",
-  definition: "To record music means to capture sound or musical performances in a digital or analog format for playback, distribution, or archival purposes."
-},
- 
- 
- {
-    images: [
-       require('../assets/Images/jazz/jazz1.jpg'),
-       require('../assets/Images/jazz/jazz2.jpg'),
-       require('../assets/Images/jazz/jazz3.jpg'),
-       require('../assets/Images/jazz/jazz4.jpg'),
-     ],
-    word: "JAZZ",
-    category: "Music",
-    definition: "Jazz, musical form, often improvisational, developed by African Americans and influenced by both European harmonic structure and African rhythms. It was developed partially from ragtime and blues and is often characterized by syncopated rhythms, polyphonic ensemble playing, varying degrees of improvisation, often deliberate deviations of pitch, and the use of original timbres."
-  },
-
-
-  {
-    images: [
-       require('../assets/Images/staff/staff1.png'),
-       require('../assets/Images/staff/staff2.jpg'),
-       require('../assets/Images/staff/staff3.jpg'),
-       require('../assets/Images/staff/staff4.png'),
-     ],
-    word: "STAFF",
-    category: "Music",
-    definition: "Staff notation, also known as standard notation, is the system of musical notation used by most Western classical and popular music. It consists of a set of five horizontal lines called a staff (plural: staves) on which musical symbols such as notes, rests, and other symbols are placed to represent pitch and rhythm. The pitch of a note is determined by its vertical position on the staff, and the duration of a note is indicated by the shape of the note head and any accompanying flags or stems."
-  },
-
-  
-  {
-    images: [
-       require('../assets/Images/country/country1.jpg'),
-       require('../assets/Images/country/country2.jpg'),
-       require('../assets/Images/country/country3.jpg'),
-       require('../assets/Images/country/country4.jpg'),
-     ],
-    word: "COUNTRY",
-    category: "Music",
-    definition:"Country music, style of American popular music that originated in rural areas of the South and West in the early 20th century. The term country and western music (later shortened to country music) was adopted by the recording industry in 1949 to replace the derogatory label hillbilly music. Ultimately, country music's roots lie in the ballads, folk songs, and popular songs of the English, Scots, and Irish settlers of the Appalachians and other parts of the South. In the early 1920s the traditional string-band music of the Southern mountain regions began to be commercially recorded, with Fiddlin' John Carson garnering the genre's first hit record in 1923."
-  },
-
-  {
-    images: [
-       require('../assets/Images/duet/duet1.jpg'),
-       require('../assets/Images/duet/duet2.jpg'),
-       require('../assets/Images/duet/duet3.jpg'),
-       require('../assets/Images/duet/duet4.jpg'),
-     ],
-    word: "DUET",
-    category: "Music",
-    definition: "A duet is a musical composition or performance featuring two performers, typically singers or instrumentalists, who perform together as a pair. The term duet is derived from the Italian word duetto meaning two together. Duets can be found in various genres of music, including classical, pop, jazz, country, and more.In a vocal duet, two singers may perform either in unison, harmony, or with alternating lead and backing vocal parts. They may sing together throughout the entire piece or take turns singing different sections."
-  },
-  
-  {
-    images: [
-       require('../assets/Images/opera/opera1.jpg'),
-       require('../assets/Images/opera/opera2.jpg'),
-       require('../assets/Images/opera/opera3.jpg'),
-       require('../assets/Images/opera/opera4.jpg'),
-     ],
-    word: "OPERA",
-    category: "Music",
-    definition:"Opera, a staged drama set to music in its entirety, made up of vocal pieces with instrumental accompaniment and usually with orchestral overtures and interludes. In some operas the music is continuous throughout an act; in others it is broken up into discrete pieces, or “numbers,” separated either by recitative (a dramatic type of singing that approaches speech) or by spoken dialogue. This article focuses on opera in the Western tradition. For an overview of opera and operalike traditions in Asia (particularly in China), see the appropriate sections of Chinese music, Japanese music, South Asian arts, and Southeast Asian arts; see also short entries on specific forms of Chinese opera, such as chuanqi, jingxi, kunqu, and nanxi."
-  },
-  {
-    images: [
-       require('../assets/Images/hiphop/hiphop1.jpg'),
-       require('../assets/Images/hiphop/hiphop2.jpg'),
-       require('../assets/Images/hiphop/hiphop3.jpg'),
-       require('../assets/Images/hiphop/hiphop4.jpg'),
-     ],
-    word: "HIPHOP",
-    category: "Music",
-    definition:"Hip-hop, cultural movement that attained widespread popularity in the 1980s and 90s and also the backing music for rap, the musical style incorporating rhythmic and/or rhyming speech that became the movement's most lasting and influential art form."
-  },
-
-  {
-    images: [
-       require('../assets/Images/banjo/banjo1.jpg'),
-       require('../assets/Images/banjo/banjo2.jpg'),
-       require('../assets/Images/banjo/banjo3.jpg'),
-       require('../assets/Images/banjo/banjo4.jpg'),
-     ],
-    word: "BANJO",
-    category: "Music",
-    definition: "A banjo is a stringed musical instrument that originated in West Africa and was later adopted in the Americas, particularly in the United States. It typically consists of a circular body, often made of wood or a synthetic material, with a drum-like membrane stretched over the top. The banjo has a distinctive sound produced by plucking or strumming the strings, which are stretched over a bridge and fretboard. It is commonly used in folk, bluegrass, country, and traditional African music, and it has a unique twangy tone that sets it apart from other stringed instruments."
-  },
-   
-
-  {
-    images: [
-       require('../assets/Images/chorale/chorale1.jpg'),
-       require('../assets/Images/chorale/chorale2.jpg'),
-       require('../assets/Images/chorale/chorale3.jpg'),
-       require('../assets/Images/chorale/chorale4.jpg'),
-     ],
-    word: "CHORALE",
-    category: "Music",
-    definition:"A chorale can also refer to a group of singers who specialize in performing choral music, often in a choir setting. Chorales typically consist of multiple vocal parts, such as soprano, alto, tenor, and bass, and they may perform a wide range of repertoire, including classical, sacred, secular, and contemporary music. Chorales play an important role in both amateur and professional music communities, contributing to the cultural and artistic landscape through their vocal performances."
-  },
-
-
-  {
-    images: [
-       require('../assets/Images/afrobeat/afrobeat1.jpg'),
-       require('../assets/Images/afrobeat/afrobeat2.jpg'),
-       require('../assets/Images/afrobeat/afrobeat3.jpg'),
-       require('../assets/Images/afrobeat/afrobeat4.jpg'),
-     ],
-    word: "AFROBEAT",
-    category: "Music",
-    definition:"Afrobeat (also known as Afrofunk) is a Nigerian music genre that involves the combination of West African musical styles from mainly Nigeria such as the traditional Yoruba and Igbo music and highlife with American funk, jazz, and soul influences."
-  },
-
-  {
-    images: [
-       require('../assets/Images/horror/horror1.jpg'),
-       require('../assets/Images/horror/horror2.jpg'),
-       require('../assets/Images/horror/horror3.jpg'),
-       require('../assets/Images/horror/horror4.jpg'),
-     ],
-    word: "HORROR",
-    category: "Film",
-    definition:"Horror is a film genre that seeks to elicit fear or disgust in its audience for entertainment purposes. Horror films often explore dark subject matter and may deal with transgressive topics or themes. Broad elements include monsters, apocalyptic events, and religious or folk beliefs."
-  },
-
-  {
-    images: [
-       require('../assets/Images/action/action1.jpg'),
-       require('../assets/Images/action/action2.jpg'),
-       require('../assets/Images/action/action3.jpg'),
-       require('../assets/Images/action/action4.jpg'),
-     ],
-    word: "ACTION",
-    category: "Film",
-    definition: "Action film is a film genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, and frantic chases."
-  },
-
-  {
-    images: [
-       require('../assets/Images/lighting/lighting1.jpg'),
-       require('../assets/Images/lighting/lighting2.jpg'),
-       require('../assets/Images/lighting/lighting3.jpg'),
-       require('../assets/Images/lighting/lighting4.jpg'),
-     ],
-    word: "LIGHTING",
-    category: "Film",
-    definition:"Lighting in movies plays a crucial role in setting the mood, atmosphere, and visual tone of a scene. It serves both practical and artistic purposes, enhancing the storytelling and conveying emotions to the audience. "
-  },
-  {
-   images: [
-      require('../assets/Images/fantasy/fantasy1.jpg'),
-      require('../assets/Images/fantasy/fantasy2.jpg'),
-      require('../assets/Images/fantasy/fantasy3.jpg'),
-      require('../assets/Images/fantasy/fantasy4.jpg'),
-    ],
-   word: "FANTASY",
-   category: "Film",
-   definition:"Fantasy, imaginative fiction dependent for effect on strangeness of setting (such as other worlds or times) and of characters (such as supernatural or unnatural beings). Examples include William Shakespeare's A Midsummer Night's Dream, Jonathan Swift's Gulliver's Travels, J.R.R. Tolkien's The Lord of the Rings, and T.H. White's The Once and Future King. Fantasy is set in an imaginary world and features the magic of mythical beings."
- },
- 
- 
-
- 
-
-
-
-{
-  images: [
-     require('../assets/Images/crew/crew1.jpg'),
-     require('../assets/Images/crew/crew2.jpg'),
-     require('../assets/Images/crew/crew3.jpg'),
-     require('../assets/Images/crew/crew4.jpg'),
-   ],
-  word: "CREW",
-  category: "Film",
-  definition:"A crew is a group of individuals who work together on a movie or television production. They fulfill various roles, including director, producer, cinematographer, and sound technician, among others. Each member contributes their expertise to bring the production to life, from managing the creative vision to handling technical aspects like lighting and sound. Together, the crew collaborates to create a cohesive and engaging final product for audiences to enjoy."
-},
-
-
-
-  
-  
-
-  {
-    images: [
-       require('../assets/Images/costume/costume1.jpg'),
-       require('../assets/Images/costume/costume2.jpg'),
-       require('../assets/Images/costume/costume3.jpg'),
-       require('../assets/Images/costume/costume4.jpg'),
-     ],
-    word: "COSTUME",
-    category: "Film",
-    definition:"Costume refers to the clothing and accessories worn by actors or performers in a theatrical production, film, television show, or other forms of entertainment. Costumes play a significant role in bringing characters to life, establishing setting and time period, and enhancing storytelling."
-  },
-  
- 
-  {
-    images: [
-       require('../assets/Images/musical/musical1.jpg'),
-       require('../assets/Images/musical/musical2.jpg'),
-       require('../assets/Images/musical/musical3.jpg'),
-       require('../assets/Images/musical/musical4.jpg'),
-     ],
-    word: "MUSICAL",
-    category: "Film",
-    definition:"Musical film is a film genre in which songs by the characters are interwoven into the narrative, sometimes accompanied by dancing. The songs usually advance the plot or develop the film's characters, but in some cases, they serve merely as breaks in the storyline, often as elaborate production numbers"
-  },
-
-  {
-    images: [
-       require('../assets/Images/scifi/scifi1.jpg'),
-       require('../assets/Images/scifi/scifi2.jpg'),
-       require('../assets/Images/scifi/scifi3.jpg'),
-       require('../assets/Images/scifi/scifi4.jpg'),
-     ],
-    word: "SCIFI",
-    category: "Film",
-    definition:"Science fiction, popularly shortened as sci-fi, is a genre of fiction that creatively depicts real or imaginary science and technology as part of its plot, setting, or theme. The fiction part of science fiction means, of course, that it's a fictional story—not a real-life account."
-  },
-
-  {
-    images: [
-       require('../assets/Images/subtitle/subtitle1.jpeg'),
-       require('../assets/Images/subtitle/subtitle2.jpeg'),
-       require('../assets/Images/subtitle/subtitle3.jpeg'),
-       require('../assets/Images/subtitle/subtitle4.jpeg'),
-     ],
-    word: "SUBTITLE",
-    category: "Film",
-    definition:"Subtitles are texts representing the contents of the audio in a film, television show, opera or other audiovisual media. Subtitles might provide a transcription or translation of spoken dialogue. Although naming conventions can vary, captions are subtitles that include written descriptions of other elements of the audio, like music or sound effects. Captions are thus especially helpful to people who are deaf or hard-of-hearing. Subtitles may also add information that is not present in the audio. Localizing subtitles provide cultural context to viewers. For example, a subtitle could be used to explain to an audience unfamiliar with sake that it is a type of Japanese wine. Lastly, subtitles are sometimes used for humor, as in Annie Hall, where subtitles show the characters' inner thoughts, which contradict what they were saying in the audio."
-  },
-
-
-  {
-    images: [
-       require('../assets/Images/rental/rental1.jpg'),
-       require('../assets/Images/rental/rental2.jpg'),
-       require('../assets/Images/rental/rental3.jpg'),
-       require('../assets/Images/rental/rental4.jpg'),
-     ],
-    word: "RENTAL",
-    category: "Film",
-    definition:"Rental refers to the act of temporarily obtaining or leasing something, such as a movie, for a specified period of time in exchange for payment. In the context of movies, rental typically refers to the process of renting or borrowing a film for a short-term viewing period, usually from a rental store, online streaming service, or digital platform. Renting a movie allows individuals to watch it at their convenience without needing to purchase a permanent copy."
-  },
-  
   {
     images: [
        require('../assets/Images/ballet/ballet1.jpg'),
@@ -1555,7 +1557,7 @@ const levels = [
        require('../assets/Images/tango/tango1.jpg'),
        require('../assets/Images/tango/tango2.jpg'),
        require('../assets/Images/tango/tango3.jpg'),
-       require('../assets/Images/tango/tango44.jpg'),
+       require('../assets/Images/tango/tango4.jpg'),
      ],
     word: "TANGO",
     category: "Dance",
@@ -1580,10 +1582,10 @@ const levels = [
 
  {
   images: [
-     require('../assets/Images/twerk/twerk1.jpeg'),
-     require('../assets/Images/twerk/twerk2.jpeg'),
-     require('../assets/Images/twerk/twerk3.jpeg'),
-     require('../assets/Images/twerk/twerk4.jpeg'),
+     require('../assets/Images/twerk/twerk1.jpg'),
+     require('../assets/Images/twerk/twerk2.jpg'),
+     require('../assets/Images/twerk/twerk3.jpg'),
+     require('../assets/Images/twerk/twerk4.jpg'),
    ],
   word: "TWERK",
   category: "Dance",
@@ -1592,10 +1594,10 @@ const levels = [
 
  {
   images: [
-     require('../assets/Images/split/split1.jpeg'),
-     require('../assets/Images/split/split2.jpeg'),
-     require('../assets/Images/split/split3.jpeg'),
-     require('../assets/Images/split/split4.jpeg'),
+     require('../assets/Images/split/split1.jpg'),
+     require('../assets/Images/split/split2.jpg'),
+     require('../assets/Images/split/split3.jpg'),
+     require('../assets/Images/split/split4.jpg'),
    ],
   word: "SPLIT",
   category: "Dance",
@@ -1689,10 +1691,10 @@ const levels = [
 
   {
     images: [
-       require('../assets/Images/quran/quran1.jpeg'),
-       require('../assets/Images/quran/quran2.png'),
-       require('../assets/Images/quran/quran3.jpeg'),
-       require('../assets/Images/quran/quran4.jpeg'),
+       require('../assets/Images/quran/quaran1.jpg'),
+       require('../assets/Images/quran/quaran2.jpg'),
+       require('../assets/Images/quran/quaran3.jpg'),
+       require('../assets/Images/quran/quaran4.jpg'),
      ], 
     word: "QURAN",
     category: "Religion",
@@ -1719,7 +1721,7 @@ const levels = [
        require('../assets/Images/cardinal/cardinal1.jpg'),
        require('../assets/Images/cardinal/cardinal2.jpg'),
        require('../assets/Images/cardinal/cardinal3.jpg'),
-       require('../assets/Images/cardinal/cardinal4.png'),
+       require('../assets/Images/cardinal/cardinal4.jpg'),
      ],
     word: "CARDINAL",
     category: "Religion",
@@ -1781,10 +1783,10 @@ const levels = [
 
   {
     images: [
-       require('../assets/Images/mandala/mandala1.jpeg'),
-       require('../assets/Images/mandala/mandala2.jpeg'),
-       require('../assets/Images/mandala/mandala3.jpeg'),
-       require('../assets/Images/mandala/mandala4.jpeg'),
+       require('../assets/Images/mandala/mandala1.jpg'),
+       require('../assets/Images/mandala/mandala2.jpg'),
+       require('../assets/Images/mandala/mandala3.jpg'),
+       require('../assets/Images/mandala/mandala4.jpg'),
      ],
     word: "MANDALA",
     category: "Religion",

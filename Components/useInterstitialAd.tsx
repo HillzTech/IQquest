@@ -3,7 +3,7 @@ import { AppState, AppStateStatus } from 'react-native';
 import { InterstitialAd, AdEventType, RequestConfiguration } from 'react-native-google-mobile-ads';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const adUnitId = 'ca-app-pub-1458204118033702/6875450130';
+const adUnitId = 'ca-app-pub-1458204118033702/3922600342';
 const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
   keywords: ['food', 'cooking', 'fruit'],
   requestNonPersonalizedAdsOnly: true,

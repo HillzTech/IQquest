@@ -17,7 +17,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [showAd, setShowAd] = useState<boolean>(false);
   const { score, setScore } = useGame();
-  const adUnitId = 'ca-app-pub-1458204118033702/2153606496';
+  const adUnitId = 'ca-app-pub-1458204118033702/9133923793';
   const rewarded = RewardedAd.createForAdRequest(adUnitId, {
     keywords: ['food', 'cooking', 'fruit'],
     requestNonPersonalizedAdsOnly: true,
@@ -87,7 +87,9 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
         AsyncStorage.setItem('score', score.toString());
         setPendingScore(score + 50);
         setShowAd(false);
-        
+        setTimeout(() => {
+          playSound('daily');
+       }, 30000);
         
       }
     });
@@ -205,16 +207,16 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           <ImageBackground source={require('../assets/Images/newcoin.png')} style={{ width: wp('19%'), height: hp('12%') }} />
           <Text style={{ color: 'white', textAlign: 'center', fontSize: RFValue(17), fontFamily: 'Poppins-Bold', bottom: hp('8%')}}>{score}</Text>
         </View>
-      <View style={{justifyContent:'center', alignItems:'flex-end', right:wp('4%'), bottom:hp('27%')}}>
+      <View style={{justifyContent:'center', alignItems:'flex-end', right:wp('4%'), bottom:hp('21%')}}>
       <TouchableOpacity onPress={handleExit}>
         <Ionicons name='close' size={iconSize} color={'white'}/>
          </TouchableOpacity>
         <View>
-            <ImageBackground source={require('../assets/box.png')} style={{width:wp('30%'), height:hp('18%'), top:hp('6%'), right: wp('19%')}}/>
+            <ImageBackground source={require('../assets/box.png')} style={{width:wp('30%'), height:hp('18%'), top:hp('7%'), right: wp('19%')}}/>
         </View>
       </View>
 
-        {/* 
+      
 
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', bottom:hp('19%') }}>
           <TouchableOpacity onPress={handleShowAd}>
@@ -222,9 +224,9 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
-        */}
+        
 
-        <View style={{bottom: hp('20%'), flex: 1, maxWidth:wp('60%'), left:wp('11%')}}>
+        <View style={{bottom: hp('25%'), flex: 1, maxWidth:wp('59%'), left:wp('11%')}}>
           {isPurchasing && <ActivityIndicator size="large" color="#0000ff" />}
           {!isPurchasing &&
             packages.map((pkg) => (

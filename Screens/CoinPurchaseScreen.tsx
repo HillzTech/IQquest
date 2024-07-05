@@ -15,7 +15,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [showAd, setShowAd] = useState<boolean>(false);
   const { score, setScore } = useGame();
-  const adUnitId = 'ca-app-pub-1458204118033702/2153606496';
+  const adUnitId = 'ca-app-pub-1458204118033702/9133923793';
   const rewarded = RewardedAd.createForAdRequest(adUnitId, {
     keywords: ['food', 'cooking', 'fruit'],
     requestNonPersonalizedAdsOnly: true,
@@ -87,8 +87,9 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
         AsyncStorage.setItem('score', score.toString());
         setPendingScore(score + 50);
         setShowAd(false);
-        
-        
+        setTimeout(() => {
+          playSound('daily');
+       }, 30000);
       }
     });
 
@@ -202,18 +203,18 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
           <Text style={{ color: 'white', textAlign: 'center', fontSize: RFValue(21), fontFamily: 'Poppins-Bold', bottom:  hp('10.5%')}}>{score}</Text>
         </View>
 
-{/* 
+
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', top: hp('-18%')}}>
           <TouchableOpacity onPress={handleShowAd}>
             <ImageBackground source={require('../assets/watchad.png')} style={{ width: wp('70%'), height: hp('14%')}} />
           </TouchableOpacity>
         </View>
 
-        */}
+        
 
        
 
-        <View style={{top: hp('-20%'), flex: 1,  maxWidth:wp('70%'), left:wp('16%')}}>
+        <View style={{top: hp('-26%'), flex: 1,  maxWidth:wp('68%'), left:wp('16%')}}>
           {isPurchasing && <ActivityIndicator size="large" color="#0000ff" />}
           {!isPurchasing &&
             packages.map((pkg) => (
