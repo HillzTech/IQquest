@@ -42,7 +42,7 @@
     "react-native-gesture-handler": "^2.14.0",
     "react-native-gif": "^1.0.3",
     "react-native-glassfy-module": "^1.6.2",
-    "react-native-google-mobile-ads": "^13.0.2",
+    "react-native-google-mobile-ads": "^13.6.1",
     "react-native-image-zoom-viewer": "^3.0.1",
     "react-native-paper": "^5.12.3",
     "react-native-purchases": "^7.23.0",

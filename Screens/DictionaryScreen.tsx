@@ -76,9 +76,9 @@ const DictionaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
             <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: wp('1%'), top: hp('4%'), width: wp('87%'), borderRadius: 20 }}>
               {images.length > 0 && (
                 <View style={{flex:1, justifyContent:'center', alignItems:'center', left:wp('16%')}}> 
-                <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginTop: hp('2%') }}>
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginBottom: hp('1%') }}>
                   {images.map((image, index) => (
-                    <Image key={index} source={image} style={{ width: wp('29%'), height: hp('10%'), margin: 5 }} />
+                    <Image key={index} source={image} style={{ width: wp('27%'), height: hp('11.5%'), margin: 4 }} />
                   ))}
                   </View>
                 </View>

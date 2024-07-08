@@ -29,6 +29,7 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [correctSound, setCorrectSound] = useState<Sound | null>(null);
   const { soundEnabled } = useSound();
   const { playSound } = useSound();
+  const [loadingAd, setLoadingAd] = useState<boolean>(false);
   const iconSize = width < 395 ? 37 : 40
 
   useEffect(() => {
@@ -82,14 +83,13 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 
   useEffect(() => {
     const adEventListener = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
+      console.log('Ad Loaded');
       if (showAd) {
         rewarded.show();
         AsyncStorage.setItem('score', score.toString());
         setPendingScore(score + 50);
         setShowAd(false);
-        setTimeout(() => {
-          playSound('daily');
-       }, 30000);
+        setLoadingAd(false); 
         
       }
     });
@@ -101,6 +101,8 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       rewarded.load(); // Load a new ad after receiving the reward
     });
 
+    
+
     rewarded.load();
 
     return () => {
@@ -111,6 +113,7 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 
   const handleShowAd = () => {
     console.log('Button clicked');
+    setLoadingAd(true);
     setShowAd(true);
   };
 
@@ -217,14 +220,16 @@ export const DrawerScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       </View>
 
       
-
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', bottom:hp('19%') }}>
+  
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', bottom:hp('18.8%') }}>
+        {loadingAd && <ActivityIndicator style={{ marginTop: hp('58%') }} size='small' color="#0000ff" />} 
           <TouchableOpacity onPress={handleShowAd}>
             <ImageBackground source={require('../assets/watchad.png')} style={{ width: wp('60%'), height: wp('25%')}} />
           </TouchableOpacity>
+          {loadingAd && <ActivityIndicator style={{ marginTop: hp('58%') }} size='small' color="white" />} 
         </View>
-
         
+  
 
         <View style={{bottom: hp('25%'), flex: 1, maxWidth:wp('59%'), left:wp('11%')}}>
           {isPurchasing && <ActivityIndicator size="large" color="#0000ff" />}

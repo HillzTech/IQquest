@@ -203,18 +203,18 @@ export const CoinPurchaseScreen: React.FC<{ navigation: any }> = ({ navigation }
           <Text style={{ color: 'white', textAlign: 'center', fontSize: RFValue(21), fontFamily: 'Poppins-Bold', bottom:  hp('10.5%')}}>{score}</Text>
         </View>
 
-
+   {/*
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', top: hp('-18%')}}>
           <TouchableOpacity onPress={handleShowAd}>
             <ImageBackground source={require('../assets/watchad.png')} style={{ width: wp('70%'), height: hp('14%')}} />
           </TouchableOpacity>
         </View>
-
+*/}
         
 
        
 
-        <View style={{top: hp('-26%'), flex: 1,  maxWidth:wp('68%'), left:wp('16%')}}>
+        <View style={{top: hp('-18%'), flex: 1,  maxWidth:wp('68%'), left:wp('16%')}}>
           {isPurchasing && <ActivityIndicator size="large" color="#0000ff" />}
           {!isPurchasing &&
             packages.map((pkg) => (
